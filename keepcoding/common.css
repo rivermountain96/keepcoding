@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-style: normal;
+}
+
+/* root 변경 */
+
+:root {
+
+  /* layout */
+
+  --base-unit: 24px;
+
+  /* color */
+
+  /* brand color */
+  --primary-color: #4E75FF;
+  --primary-color-hover: #5579FA;
+  /* sub color */
+  --sc-green: #75B798;
+  --sc-cyan: #0AA2C0;
+  --sc-orange: #FD9843;
+  --sc-red: #E35D6A;
+  --sc-pink: #E685B5;
+  --sc-purple: #C5B3E6;
+  --sc-blue: #9EC5FE;
+  /* mono color */
+  --mc-black: #000;
+  --mc-gray1: #212529;
+  --mc-gray2: #F2F3F5;
+  --mc-gray3: #495057;
+  --mc-white: #fff;
+  /* rgba */
+  --mc-b-rgba: rgba(0, 0, 0, 0.55);
+}
+
+
+
+/* color */
+
+/* primary color */
+
+.pc{ color: var(--primary-color) ; }
+.pcbg{ background-color: var(--primary-color); }
+.pc-hover{ color: var(--primary-color-hover); }
+.pcbg-hover{ background-color: var(--primary-color-hover); }
+
+/* sub color */
+
+.sc-green{ color: var(--sc-green); }
+.scbg-green{ background-color: var(--sc-green); }
+
+.sc-cyan{ color: var(--sc-cyan); }
+.scbg-cyan{ background-color: var(--sc-cyan); }
+
+.sc-orange{ color: var(--sc-orange); }
+.scbg-orange{ background-color: var(--sc-orange); }
+
+.sc-red{ color: var(--sc-red); }
+.scbg-red{ background-color: var(--sc-red); }
+
+.sc-pink{ color: var(--sc-pink); }
+.scbg-pink{ background-color: var(--sc-pink); }
+
+.sc-purple{ color: var(--sc-purple); }
+.scbg-purple{ background-color: var(--sc-purple); }
+
+.sc-blue{ color: var(--sc-blue); }
+.scbg-blue{ background-color: var(--sc-blue); }
+
+/* mono color */
+
+.mc-black{ color: var(--mc-black); }
+.mcbg-black{ background-color: var(--mc-black); }
+
+.mc-gray1{ color: var(--mc-gray1); }
+.mcbg-gray1{ background-color: var(--mc-gray1); }
+
+.mc-gray2{ color: var(--mc-gray2); }
+.mcbg-gray2{ background-color: var(--mc-gray2); }
+
+.mc-gray3{ color: var(--mc-gray3); }
+.mcbg-gray3{ background-color: var(--mc-gray3); }
+
+.mc-white{ color: var(--mc-white); }
+.mcbg-white{ background-color: var(--mc-white); }
+
+.mc-b-rgba{ color: var(--mc-b-rgba); }
+.mcbg-b-rgba{ background-color: var(--mc-b-rgba); }
+
+/* layout */
+
+.content{
+  height: 6000px;
+  box-sizing: content-box;
+  width:65%;
+  padding: 147px 0px 68px 388px;
+}
+
+.pd10{
+  padding-bottom: 10px;
+}
+.pd24{
+  padding-bottom: calc(var(--base-unit)*1);
+}
+.pd48{
+  padding-bottom: calc(var(--base-unit)*2);
+}
+.pd72{
+  padding-bottom: calc(var(--base-unit)*3);
+}
+
+
+/* component */
+
+.bd-callout {
+  width: 100%;
+  padding: 38.5px 52.5px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--bd-callout-color, inherit);
+  background-color: #fff;
+  border-left: 0.25rem solid var(--bd-callout-border, #4E75FF);
+}
+
+
+/* 리스트 스타일 변경 */
+
+li{
+  list-style: none;
+}
+dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ol, ul {
+  padding-left: 0;
+}
+
+/* text tag 마진 변경 */
+
+p{
+  margin-bottom: 0;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+/* font 지정 */
+
+body{
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background-color: var(--gray2);
+  font-size: 16px;
+}
+
+/* primary 컬러 변경 */
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-outline-primary{
+  border-color: var(--primary-color);
+  color: var(--primary-color)
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.page-link {
+  color: var(--primary-color);
+  background-color: var(--bs-pagination-bg);
+  border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #4E75FF;
+  --bs-btn-border-color: #4E75FF;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #4E75FF;
+  --bs-btn-hover-border-color: #4E75FF;
+  --bs-btn-focus-shadow-rgb: 108,117,125;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #4E75FF;
+  --bs-btn-active-border-color: #4E75FF;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #4E75FF;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #4E75FF;
+  --bs-gradient: none;
+}
+
+.btn-outline-success {
+  --bs-btn-color: #4E75FF;
+  --bs-btn-border-color: #4E75FF;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #4E75FF;
+  --bs-btn-hover-border-color: #4E75FF;
+  --bs-btn-focus-shadow-rgb: 25,135,84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #4E75FF;
+  --bs-btn-active-border-color: #4E75FF;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #4E75FF;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #4E75FF;
+  --bs-gradient: none;
+}
+
+/* 마우스 호버나 액티브 상태 컬러 변경 */
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--primary-color-hover);
+  border-color: var(--primary-color-hover);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: var(--primary-color-hover);
+  border-color: var(--primary-color-hover);
+}
+
+input:focus{
+  outline: 0px 0px 5px #4E75FF !important;
+}
+
+/* 확인용으로 만든 css, 사용금지*/
+
+.flex-box{
+  background-color: var(--primary-color);
+  width: 100px;
+  height: 100px;
+}
