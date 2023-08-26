@@ -1,3 +1,10 @@
+/* bootstrap 초기화 */
+.row {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
 p{
   margin-bottom: 0;
 }
@@ -12,6 +19,9 @@ dl, ol, ul {
 ol, ul {
   padding-left: 0;
 }
+
+/* navbar */
+
 nav{
   z-index: 100;
 }
@@ -69,6 +79,12 @@ nav{
   flex-direction: column;
   gap:20px;
 }
+
+/* index.html */
+
+body.index{
+  background-color: var(--mc-gray2);
+}
 .sell_report{
   width: 100%;
   gap:30px;
@@ -85,12 +101,16 @@ nav{
 .member{
   width:100%;
 }
+.kcard.big{
+  width: 100%;
+}
 .kcard{
   width: 600px;
   /* height: 144px; */
-  padding:47px;
+  padding:40px;
   background-color: #fff;
   border-radius: 10px;
+  box-sizing: border-box;
   gap: 20px;
 }
 .kcard h6{
@@ -124,4 +144,16 @@ nav{
 }
 .callout i {
   font-size: 25px;
+}
+.smile_icons i{
+  font-size: 20px;
+}
+i.i-fill{
+  color:var(--primary-color);
+}
+i.i-empty{
+  color:var(--mc-gray2);
+}
+.coupon_report i{
+  font-size: 35px;
 }
