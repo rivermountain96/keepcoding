@@ -11,6 +11,7 @@
   $result = $mysqli->query($query) or die("query error => ".$mysqli->error);
   $rs = $result->fetch_object();
   
+
   if($rs){
       $sql="update admins set last_login=now() where idx=".$rs->idx;  //관리자의 마지막 로그인 시간을 업데이트
       $result=$mysqli->query($sql) or die($mysqli->error);
