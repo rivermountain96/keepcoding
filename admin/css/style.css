@@ -5,21 +5,6 @@
   margin-left: 0;
 }
 
-p{
-  margin-bottom: 0;
-}
-
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 0;
-}
-dl, ol, ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-ol, ul {
-  padding-left: 0;
-}
-
 /* navbar */
 
 nav{
@@ -156,4 +141,17 @@ i.i-empty{
 }
 .coupon_report i{
   font-size: 35px;
+}
+
+/* table */
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td, .table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
 }
