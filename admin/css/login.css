@@ -34,17 +34,14 @@
 .login_content .login_pw{
     margin-top: 33px;
 }
-.login_id label{
-    margin-bottom: 8px;
-}
+.login_id label,
 .login_pw label{
     margin-bottom: 8px;
-}
-.login label{
     font-size: 16px;
     color: #495057;
 }
-.login input{
+.login_id input,
+.login_pw input{
     width: 320px;
     height: 48px;
     border-radius: 10px;
@@ -70,5 +67,17 @@
     border: none;
     border-radius: 10px;
     background: #D9D9D9;
-    margin: 37px 40px 46px 40px;
+    margin: 10px 40px 46px 40px;
+}
+.login_ir{
+    padding-top: 12px;
+}
+.login_ir label{
+    color: var(--mc-gray3);
+    font-size: 16px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+.login_ir .form-check-input{
+    margin-top: 0;
 }
