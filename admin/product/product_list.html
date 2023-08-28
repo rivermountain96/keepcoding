@@ -66,15 +66,11 @@ if ($result->num_rows > 0) {
     <div class="nav_top container-fluid">
       <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
       <div class="d-flex align-items-center">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <div class="d-flex g-1 align-items-center">
-          <span><i class="bi bi-bell"></i></span>
-          <div class="user d-flex align-items-center g-1">
-            <p>총관리자</p>
-            <img src="/keepcoding.com/admin/img/Ellipse 3.png" alt="">
+        <div class="d-flex gap-3 align-items-center">
+          <span><i class="bi bi-bell mc-gray3"></i></span>
+          <div class="user d-flex align-items-center gap-3">
+            <p class="mc-gray3">총관리자</p>
+            <img src="../img/Ellipse 3.png" alt="">
           </div>
         </div>
       </div>
@@ -115,16 +111,13 @@ if ($result->num_rows > 0) {
             <li class="nav-item">
               <a class="nav-link" href="#" aria-disabled="true">Q&A 게시판</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">커뮤니티</a>
-            </li>
           </ul>
         </li>
       </ul>
       <ul>
         <li class="nav-item d-flex justify-content-between">
-          <a class="nav-link" aria-current="page" href="#">로그아웃</a>
-          <a class="nav-link" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#">로그아웃</a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
         </li>
       </ul>
     </div>
@@ -134,10 +127,10 @@ if ($result->num_rows > 0) {
 
 
   <div class="content mcbg-white">
-    <h4 class="mb-70">강의 리스트</h4>
+    <h3 class="pd72">강의 리스트</h3>
 
     <!-- product_list_sec1 강의리스트 분류단 -->
-    <div class=" product_list_sec1 row mb-48">
+    <div class=" product_list_sec1 row pd48">
       <div class="col">
         <select class="form-select" aria-label="Default select example" id="cate1" name="cate1">
           <option selected disabled>대분류</option>
@@ -178,7 +171,7 @@ if ($result->num_rows > 0) {
 
     <!-- product_list_sec2 검색단 -->
 
-    <form class="product_list_sec2 d-flex mb-48 " role="search">
+    <form class="product_list_sec2 d-flex pd48 " role="search">
       <input class="form-control me-2" type="search" placeholder="강좌명으로 검색하기" aria-label="Search">
       <button class="btn btn-outline-success btn-sm col-sm-1" type="submit">강좌검색 </button>
     </form>
@@ -186,7 +179,7 @@ if ($result->num_rows > 0) {
 
     <!-- product_list_sec3 강좌내용 테이블 -->
 
-    <table class=" product_list_sec3 table mb-48">
+    <table class=" product_list_sec3 table pd48">
       <thead>
         <tr>
           <th scope="col">강좌명</th>
@@ -300,17 +293,6 @@ if ($result->num_rows > 0) {
         height: 100%;
       }
 
-      .mb-70 {
-        margin-bottom: 70px;
-      }
-
-      .mb-48 {
-        margin-bottom: 48px;
-      }
-
-      .mb-24 {
-        margin-bottom: 48px;
-      }
     </style>
 
 

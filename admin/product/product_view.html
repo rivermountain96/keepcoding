@@ -82,19 +82,13 @@ if ($result->num_rows > 0) {
   <!-- 공통부분 nav -->
   <nav class="navbar">
     <div class="nav_top container-fluid">
-      <h1 class="logo">
-        <a href="index.html"><span>keep coding</span></a>
-      </h1>
+      <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
       <div class="d-flex align-items-center">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <div class="d-flex g-1 align-items-center">
-          <span><i class="bi bi-bell"></i></span>
-          <div class="user d-flex align-items-center g-1">
-            <p>총관리자</p>
-            <img src="/keepcoding.com/admin/img/Ellipse 3.png" alt="" />
+        <div class="d-flex gap-3 align-items-center">
+          <span><i class="bi bi-bell mc-gray3"></i></span>
+          <div class="user d-flex align-items-center gap-3">
+            <p class="mc-gray3">총관리자</p>
+            <img src="../img/Ellipse 3.png" alt="">
           </div>
         </div>
       </div>
@@ -135,16 +129,13 @@ if ($result->num_rows > 0) {
             <li class="nav-item">
               <a class="nav-link" href="#" aria-disabled="true">Q&A 게시판</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">커뮤니티</a>
-            </li>
           </ul>
         </li>
       </ul>
       <ul>
         <li class="nav-item d-flex justify-content-between">
-          <a class="nav-link" aria-current="page" href="#">로그아웃</a>
-          <a class="nav-link" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#">로그아웃</a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
         </li>
       </ul>
     </div>
@@ -156,7 +147,7 @@ if ($result->num_rows > 0) {
   <div class="product_view_sec1 content mcbg-white d-flex flex-column">
 
     <div>
-      <h4 class="mb-48">강의상세보기</h4>
+      <h4 class="pd48">강의상세보기</h4>
       <hr>
     </div>
 
@@ -283,21 +274,10 @@ if ($result->num_rows > 0) {
       /* 모달 창 최대 너비 설정 */
     }
 
-    .mb-70 {
-      margin-bottom: 70px;
-    }
-
-    .mb-48 {
-      margin-bottom: 48px;
-    }
-
-    .mb-24 {
-      margin-bottom: 24px;
-    }
-
+    
     hr {
-      margin-top: 24px;
-      margin-bottom: 24px;
+      margin-top: calc(var(--base-unit) * 1);
+      margin-bottom:calc(var(--base-unit) * 1);
     }
 
 
