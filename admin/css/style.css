@@ -126,18 +126,24 @@ nav{
   font-size: 25px;
 }
 
-.table{
-  margin-bottom: 48px;
+/* 최성희 notice_list_table 시작 */
+.notice_list_table{
+  margin: 48px auto;
 }
-.table thead th {
+
+.notice_list_table thead th{
+  padding: 1rem 0 1rem 1.5rem;
+}
+.notice_list_table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #DEE2E6;
 }
-.table td, .table th {
-  padding: 0.75rem;
+.notice_list_table td, .notice_list_table th {
+  padding: 0.53rem 0 0.53rem 1.5rem;
   /* vertical-align: top; */
   border-top: 1px solid #DEE2E6;
 }
-.table tbody{
+.notice_list_table tbody{
   border-bottom: 2px solid #DEE2E6;
 }
+/* 최성희 notice_list_table 끝 */
