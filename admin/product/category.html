@@ -94,24 +94,24 @@
     <div class="row">
       <div class="col-md-4">
         <ul class="list-group" id="cate1">
-          <li class="selected_cate list-group-item d-flex justify-content-between align-items-center">
+          <li class="selected_cate list-group-item big d-flex justify-content-between align-items-center">
             대분류
           </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+            <li class="list-group-item big d-flex justify-content-between align-items-center" data-cid="">
               <span class="cate_size">기초 강의</span>
               <div class="cate_edit_btns d-flex gap-3">
                 <a href="#">수정</a>
                 <a href="#">삭제</a>
               </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+            <li class="list-group-item big d-flex justify-content-between align-items-center" data-cid="">
               <span class="cate_size">프론트엔드</span>
               <div class="cate_edit_btns d-flex gap-3">
                 <a href="#">수정</a>
                 <a href="#">삭제</a>
               </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+            <li class="list-group-item big d-flex justify-content-between align-items-center" data-cid="">
               <span class="cate_size">백엔드</span>
               <div class="cate_edit_btns d-flex gap-3">
                 <a href="#">수정</a>
@@ -120,19 +120,20 @@
             </li>
         </ul>
       </div>
+      <!-- 대분류 -->
       <div class="col-md-4">
         <ul class="list-group" id="cate1">
-          <li class="selected_cate list-group-item d-flex justify-content-between align-items-center">
+          <li class="selected_cate list-group-item big d-flex justify-content-between align-items-center">
             중분류
           </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+            <li class="list-group-item big d-flex justify-content-between align-items-center" data-cid="">
               <span class="cate_size">HTML</span>
               <div class="cate_edit_btns d-flex gap-3">
                 <a href="#">수정</a>
                 <a href="#">삭제</a>
               </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+            <li class="list-group-item big d-flex justify-content-between align-items-center" data-cid="">
               <span class="cate_size">CSS</span>
               <div class="cate_edit_btns d-flex gap-3">
                 <a href="#">수정</a>
@@ -141,26 +142,27 @@
             </li>
         </ul>
       </div>
+      <!-- 중분류 -->
       <div class="col-md-4">
         <ul class="list-group" id="cate3">
-          <li class="selected_cate list-group-item d-flex justify-content-between align-items-center">
+          <li class="selected_cate list-group-item big d-flex justify-content-between align-items-center">
             소분류
           </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+            <li class="list-group-item big d-flex justify-content-between align-items-center" data-cid="">
               <span class="cate_size">초급</span>
               <div class="cate_edit_btns d-flex gap-3">
                 <a href="#">수정</a>
                 <a href="#">삭제</a>
               </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+            <li class="list-group-item big d-flex justify-content-between align-items-center" data-cid="">
               <span class="cate_size">중급</span>
               <div class="cate_edit_btns d-flex gap-3">
                 <a href="#">수정</a>
                 <a href="#">삭제</a>
               </div>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+            <li class="list-group-item big d-flex justify-content-between align-items-center" data-cid="">
               <span class="cate_size">고급</span>
               <div class="cate_edit_btns d-flex gap-3">
                 <a href="#">수정</a>
@@ -169,19 +171,14 @@
             </li>
         </ul>
       </div>
-
-      <div class="btns mt-5 row g-5">
-        <div class="col d-flex justify-content-center">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate1Modal">대분류 등록</button>
-        </div>
-        <div class="col d-flex justify-content-center">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate2Modal">중분류 등록</button>
-        </div>
-        <div class="col d-flex justify-content-center">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate3Modal">소분류 등록</button>
-        </div>
+      <!-- 소분류 -->
+      <div class="cate-add-btns mt-5 d-flex justify-content-around">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate1Modal">대분류 등록</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate2Modal">중분류 등록</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate3Modal">소분류 등록</button>
       </div><!-- //btns -->
-    </div>  <!-- cate select -->
+
+    
 
     <!-- Modal 1 -->
     <div class="modal fade" id="cate1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -193,12 +190,7 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="col-md-6">
-                <input type="text" class="form-control" name="code1" id="code1" placeholder="코드명">
-              </div>
-              <div class="col-md-6">
-              <input type="text" class="form-control" name="name1" id="name1" placeholder="대분류명">
-              </div>
+              <input type="text" class="form-control big" name="name1" id="name1" placeholder="대분류명">
             </div>
           </div>
           <div class="modal-footer">
@@ -209,95 +201,55 @@
       </div>
     </div> <!-- //Modal 1 -->
     <!-- Modal 2 -->
-    <div class="modal fade" id="cate2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fs-5">중분류 등록</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <!-- <?php
-    
-                    $query = "select * from category where step=1";
-                    //$mysqli->함수명,   쿼리실행 $mysqli -> query(sql지시문);
-                    $result = $mysqli -> query($query); //쿼리실행결과를 $result 할당
-    
-                    while($rs = $result -> fetch_object()){
-                        $cate2[] = $rs;
-                    }
-              ?> -->
-              <div class="col-md-12">
-                <select class="form-select" aria-label="Default select example" id="pcode2">
-                  <option selected disabled>대분류를 선택해주세요.</option>
-                  <option value=""></option>
-                </select>
-              </div>          
-            </div>
-            <div class="row mt-3">
-              <div class="col-md-6">
-                <input type="text" class="form-control" name="code2" id="code2" placeholder="코드명">
-              </div>
-              <div class="col-md-6">
-              <input type="text" class="form-control" name="name2" id="name2" placeholder="중분류명">
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-            <button type="submit" class="btn btn-primary" data-step="2">등록</button>
-          </div>
+<div class="modal fade" id="cate2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fs-5">중분류 등록</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column gap-4">
+        <select class="form-select big" aria-label="Default select example" id="pcode2">
+          <option selected disabled>대분류를 선택해주세요.</option>
+          <option value=""></option>
+        </select>       
+        <input type="text" class="form-control big" name="name2" id="name2" placeholder="중분류명">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        <button type="submit" class="btn btn-primary" data-step="2">등록</button>
+      </div>
+    </div>
+  </div>
+</div> <!-- //Modal 2 -->
+
+<!-- Modal 3 -->
+<div class="modal fade" id="cate3Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fs-5">소분류 등록</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column gap-4">
+        <select class="form-select big" aria-label="Default select example" id="pcode2_1">
+        <option selected disabled>대분류</option>
+          <option value=""></option>
+        </select>
+        <select class="form-select big" aria-label="Default select example" id="pcode3">
+          <option selected disabled>중분류</option>
+        </select>
+        <div class="row">
+          <input type="text" class="form-control big" name="name3" id="name3" placeholder="소분류명">
         </div>
       </div>
-    </div> <!-- //Modal 2 -->
-    <!-- Modal 3 -->
-    <div class="modal fade" id="cate3Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fs-5">소분류 등록</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-6">
-                <select class="form-select" aria-label="Default select example" id="pcode2_1">
-                <option selected disabled>대분류</option>
-                <!-- <?php
-                  foreach($cate1 as $c){            
-                ?> -->
-                  <option value=""></option>
-                  <!-- <?php echo $c->code ?> -->
-                  <!-- <?php echo $c->name ?> -->
-                </option>
-                <!-- <?php } ?> -->
-                </select>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select" aria-label="Default select example" id="pcode3">
-                  <option selected disabled>대분류를 먼저 선택해주세요</option>
-                
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <input type="text" class="form-control" name="code3" id="code3" placeholder="코드명">
-              </div>
-              <div class="col-md-6">
-              <input type="text" class="form-control" name="name3" id="name3" placeholder="소분류명">
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-            <button type="submit" class="btn btn-primary" data-step="3">등록</button>
-          </div>
-        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        <button type="submit" class="btn btn-primary" data-step="3">등록</button>
       </div>
-    </div> <!-- //Modal 3 -->
-  </div> <!-- //content 1 -->
+    </div>
+  </div>
+</div> <!-- //Modal 3 -->
 
   <!-- <?php
       }
@@ -305,92 +257,7 @@
   ?> -->
 
 <!-- script -->
-<script>
-  $(document).ready(function () {
-    // 대분류 list-group-item을 클릭했을 때
-    $('.list-group-item[data-value]').on('click', function () {
-      let selectedCateCode = $(this).data('value');
-      $('#pcode2').val(selectedCateCode); // 중분류 select 엘리먼트의 값을 설정
-      
-      // 변경 이벤트를 트리거하여 종속 요소가 업데이트되도록 함
-      $('#pcode2').trigger('change');
-    });
-
-    // 중분류 select의 값이 변경되었을 때
-    $('#pcode2').on('change', function () {
-      let selectedPCode = $(this).val();
-      $('#pcode3 option').each(function () {
-        $(this).prop('disabled', true); // 모든 옵션 비활성화
-      });
-
-      // 선택한 값과 일치하는 옵션 활성화
-      $('#pcode3 option[value="' + selectedPCode + '"]').prop('disabled', false);
-    });
-  });
-</script>
-<script src="../../js/makeoption.js"></script>
-<script>
-
-  let categorySubmitBtn = $('.modal button[type="submit"]');
-
-  categorySubmitBtn.click(function(){
-    let step = $(this).attr('data-step');
-    save_category(step);
-  });
-
-  function save_category(step){
-    let code = $(`#code${step}`).val(); //$('#code1').val()
-    let name = $(`#name${step}`).val();
-    let pcode = $(`#pcode${step} option:selected`).val();
-
-    if(step > 1 && !pcode){
-      alert('대분류를 먼저 선택하세요');
-      return; //아무것도 반환하지 않고 종료
-    }    
-    if(!code){
-      alert('코드명을 입력하세요');
-      return; 
-    }
-    if(!name){
-      alert('분류명을 입력하세요');
-      return; 
-    }
-    let data = {
-      name:name,
-      code:code,
-      pcode:pcode,
-      step:step
-    }
-    console.log(data);
-    
-    $.ajax({
-      async : false, 
-      type: 'post',     
-      data: data, 
-      url: "save_category.php", 
-      dataType: 'json', //결과 json 객체형식
-      error: function(error){
-        console.log('Error:', error);
-      },
-      success: function(return_data){
-        console.log(return_data.result);
-
-        if(return_data.result == 1){
-          alert('등록성공');
-        } else if(return_data.result == -1){
-          alert('코드나 분류명이 이미 사용중입니다.');
-          location.reload();//새로고침
-        } else{
-          alert('등록실패');
-        }
-      }
-    });//ajax
-
-
-  }
-
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -179,3 +179,7 @@ i.i-empty{
   color: var(--mc-gray1);
   opacity: 1;
 }
+
+.form-control.big, .form-select.big, .list-group-item.big{
+  padding: 16px;
+}
