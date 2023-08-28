@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css" integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  
+  <!-- summernote 시작-->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+  <!-- summernote 끝 -->
+  <script src="../../js/makeoption.js"></script>
+  <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/product_up.css">
+  <title>강좌등록</title>
+</head>
+<body>
+<!-- 이은서 header 시작 -->
+  <nav class="navbar">
+    <div class="nav_top container-fluid">
+      <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+      <div class="d-flex align-items-center">
+        <div class="d-flex gap-3 align-items-center">
+          <span><i class="bi bi-bell mc-gray3"></i></span>
+          <div class="user d-flex align-items-center gap-3">
+            <p class="mc-gray3">총관리자</p>
+            <img src="../img/Ellipse 3.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav_side navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">대시보드</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">카테고리 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">강좌 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">강사 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">수강생 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">쿠폰 관리</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">공지사항</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">Q&A 게시판</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="nav-item d-flex justify-content-between">
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#">로그아웃</a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!-- 이은서 header 끝 -->
+
+<!-- 정이원 coupon_up 시작 -->
+<div class="content">
+  <h4 class="fs-4 pd48">쿠폰 등록</h4>
+
+<div class="d-flex pd48">
+  <div class="coupon_up_name">
+      <h6 class="pd10">쿠폰명</h6>
+      <label for=""></label>
+      <input class="form-control" type="text" placeholder="쿠폰명을 입력하세요" aria-label="default input example">
+  </div>
+  <div class="coupon_status d-flex row">
+      <h4>상태</h4>
+      <div class="coupon_status_checkbox d-flex">
+      <div class="form-check">
+          <input class="coupon_status_input form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-lsabel" for="flexCheckDefault">
+          활성화
+          </label>
+      </div>
+      <div class="form-check coupon_no_status">
+          <input class="coupon_status_input form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckChecked">
+          비활성화
+          </label>
+      </div>
+      </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-between pd48">
+      <div class="coupon_up_price">
+      <h6 class="pd10">할인가</h6>
+      <label for=""></label>
+      <input class="form-control" type="text" placeholder="숫자만 입력하세요" aria-label="default input example">
+      </div>
+  
+      <div class="coupon_up_min_price">
+      <h6 class="pd10">최소사용금액</h6>
+      <label for=""></label>
+      <input class="form-control" type="number" min="5000" max="100000" step="5000" aria-label="default input example">
+      </div>
+  
+      <div class="coupon_up_max_price">
+      <h6 class="pd10">최대사용금액</h6>
+      <label for=""></label>
+      <input class="form-control" type="number" min="5000" max="100000" step="5000" aria-label="default input example">
+      </div>
+</div>
+
+<div class="d-flex justify-content-between pd48">
+  <div class="coupon_up_usedate">
+  <h6 class="pd10">사용기한</h6>
+  <select class="form-select form-select-sm" aria-label="Small select example">
+      <option value="1" selected>제한</option>
+      <option value="2">무제한</option>
+    </select>
+  </div>
+
+  <div class="coupon_up_regdate">
+  <h6 class="pd10">시작일</h6>
+  <label for=""></label>
+  <input type="text" id="datepicker" name="datepicker" class="form-control"></p>
+  </div>
+
+  <div class="coupon_up_enddate">
+      <h6 class="pd10">만료일</h6>
+      <label for=""></label>
+      <input type="text" id="datepicker" name="datepicker" class="form-control"></p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-between pd48">
+  <div class="coupon_up_image">
+  <h6 class="pd10">이미지</h6>
+      <label for="formFileLg" class="form-label"></label>
+      <input class="form-control form-control-lg" id="formFileLg" type="file">
+  </div>
+</div>
+
+  <div class="coupon_up_btn d-flex justify-content-end">
+      <button type="button" class="btn btn-primary">등록</button>
+      <button type="button" class="coupon_up_cancel btn btn-primary">취소</button>
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#product_detail').summernote();
+    $("#datepicker").datepicker();
+  });
+  
+</script>
+</body>
+</html>
+
+
+
+
