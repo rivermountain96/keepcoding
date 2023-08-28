@@ -155,3 +155,14 @@ i.i-empty{
 .table tbody{
   border-bottom: 2px solid #dee2e6;
 }
+
+/* category */
+
+.cate_edit_btns a{
+  text-decoration: none;
+  color: var(--mc-gray3);
+}
+.cate_edit_btns a:hover{
+  text-decoration: none;
+  color: var(--primary-color);
+}

@@ -98,48 +98,13 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <option disabled>대분류</option>
             </li>
-            <!-- <?php
-              foreach($cate1 as $c){            
-            ?> -->
               <li class="list-group-item d-flex justify-content-between align-items-center" data-value="<?php echo $c->code ?>">
-                <div>
-                  <a href="#" class="btn-edit btn-sm mr-2">수정</a>
-                  <a href="#" class="btn-delete btn-sm">삭제</a>
+                <span>대분류명</span>
+                <div class="cate_edit_btns d-flex gap-2">
+                  <a href="#">수정</a>
+                  <a href="#">삭제</a>
                 </div>
               </li>
-            <!-- <?php } ?> -->
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" id="cate2">
-                <option selected disabled>중분류</option>   
-            </li>
-            <!-- <?php
-  
-              $query = "select * from category where step=1";
-              $result = $mysqli -> query($query);
-  
-              while($rs = $result -> fetch_object()){
-                  $cate2[] = $rs;
-              }
-                  foreach($cate2 as $p){            
-            ?> -->
-              <li class="list-group-item d-flex justify-content-between align-items-center" data-value="">
-                <!-- <?php echo $p->name ?> -->
-                <div>
-                  <a href="#" class="btn-edit btn-sm mr-2">수정</a>
-                  <a href="#" class="btn-delete btn-sm">삭제</a>
-                </div>
-              </li>
-            <!-- <?php } ?> -->
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" id="cate3">
-              <option selected disabled>소분류</option>
-            </li>
           </ul>
         </div>
         <div class="btns mt-5 row g-5">
