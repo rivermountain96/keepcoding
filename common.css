@@ -14,7 +14,7 @@
   /* typo */
 
   --font-size-16: 16px;
-  --font-size-14: calc((var(--font-size)*0.875);
+  --font-size-14: calc((var(--font-size)*0.875));
 
   /* layout */
 
@@ -41,7 +41,7 @@
   --mc-white: #fff;
   /* rgba */
   --mc-b-rgba: rgba(0, 0, 0, 0.55);
-}
+};
 
 
 
