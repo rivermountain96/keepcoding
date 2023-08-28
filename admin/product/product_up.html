@@ -27,15 +27,17 @@
 <div class="container">
   <h1 class="h3 mt-5">강좌등록</h1>
   <form action="product_ok.php" method="POST" id="product_form" enctype="multipart/form-data">
-    <input type="hidden" name="file_table_id" id="file_table_id" value="">
-    <input type="hidden" name="content" id="content" value="">
-    <table class="table table-borderless">
-      <tbody>
+  <input type="hidden" name="file_table_id" id="file_table_id" value="">
+  <input type="hidden" name="content" id="content" value="">
+  <table class="table table-borderless">
+    <tbody>
         <tr>
           <th scope="row">카테고리</th>
+        </tr>
+        <tr>
           <td>
             <div class="row">
-              <div class="col-md-4 cate_sel">
+              <div class="col cate_sel">
                 <select class="form-select" aria-label="Default select example" id="cate1" name="cate1">
                   <option selected disabled>대분류</option>
                   <option value="">기초강의</option>
@@ -43,13 +45,13 @@
                   <option value="">백엔드</option>
                 </select>
               </div>
-              <div class="col-md-4">
+              <div class="col">
                 <select class="form-select" aria-label="Default select example" id="cate2" name="cate2">
                   <option selected disabled>중분류</option>
 
                 </select>
               </div>
-              <div class="col-md-4">
+              <div class="col">
                 <select class="form-select" aria-label="Default select example" id="cate3" name="cate3">
                   <option selected disabled>소분류</option>
 
@@ -62,37 +64,47 @@
           <th scope="row">
             <label for="name">강좌명</label>
           </th>
+        </tr>
+        <tr>
           <td>
             <input type="text" name="name" id="name" class="form-control" placeholder="강좌명 입력하기">
           </td>
         </tr>
         <tr>
-          <div class="row d-flex justify-content-between">
-            <div class="col-md-2">
-              <th scope="row">수강기한</th>
-              <td>
-                <select class="form-select" name="product_limit" id="product_limit" aria-label="Default select example">
-                  <option value="0">제한</option>
-                  <option value="1">무제한</option>
-                </select>
-              </td>
-            </div>
-            <!-- <div class="col-md-4">
-              <th scope="row">시작일</th>
-              <td>
-                <input type="text" name="sale_end_date" id="sale_end_date" class="form-control" value="" placeholder="2023.08.27">
-              </td>
-            </div> -->
-          </div>
+          <th scope="row">수강기한</th>
+          <th scope="row">시작일</th>
+        </tr>
+        <tr>
+          <td>
+            <select class="form-select" name="product_limit" id="product_limit" aria-label="Default select example">
+              <option value="0">제한</option>
+              <option value="1">무제한</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" name="sale_end_date" id="sale_end_date" class="form-control" value="" placeholder="2023.08.27">
+          </td>
+        <tr>  
+        </tr>
+        <tr>
+          
+        </tr>
+        <tr>
+          <td>
+            
+          </td>
+        </tr>
         </tr>
         <tr>
           <div class="row">
-            <div class="col">
-                <th scope="row"><label for="name">판매금액</label></th>
-                <td>
-                  <input type="number" name="price" id="price" min="10000" max="1000000" step="10000" class="form-control" placeholder="판매금액 입력하기">
-                </td>
-            </div>
+            <tr>
+              <th scope="row"><label for="name">판매금액</label></th>
+            </tr>
+            <tr>
+              <td>
+                <input type="number" name="price" id="price" min="10000" max="1000000" step="10000" class="form-control" placeholder="판매금액 입력하기">
+              </td>
+            </tr>
             <!-- <div class="col">
               <th scope="row">
                 <label for="name">판매상태</label>
