@@ -11,6 +11,10 @@
 /* root 변경 */
 
 :root {
+  /* typo */
+
+  --font-size-16: 16px;
+  --font-size-14: calc((var(--font-size)*0.875);
 
   /* layout */
 
