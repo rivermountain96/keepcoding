@@ -11,6 +11,10 @@
 /* root 변경 */
 
 :root {
+  /* typo */
+
+  --font-size-16: 16px;
+  --font-size-14: calc(var(--font-size-16)*0.875);
 
   /* layout */
 
@@ -37,7 +41,7 @@
   --mc-white: #fff;
   /* rgba */
   --mc-b-rgba: rgba(0, 0, 0, 0.55);
-}
+};
 
 
 
@@ -96,7 +100,6 @@
 /* layout */
 
 .content{
-  height: 6000px;
   box-sizing: content-box;
   width:65%;
   padding: 147px 0px 68px 388px;
@@ -236,6 +239,22 @@ body{
 
 input:focus{
   outline: 0px 0px 5px #4E75FF !important;
+}
+
+/* datepicker 색상 변경 */
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight, 
+.ui-widget-header .ui-state-highlight {
+  border: 1px solid var(--primary-color);
+  background: rgba(78, 117, 255, 0.15);
+  color: var(--primary-color);
+}
+
+.ui-state-active, 
+.ui-widget-content .ui-state-active{
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  color: var(--mc-white);
 }
 
 /* 확인용으로 만든 css, 사용금지*/
