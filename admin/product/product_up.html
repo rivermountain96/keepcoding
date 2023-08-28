@@ -19,11 +19,74 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   <!-- summernote 끝 -->
   <script src="../../js/makeoption.js"></script>
-  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="../css/style.css">
   <title>강좌등록</title>
 </head>
 <body>
-    
+<!-- header 시작 -->
+  <nav class="navbar">
+    <div class="nav_top container-fluid">
+      <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+      <div class="d-flex align-items-center">
+        <div class="d-flex gap-3 align-items-center">
+          <span><i class="bi bi-bell mc-gray3"></i></span>
+          <div class="user d-flex align-items-center gap-3">
+            <p class="mc-gray3">총관리자</p>
+            <img src="../img/Ellipse 3.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav_side navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">대시보드</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">카테고리 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">강좌 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">강사 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">수강생 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">쿠폰 관리</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">공지사항</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">Q&A 게시판</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="nav-item d-flex justify-content-between">
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#">로그아웃</a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!-- header -->
+
 <div class="container">
   <h1 class="h3 mt-5">강좌등록</h1>
   <form action="product_ok.php" method="POST" id="product_form" enctype="multipart/form-data">
@@ -95,43 +158,43 @@
           </td>
         </tr>
         </tr>
-        <tr>
           <div class="row">
             <tr>
               <th scope="row"><label for="name">판매금액</label></th>
+              <th scope="row"><label for="">판매상태</label></th>
             </tr>
+          <div class="row">
             <tr>
               <td>
                 <input type="number" name="price" id="price" min="10000" max="1000000" step="10000" class="form-control" placeholder="판매금액 입력하기">
               </td>
-            </tr>
-            <!-- <div class="col">
-              <th scope="row">
-                <label for="name">판매상태</label>
-              </th>
               <td>
-                <input class="form-check-input" type="radio" value="1" id="isnotsale" name="isnotsale">
+                <input class="form-check-input" type="radio" value="" id="isnotsale" name="isnotsale">
                 <label class="form-check-label" for="isnotsale">
                   제한
                 </label>
-                <input class="form-check-input" type="radio" value="1" id="issale" name="issale">
+                <input class="form-check-input" type="radio" value="" id="issale" name="issale">
                 <label class="form-check-label" for="issale">
                   무제한
                 </label>
               </td>
-            </div> -->
+            </tr>
           </div>
+        <tr>
+          <th scope="row"><label for="product_detail">상세설명</label></th>
         </tr>
         <tr>
-          <th scope="row">상세설명</th>
           <td>
             <form method="post">
               <textarea id="product_detail" name="editordata"></textarea>
             </form>
           </td>
+  
         </tr>
         <tr>
           <th scope="row">썸네일</th>
+        </tr>
+        <tr>
           <td>
             <input type="file" name="thumbnail" id="thumbnail" class="form-control">
           </td>
@@ -140,6 +203,8 @@
           <div class="row">
             <th scope="row">강의 영상 업로드</th>
           </div>
+        </tr>
+        <tr>
           <div class="row">
             <div class="col-md-4">
               <td>
