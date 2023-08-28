@@ -91,35 +91,98 @@
     </div>
   </nav>
   <div class="content">
-    <form action="">
-      <div class="row">
-        <div class="col-md-4">
-          <ul class="list-group" id="cate1">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <option disabled>대분류</option>
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="list-group" id="cate1">
+          <li class="selected_cate list-group-item d-flex justify-content-between align-items-center">
+            대분류
+          </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+              <span class="cate_size">기초 강의</span>
+              <div class="cate_edit_btns d-flex gap-3">
+                <a href="#">수정</a>
+                <a href="#">삭제</a>
+              </div>
             </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center" data-value="<?php echo $c->code ?>">
-                <span>대분류명</span>
-                <div class="cate_edit_btns d-flex gap-2">
-                  <a href="#">수정</a>
-                  <a href="#">삭제</a>
-                </div>
-              </li>
-          </ul>
-        </div>
-        <div class="btns mt-5 row g-5">
-          <div class="col d-flex justify-content-center">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate1Modal">대분류 등록</button>
-          </div>
-          <div class="col d-flex justify-content-center">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate2Modal">중분류 등록</button>
-          </div>
-          <div class="col d-flex justify-content-center">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate3Modal">소분류 등록</button>
-          </div>
-        </div><!-- //btns -->
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+              <span class="cate_size">프론트엔드</span>
+              <div class="cate_edit_btns d-flex gap-3">
+                <a href="#">수정</a>
+                <a href="#">삭제</a>
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+              <span class="cate_size">백엔드</span>
+              <div class="cate_edit_btns d-flex gap-3">
+                <a href="#">수정</a>
+                <a href="#">삭제</a>
+              </div>
+            </li>
+        </ul>
       </div>
-    </form>
+      <div class="col-md-4">
+        <ul class="list-group" id="cate1">
+          <li class="selected_cate list-group-item d-flex justify-content-between align-items-center">
+            중분류
+          </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+              <span class="cate_size">HTML</span>
+              <div class="cate_edit_btns d-flex gap-3">
+                <a href="#">수정</a>
+                <a href="#">삭제</a>
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+              <span class="cate_size">CSS</span>
+              <div class="cate_edit_btns d-flex gap-3">
+                <a href="#">수정</a>
+                <a href="#">삭제</a>
+              </div>
+            </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-group" id="cate3">
+          <li class="selected_cate list-group-item d-flex justify-content-between align-items-center">
+            소분류
+          </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+              <span class="cate_size">초급</span>
+              <div class="cate_edit_btns d-flex gap-3">
+                <a href="#">수정</a>
+                <a href="#">삭제</a>
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+              <span class="cate_size">중급</span>
+              <div class="cate_edit_btns d-flex gap-3">
+                <a href="#">수정</a>
+                <a href="#">삭제</a>
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" data-cid="">
+              <span class="cate_size">고급</span>
+              <div class="cate_edit_btns d-flex gap-3">
+                <a href="#">수정</a>
+                <a href="#">삭제</a>
+              </div>
+            </li>
+        </ul>
+      </div>
+
+      <div class="btns mt-5 row g-5">
+        <div class="col d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate1Modal">대분류 등록</button>
+        </div>
+        <div class="col d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate2Modal">중분류 등록</button>
+        </div>
+        <div class="col d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate3Modal">소분류 등록</button>
+        </div>
+      </div><!-- //btns -->
+    </div>  <!-- cate select -->
+
     <!-- Modal 1 -->
     <div class="modal fade" id="cate1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">

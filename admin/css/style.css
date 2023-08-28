@@ -158,11 +158,24 @@ i.i-empty{
 
 /* category */
 
-.cate_edit_btns a{
+.cate_edit_btns a, .cate_size{
   text-decoration: none;
   color: var(--mc-gray3);
+  opacity: 0.7;
+  transition: 0.3s ease-in;
+  cursor: pointer;
 }
 .cate_edit_btns a:hover{
   text-decoration: none;
   color: var(--primary-color);
+}
+.list-group-item{
+  transition: 0.3s ease-in;
+}
+.list-group-item:hover{
+  background-color: var(--mc-gray2);
+}
+.list-group-item:hover .cate_size{
+  color: var(--mc-gray1);
+  opacity: 1;
 }
