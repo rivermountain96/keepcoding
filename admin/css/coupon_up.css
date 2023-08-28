@@ -8,7 +8,7 @@ label{
 .coupon_up_name input::placeholder,
 .coupon_up_price input::placeholder{
     font-size: var(--font-size-14);
-    color: #969696;
+    color: var(---mc-gray3, #969696);
 }
 .coupon_status{
     padding-left: 42px;
@@ -35,7 +35,7 @@ label{
     height: 48px;
 }
 .coupon_up_usedate select.form-select{
-    font-size: 16px;
+    font-size: var(--font-size-16);
     color: var(--mc-gray1);
 }
 .coupon_up_usedate select.form-select-sm{
@@ -45,17 +45,17 @@ label{
     width: 1232px;
 }
 .coupon_up_image .form-control-lg{
-    font-size: 16px;
+    font-size: var(--font-size-16);
     line-height: calc(var(--base-unit)*1.25);
 }
 .coupon_up_image .form-control{
-    color: #969696;
+    color: var(---mc-gray3, #969696);
 }
 .coupon_up_image .form-label{
     margin-bottom: 0;
 }
 .coupon_up_btn .coupon_up_cancel{
     margin-left: 20px;
-    background-color: #6C757D;
-    border-color: #6C757D;
+    background-color: var(---mc-gray3, #6C757D);
+    border-color: var(---mc-gray3, #6C757D);
 }
