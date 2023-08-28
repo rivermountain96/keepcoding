@@ -7,8 +7,7 @@ label{
 }
 .coupon_up_name input::placeholder,
 .coupon_up_price input::placeholder{
-    /* font-size: calc(var(--font-size)*0.875); */
-    font-size: 14px;
+    font-size: var(--font-size-14);
     color: #969696;
 }
 .coupon_status{
