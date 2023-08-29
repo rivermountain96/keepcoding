@@ -6,7 +6,7 @@
   margin-left: 0;
 }
 
-/* navbar */
+/* header navbar */
 
 nav{
   z-index: 100;
@@ -135,7 +135,7 @@ i.i-empty{
   font-size: 35px;
 }
 
-/* table */
+/* coupon_list.html table */
 
 .table{
   margin-bottom: 48px;
@@ -156,7 +156,7 @@ i.i-empty{
   border-bottom: 2px solid #dee2e6;
 }
 
-/* category */
+/* category.html */
 
 .cate_edit_btns a, .cate_size{
   text-decoration: none;
