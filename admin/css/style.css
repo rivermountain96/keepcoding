@@ -6,7 +6,7 @@
   margin-left: 0;
 }
 
-/* navbar */
+/* header navbar */
 
 nav{
   z-index: 100;
@@ -66,7 +66,7 @@ nav{
   gap:20px;
 }
 
-/* index.html */
+/* 이은서 index.html 시작 */
 
 body.index{
   background-color: var(--mc-gray2);
@@ -135,7 +135,9 @@ i.i-empty{
   font-size: 35px;
 }
 
-/* table */
+/* 이은서 index.html 끝 */
+
+/* 이은서 coupon_list.html-table 시작 */
 
 .table{
   margin-bottom: 48px;
@@ -155,3 +157,35 @@ i.i-empty{
 .table tbody{
   border-bottom: 2px solid #dee2e6;
 }
+
+/* 이은서 coupon_list.html-table 끝 */
+
+/* 이은서 category.html 시작 */
+
+.cate_edit_btns a, .cate_size{
+  text-decoration: none;
+  color: var(--mc-gray3);
+  opacity: 0.7;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+.cate_edit_btns a:hover{
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.list-group-item{
+  transition: 0.3s ease-in;
+}
+.list-group-item:hover{
+  background-color: var(--mc-gray2);
+}
+.list-group-item:hover .cate_size{
+  color: var(--mc-gray1);
+  opacity: 1;
+}
+
+.form-control.big, .form-select.big, .list-group-item.big{
+  padding: 16px;
+}
+
+/* 이은서 category.html 끝 */
