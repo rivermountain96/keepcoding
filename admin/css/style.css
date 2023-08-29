@@ -66,7 +66,7 @@ nav{
   gap:20px;
 }
 
-/* index.html */
+/* 이은서 index.html 시작 */
 
 body.index{
   background-color: var(--mc-gray2);
@@ -135,7 +135,9 @@ i.i-empty{
   font-size: 35px;
 }
 
-/* coupon_list.html table */
+/* 이은서 index.html 끝 */
+
+/* 이은서 coupon_list.html-table 시작 */
 
 .table{
   margin-bottom: 48px;
@@ -156,7 +158,9 @@ i.i-empty{
   border-bottom: 2px solid #dee2e6;
 }
 
-/* category.html */
+/* 이은서 coupon_list.html-table 끝 */
+
+/* 이은서 category.html 시작 */
 
 .cate_edit_btns a, .cate_size{
   text-decoration: none;
@@ -183,3 +187,5 @@ i.i-empty{
 .form-control.big, .form-select.big, .list-group-item.big{
   padding: 16px;
 }
+
+/* 이은서 category.html 끝 */
