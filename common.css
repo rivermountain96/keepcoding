@@ -120,8 +120,6 @@
 .bd-callout {
   width: 100%;
   padding: 38.5px 52.5px;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
   color: var(--bd-callout-color, inherit);
   background-color: #fff;
   border-left: 0.25rem solid var(--bd-callout-border, #4E75FF);
