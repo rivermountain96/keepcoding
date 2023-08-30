@@ -1,3 +1,8 @@
+<?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/abcmall/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/abcmall/admin/inc/admin_check.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/abcmall/admin/inc/category_func.php';
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,9 +24,9 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   <!-- summernote 끝 -->
   <script src="../js/makeoption.js"></script>
-  <link rel="stylesheet" href="/common.css">
-  <link rel="stylesheet" href="/admin/css/style.css">
-  <link rel="stylesheet" href="/admin/css/product_up.css">
+  <link rel="stylesheet" href="/keepcoding/common.css">
+  <link rel="stylesheet" href="/keepcoding/admin/css/style.css">
+  <link rel="stylesheet" href="/keepcoding/admin/css/product_up.css">
   <title>강좌 등록</title>
 </head>
 <body>
