@@ -26,6 +26,7 @@
 <!-- 이강산 product_up 시작 -->
 <div class="product_up content">
   <h4 class="fs-4 pd48">강좌 등록</h4>
+
   <form action="product_ok.php" method="POST" id="product_form" enctype="multipart/form-data">
     <div class="d-flex justify-content-between pd24">
       <div class="product_up_category">
@@ -154,7 +155,9 @@
     });
 
   $('#product_start').datepicker({
-    dateFormat:'yy-mm-dd'
+    dateFormat:'yy-mm-dd',
+    minDate: 'today',
+    maxDate: '+1Y'
   });
 
   $("#submitButton").click(function() {
