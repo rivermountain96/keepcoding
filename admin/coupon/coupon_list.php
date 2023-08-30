@@ -7,25 +7,27 @@
   // include_once $_SERVER['DOCUMENT_ROOT'].'/abcmall/admin/inc/pagenation.php';
 
   //검색, 조회 대상 지정
-  // $status = $_GET['status'] ?? ''; //받아올값
-  // $search_keyword = $_GET['search_keyword'] ?? ''; //받아올값
+  $status = $_GET['status'] ?? ''; //받아올값
+  $search_keyword = $_GET['search_keyword'] ?? ''; //받아올값
 
-  // $search_where = ''; //빈 문자열 생성
+  $search_where = ''; //빈 문자열 생성
 
-  // if($status > 0){
-  //   $search_where .= " and status = 1";
-  // }else{
-  //   $search_where .= " and status = 0";
-  // }
-  // if($search_keyword){
-  //   $search_where .= " and (name like '%{$search_keyword}%')";
-  // }
+  if($status > 0){
+    $search_where .= " and status = 1";
+  }else if($status == 0){
+    $search_where .= " and status = 0";
+  }
+
+  if($search_keyword){
+    $search_where .= " and (name like '%{$search_keyword}%')";
+  }
 
   // $sql = "SELECT * FROM coupons WHERE 1=1";
 
   // $sql .= $search_where;
-  // $order = ' order by pide desc'; //최신순 정렬
+  // $order = ' order by pid desc'; //최신순 정렬
   // $limit = " limit $startLimit, $endLimit";
+  // $limit = " limit 0, 10";
   // $query = $sql.$order.$limit;
   // $query = $sql.$order;
   $sql = "SELECT * FROM coupons";
@@ -41,17 +43,42 @@
 <!-- 이은서 coupon_list 시작-->
 <div class="content">
   <h4 class="pd72">쿠폰 관리</h4>
-  <div class="d-flex justify-content-between pd48">
-      <div class="btn-group" role="group" aria-label="Default button group">
-          <button type="button" class="btn btn-outline-primary">활성화 쿠폰</button>
-          <button type="button" class="btn btn-outline-primary">비활성화 쿠폰</button>
-          <button type="button" class="btn btn-outline-primary">전체</button>
+    <form class="d-flex justify-content-between pd48">
+      <div class="d-flex gap-3">
+        <div class="form-check d-flex align-items-center gap-3">
+          <input class="form-check-input" type="radio" name="status" id="statusAll" value="" checked>
+          <label class="form-check-label" for="status2">
+            전체
+          </label>
+        </div>
+        <div class="form-check d-flex align-items-center gap-3">
+          <input class="form-check-input" type="radio" name="status" id="status1" value="1">
+          <label class="form-check-label" for="status1">
+            활성화 쿠폰
+          </label>
+        </div>
+        <div class="form-check d-flex align-items-center gap-3">
+          <input class="form-check-input" type="radio" name="status" id="status0" value="0">
+          <label class="form-check-label" for="status0">
+            비활성화 쿠폰
+          </label>
+        </div>
       </div>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="쿠폰명으로 검색하기" aria-label="Search">
+      <!-- <div class="btn-group" role="group" aria-label="Default button group">
+        <button type="button" class="btn btn-outline-primary" value="1">활성화 쿠폰</button>
+        <button type="button" class="btn btn-outline-primary" value="0">비활성화 쿠폰</button>
+        <button type="button" class="btn btn-outline-primary" value="2">전체</button>
+      </div> -->
+      <div class="d-flex gap-3">
+        <input class="form-control me-2" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
         <button class="btn btn-outline-primary nowrap" type="submit">쿠폰 검색</button>
-      </form>
-  </div>
+      </div>
+    </form>
+
+    <!-- <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
+      <button class="btn btn-outline-primary nowrap" type="submit">쿠폰 검색</button>
+    </form> -->
   <table class="table pd48">
     <thead>
       <tr scope="row">
@@ -75,11 +102,11 @@
             <?php
               if($item->status > 0){
             ?>
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked disabled>
             <?php
               }else{
             ?>
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" disabled>
             <?php
               }
             ?>

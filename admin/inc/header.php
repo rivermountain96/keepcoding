@@ -22,7 +22,7 @@
   <!-- script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <title><?php if(isset($title)){echo $title;}else{echo 'home';} ?> - KEEP CODING</title>
+  <title><?php if(isset($title)){echo $title;}else{echo '홈';} ?> - KEEP CODING</title>
   <title>KEEP CODING</title>
 </head>
 <body>
