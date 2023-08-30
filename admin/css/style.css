@@ -146,4 +146,11 @@ nav{
 .notice_list_table tbody{
   border-bottom: 2px solid #DEE2E6;
 }
+
+.notice_view hr{
+  border-color: var(--mc-black);
+}
+.notice_view img{
+  width: 200px;
+}
 /* 최성희 notice_list_table 끝 */
