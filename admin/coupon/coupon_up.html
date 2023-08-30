@@ -4,185 +4,198 @@
 ?> -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- style -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-  integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-  crossorigin="anonymous" referrerpolicy="no-referrer">
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-  integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
+    integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="/common.css" rel="stylesheet">
-  <link href="/admin/css/coupon_up.css" rel="stylesheet">
+  <link href="/admin/css/ewon.css" rel="stylesheet">
   <link href="/admin/css/style.css" rel="stylesheet">
   <!-- script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <!-- <title><?php if(isset($title)){echo $title;}else{echo 'home';} ?>KEEP CODING</title> -->
   <title>KEEP CODING</title>
 </head>
+
 <body>
   <!-- <?php  
   if(isset($_SESSION['AUID'])){
     if($_SESSION['AUID'] == 'admin'){
   ?> -->
-  <!-- 이은서 nav_and_mainmenu 시작 -->
-  <nav class="navbar">
-    <div class="nav_top container-fluid">
-      <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
-      <div class="d-flex align-items-center">
-        <div class="d-flex gap-3 align-items-center">
-          <span><i class="bi bi-bell mc-gray3"></i></span>
-          <div class="user d-flex align-items-center gap-3">
-            <p class="mc-gray3">총관리자</p>
-            <img src="../img/admin_img.png" alt="">
-          </div>
+<!-- 이은서 nav 시작 -->
+<nav class="navbar">
+  <div class="nav_top container-fluid">
+    <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+    <div class="d-flex align-items-center">
+      <div class="d-flex gap-3 align-items-center">
+        <span><i class="bi bi-bell mc-gray3"></i></span>
+        <div class="user d-flex align-items-center gap-3">
+          <p class="mc-gray3">총관리자</p>
+          <img src="../img/admin_img.png" alt="">
         </div>
       </div>
     </div>
-    <div class="nav_side navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">대시보드</a>
-        </li>
-        <li>
-          <ul>
-            <li class="nav-item">
-              <a class="nav-link" href="#">카테고리 관리</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-disabled="true">강좌 관리</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li class="nav-item">
-              <a class="nav-link" href="#">강사 관리</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-disabled="true">수강생 관리</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">쿠폰 관리</a>
-        </li>
-        <li>
-          <ul>
-            <li class="nav-item">
-              <a class="nav-link" href="#">공지사항</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-disabled="true">Q&A 게시판</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li class="nav-item d-flex justify-content-between">
-          <a class="nav-link mc-b-rgba" aria-current="page" href="#">로그아웃</a>
-          <a class="nav-link mc-b-rgba" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-<!-- 이은서 nav_and_mainmenu 끝 -->
+  </div>
+  <div class="nav_side navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/keepcoding/admin/index.php">대시보드</a>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/keepcoding/admin/product/category_list.php">카테고리 관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/keepcoding/admin/product/product_list.php" aria-disabled="true">강좌 관리</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="">강사 관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="" aria-disabled="true">수강생 관리</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/keepcoding/admin/coupon/coupon_list.php">쿠폰 관리</a>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/keepcoding/admin/notice/notice_list.php">공지사항</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/keepcoding/admin/qna/qna_list.php" aria-disabled="true">Q&A 게시판</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="nav-item d-flex justify-content-between">
+        <a class="nav-link mc-b-rgba" aria-current="page" href="">로그아웃</a>
+        <a class="nav-link mc-b-rgba" aria-current="page" href=""><i class="bi bi-gear-wide-connected"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- 이은서 nav 끝 -->
 
-<!-- 정이원 coupon_up 시작 -->
-<div class="content">
+<!-- 정이원 coupon_up 시작--> 
+  <div class="content coupon_up">
     <h4 class="fs-4 pd48">쿠폰 등록</h4>
 
- <form action="coupon_ok.php" method="post" enctype="multipart/form-data">
-    <div class="d-flex pd48">
-      <div class="coupon_up_name">
+    <form action="coupon_ok.php" method="post" enctype="multipart/form-data">
+      <div class="d-flex pd48">
+        <div class="coupon_up_name">
           <h6 class="pd10">쿠폰명</h6>
           <label for=""></label>
-          <input class="form-control" type="text" name="coupon_name" id="coupon_name" placeholder="쿠폰명을 입력하세요" aria-label="default input example">
-      </div>
-      <div class="coupon_up_status d-flex row">
+          <input class="form-control" type="text" name="coupon_name" id="coupon_name" placeholder="쿠폰명을 입력하세요"
+            aria-label="default input example">
+        </div>
+        <div class="coupon_up_status d-flex row">
           <h4>상태</h4>
           <div class="coupon_up_status_checkbox d-flex">
-          <div class="form-check">
-              <input class="coupon_up_status_input form-check-input" type="checkbox" value="1" name="status" id="status">
+            <div class="form-check">
+              <input class="coupon_up_status_input form-check-input" type="checkbox" value="1" name="status"
+                id="status">
               <label class="form-check-lsabel" for="flexCheckDefault">
-              활성화
+                활성화
               </label>
-          </div>
-          <div class="form-check coupon_no_status">
-              <input class="coupon_status_input form-check-input" type="checkbox" value="1"  name="status" id="status" checked>
+            </div>
+            <div class="form-check coupon_no_status">
+              <input class="coupon_up_status_input form-check-input" type="checkbox" value="1" name="status" id="status"
+                checked>
               <label class="form-check-label" for="flexCheckChecked">
-              비활성화
+                비활성화
               </label>
+            </div>
           </div>
-          </div>
+        </div>
       </div>
-    </div>
-  
-  <div class="d-flex  pd48">
-          <div class="coupon_up_price">
+
+      <div class="d-flex  pd48">
+        <div class="coupon_up_price">
           <h6 class="pd10">할인가</h6>
           <label for=""></label>
-          <input class="form-control" type="number" name="coupon_price" id="coupon_price" min="5000" max="100000" step="5000" placeholder="숫자만 입력하세요" aria-label="default input example">
-          </div>
-      
-          <div class="coupon_up_min_price">
+          <input class="form-control" type="number" name="coupon_price" id="coupon_price" min="5000" max="100000"
+            step="5000" placeholder="숫자만 입력하세요" aria-label="default input example">
+        </div>
+
+        <div class="coupon_up_min_price">
           <h6 class="pd10">최소사용금액</h6>
           <label for=""></label>
-          <input class="form-control" type="number" name="use_min_price" id="use_min_price" min="10000" max="110000" step="5000" aria-label="default input example">
-          </div>
-      
-          <!-- <div class="coupon_up_max_price">
+          <input class="form-control" type="number" name="use_min_price" id="use_min_price" min="10000" max="110000"
+            step="5000" aria-label="default input example">
+        </div>
+
+        <!-- <div class="coupon_up_max_price">
           <h6 class="pd10">최대사용금액</h6>
           <label for=""></label>
           <input class="form-control" type="number" name="max_value" id="max_value" min="5000" max="110000" step="5000" aria-label="default input example">
           </div> -->
-  </div>
-  
-  <div class="d-flex justify-content-between pd48">
-      <div class="coupon_up_usedate">
-      <h6 class="pd10">사용기한</h6>
-      <select class="form-select form-select-sm" aria-label="Small select example">
-          <option value="1" selected>제한</option>
-          <option value="2">무제한</option>
-        </select>
       </div>
-  
-      <div class="coupon_up_regdate">
-      <h6 class="pd10">시작일</h6>
-      <label for="regdate"></label>
-      <input type="text" id="datepicker" name="regdate" class="form-control" required>
-      </div>
-  
-      <div class="coupon_up_enddate">
+
+      <div class="d-flex justify-content-between pd48">
+        <div class="coupon_up_usedate">
+          <h6 class="pd10">사용기한</h6>
+          <select class="form-select form-select-sm" aria-label="Small select example">
+            <option value="1" selected>제한</option>
+            <option value="2">무제한</option>
+          </select>
+        </div>
+
+        <div class="coupon_up_regdate">
+          <h6 class="pd10">시작일</h6>
+          <label for="regdate"></label>
+          <input type="text" id="datepicker" name="regdate" class="form-control" required>
+        </div>
+
+        <div class="coupon_up_enddate">
           <h6 class="pd10">만료일</h6>
           <label for="duedate"></label>
           <input type="text" id="datepicker2" name="duedate" class="form-control" required>
+        </div>
       </div>
-  </div>
-  
-  <div class="d-flex justify-content-between pd48">
-      <div class="coupon_up_image">
-      <h6 class="pd10">이미지</h6>
+
+      <div class="d-flex justify-content-between pd48">
+        <div class="coupon_up_image">
+          <h6 class="pd10">이미지</h6>
           <label for="coupon_image" class="form-label"></label>
           <input class="form-control form-control-lg" name="coupon_image" id="coupon_image" type="file">
+        </div>
       </div>
-  </div>
-  
-      <div class="coupon_up_btn d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">등록</button>
-          <button type="button" class="coupon_up_cancel btn btn-primary">취소</button>
-      </div>
-  
- </form>
-</div>
 
-  
+      <div class="coupon_up_btn d-flex justify-content-end">
+        <button type="button" class="btn btn-primary">등록</button>
+        <button type="button" class="coupon_up_cancel btn btn-primary">취소</button>
+      </div>
+
+    </form>
+  </div>
+<!-- 정이원 coupon_up 끝 --> 
+
+
   <!-- <?php
       }
     }
@@ -194,16 +207,19 @@
       dateFormat: 'yy-mm-dd',
       minDate: 'today',
       maxDate: '+1Y'
-  });
-    $("#datepicker").datepicker( "setDate", new Date() );
+    });
+    $("#datepicker").datepicker("setDate", new Date());
     $("#datepicker2").datepicker({
       dateFormat: 'yy-mm-dd',
       minDate: 'today',
       maxDate: '+1Y'
     });
-    $("#datepicker2").datepicker("setDate", new Date() );
+    $("#datepicker2").datepicker("setDate", new Date());
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+  </script>
 </body>
+
 </html>
