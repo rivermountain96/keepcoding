@@ -157,7 +157,7 @@ nav{
   border-color: var(--mc-black);
 }
 .notice_view img,
-.qna_view hr{
+.qna_view img{
   height: 200px;
 }
 /* 최성희 notice_list, qna_list table 끝 */
