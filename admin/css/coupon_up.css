@@ -11,16 +11,16 @@ label{
     font-size: 14px;
     color: #969696;
 }
-.coupon_status{
+.coupon_up_status{
     padding-left: 42px;
 }
 .coupon_no_status{
     margin-left: 16px;
 }
-.coupon_status_input.form-check-input {
+.coupon_up_status_input.form-check-input {
     margin-top: 0;
 }
-.coupon_status_checkbox{
+.coupon_up_status_checkbox{
     margin-top: var(--base-unit);
 }
 .coupon_up_price input,
@@ -59,4 +59,7 @@ label{
     margin-left: 20px;
     background-color: #6C757D;
     border-color: #6C757D;
+}
+.coupon_up_min_price{
+    margin-left: 46px;
 }
