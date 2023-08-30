@@ -126,7 +126,7 @@ nav{
   font-size: 25px;
 }
 
-/* 최성희 notice_list, qna_list table 시작 */
+/* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 */
 .notice_list_table, .qna_list_table, .smember_list_table, .tmember_list_table{
   margin: 48px auto;}
 
@@ -154,6 +154,9 @@ padding: 0.53rem 0 0.53rem 1.5rem; border-top: 1px solid #DEE2E6;}
 .btn-outline-primary.active, .active>.page-link {
   background-color: var(--primary-color);}
 
-a{
-color:  var(--primary-color);}
-/* 최성희 notice_list, qna_list table 끝 */
+.notice_list a, .qna_list a, .smember_list a, .tmember_list{color:  var(--primary-color);}
+
+.notice_up .datepicker input{
+  background: url(../img/calendar.svg) no-repeat 96% center; 
+}
+/* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 끝 */
