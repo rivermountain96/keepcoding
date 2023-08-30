@@ -127,37 +127,33 @@ nav{
 }
 
 /* 최성희 notice_list, qna_list table 시작 */
-.notice_list_table, 
-.qna_list_table{
-  margin: 48px auto;
-}
+.notice_list_table, .qna_list_table, .smember_list_table, .tmember_list_table{
+  margin: 48px auto;}
 
-.notice_list_table thead th, 
-.qna_list_table thead th{
-  padding: 1rem 0 1rem 1.5rem;
-  vertical-align: bottom;
-  border-bottom: 2px solid #DEE2E6;
-}
-.notice_list_table td, 
-.notice_list_table th,
-.qna_list_table td, 
-.qna_list_table th
-{
-  padding: 0.53rem 0 0.53rem 1.5rem;
-  border-top: 1px solid #DEE2E6;
-}
+.notice_list_table thead th, .qna_list_table thead th, .smember_list_table thead th, .tmember_list_table thead th{
+  padding: 1rem 0 1rem 1.5rem;  vertical-align: bottom;  border-bottom: 2px solid #DEE2E6;}
+
+.notice_list_table td, .notice_list_table th,
+.qna_list_table td, .qna_list_table th,
+.smember_list_table td, .smember_list_table th,
+.tmember_list_table td, .tmember_list_table th{
+padding: 0.53rem 0 0.53rem 1.5rem; border-top: 1px solid #DEE2E6;}
+
 .notice_list_table tbody,
-.qna_list_table tbody{
-  border-bottom: 2px solid #DEE2E6;
-}
+.qna_list_table tbody,
+.smember_list_table tbody,
+.tmember_list_table tbody{
+  border-bottom: 2px solid #DEE2E6;}
 
-.notice_view hr,
-.qna_view hr
-{
-  border-color: var(--mc-black);
-}
-.notice_view img,
-.qna_view img{
-  height: 200px;
-}
+.notice_view hr, .qna_view hr{
+  border-color: var(--mc-black);}
+
+.notice_view img, .qna_view img{
+  height: 200px;}
+
+.btn-outline-primary.active, .active>.page-link {
+  background-color: var(--primary-color);}
+
+a{
+color:  var(--primary-color);}
 /* 최성희 notice_list, qna_list table 끝 */
