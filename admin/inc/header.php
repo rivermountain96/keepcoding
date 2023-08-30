@@ -1,7 +1,7 @@
-<!-- <?php
-  session_start(); 
-  include_once $_SERVER['DOCUMENT_ROOT'].'/abcmall/admin/inc/dbcon.php';
-?> -->
+<?php
+  session_start();
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,19 +17,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="keepcoding/common.css" rel="stylesheet">
-  <link href="keepcoding/admin/css/style.css" rel="stylesheet">
+  <link href="/keepcoding/common.css" rel="stylesheet">
+  <link href="/keepcoding/admin/css/style.css" rel="stylesheet">
   <!-- script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <!-- <title><?php if(isset($title)){echo $title;}else{echo 'home';} ?>KEEP CODING</title> -->
+  <title><?php if(isset($title)){echo $title;}else{echo 'home';} ?>KEEP CODING</title>
   <title>KEEP CODING</title>
 </head>
 <body>
-  <!-- <?php  
+  <?php  
   if(isset($_SESSION['AUID'])){
     if($_SESSION['AUID'] == 'admin'){
-  ?> -->
+  ?> 
   <nav class="navbar">
     <div class="nav_top container-fluid">
       <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
@@ -51,10 +51,10 @@
         <li>
           <ul>
             <li class="nav-item">
-              <a class="nav-link" href="#">카테고리 관리</a>
+              <a class="nav-link" href="category_list.php">카테고리 관리</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" aria-disabled="true">강좌 관리</a>
+              <a class="nav-link" href="product_up.php" aria-disabled="true">강좌 관리</a>
             </li>
           </ul>
         </li>
@@ -90,10 +90,9 @@
       </ul>
     </div>
   </nav>
-  <div class="content"></div>
 
 
-  <!-- <?php
+  <?php
       }
     }
-  ?> -->
+  ?>
