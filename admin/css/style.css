@@ -156,7 +156,7 @@ padding: 0.53rem 0 0.53rem 1.5rem; border-top: 1px solid #DEE2E6;}
 
 .notice_list a, .qna_list a, .smember_list a, .tmember_list{color:  var(--primary-color);}
 
-.notice_up .datepicker input{
+.notice_up .datepicker input, .notice_change .datepicker input{
   background: url(../img/calendar.svg) no-repeat 96% center; 
 }
 /* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 끝 */
