@@ -46,8 +46,7 @@
 <!-- 이은서 coupon_list 시작-->
 <div class="content">
   <h4 class="pd72">쿠폰 관리</h4>
-  <h5> <?= $row_num; ?></h5>
-    <form class="d-flex justify-content-between pd48">
+    <form class="d-flex justify-content-between align-items-center pd48">
       <div class="d-flex gap-3">
         <div class="form-check d-flex align-items-center gap-3">
           <input class="form-check-input" type="radio" name="status" id="statusAll" value="">
@@ -68,11 +67,7 @@
           </label>
         </div>
       </div>
-      <!-- <div class="btn-group" role="group" aria-label="Default button group">
-        <button type="button" class="btn btn-outline-primary" value="1">활성화 쿠폰</button>
-        <button type="button" class="btn btn-outline-primary" value="0">비활성화 쿠폰</button>
-        <button type="button" class="btn btn-outline-primary" value="2">전체</button>
-      </div> -->
+      <!-- <h5> 검색 결과: 총 <?= $row_num; ?> 개가 있습니다.</h5> -->
       <div class="d-flex gap-3">
         <input class="form-control me-2" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
         <button class="btn btn-outline-primary nowrap" type="submit">쿠폰 검색</button>
