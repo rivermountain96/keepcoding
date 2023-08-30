@@ -68,9 +68,6 @@ nav{
 
 /* 이은서 index.html 시작 */
 
-.index{
-  background-color: var(--mc-gray2);
-}
 .sell_report{
   width: 100%;
   gap:30px;

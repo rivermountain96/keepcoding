@@ -1,8 +1,13 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 ?>
+<style>
+  body{
+    background-color: var(--mc-gray2);
+  }
+</style>
 <!-- 이은서 index 시작-->
-<div class="content index">
+<div class="content">
   <h4 class="pd72">홈</h4>
   <h6 class="pd10">이번달 판매 현황</h6>
   <div class="sell_report pd48 row">

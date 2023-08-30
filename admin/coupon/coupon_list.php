@@ -2,9 +2,7 @@
   $title =  '쿠폰 관리';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 
-  //페이지네이션
-  // $pagenationTarget = 'products';
-  // include_once $_SERVER['DOCUMENT_ROOT'].'/abcmall/admin/inc/pagenation.php';
+  $pageNumber = $_GET['pageNumber'] ?? 1;
 
   //검색, 조회 대상 지정
   $status = $_GET['status'] ?? ''; //받아올값
@@ -19,34 +17,40 @@
   }
 
   if($search_keyword){
-    $search_where .= " and (name like '%{$search_keyword}%')";
+    $search_where .= " and (coupon_name like '%{$search_keyword}%')";
   }
 
-  // $sql = "SELECT * FROM coupons WHERE 1=1";
+  $sql = "SELECT * FROM coupons WHERE 1=1";
 
-  // $sql .= $search_where;
-  // $order = ' order by pid desc'; //최신순 정렬
-  // $limit = " limit $startLimit, $endLimit";
+  $sql .= $search_where;
+  $order = ' order by cid desc'; //최신순 정렬
+
+  //페이지네이션
+  $pagenationTarget = 'coupons';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/pagenation.php';
+      
+  $limit = " limit $startLimit, $endLimit";
   // $limit = " limit 0, 10";
-  // $query = $sql.$order.$limit;
-  // $query = $sql.$order;
-  $sql = "SELECT * FROM coupons";
-  var_dump($sql);
+  $query = $sql.$order.$limit;
 
-  $result = $mysqli -> query($sql);
+  $result = $mysqli -> query($query);
   
   while($rs = $result -> fetch_object()){
     $rsc[] = $rs;
   }
+
+
+
 ?>
 
 <!-- 이은서 coupon_list 시작-->
 <div class="content">
   <h4 class="pd72">쿠폰 관리</h4>
+  <h5> <?= $row_num; ?></h5>
     <form class="d-flex justify-content-between pd48">
       <div class="d-flex gap-3">
         <div class="form-check d-flex align-items-center gap-3">
-          <input class="form-check-input" type="radio" name="status" id="statusAll" value="" checked>
+          <input class="form-check-input" type="radio" name="status" id="statusAll" value="">
           <label class="form-check-label" for="status2">
             전체
           </label>
@@ -133,13 +137,31 @@
     </tbody>
   </table>
   <div class="d-flex align-items-center">
-    <nav aria-label="Page navigation example" class="col-11">
+    <nav aria-label="Page navigation" class="col-11">
       <ul class="pagination justify-content-center align-items-center ">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      <?php
+          if($pageNumber>1){                   
+              echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?status=$status&pageNumber=1\">Previous</a></li>";
+              if($block_num > 1){
+                  $prev = ($block_num - 2) * $block_ct + 1;
+                  echo "<li class=\"page-item\"><a href='?status=$status&pageNumber=$prev' class=\"page-link\">&lt;</a></li>";
+              }
+          }
+          for($i=$block_start;$i<=$block_end;$i++){
+            if($pageNumber == $i){
+                echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?status=$status&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+            }else{
+                echo "<li class=\"page-item\"><a href=\"?status=$status&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+            }
+          }
+          if($pageNumber<$total_page){
+            if($total_block > $block_num){
+                $next = $block_num * $block_ct + 1;
+                echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
+            }
+            echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
+          }
+        ?>
       </ul>
     </nav>
     <button type="button" class="btn btn-primary col-1">쿠폰 등록</button>
