@@ -293,35 +293,23 @@ if ($result->num_rows > 0) {
 
     <!-- 박민용 product_list 끝 -->
     <style>
-      .product_list_sec3 tbody tr {
-        height: 50px;
-      }
-
       .product_list_sec3>tbody tr {
         border-top: 1px solid #DEE2E6;
-        padding: none;
+        box-sizing: border-box;
+        height: 80px;
+      }
+
+      .product_list_sec3 th {
+        border-top: 1px solid #DEE2E6;
       }
 
       .product_list_sec3>tbody tr:last-child {
         border-bottom: 1px solid #DEE2E6;
       }
 
-      .product_list_sec3>thead tr {
-        border-top: 2px solid #DEE2E6;
-        border-bottom: 2px solid #DEE2E6;
-
-      }
-
       .product_list_sec3>thead {
-        line-height: 34px;
         height: 50px;
-        font-size: 16px;
-
-      }
-
-      .product_list_sec2 input {
-        height: 48px;
-
+        vertical-align: center;
       }
     </style>
 
