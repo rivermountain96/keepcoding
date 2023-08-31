@@ -23,8 +23,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="/common.css" rel="stylesheet" />
   <link href="../css/style.css" rel="stylesheet" />
+  <link href="/common.css" rel="stylesheet" />
+
 
   <title>product_list</title>
 
@@ -292,8 +293,35 @@ if ($result->num_rows > 0) {
 
     <!-- 박민용 product_list 끝 -->
     <style>
-      .table {
-        border-color: gray;
+      .product_list_sec3 tbody tr {
+        height: 50px;
+      }
+
+      .product_list_sec3>tbody tr {
+        border-top: 1px solid #DEE2E6;
+        padding: none;
+      }
+
+      .product_list_sec3>tbody tr:last-child {
+        border-bottom: 1px solid #DEE2E6;
+      }
+
+      .product_list_sec3>thead tr {
+        border-top: 2px solid #DEE2E6;
+        border-bottom: 2px solid #DEE2E6;
+
+      }
+
+      .product_list_sec3>thead {
+        line-height: 34px;
+        height: 50px;
+        font-size: 16px;
+
+      }
+
+      .product_list_sec2 input {
+        height: 48px;
+
       }
     </style>
 
@@ -302,8 +330,6 @@ if ($result->num_rows > 0) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"></script>
-
-
 
 
 </body>

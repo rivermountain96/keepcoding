@@ -23,13 +23,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="/common.css" rel="stylesheet" />
   <link href="../css/style.css" rel="stylesheet" />
+  <link href="/common.css" rel="stylesheet" />
+
 
   <title>product_list</title>
 
 
-  <?
+  <!-- 
   $servername = "localhost"; // 데이터베이스 서버 주소
   $username = "username"; // 사용자명
   $password = "password"; // 비밀번호
@@ -54,8 +55,8 @@ if ($result->num_rows > 0) {
 } else {
     echo "데이터가 없습니다.";
 }
+-->
 
-?>
 
 
 </head>
@@ -292,8 +293,23 @@ if ($result->num_rows > 0) {
 
     <!-- 박민용 product_list 끝 -->
     <style>
-      .table {
-        border-color: gray;
+      .product_list_sec3>tbody tr {
+        border-top: 1px solid #DEE2E6;
+        box-sizing: border-box;
+        height: 80px;
+      }
+
+      .product_list_sec3 th {
+        border-top: 1px solid #DEE2E6;
+      }
+
+      .product_list_sec3>tbody tr:last-child {
+        border-bottom: 1px solid #DEE2E6;
+      }
+
+      .product_list_sec3>thead {
+        height: 50px;
+        vertical-align: center;
       }
     </style>
 
@@ -302,8 +318,6 @@ if ($result->num_rows > 0) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"></script>
-
-
 
 
 </body>
