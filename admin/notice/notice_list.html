@@ -1,0 +1,267 @@
+<!-- header 시작 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+  integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="../../common.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <!-- script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- <title><?php if(isset($title)){echo $title;}else{echo 'home';} ?>KEEP CODING</title> -->
+  <title>KEEP CODING</title>
+</head>
+<body>
+  <!-- <?php  
+  if(isset($_SESSION['AUID'])){
+    if($_SESSION['AUID'] == 'admin'){
+  ?> -->
+  <nav class="navbar">
+    <div class="nav_top container-fluid">
+      <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+      <div class="d-flex align-items-center">
+        <div class="d-flex gap-3 align-items-center">
+          <span><i class="bi bi-bell mc-gray3"></i></span>
+          <div class="user d-flex align-items-center gap-3">
+            <p class="mc-gray3">총관리자</p>
+            <img src="../img/Ellipse 3.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav_side navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">대시보드</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">카테고리 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">강좌 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">강사 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">수강생 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">쿠폰 관리</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">공지사항</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">Q&A 게시판</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="nav-item d-flex justify-content-between">
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#">로그아웃</a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!-- header 끝 -->
+
+<!-- 최성희 notice_list 시작 -->
+<div class="content">
+  <h2 class="pd72 fs-4">공지 사항</h2>
+    <form class="d-flex" role="search">
+      <input class="form-control me-4" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search">
+      <button class="btn btn-outline-primary nowrap col-1" type="submit">검색</button>
+    </form>
+  <table class="table notice_list_table">
+    <thead>
+      <tr class="fw-bold" scope="row">
+        <th class="col-1">No.</th>
+        <th class="col-5">제목</th>
+        <th class="col-1">작성자</th>
+        <th class="col-1">댓글</th>
+        <th class="col-1">조회</th>
+        <th class="col-2">작성일</th>
+        <th class="col-1">삭제</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">150</td>
+        <td class="align-middle"><a href="notice_view.html">[이벤트] 킵코딩 2023 회고를 기록해보세요!</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">149</td>
+        <td class="align-middle"><a href="notice_view.html">[보도자료/기사] 킵코딩 ‘킵콘 2023’... 성황리 종료</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">148</td>
+        <td class="align-middle"><a href="notice_view.html">우리 이제 만나요! 킵콘 2023 부스 소개</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">147</td>
+        <td class="align-middle"><a href="notice_view.html">[Tech Series #4] 더 성장하고 싶은 개발자를 위해!</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">146</td>
+        <td class="align-middle"><a href="notice_view.html">두근두근! 킵콘 2023 발표자 사전 모임 스케치</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">145</td>
+        <td class="align-middle"><a href="notice_view.html">[당첨자 발표] 내 킵코딩 시간표 공유하기</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">144</td>
+        <td class="align-middle"><a href="notice_view.html">커밍 순! 기다리며 다시 보는 킵콘</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">143</td>
+        <td class="align-middle"><a href="notice_view.html">오프라인에서 온라인으로, 전환점을 찾는 이들에게</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">142</td>
+        <td class="align-middle"><a href="notice_view.html">킵콘 2023 - 이것만은 지켜요</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      <!-- notice_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">141</td>
+        <td class="align-middle"><a href="notice_view.html">에디터가 만들어가는 헬로 킵콘 이야기</a></td>
+        <td class="align-middle">관리자</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">0</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- notice_list_tr 끝 -->
+      
+    </tbody>
+  </table>
+  <div class="d-flex align-items-center pd48">
+    <nav aria-label="Page navigation example" class="col-11">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">11</a></li>
+        <li class="page-item"><a class="page-link" href="#">12</a></li>
+        <li class="page-item"><a class="page-link" href="#">13</a></li>
+        <li class="page-item active"><a class="page-link" href="#">14</a></li>
+        <li class="page-item"><a class="page-link" href="#">15</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="btn btn-primary col-1" onClick="location.href='notice_up.html'">공지등록</button>
+  </div>
+  
+<div>
+<!-- 최성희 notice_list 끝 -->
+
+<!-- footer 시작 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
+<!-- footer 끝 -->

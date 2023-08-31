@@ -1,0 +1,152 @@
+/* 정이원 login 시작 */
+.login .row>*{
+    padding: 0px;
+}
+.login{
+    width: 400px;
+    height: 442px;
+    background-color: #fff;
+    background-image: url(/admin/img/logo\(login\).png);
+    background-repeat: no-repeat;
+    background-position: center 43px;
+    border: 1px solid #fff;
+    border-radius: 0 20px;
+    box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -85%);
+}
+.login input:focus{
+    outline: none;
+    border: var(--primary-color);
+    box-shadow: 0 0 5px 0 var(--primary-color);
+}
+.login input[type="text"],
+.login input[type="password"]{
+    padding: .8em .8em;
+}
+.login_content > div{
+    margin: 0 40px;
+}
+.login_content .login_id{
+    padding-top: 110px;
+}
+.login_content .login_pw{
+    margin-top: 33px;
+}
+.login_id label,
+.login_pw label{
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #495057;
+}
+.login_id input,
+.login_pw input{
+    width: 320px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid #CED4DA;
+}
+.login button{
+    font-size: 16px;
+    color: #495057;
+}
+.login_pw{
+    margin-top: 20px;
+}
+.login_content a{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-top: 10px;
+}
+.login button{
+    width: 320px;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    background: #D9D9D9;
+    margin: 10px 40px 46px 40px;
+}
+.login_ir{
+    padding-top: 12px;
+}
+.login_ir label{
+    color: var(--mc-gray3);
+    font-size: 16px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+.login_ir .form-check-input{
+    margin-top: 0;
+}
+/* 정이원 login 끝 */
+
+/* 정이원 coupon_up 시작 */
+.content.coupon_up label{
+    display: block;
+}
+.coupon_up_name input{
+    width: 1008px;
+    height: 48px;
+}
+.coupon_up_name input::placeholder,
+.coupon_up_price input::placeholder{
+    font-size: var(--font-size-14);
+    color: var(---mc-gray3, #969696);
+}
+.coupon_up_status{
+    padding-left: 42px;
+}
+.coupon_no_status{
+    margin-left: 16px;
+}
+.coupon_up_status_input.form-check-input {
+    margin-top: 0;
+}
+.coupon_up_status_checkbox{
+    margin-top: var(--base-unit);
+}
+.coupon_up_price input,
+.coupon_up_min_price input,
+.coupon_up_max_price input,
+.coupon_up_regdate input,
+.coupon_up_enddate input{
+    width: 380px;
+    height: 48px;
+}
+.coupon_up_usedate select{
+    width: 380px;
+    height: 48px;
+}
+.coupon_up_usedate select.form-select{
+    font-size: var(--font-size-16);
+    color: var(--mc-gray1);
+}
+.coupon_up_usedate select.form-select-sm{
+    padding-left: 12px;
+}
+.coupon_up_image input{
+    width: 1232px;
+}
+.coupon_up_image .form-control-lg{
+    font-size: var(--font-size-16);
+    line-height: calc(var(--base-unit)*1.25);
+}
+.coupon_up_image .form-control{
+    color: var(---mc-gray3, #969696);
+}
+.coupon_up_image .form-label{
+    margin-bottom: 0;
+}
+.coupon_up_btn .coupon_up_cancel{
+    margin-left: 20px;
+    background-color: var(---mc-gray3, #6C757D);
+    border-color: var(---mc-gray3, #6C757D);
+}
+.coupon_up_min_price{
+    margin-left: 46px;
+}
+/* 정이원 coupon_up 끝 */
