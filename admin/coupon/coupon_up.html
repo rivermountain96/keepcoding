@@ -159,7 +159,7 @@
       <div class="d-flex justify-content-between pd48">
         <div class="coupon_up_usedate">
           <h6 class="pd10">사용기한</h6>
-          <select class="form-select form-select-sm" aria-label="Small select example">
+          <select class="form-select form-select-sm" id="usedate" aria-label="Small select example">
             <option value="1" selected>제한</option>
             <option value="2">무제한</option>
           </select>
@@ -217,13 +217,22 @@
     $("#datepicker2").datepicker("setDate", new Date());
 
     // $("#datepicker").datepicker("option", "disabled", true);
+    $('.coupon_up_price input').prop('disabled',false);
 
-    $('.coupon_up_usedate option').change(function(){
-      let option = $(this).val();
-      if(option == 1){
-        $("#datepicker").datepicker("option", "disabled", true);
+    let option = $('#usedate option');
+    option.change(function(){
+      let usedate = $(this).val();
+      if(usedate == '2'){
+        $('.coupon_up_price input').prop('disabled',true);
       }
     })
+
+    // $('.coupon_up_usedate option').change(function(){
+    //   let option = $(this).val();
+    //   if(option == '1'){
+    //     $("#datepicker").datepicker("option", {disabled:true});
+    //   }
+    // })
     
     // 활성화, 비활성화 체크박스 하나씩 체크하기
     function doOpenCheck(chk){
