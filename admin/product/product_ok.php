@@ -94,7 +94,7 @@ if($result){ //상품이 등록되면
 
   echo "<script>
     alert('상품 등록 완료!');
-    location.href='/abcmall/admin/product/product_list.php';  
+    location.href='/keepcoding/admin/product/product_list.php';  
   </script>";
   }
 }  catch (Exception $e) {

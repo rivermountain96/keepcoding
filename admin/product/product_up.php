@@ -27,7 +27,7 @@
 <div class="product_up content">
   <h4 class="fs-4 pd48">강좌 등록</h4>
 
-  <form action="product_ok.php" method="POST" id="product_form" enctype="multipart/form-data">
+  <form action="product_ok.php" method="POST" id="product_up_form" enctype="multipart/form-data">
     <div class="d-flex justify-content-between pd24">
       <div class="product_up_category">
         <h6 class="pd10">카테고리</h6>
@@ -57,15 +57,15 @@
   <div class="d-flex pd24">
     <div class="product_up_name col">
         <h6 class="pd10">강좌명</h6>
-        <label for=""></label>
-        <input class="form-control" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
+        <label for="name"></label>
+        <input class="form-control" name="name" id="name" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
     </div>
   </div>
 
   <div class="d-flex justify-content-start pd24">
     <div class="product_up_usedate">
       <h6 class="pd10">수강 기한</h6>
-      <select class="form-select form-select-sm" aria-label="Small select example">
+      <select class="form-select form-select-sm" name="" id="" aria-label="Small select example">
           <option value="1" selected>제한</option>
           <option value="2">무제한</option>
       </select>
@@ -73,8 +73,8 @@
 
     <div class="product_up_regdate">
       <h6 class="pd10">시작일</h6>
-      <label for="product_start"></label>
-      <input type="text" id="product_start" name="product_start" class="form-control" placeholder="2023-09-11"></p>
+      <label for="reg_date"></label>
+      <input type="text" id="reg_date" name="reg_date" class="form-control" placeholder="2023-09-11"></p>
     </div>
 
   </div>
@@ -82,8 +82,8 @@
   <div class="d-flex justify-content-start pd24">
     <div class="product_up_price">
       <h6 class="pd10">판매 금액</h6>
-      <label for=""></label>
-      <input class="form-control" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example">
+      <label for="price"></label>
+      <input class="form-control" name="price" id="price" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example">
     </div>
     <div class="product_status d-flex row">
       <h4>판매 상태</h4>
@@ -117,7 +117,7 @@
     <div class="product_up_thumbnail">
     <h6 class="pd10">썸네일</h6>
       <label for="thumbnail" class="form-label"></label>
-      <input class="form-control form-control-lg" id="thumbnail" type="file">
+      <input class="form-control form-control-lg" name="thumbnail" id="thumbnail" type="file">
     </div>
   </div>
 
@@ -139,7 +139,7 @@
   </div>
 
     <div class="product_up_btn d-flex justify-content-end">
-        <button type="button" class="btn btn-primary" id="product_up_btn">등록</button>
+        <button type="button" class="btn btn-primary" id="product_up_btn_up">등록</button>
         <button type="button" class="product_up_cancel btn btn-primary">취소</button>
     </div>
   </form>
@@ -148,6 +148,12 @@
 <script src="/keepcoding/admin/js/makeoption.js"></script>
 
 <script>
+  $('#product_up_form').submit(function(){
+    let markupStr = $('#product_detail').summernote('code');
+    let content = encodeURIComponent(markupStr);
+    $('#content').val(content);
+  });
+
   $('#product_detail').summernote({
       placeholder: '상세 설명을 입력하세요',
       tabsize: 2,
@@ -160,32 +166,7 @@
     maxDate: '+1Y'
   });
 
-  $("#submitButton").click(function() {
-    // // 폼 데이터 수집
-    // var formData = $("#myForm").serializeArray();
-    // var jsonObject = {};
-    
-    // // 폼 데이터를 JSON 형태로 변환
-    // $.each(formData, function(index, field){
-    //     jsonObject[field.name] = field.value;
-    // });
 
-    // // JSON 데이터를 서버로 전송
-    // $.ajax({
-    //   url: "서버_주소_또는_엔드포인트",
-    //   type: "POST",
-    //   contentType: "application/json",
-    //   data: JSON.stringify(jsonObject),
-    //   error: function(error) {
-    //       // 오류 처리 로직
-    //       console.error("오류 발생:", error);
-    //   },
-    //   success: function(data) {
-    //       // 서버 응답 처리 로직
-    //       console.log(data);
-    //   },
-    // });
-  });
 
 
 
