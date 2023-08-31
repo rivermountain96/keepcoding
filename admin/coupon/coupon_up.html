@@ -118,14 +118,14 @@
           <div class="coupon_up_status_checkbox d-flex">
             <div class="form-check">
               <input class="coupon_up_status_input form-check-input" type="checkbox" value="1" name="status"
-                id="status">
+               id="status" onclick="doOpenCheck(this);" checked>
               <label class="form-check-lsabel" for="flexCheckDefault">
                 활성화
               </label>
             </div>
             <div class="form-check coupon_no_status">
-              <input class="coupon_up_status_input form-check-input" type="checkbox" value="1" name="status" id="status"
-                checked>
+              <input class="coupon_up_status_input form-check-input" type="checkbox" value="2" name="status" id="status"
+              onclick="doOpenCheck(this);">
               <label class="form-check-label" for="flexCheckChecked">
                 비활성화
               </label>
@@ -215,6 +215,25 @@
       maxDate: '+1Y'
     });
     $("#datepicker2").datepicker("setDate", new Date());
+
+    // $("#datepicker").datepicker("option", "disabled", true);
+
+    $('.coupon_up_usedate option').change(function(){
+      let option = $(this).val();
+      if(option == 1){
+        $("#datepicker").datepicker("option", "disabled", true);
+      }
+    })
+    
+    // 활성화, 비활성화 체크박스 하나씩 체크하기
+    function doOpenCheck(chk){
+    var obj = document.getElementsByName("status");
+    for(var i=0; i<obj.length; i++){
+        if(obj[i] != chk){
+            obj[i].checked = false;
+        }
+    }
+}
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
