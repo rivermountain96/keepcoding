@@ -217,14 +217,24 @@
     $("#datepicker2").datepicker("setDate", new Date());
 
     // $("#datepicker").datepicker("option", "disabled", true);
-    $('.coupon_up_price input').prop('disabled',false);
+    // $('.coupon_up_price input').prop('disabled',false);
 
-    let option = $('#usedate option');
-    option.change(function(){
-      let usedate = $(this).val();
-      if(usedate == '2'){
-        $('.coupon_up_price input').prop('disabled',true);
+    let usedate = $('#usedate');
+    usedate.change(function(){
+      let value = usedate.val();
+      if(value == 2){
+        $("#datepicker").datepicker("option", {disabled:true, dateFormat: ''});
+        $("#datepicker2").datepicker("option", {disabled:true, dateFormat: ''});
+      }else{
+        $("#datepicker").datepicker("option", {disabled:false, dateFormat: 'yy-mm-dd'});
+        $("#datepicker2").datepicker("option", {disabled:false, dateFormat: 'yy-mm-dd'});
       }
+
+      // if()
+      // let usedate = $(this).val();
+      // if(usedate == '2'){
+      //   $('.coupon_up_price input').prop('disabled',true);
+      // }
     })
 
     // $('.coupon_up_usedate option').change(function(){
