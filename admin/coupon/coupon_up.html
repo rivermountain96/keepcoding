@@ -195,13 +195,6 @@
   </div>
   <!-- 정이원 coupon_up 끝 -->
 
-
-  <!-- <?php
-      }
-    }
-  ?> -->
-
-
   <script>
     $("#datepicker").datepicker({
       dateFormat: 'yy-mm-dd',
@@ -216,9 +209,6 @@
     });
     $("#datepicker2").datepicker("setDate", new Date());
 
-    // $("#datepicker").datepicker("option", "disabled", true);
-    // $('.coupon_up_price input').prop('disabled',false);
-
     let usedate = $('#usedate');
     usedate.change(function(){
       let value = usedate.val();
@@ -229,20 +219,7 @@
         $("#datepicker").datepicker("option", {disabled:false, dateFormat: 'yy-mm-dd'});
         $("#datepicker2").datepicker("option", {disabled:false, dateFormat: 'yy-mm-dd'});
       }
-
-      // if()
-      // let usedate = $(this).val();
-      // if(usedate == '2'){
-      //   $('.coupon_up_price input').prop('disabled',true);
-      // }
     })
-
-    // $('.coupon_up_usedate option').change(function(){
-    //   let option = $(this).val();
-    //   if(option == '1'){
-    //     $("#datepicker").datepicker("option", {disabled:true});
-    //   }
-    // })
     
     // 활성화, 비활성화 체크박스 하나씩 체크하기
     function doOpenCheck(chk){
