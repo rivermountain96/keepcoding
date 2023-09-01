@@ -1,9 +1,18 @@
 <?php
+  $title = '제품 상세보기';
+
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 
+
+//SQL 쿼리를 통해 데이터를 조회
+$sql = "SELECT * FROM products";
+$result = $mysqli->query($sql);
+
+while($rs = $result -> fetch_object()){
+  $rsc[] = $rs;
+}
   ?>
 
-  <title>product_view</title>
 
 <body>
 

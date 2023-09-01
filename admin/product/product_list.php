@@ -1,21 +1,43 @@
 <?php
+  $title = '제품 목록';
+
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 
-  ?>
+// 카테고리 검색
 
-  <title>product_list</title>
+  $cate1 = $_GET['cate1'] ?? '';
+  $cate2 = $_GET['cate2'] ?? '';
+  $cate3 = $_GET['cate3'] ?? '';
 
-  <style>
-  .product_list_sec3 tbody tr td,
-  .product_list_sec3 tbody tr th {
-    vertical-align: middle;
+  $search_where = '';
+
+  $cates = $cates1.$cate2.$cate3;
+
+  if($cates){
+    $search_where .= " and cate like '{$cates}%'";
   }
-</style>
+
+  if($search_keyword){
+    $search_where .= " and (name like '%{$search_keyword}%' or content like '%{$search_keyword}%')";
+    //제목과 내용에 키워드가 포함된 상품 조회
+  }
+
+
+
+//SQL 쿼리를 통해 데이터를 조회
+$sql = "SELECT * FROM products";
+$result = $mysqli->query($sql);
+
+while($rs = $result -> fetch_object()){
+  $rsc[] = $rs;
+}
+
+
+  ?>
 
 <body>
 
   <!-- 박민용 product_list 시작 -->
-
 
   <div class="  content mcbg-white">
     <h2 class=" h4 pd72">강의 리스트</h2>
@@ -62,14 +84,13 @@
 
     <!-- product_list_sec2 검색단 -->
 
-    <form class="product_list_sec2 d-flex pd48 " role="search">
-      <input class="form-control me-2" type="search" placeholder="강좌명으로 검색하기" aria-label="Search">
+    <form class="product_list_sec2 d-flex pd48 " id="search_form">
+      <input class="form-control me-2" type="search" placeholder="강좌명으로 검색하기" name="search_keyword" id="search_keyword" aria-label="Search">
       <button class="btn btn-outline-primary btn-sm col-sm-1" type="submit">강좌검색 </button>
     </form>
 
 
     <!-- product_list_sec3 강좌내용 테이블 -->
-
 
 
     <table class=" product_list_sec3 table pd48">
@@ -84,73 +105,39 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row"> <a href="#">JavaScript 입문 수업</a></th>
-          <td>판매중</td>
-          <td>프론트엔드>javascript>초급</td>
-          <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
-        </tr>
+    
+    <?php
+            if(isset($rsc)){
+              foreach($rsc as $item){            
+            ?>
 
         <tr>
-          <th scope="row"> <a href="#">WEB1 - HTML & Internet</a></th>
-          <td>판매중</td>
-          <td>프론트엔드>html>초급</td>
-          <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
+          <th scope="row"> <a href="#"><?php echo $item->name ?></a></th>
+          <td><?php 
+          if($item -> status == 1){
+            echo '판매중';
+          } else if ($item -> status == 2){
+            echo '판매중지';
+          } 
+          ?></td>
+          <td><?php echo $item->cate ?></td>
+          <td><?php echo $item->price ?></td>
+          <td><a href="product_change.php?pid=<?php echo $item->pid ?>" class="btn btn-outline-primary">수정</a></td>
+          <td><a href="product_delete.php?pid=<?php echo $item->pid ?>"  class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
-        <tr>
-          <th scope="row"> <a href="#">DATABASE1</a></th>
-          <td>판매중지</td>
-          <td>백엔드>database>초급</td>
-          <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
+        <?php
+          }
+        } else {
+      ?>
+  <tr>
+          <td colspan="10"> </td>
         </tr>
-
-        <tr>
-          <th scope="row"> <a href="#">DATABASE2</a></th>
-          <td>판매중지</td>
-          <td>백엔드>database>초급</td>
-          <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
-        </tr>
-
-
-        <tr>
-          <th scope="row"> <a href="#">DATABASE3</a></th>
-          <td>판매중지</td>
-          <td>백엔드>database>초급</td>
-          <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
-        </tr>
-
-        <tr>
-          <th scope="row"> <a href="#">DATABASE4</a></th>
-          <td>판매중지</td>
-          <td>백엔드>database>초급</td>
-          <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
-        </tr>
-
-
-        <tr>
-          <th scope="row"> <a href="#">DATABASE5</a></th>
-          <td>판매중지</td>
-          <td>백엔드>database>초급</td>
-          <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
-        </tr>
+        <?php
+          }   
+      ?>
 
         <div>
-
 
         </div>
 
@@ -175,7 +162,7 @@
 
       <!-- 강의등록 -->
 
-      <td><a href="#" class="btn btn-primary">등록</a></td>
+      <td><a href="/product_up.php" class="btn btn-primary">등록</a></td>
       </nav>
     </div>
 
