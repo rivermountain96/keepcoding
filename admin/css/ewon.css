@@ -85,7 +85,7 @@
 /* 정이원 login 끝 */
 
 /* 정이원 coupon_up 시작 */
-.content.coupon_up label{
+/* .content.coupon_up label{
     display: block;
 }
 .coupon_up_name input{
@@ -97,18 +97,17 @@
     font-size: var(--font-size-14);
     color: var(---mc-gray3, #969696);
 }
-.coupon_up_status{
-    padding-left: 42px;
-}
-.coupon_no_status{
+*/
+.coupon_no_status, .product_no_status{
     margin-left: 16px;
 }
-.coupon_up_status_input.form-check-input {
+.coupon_up_status_input.form-check-input, .product_status_input.form-check-input {
     margin-top: 0;
 }
-.coupon_up_status_checkbox{
-    margin-top: var(--base-unit);
-}
+/* .coupon_up_status_checkbox{
+    margin-top: 10px;
+} */
+/*
 .coupon_up_price input,
 .coupon_up_min_price input,
 .coupon_up_max_price input,
@@ -148,5 +147,5 @@
 }
 .coupon_up_min_price{
     margin-left: 46px;
-}
+} */
 /* 정이원 coupon_up 끝 */
