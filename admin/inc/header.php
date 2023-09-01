@@ -1,5 +1,5 @@
 <?php
-  session_start(); 
+  session_start();
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 ?>
 <!DOCTYPE html>
@@ -22,75 +22,76 @@
   <!-- script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <title><?php if(isset($title)){echo $title;}else{echo '홈';} ?> - KEEP CODING</title>
-  <title>KEEP CODING</title>
+  <title><?php if(isset($title)){echo $title;}else{echo 'HOME';} ?> - KEEP CODING</title>
 </head>
 <body>
-<?php  
-  // if(isset($_SESSION['AUID'])){
-  //   if($_SESSION['AUID'] == 'admin'){
-?>
-<nav class="navbar">
-  <div class="nav_top container-fluid">
-    <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
-    <div class="d-flex align-items-center">
-      <div class="d-flex gap-3 align-items-center">
-        <span><i class="bi bi-bell mc-gray3"></i></span>
-        <div class="user d-flex align-items-center gap-3">
-          <p class="mc-gray3">총관리자</p>
-          <img src="/keepcoding/admin/img/admin.png" alt="">
+  <?php  
+  if(isset($_SESSION['AUID'])){
+    if($_SESSION['AUID'] == 'admin'){
+  ?> 
+  <nav class="navbar">
+    <div class="nav_top container-fluid">
+      <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+      <div class="d-flex align-items-center">
+        <div class="d-flex gap-3 align-items-center">
+          <span><i class="bi bi-bell mc-gray3"></i></span>
+          <div class="user d-flex align-items-center gap-3">
+            <p class="mc-gray3">총관리자</p>
+            <img src="../img/Ellipse 3.png" alt="">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="nav_side navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/keepcoding/admin/index.php">대시보드</a>
-      </li>
-      <li>
-        <ul>
-          <li class="nav-item">
-            <a class="nav-link" href="/keepcoding/admin/product/category_list.php">카테고리 관리</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/keepcoding/admin/product/product_list.php" aria-disabled="true">강좌 관리</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <ul>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="">강사 관리</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="" aria-disabled="true">수강생 관리</a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/keepcoding/admin/coupon/coupon_list.php">쿠폰 관리</a>
-      </li>
-      <li>
-        <ul>
-          <li class="nav-item">
-            <a class="nav-link" href="/keepcoding/admin/notice/notice_list.php">공지사항</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/keepcoding/admin/qna/qna_list.php" aria-disabled="true">Q&A 게시판</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul>
-      <li class="nav-item d-flex justify-content-between">
-        <a class="nav-link mc-b-rgba" aria-current="page" href="">로그아웃</a>
-        <a class="nav-link mc-b-rgba" aria-current="page" href=""><i class="bi bi-gear-wide-connected"></i></a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<?php
-    //   }
-    // }
-?>
+    <div class="nav_side navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">대시보드</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="category_list.php">카테고리 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="product_up.php" aria-disabled="true">강좌 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">강사 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">수강생 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">쿠폰 관리</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">공지사항</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-disabled="true">Q&A 게시판</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="nav-item d-flex justify-content-between">
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#">로그아웃</a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <?php
+      }
+    }
+  ?>
