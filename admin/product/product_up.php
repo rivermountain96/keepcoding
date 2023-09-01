@@ -7,7 +7,9 @@
 <div class="product_up content">
   <h4 class="fs-4 pd48">강좌 등록</h4>
 
-  <form action="product_ok.php" method="POST" id="product_up_form" enctype="multipart/form-data">
+<form action="product_ok.php" method="POST" id="product_up_form" enctype="multipart/form-data">
+    <input type="hidden" name="file_table_id" id="file_table_id" value="">
+    <input type="hidden" name="content" id="content" value="">
     <div class="d-flex justify-content-between pd24">
       <div class="product_up_category">
         <h6 class="pd10">카테고리</h6>
@@ -45,7 +47,8 @@
   <div class="d-flex justify-content-start pd24">
     <div class="product_up_usedate">
       <h6 class="pd10">수강 기한</h6>
-      <select class="form-select form-select-sm" name="" id="" aria-label="Small select example">
+      <!-- <select class="form-select form-select-sm" name="usedate" id="usedate" require aria-label="Small select example"> -->
+      <select class="form-select form-select-sm" name="usedate" id="usedate" aria-label="Small select example">
           <option value="1" selected>제한</option>
           <option value="2">무제한</option>
       </select>
@@ -54,8 +57,11 @@
     <div class="product_up_regdate">
       <h6 class="pd10">시작일</h6>
       <label for="reg_date"></label>
-      <input type="text" id="reg_date" name="reg_date" class="form-control" placeholder="2023-09-11"></p>
+      <input type="text" id="reg_date" name="reg_date" class="form-control" placeholder="<?php echo date("Y.m.d");?>"></p>
+      <!-- <input type="text" id="reg_date" name="reg_date" class="form-control" require placeholder="<?php echo date("Y.m.d");?>"></p> -->
     </div>
+
+    <!-- 1년뒤 날짜 date("Y-m-d", strtotime("+1 year", strtotime($today))); -->
 
   </div>
 
@@ -64,18 +70,19 @@
       <h6 class="pd10">판매 금액</h6>
       <label for="price"></label>
       <input class="form-control" name="price" id="price" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example">
+      <!-- <input class="form-control" name="price" id="price" type="number" require placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example"> -->
     </div>
     <div class="product_status d-flex row">
       <h4>판매 상태</h4>
       <div class="product_status_checkbox d-flex">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="" id="issale">
+            <input class="product_status_input form-check-input" type="radio" value="issale" id="issale" name="status">
             <label class="form-check-lsabel" for="issale">
             판매중
             </label>
         </div>
         <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="" id="isnotsale" checked>
+            <input class="product_status_input form-check-input" type="radio" value="" id="isnotsale" name="status" checked>
             <label class="form-check-label" for="isnotsale">
             판매중지
             </label>
@@ -117,11 +124,11 @@
   </div>
 
     <div class="product_up_btn d-flex justify-content-end">
-        <button type="button" class="btn btn-primary" id="product_up_btn_up">등록</button>
+        <button type="submit" class="btn btn-primary" id="product_up_btn_up">등록</button>
         <button type="button" class="product_up_cancel btn btn-primary">취소</button>
     </div>
-  </form>
-</div>
+</form> 
+
 <!-- 이강산 product_up 끝 -->
 <script src="/keepcoding/admin/js/makeoption.js"></script>
 
@@ -130,6 +137,11 @@
     let markupStr = $('#product_detail').summernote('code');
     let content = encodeURIComponent(markupStr);
     $('#content').val(content);
+
+    if ($('#product_detail').summernote('isEmpty')) {
+      alert('상품 설명을 입력하세요');
+      return false;
+    }
   });
 
   $('#product_detail').summernote({
@@ -138,11 +150,32 @@
       height: 100
     });
 
-  $('#product_start').datepicker({
-    dateFormat:'yy-mm-dd',
+  $('#reg_date').datepicker({
+    dateFormat:'yy.mm.dd',
     minDate: 'today',
     maxDate: '+1Y'
   });
+
+
+  //   $("#reg_date").datepicker("setDate", new Date());
+  //   $("#sale_end_date").datepicker({
+  //     dateFormat: 'yy-mm-dd',
+  //     minDate: 'today',
+  //     maxDate: '+1Y'
+  //   });
+  //   $("#sale_end_date").datepicker("setDate", new Date());
+
+    let usedate = $('#usedate');
+    usedate.change(function(){
+      let value = usedate.val();
+      if(value == 2){
+        $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
+        $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
+      }else{
+        $("#reg_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+        $("#sale_end_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      }
+    });
 
 
 
