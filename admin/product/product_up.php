@@ -1,27 +1,7 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 ?>
-  <!-- php header -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  
-  <!-- summernote 시작-->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-  <!-- summernote 끝 -->
-  <script src="keepcoding/admin/js/makeoption.js"></script>
-  <link rel="stylesheet" href="/keepcoding/common.css">
-  <link rel="stylesheet" href="/keepcoding/admin/css/style.css">
-  <link rel="stylesheet" href="/keepcoding/admin/css/product_up.css">
-  <title>강좌 등록</title>
-</head>
 <body>
 <!-- 이강산 product_up 시작 -->
 <div class="product_up content">
@@ -42,7 +22,7 @@
       </div>
       <div class="product_up_category">
         <h6 class="category_name pd10">중분류</h6>
-        <select class="form-select form-select-sm" aria-label="Small select example" id="cate2" name="cate2">
+        <select class="form-select form-\select-sm" aria-label="Small select example" id="cate2" name="cate2">
           <option selected disabled>중분류</option>
         </select>
       </div>
@@ -106,10 +86,8 @@
 
   <div class="pd24">
     <div class="product_detail col">
-    <h6 class="pd10">상세설명</h6>
-      <form method="post">
-        <textarea id="product_detail" name="product_detail"></textarea>
-      </form>
+      <h6 class="pd10">상세설명</h6>
+      <div id="product_detail"></div>
     </div>
   </div>
 

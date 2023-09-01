@@ -4,12 +4,12 @@
 
 
   //관리자 검사
-  if(!isset($_SESSION['AUID'])){
-    echo "<script>
-    alert('권한이 없습니다');
-    history.back();
-    </script>";
-  }
+  // if(!isset($_SESSION['AUID'])){
+  //   echo "<script>
+  //   alert('권한이 없습니다');
+  //   history.back();
+  //   </script>";
+  // }
 
 $mysqli->autocommit(FALSE);//커밋이 안되도록 지정, 일단 바로 저장하지 못하도록
 try{
