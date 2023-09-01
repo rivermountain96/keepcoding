@@ -1,3 +1,28 @@
+<?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+
+
+  $servername = "localhost"; // 데이터베이스 서버 주소
+  $username = "username"; // 사용자명
+  $password = "password"; // 비밀번호
+  $dbname = "database_name"; // 데이터베이스 이름
+  
+  // 데이터베이스 연결 생성
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  
+  // 연결 확인
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  } 
+
+
+$sql = "SELECT column_name FROM table_name"; // 가져올 데이터 SQL 쿼리
+$result = $conn->query($sql);
+
+
+
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,32 +55,7 @@
   <title>product_list</title>
 
 
-  <!-- 
-  $servername = "localhost"; // 데이터베이스 서버 주소
-  $username = "username"; // 사용자명
-  $password = "password"; // 비밀번호
-  $dbname = "database_name"; // 데이터베이스 이름
-  
-  // 데이터베이스 연결 생성
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  
-  // 연결 확인
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  } 
 
-
-$sql = "SELECT column_name FROM table_name"; // 가져올 데이터 SQL 쿼리
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "데이터: " . $row["column_name"] . "<br>";
-    }
-} else {
-    echo "데이터가 없습니다.";
-}
--->
 
 
 
@@ -323,3 +323,7 @@ if ($result->num_rows > 0) {
 </body>
 
 </html>
+
+<?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
+?>
