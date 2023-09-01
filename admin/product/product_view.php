@@ -1,18 +1,6 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 
-
-  // 데이터베이스 연결 생성
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  
-  // 연결 확인
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  } 
-
-$sql = "SELECT column_name FROM table_name"; // 가져올 데이터 SQL 쿼리
-$result = $conn->query($sql);
-
   ?>
 
   <title>product_view</title>
@@ -24,7 +12,7 @@ $result = $conn->query($sql);
   <div class="product_view_sec1 content mcbg-white d-flex flex-column">
 
     <div>
-      <h4 class=" h4 pd48">강의상세보기</h4>
+      <h4 class=" h4 pd48 ">강의상세보기</h4>
       <hr>
     </div>
 
@@ -110,7 +98,7 @@ $result = $conn->query($sql);
 
     <div class="d-flex gap-3 justify-content-end">
       <a href="#" class="btn btn-primary ">수정</a>
-      <a href="#" class="btn btn-outline-success  ">삭제</a>
+      <a href="#" class="btn btn-outline-primary  ">삭제</a>
       <a href="#" class="btn btn-primary  ">강좌 리스트</a>
     </div>
   </div>
@@ -172,10 +160,6 @@ $result = $conn->query($sql);
 
   <!-- 박민용 product_list 끝 -->
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>

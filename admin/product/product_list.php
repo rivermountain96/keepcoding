@@ -1,21 +1,16 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 
-  
-  // 데이터베이스 연결 생성
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  
-  // 연결 확인
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  } 
-
-$sql = "SELECT column_name FROM table_name"; // 가져올 데이터 SQL 쿼리
-$result = $conn->query($sql);
-
   ?>
 
   <title>product_list</title>
+
+  <style>
+  .product_list_sec3 tbody tr td,
+  .product_list_sec3 tbody tr th {
+    vertical-align: middle;
+  }
+</style>
 
 <body>
 
@@ -69,7 +64,7 @@ $result = $conn->query($sql);
 
     <form class="product_list_sec2 d-flex pd48 " role="search">
       <input class="form-control me-2" type="search" placeholder="강좌명으로 검색하기" aria-label="Search">
-      <button class="btn btn-outline-success btn-sm col-sm-1" type="submit">강좌검색 </button>
+      <button class="btn btn-outline-primary btn-sm col-sm-1" type="submit">강좌검색 </button>
     </form>
 
 
@@ -94,8 +89,8 @@ $result = $conn->query($sql);
           <td>판매중</td>
           <td>프론트엔드>javascript>초급</td>
           <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-success">수정</a></td>
-          <td><a href="#" class="btn btn-outline-success">삭제</a></td>
+          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
+          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
         <tr>
@@ -103,8 +98,8 @@ $result = $conn->query($sql);
           <td>판매중</td>
           <td>프론트엔드>html>초급</td>
           <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-success">수정</a></td>
-          <td><a href="#" class="btn btn-outline-success">삭제</a></td>
+          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
+          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
         <tr>
@@ -112,8 +107,8 @@ $result = $conn->query($sql);
           <td>판매중지</td>
           <td>백엔드>database>초급</td>
           <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-success">수정</a></td>
-          <td><a href="#" class="btn btn-outline-success">삭제</a></td>
+          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
+          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
         <tr>
@@ -121,8 +116,8 @@ $result = $conn->query($sql);
           <td>판매중지</td>
           <td>백엔드>database>초급</td>
           <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-success">수정</a></td>
-          <td><a href="#" class="btn btn-outline-success">삭제</a></td>
+          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
+          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
 
@@ -131,8 +126,8 @@ $result = $conn->query($sql);
           <td>판매중지</td>
           <td>백엔드>database>초급</td>
           <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-success">수정</a></td>
-          <td><a href="#" class="btn btn-outline-success">삭제</a></td>
+          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
+          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
         <tr>
@@ -140,8 +135,8 @@ $result = $conn->query($sql);
           <td>판매중지</td>
           <td>백엔드>database>초급</td>
           <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-success">수정</a></td>
-          <td><a href="#" class="btn btn-outline-success">삭제</a></td>
+          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
+          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
 
@@ -150,8 +145,8 @@ $result = $conn->query($sql);
           <td>판매중지</td>
           <td>백엔드>database>초급</td>
           <td>₩100,000</td>
-          <td><a href="#" class="btn btn-outline-success">수정</a></td>
-          <td><a href="#" class="btn btn-outline-success">삭제</a></td>
+          <td><a href="#" class="btn btn-outline-primary">수정</a></td>
+          <td><a href="#" class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
         <div>
@@ -186,32 +181,7 @@ $result = $conn->query($sql);
 
 
     <!-- 박민용 product_list 끝 -->
-    <style>
-      .product_list_sec3>tbody tr {
-        border-top: 1px solid #DEE2E6;
-        box-sizing: border-box;
-        height: 80px;
-      }
 
-      .product_list_sec3 th {
-        border-top: 1px solid #DEE2E6;
-      }
-
-      .product_list_sec3>tbody tr:last-child {
-        border-bottom: 1px solid #DEE2E6;
-      }
-
-      .product_list_sec3>thead {
-        height: 50px;
-        vertical-align: center;
-      }
-    </style>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"></script>
 
 
 </body>
