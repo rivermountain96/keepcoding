@@ -197,13 +197,13 @@
 
   <script>
     $("#datepicker").datepicker({
-      dateFormat: 'yy-mm-dd',
+      dateFormat: 'yy.mm.dd',
       minDate: 'today',
       maxDate: '+1Y'
     });
     $("#datepicker").datepicker("setDate", new Date());
     $("#datepicker2").datepicker({
-      dateFormat: 'yy-mm-dd',
+      dateFormat: 'yy.mm.dd',
       minDate: 'today',
       maxDate: '+1Y'
     });
@@ -216,8 +216,8 @@
         $("#datepicker").datepicker("option", {disabled:true, dateFormat: ''});
         $("#datepicker2").datepicker("option", {disabled:true, dateFormat: ''});
       }else{
-        $("#datepicker").datepicker("option", {disabled:false, dateFormat: 'yy-mm-dd'});
-        $("#datepicker2").datepicker("option", {disabled:false, dateFormat: 'yy-mm-dd'});
+        $("#datepicker").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+        $("#datepicker2").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
       }
     })
     
