@@ -218,3 +218,13 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
 .coupon_up_status_input.form-check-input, .product_status_input.form-check-input, .coupon_change_status_input.form-check-input{
   margin-top: 0;
 }
+
+.form-control-lg::placeholder{
+    font-size: var(--font-size-14);    
+    /* color: var(--mc-gray3); */
+}
+.form-control, .form-control-lg, .form-select-lg, .btn-lg{
+  font-size: var(--font-size-16);
+  height: 48px;
+  line-height: 30px;
+}
