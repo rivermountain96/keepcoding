@@ -106,19 +106,19 @@
   <div class="product_change_category">
       <h6 class="pd10 h6">카테고리</h6>
       <div class="row pd24 gap-3">
-        <select class="form-select col" aria-label="Small select example" id="cate1" name="cate1">
+        <select class="form-select form-control-lg col" aria-label="Small select example" id="cate1" name="cate1">
           <option value="" disabled>대분류</option>
           <option value="">기초강의</option>
           <option value="" selected>프론트엔드</option>
           <option value="">백엔드</option>
         </select>
 
-        <select class="form-select col" aria-label="Small select example" id="cate2" name="cate2">
+        <select class="form-select form-control-lg col" aria-label="Small select example" id="cate2" name="cate2">
           <option value="" disabled>중분류</option>
           <option value="" selected>javascript</option>
         </select>
 
-        <select class="form-select col" aria-label="Small select example" id="cate3" name="cate3">
+        <select class="form-select form-control-lg col" aria-label="Small select example" id="cate3" name="cate3">
           <option value="" disabled>소분류</option>
           <option value="" selected>중급</option>
         </select>
@@ -128,14 +128,14 @@
   <div class="pd24">
     <div class="product_change_name">
       <label class="pd10 h6" for="">강좌명</label>
-      <input class="form-control" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
+      <input class="form-control form-control-lg" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
     </div>
   </div>
 
   <div class="d-flex justify-content-start pd24 gap-3">
     <div class="product_change_usedate col p-0">
       <h6 class="pd10 h6">수강 기한</h6>
-      <select class="form-select" aria-label="Small select example">
+      <select class="form-select form-control-lg" aria-label="Small select example">
         <option value="1" selected>제한</option>
         <option value="2">무제한</option>
       </select>
@@ -143,20 +143,20 @@
 
     <div class="product_change_regdate col p-0 datepicker">
       <label class="pd10 h6" for="datepicker_start">시작일</label>
-      <input type="text" id="datepicker_start" name="datepicker_start" class="form-control" value="2023.09.09"></p>
+      <input type="text" id="datepicker_start" name="datepicker_start" class="form-control form-control-lg" value="2023.09.09"></p>
     </div>
 
     <div class="product_up_enddate col p-0 datepicker">
       <label class="pd10 h6" for="datepicker_end">종료일</label>
-      <input type="text" id="datepicker_end" name="datepicker_end" class="form-control" value="2024.09.09"></p>
+      <input type="text" id="datepicker_end" name="datepicker_end" class="form-control form-control-lg" value="2024.09.09"></p>
     </div>
   </div>
 
-  <div class="ow justify-content-start pd24 row-cols-8 gap-3">
-    <div class="product_change_price">
+  <div class="row justify-content-start pd24 row-cols-8 gap-3">
+    <div class="product_change_price col-4 p-0">
       <h6 class="pd10">판매 금액</h6>
       <label for=""></label>
-      <input class="form-control" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000"
+      <input class="form-control form-control-lg" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000"
         aria-label="default input example">
     </div>
     <div class="product_status d-flex row">
@@ -199,16 +199,16 @@
     <div class="product_change_video">
       <h6 class="pd10">강의 영상 업로드</h6>
       <label for="product_name"></label>
-      <input type="text" id="product_name" name="product_name" class="form-control" placeholder="강의명 입력하기">
+      <input type="text" id="product_name" name="product_name" class="form-control form-control-lg" placeholder="강의명 입력하기">
     </div>
     <div class="product_change_video_url col-md-8">
       <h6 class="pd10">강의 영상 주소</h6>
       <label for="product_url"></label>
-      <input type="url" id="product_url" name="product_url" class="form-control" placeholder="영상 주소">
+      <input type="url" id="product_url" name="product_url" class="form-control form-control-lg" placeholder="영상 주소">
     </div>
     <div class="product_change_video_plus">
       <h6 class="pd10">강의 영상 추가</h6>
-      <button type="button" class="btn btn-outline-primary">추가</button>
+      <button type="button" class="btn btn-lg btn-outline-primary">추가</button>
     </div>
   </div>
 

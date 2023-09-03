@@ -108,7 +108,7 @@
       <div class="pd48 row">
         <div class="coupon_up_name col-8 p-0">
           <label for="" class="pd10 h6">쿠폰명</label>
-          <input class="form-control" type="text" name="coupon_name" id="coupon_name" placeholder="쿠폰명을 입력하세요"
+          <input class="form-control form-control-lg" type="text" name="coupon_name" id="coupon_name" placeholder="쿠폰명을 입력하세요"
             aria-label="default input example">
         </div>
         <div class="coupon_up_status d-flex row col-4">
@@ -130,41 +130,41 @@
       <div class="d-flex pd48 row gap-3">
         <div class="coupon_up_price col-4 p-0">
           <label class="pd10 h6" for="">할인가</label>
-          <input class="form-control" type="number" name="coupon_price" id="coupon_price" min="5000" max="100000"
+          <input class="form-control form-control-lg" type="number" name="coupon_price" id="coupon_price" min="5000" max="100000"
             step="5000" placeholder="숫자만 입력하세요" aria-label="default input example">
         </div>
 
         <div class="coupon_up_min_price col-4 p-0">
           <label class="pd10 h6" for="">최소사용금액</label>
-          <input class="form-control" type="number" name="use_min_price" id="use_min_price" min="10000" max="110000"
+          <input class="form-control form-control-lg" type="number" name="use_min_price" id="use_min_price" min="10000" max="110000"
             step="5000" aria-label="default input example">
         </div>
       </div>
 
-      <div class="row justify-content-start pd24 gap-3">
-        <div class="coupon_up_usedate col p-0">
-          <h3 class="pd10 h6">사용기한</h3>
-          <select class="form-select form-select" aria-label="Small select example">
-            <option value="1" selected>제한</option>
-            <option value="2">무제한</option>
-          </select>
-        </div>
+        <div class="row justify-content-start pd24 gap-3">
+          <div class="coupon_up_usedate col p-0">
+            <h3 class="pd10 h6">사용기한</h3>
+            <select class="form-select form-select-lg" aria-label="Small select example">
+              <option value="1" selected>제한</option>
+              <option value="2">무제한</option>
+            </select>
+          </div>
 
         <div class="coupon_up_regdate col p-0 datepicker">
           <label class="pd10 h6" for="regdate">시작일</label>
-          <input type="text" id="datepicker" name="regdate" class="form-control" required>
+          <input type="text" id="datepicker" name="regdate" class="form-control form-control-lg" required>
         </div>
 
         <div class="coupon_up_enddate col p-0 datepicker">
           <label class="pd10 h6" for="duedate">만료일</label>
-          <input type="text" id="datepicker2" name="duedate" class="form-control" required>
+          <input type="text" id="datepicker2" name="duedate" class="form-control form-control-lg" required>
         </div>
       </div>
 
       <div class="pd48">
         <div class="coupon_up_image">
           <label class="pd10 h6" for="coupon_image" class="form-label">이미지</label>
-          <input class="form-control form-control" name="coupon_image" id="coupon_image" type="file">
+          <input class="form-control form-control-lg form-control form-control-lg" name="coupon_image" id="coupon_image" type="file">
         </div>
       </div>
 
