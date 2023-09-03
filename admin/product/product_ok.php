@@ -26,18 +26,22 @@ try{
   $isnew = $_POST['isnew']??0 ;
   $isrecom = $_POST['isrecom']??0 ;
   $sale_cnt =  $_POST['sale_cnt']??0 ;
+  $status = $_POST['status'];
 
-  if (empty($name)) {
-      echo "<script>
-          alert('강좌명을 입력하세요.');    
-          history.back();            
-      </script>";
-      exit;
-  }
+  // if (empty($name)) {
+  //     echo "<script>
+  //         alert('강좌명을 입력하세요.');    
+  //         history.back();            
+  //     </script>";
+  //     exit;
+  // }
 
+
+
+  
 
   $sale_end_date =  $_POST['sale_end_date'];
-  $sale_end_date = date('Y.m.d', strtotime('+1 year'));
+  $sale_end_date = date('Y.m.d H:i:s', strtotime('+1 year'));
   $content =  rawurldecode($_POST['content']); //encodeURIComponent통해 변경된 코드를 원래코드로 변경
   $file_table_id = $_POST['file_table_id']??0;
   $file_table_id = $_POST['file_table_id'];

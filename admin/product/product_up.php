@@ -76,14 +76,14 @@
       <h4>판매 상태</h4>
       <div class="product_status_checkbox d-flex">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="issale" id="issale" name="status">
-            <label class="form-check-lsabel" for="issale">
+            <input class="product_status_input form-check-input" type="radio" value="0" id="status_0" name="status">
+            <label class="form-check-lsabel" for="status_0">
             판매중
             </label>
         </div>
         <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="" id="isnotsale" name="status" checked>
-            <label class="form-check-label" for="isnotsale">
+            <input class="product_status_input form-check-input" type="radio" value="1" id="status_1" name="status" checked>
+            <label class="form-check-label" for="status_1"></label>
             판매중지
             </label>
         </div>
