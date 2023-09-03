@@ -103,93 +103,76 @@
 
   <!-- 정이원 coupon_up 시작-->
   <div class="content coupon_up">
-    <h4 class="fs-4 pd48">쿠폰 등록</h4>
+    <h2 class="fs-4 pd72">쿠폰 등록</h2>
 
     <form action="coupon_ok.php" method="post" enctype="multipart/form-data">
-      <div class="d-flex pd48">
-        <div class="coupon_up_name">
-          <h6 class="pd10">쿠폰명</h6>
-          <label for=""></label>
-          <input class="form-control" type="text" name="coupon_name" id="coupon_name" placeholder="쿠폰명을 입력하세요"
+      <div class="pd48 row">
+        <div class="coupon_up_name col-8 p-0">
+          <label for="" class="pd10 h6">쿠폰명</label>
+          <input class="form-control form-control-lg" type="text" name="coupon_name" id="coupon_name" placeholder="쿠폰명을 입력하세요"
             aria-label="default input example">
         </div>
-        <div class="coupon_up_status d-flex row">
-          <h4>상태</h4>
+        <div class="coupon_up_status d-flex row col-4">
+          <h3 class="pd10 h6">상태</h3>
           <div class="coupon_up_status_checkbox d-flex">
-            <div class="form-check">
-              <input class="coupon_up_status_input form-check-input" type="checkbox" value="1" name="status"
-               id="status" onclick="doOpenCheck(this);" checked>
-              <label class="form-check-lsabel" for="flexCheckDefault">
-                활성화
-              </label>
+            
+            <div class="coupon_up_status_on form-check">
+              <input class="coupon_up_status_input form-check-input" type="radio" value="1" name="status" id="status">
+              <label class="form-check-lsabel" for="flexCheckDefault">활성화</label>
             </div>
-            <div class="form-check coupon_no_status">
-              <input class="coupon_up_status_input form-check-input" type="checkbox" value="2" name="status" id="status"
-              onclick="doOpenCheck(this);">
-              <label class="form-check-label" for="flexCheckChecked">
-                비활성화
-              </label>
+            <div class="coupon_up_status_off form-check text-center">
+              <input class="coupon_up_status_input form-check-input" type="radio" value="1" name="status" id="status" checked>
+              <label class="form-check-label" for="flexCheckChecked">비활성화</label>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="d-flex  pd48">
-        <div class="coupon_up_price">
-          <h6 class="pd10">할인가</h6>
-          <label for=""></label>
-          <input class="form-control" type="number" name="coupon_price" id="coupon_price" min="5000" max="100000"
+      <div class="d-flex pd48">
+        <div class="coupon_up_price p-0">
+          <label class="pd10 h6" for="">할인가</label>
+          <input class="form-control form-control-lg" type="number" name="coupon_price" id="coupon_price" min="5000" max="100000"
             step="5000" placeholder="숫자만 입력하세요" aria-label="default input example">
         </div>
 
-        <div class="coupon_up_min_price">
-          <h6 class="pd10">최소사용금액</h6>
-          <label for=""></label>
-          <input class="form-control" type="number" name="use_min_price" id="use_min_price" min="10000" max="110000"
+        <div class="coupon_up_min_price col-4">
+          <label class="pd10 h6" for="">최소사용금액</label>
+          <input class="form-control form-control-lg" type="number" name="use_min_price" id="use_min_price" min="10000" max="110000"
             step="5000" aria-label="default input example">
         </div>
-
-        <!-- <div class="coupon_up_max_price">
-          <h6 class="pd10">최대사용금액</h6>
-          <label for=""></label>
-          <input class="form-control" type="number" name="max_value" id="max_value" min="5000" max="110000" step="5000" aria-label="default input example">
-          </div> -->
       </div>
 
-      <div class="d-flex justify-content-between pd48">
-        <div class="coupon_up_usedate">
-          <h6 class="pd10">사용기한</h6>
-          <select class="form-select form-select-sm" id="usedate" aria-label="Small select example">
-            <option value="1" selected>제한</option>
-            <option value="2">무제한</option>
-          </select>
+        <div class="row justify-content-start pd24 gap-3">
+          <div class="coupon_up_usedate col p-0">
+            <h3 class="pd10 h6">사용기한</h3>
+            <select class="form-select form-select-lg" id="usedate" aria-label="Small select example">
+              <option value="1" selected>제한</option>
+              <option value="2">무제한</option>
+            </select>
+          </div>
+
+        <div class="coupon_up_regdate col p-0 datepicker">
+          <label class="pd10 h6" for="regdate">시작일</label>
+          <input type="text" id="datepicker" name="regdate" class="form-control form-control-lg" required>
         </div>
 
-        <div class="coupon_up_regdate">
-          <h6 class="pd10">시작일</h6>
-          <label for="regdate"></label>
-          <input type="text" id="datepicker" name="regdate" class="form-control" required>
-        </div>
-
-        <div class="coupon_up_enddate">
-          <h6 class="pd10">만료일</h6>
-          <label for="duedate"></label>
-          <input type="text" id="datepicker2" name="duedate" class="form-control" required>
+        <div class="coupon_up_enddate col p-0 datepicker">
+          <label class="pd10 h6" for="duedate">만료일</label>
+          <input type="text" id="datepicker2" name="duedate" class="form-control form-control-lg" required>
         </div>
       </div>
 
-      <div class="d-flex justify-content-between pd48">
+      <div class="pd48">
         <div class="coupon_up_image">
-          <h6 class="pd10">이미지</h6>
-          <label for="coupon_image" class="form-label"></label>
-          <input class="form-control form-control-lg" name="coupon_image" id="coupon_image" type="file">
+          <label class="pd10 h6" for="coupon_image" class="form-label">이미지</label>
+          <input class="form-control form-control-lg form-control form-control-lg" name="coupon_image" id="coupon_image" type="file">
         </div>
       </div>
 
-      <div class="coupon_up_btn d-flex justify-content-end">
+      <div class="coupon_up_btn d-flex justify-content-end gap-3 p-0">
         <button type="button" class="btn btn-primary">등록</button>
         <button type="button" class="coupon_up_cancel btn btn-primary">취소</button>
-      </div>
+    </div>
 
     </form>
   </div>
