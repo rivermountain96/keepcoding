@@ -119,7 +119,7 @@
     </div>
     <div class="product_up_video_plus">
       <h6 class="pd10">강의 영상 추가</h6>
-      <button type="button" class="btn btn-outline-primary">추가</button>
+      <button type="button" id="add_video_button" class="btn btn-outline-primary">추가</button>
     </div>
   </div>
 
@@ -133,6 +133,18 @@
 <script src="/keepcoding/admin/js/makeoption.js"></script>
 
 <script>
+  $('#add_video_button').click(function() {
+    // 새로운 강의명 입력 필드 생성
+    var videoNameInput = $('<div class="product_up_video"><h6 class="pd10">강의 영상 업로드</h6><label for="product_name"></label><input type="text" name="product_names[]" class="form-control" placeholder="강의명 입력하기"></div>');
+    
+    // 새로운 강의 영상 주소 입력 필드 생성
+    var videoUrlInput = $('<div class="product_up_video_url col-md-8"><h6 class="pd10">강의 영상 주소</h6><label for="product_url"></label><input type="url" name="product_urls[]" class="form-control" placeholder="영상 주소"></div>');
+    
+    // 생성된 입력 필드들을 컨테이너에 추가
+    $('product_up_video').append(videoNameInput);
+    $('product_up_video').append(videoUrlInput);
+  });
+
   $('#product_up_form').submit(function(){
     let markupStr = $('#product_detail').summernote('code');
     let content = encodeURIComponent(markupStr);
@@ -156,26 +168,66 @@
     maxDate: '+1Y'
   });
 
+  let usedate = $('#usedate');
+  usedate.change(function(){
+    let value = usedate.val();
+    if(value == 2){
+      $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
+      $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
+    }else{
+      $("#reg_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      $("#sale_end_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+    }
+  });
 
-  //   $("#reg_date").datepicker("setDate", new Date());
-  //   $("#sale_end_date").datepicker({
-  //     dateFormat: 'yy-mm-dd',
-  //     minDate: 'today',
-  //     maxDate: '+1Y'
-  //   });
-  //   $("#sale_end_date").datepicker("setDate", new Date());
+  function attachFile(file) {
+    console.log(file);
+    let formData = new FormData(); //페이지 전환없이 이페이지 바로 이미지 등록
+    formData.append('savefile', file) //<input type="file" name="savefile" value="파일명">
+    console.log(formData);
+    $.ajax({
+      url: 'product_save_video.php',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      dataType: 'json',
+      type: 'POST',
+      error: function (error) {
+        console.log('error:', error)
+      },
+      success: function (return_data) {
 
-    let usedate = $('#usedate');
-    usedate.change(function(){
-      let value = usedate.val();
-      if(value == 2){
-        $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
-        $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
-      }else{
-        $("#reg_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
-        $("#sale_end_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+        console.log(return_data);
+
+        if (return_data.result == 'member') {
+          alert('로그인을 하십시오.');
+          return;
+        } else if (return_data.result == 'image') {
+          alert('이미지파일만 첨부할 수 있습니다.');
+          return;
+        } else if (return_data.result == 'size') {
+          alert('10메가 이하만 첨부할 수 있습니다.');
+          return;
+        } else if (return_data.result == 'error') {
+          alert('관리자에게 문의하세요');
+          return;
+        } else {
+          //첨부이미지 테이블에 저장하면 할일
+          let vid = $('#file_table_id').val() + return_data.vid + ',';
+          $('#file_table_id').val(vid);
+          let html = `
+              <div class="thumb" id="f_${return_data.vid}" data-vid="${return_data.vid}">
+                <img src="/keepcoding/pdata/${return_data.savefile}" alt="">
+                <button type="button" class="btn btn-warning">삭제</button>
+             </div>
+          `;
+          $('#thumbnails').append(html);
+        }
       }
+
     });
+  }
 
 
 

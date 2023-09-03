@@ -36,10 +36,6 @@ try{
   //     exit;
   // }
 
-
-
-  
-
   $sale_end_date =  $_POST['sale_end_date'];
   $sale_end_date = date('Y.m.d H:i:s', strtotime('+1 year'));
   $content =  rawurldecode($_POST['content']); //encodeURIComponent통해 변경된 코드를 원래코드로 변경
