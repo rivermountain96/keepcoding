@@ -7,6 +7,7 @@
     format("woff");
   font-style: normal;
 }
+hr{margin:0;}
 
 /* root 변경 */
 
@@ -364,6 +365,10 @@ input:focus {
   color: var(--mc-white);
 }
 
+.datepicker input{
+  background: url(admin/img/calendar.svg) no-repeat 96% center; 
+}
+
 /* 확인용으로 만든 css, 사용금지*/
 
 .flex-box {
@@ -371,3 +376,4 @@ input:focus {
   width: 100px;
   height: 100px;
 }
+
