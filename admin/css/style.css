@@ -228,3 +228,11 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
   height: 48px;
   line-height: 30px;
 }
+
+#videoModal iframe{
+  width: 100%;
+  height: 300px;
+}
+#videoModal h2{
+  padding-top: 24px;
+}
