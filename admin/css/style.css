@@ -189,36 +189,27 @@ i.i-empty{
 
 
 /* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 */
-.notice_list_table, .qna_list_table, .smember_list_table, .tmember_list_table{
-  margin: 48px auto;}
-
-.notice_list_table thead th, .qna_list_table thead th, .smember_list_table thead th, .tmember_list_table thead th{
-  padding: 1rem 0 1rem 1.5rem;  vertical-align: bottom;  border-bottom: 2px solid #DEE2E6;}
-
+/* .notice_list_table thead th, .qna_list_table thead th, .smember_list_table thead th, .tmember_list_table thead th{
+  padding: 1rem 0 1rem 1.5rem;
+}
 .notice_list_table td, .notice_list_table th,
 .qna_list_table td, .qna_list_table th,
 .smember_list_table td, .smember_list_table th,
 .tmember_list_table td, .tmember_list_table th{
-padding: 0.53rem 0 0.53rem 1.5rem; border-top: 1px solid #DEE2E6;}
-
-.notice_list_table tbody,
-.qna_list_table tbody,
-.smember_list_table tbody,
-.tmember_list_table tbody{
-  border-bottom: 2px solid #DEE2E6;}
+padding: 0.53rem 0 0.53rem 1.5rem;} */
 
 .notice_view hr, .qna_view hr, .product_view hr, .coupon_view hr{
-  border-color: var(--mc-black);}
-
+  border-color: var(--mc-black);
+}
 .notice_view img, .qna_view img{
-  height: 200px;}
+  height: 150px;}
 
 .coupon_view img{height: 120px;}
 
 .btn-outline-primary.active, .active>.page-link {
   background-color: var(--primary-color);}
 
-.notice_list a, .qna_list a, .smember_list a, .tmember_list{color:  var(--primary-color);}
+.notice_list a, .qna_list a, .smember_list a, .tmember_list a{color: var(--primary-color);}
 /* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 끝 */
 
 .coupon_no_status, .product_no_status{

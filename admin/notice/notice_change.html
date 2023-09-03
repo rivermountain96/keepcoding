@@ -117,11 +117,11 @@
         </div>
         <div class="notice_change_regdate col p-0 datepicker">
           <label class="pd10 h6" for="">시작일</label>
-          <input type="text" id="datepicker_start" name="datepicker" class="form-control" value="09/09/2023">
+          <input type="text" id="datepicker_start" name="datepicker" class="form-control" value="2023.09.09">
         </div> 
         <div class="notice_change_enddate col p-0 datepicker">
           <label class="pd10 h6" for="">만료일</label>
-          <input type="text" id="datepicker_end" name="datepicker" class="form-control" value="09/09/2023">
+          <input type="text" id="datepicker_end" name="datepicker" class="form-control" value="2023.09.09">
         </div>
       </div>
 
@@ -155,8 +155,12 @@
     tabsize: 2,
     height: 100
     });
-    $("#datepicker_start").datepicker();
-    $("#datepicker_end").datepicker();
+    $("#datepicker_start").datepicker({
+      dateFormat:'yy.mm.dd'
+    });
+    $("#datepicker_end").datepicker({
+      dateFormat:'yy.mm.dd'
+    });
   </script>
   </body>
   </html>

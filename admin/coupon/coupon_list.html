@@ -111,9 +111,9 @@
         </div>
       </div>
       <!-- <h5> 검색 결과: 총 <?= $row_num; ?> 개가 있습니다.</h5> -->
-      <div class="d-flex gap-3">
-        <input class="form-control me-2" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
-        <button class="btn btn-outline-primary nowrap" type="submit">쿠폰 검색</button>
+      <div class="d-flex gap-3 row">
+        <input class="form-control me-2 col" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
+        <button class="btn btn-outline-primary nowrap col-4" type="submit">쿠폰 검색</button>
       </div>
     </form>
 
@@ -125,11 +125,11 @@
     <thead>
       <tr scope="row">
         <th class="fw-bold col-4">쿠폰명</th>
-        <th class="col-2">상태</th>
-        <th class="col-2">할인액</th>
-        <th class="col-2">사용기한</th>
-        <th class="col-1">수정</th>
-        <th class="col-1">삭제</th>
+        <th class="col-2 fw-bold">상태</th>
+        <th class="col-2 fw-bold">할인액</th>
+        <th class="col-2 fw-bold">사용기한</th>
+        <th class="col-1 fw-bold">수정</th>
+        <th class="col-1 fw-bold">삭제</th>
       </tr>
     </thead>
     <tbody>
