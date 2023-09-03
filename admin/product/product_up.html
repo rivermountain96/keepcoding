@@ -88,37 +88,31 @@
   </nav>
 <!-- 이은서 header 끝 -->
 
-<!-- 정이원 product_up 시작 -->
 <div class="product_up content">
   <h2 class="fs-4 pd72">강좌 등록</h2>
 
-  <div class="row pd24 gap-3">
-    <div class="product_up_category col p-0">
+    <div class="product_up_category">
       <h3 class="pd10 h6">카테고리</h3>
-      <select class="form-select" aria-label="Small select example" id="cate1" name="cate1">
-        <option selected disabled>대분류</option>
-        <option value="">기초강의</option>
-        <option value="">프론트엔드</option>
-        <option value="">백엔드</option>
-      </select>
+      <div class="row pd24 gap-3">
+        <select class="form-select col" aria-label="Small select example" id="cate1" name="cate1">
+          <option value="" selected disabled>대분류</option>
+          <option value="">기초강의</option>
+          <option value="">프론트엔드</option>
+          <option value="">백엔드</option>
+        </select>
+
+        <select class="form-select col" aria-label="Small select example" id="cate2" name="cate2">
+          <option value="" selected disabled>중분류</option>
+        </select>
+
+        <select class="form-select col" aria-label="Small select example" id="cate3" name="cate3">
+          <option value="" selected disabled>소분류</option>
+        </select>
+      </div>
     </div>
-    <div class="product_up_category col p-0">
-      <h6 class="category_name pd10">중분류</h6>
-      <select class="form-select" aria-label="Small select example" id="cate2" name="cate2">
-        <option selected disabled>중분류</option>
-      </select>
-    </div>
-    <div class="product_up_category col p-0">
-      <h6 class="category_name pd10">소분류</h6>
-      <select class="form-select" aria-label="Small select example" id="cate3" name="cate3">
-        <option selected disabled>소분류</option>
-      </select>
-    </div>
-</div>
 
 <div class="pd24">
   <div class="product_up_name">
-      <!-- <h6 class="pd10">강좌명</h6> -->
       <label class="pd10 h6" for="">강좌명</label>
       <input class="form-control" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
   </div>
@@ -139,12 +133,12 @@
   </div>
 
   <div class="product_up_enddate col p-0 datepicker">
-    <label class="pd10 h6" for="product_start">종료일</label>
-    <input type="text" id="product_start" name="product_start" class="form-control" placeholder="2023.09.11"></p>
+    <label class="pd10 h6" for="product_end">종료일</label>
+    <input type="text" id="product_end" name="product_end" class="form-control" placeholder="2024.09.11"></p>
   </div>
 </div>
 
-<div class=" row justify-content-start pd24 row-cols-8 gap-3">
+<div class="row justify-content-start pd24 row-cols-8 gap-3">
   <div class="product_up_price col-4 p-0">
     <label class="pd10 h6" for="">판매 금액</label>
     <input class="form-control" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example">
@@ -202,7 +196,6 @@
 </div>
 
 <script>
-$(document).ready(function() {
   $('#product_detail').summernote({
       placeholder: '상세 설명을 입력하세요',
       tabsize: 2,
@@ -216,7 +209,6 @@ $(document).ready(function() {
   $('#product_end').datepicker({
     dateFormat:'yy.mm.dd'
   });
-});
 </script>
 </body>
 </html>
