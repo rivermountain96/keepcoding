@@ -85,26 +85,12 @@
 /* 정이원 login 끝 */
 
 /* 정이원 coupon_up 시작 */
+.coupon_up_status_on{
+    margin-right: 16px;
+}
 .coupon_up_status_on.form-check,
 .coupon_up_status_off.form-check{
     min-height: 0;
     margin-bottom: 0;
-}
-.coupon_up_status_on{
-    margin-right: 16px;
-}
-.coupon_up_name input::placeholder,
-.coupon_up_price input::placeholder{
-    font-size: var(--font-size-14);
-    color: var(---mc-gray3, #969696);
-}
-.coupon_up_price input,
-.coupon_up_min_price input{
-    width: 405px;
-    margin-right: 16px;
-}
-.coupon_up_btn .coupon_up_cancel{
-    background-color: var(---mc-gray3, #6C757D);
-    border-color: var(---mc-gray3, #6C757D);
 }
 /* 정이원 coupon_up 끝 */
