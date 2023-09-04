@@ -4,13 +4,13 @@
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 
 
-//SQL 쿼리를 통해 데이터를 조회
-$sql = "SELECT * FROM products";
-$result = $mysqli->query($sql);
+  $pid = $_GET['pid'];
+  $sql = "SELECT * FROM products WHERE pid = '$pid'";
+  $result = $mysqli ->query($sql);
+  $row = $result -> fetch_object();
+  
 
-while($rs = $result -> fetch_object()){
-  $rsc[] = $rs;
-}
+
   ?>
 
 
@@ -30,12 +30,12 @@ while($rs = $result -> fetch_object()){
     <div class="product_view_sec2 row ">
       <div class="col">
         <h6 class="">강좌명</h6>
-        <p class="">JavaScript 입문 수업</p>
+        <p class=""><?php echo $row->name ?></p>
       </div>
 
       <div class="col">
         <h6 class="">카테고리</h6>
-        <p class="">기초강의>javascript>초급</p>
+        <p class=""><?php echo $row->cate ?></p>
       </div>
 
     </div>
@@ -46,12 +46,12 @@ while($rs = $result -> fetch_object()){
     <div class="product_view_sec2 row ">
       <div class="col">
         <h6 class="">수강 기한</h6>
-        <p class="">무제한</p>
+        <p class=""><?php echo $row->reg_date ?></p>
       </div>
 
       <div class="col">
         <h6 class="">시작일</h6>
-        <p class="">2023.09.09</p>
+        <p class=""><?php echo $row->reg_date ?></p>
       </div>
 
     </div>
@@ -63,8 +63,7 @@ while($rs = $result -> fetch_object()){
     <div class="col">
       <h6>강좌설명</h6>
       <p class="">1.수업소개<br><br>
-        &nbsp &nbsp a. 본 모듈은 자바스크립트 언어에 대한 기초 수업입니다. <br><br>
-        &nbsp &nbsp b.텍스트 수업과 동영상 수업이 함께 제공 됩니다. 텍스트만으로도 완주 하실 수 있고, 동영상만으로도 완주 할 수 있도록 구성되었습니다.</p>
+      <?php echo $row->content ?></p>
       <hr>
     </div>
 
@@ -73,9 +72,9 @@ while($rs = $result -> fetch_object()){
 
     <div class="col">
       <h6 class="">썸네일</h6>
-      <p class="mb-24">오리엔테이션.jpg</p>
+      <p class="mb-24"><?php echo $row->thumbnail ?></p>
       <br>
-      <img src="../img/Ellipse 3.png" alt="">
+      <img src="<?php echo $row->thumbnail ?>" alt="">
     </div>
 
     <hr>
@@ -86,14 +85,14 @@ while($rs = $result -> fetch_object()){
       <h6 class="">강의 영상</h6>
 
       <div class="col">
-        <p class="">JavaScript - 오리엔테이션</p>
+        <p class=""><?php echo $row->content ?></p>
       </div>
 
 
       <div class="col">
         <p class="col text-nowrap">
           <a href="#" data-toggle="modal" data-target="#videoModal">
-            http://www.youtube.com/playlist?list=PLuHgQVnccGMA4uSig3hCjl7wTDeyIeZVU
+          <?php echo $row->content ?>
           </a>
 
         </p>
@@ -106,12 +105,11 @@ while($rs = $result -> fetch_object()){
     <!-- 3buttons -->
 
     <div class="d-flex gap-3 justify-content-end">
-      <a href="#" class="btn btn-primary ">수정</a>
-      <a href="#" class="btn btn-outline-primary  ">삭제</a>
-      <a href="#" class="btn btn-primary  ">강좌 리스트</a>
+    <a href="/keepcoding/admin/product/product_change.php?pid=<?= $row->pid ?>" class="btn btn-outline-primary">수정</a>
+      <a href="/keepcoding/admin/product/product_del.php?pid=<?= $row->pid ?>" class="btn btn-outline-primary">삭제</a>
+      <a href="/keepcoding/admin/product/product_list.php" class="btn btn-primary  ">강좌 리스트</a>
     </div>
   </div>
-
 
 
   <!-- modal -->
@@ -121,10 +119,10 @@ while($rs = $result -> fetch_object()){
       <div class="modal-content">
         <div class="modal-body">
           <iframe width="100%" height="485"
-            src="https://www.youtube.com/embed/videoseries?list=PLuHgQVnccGMA4uSig3hCjl7wTDeyIeZVU" frameborder="0"
+            src="<?php echo $row->content ?>" frameborder="0"
             allowfullscreen></iframe>
-          <h4 class="">WEB2 -JavaScript</h4>
-          <p class="">기초강의 > javascript > 중급</p>
+          <h4 class=""><?php echo $row->content ?></h4>
+          <p class=""><?php echo $row->content ?></p>
 
           <div class="d-flex justify-content-end">
             <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal" aria-label="Close">
@@ -173,8 +171,16 @@ while($rs = $result -> fetch_object()){
 
 </html>
 
+<style>
 
-?>
+
+</style>
+
+
+
+
+
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
 ?>
+
