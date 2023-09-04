@@ -83,9 +83,7 @@
   <div class="pd24">
     <div class="product_up_detail col p-0">
       <h6 class="pd10">상세설명</h6>
-      <form method="post">
-        <textarea id="product_detail" name="product_detail"></textarea>
-      </form>
+        <div id="product_detail" name="product_detail"></div>
     </div>
   </div>
 
@@ -121,7 +119,7 @@
 
     if ($('#product_detail').summernote('isEmpty')) {
       alert('상품 설명을 입력하세요');
-      return false;
+      // return false;
     }
     
   });
@@ -167,7 +165,6 @@
   usedate.change(function(){
     let value = usedate.val();
     if(value == 2){
-      console.log('버튼 비활성화');
       $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
       $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
     }else{
@@ -224,6 +221,7 @@
 
     });
   }
+  
 </script>
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';

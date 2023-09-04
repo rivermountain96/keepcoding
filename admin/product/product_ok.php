@@ -28,17 +28,17 @@ try{
   $sale_cnt =  $_POST['sale_cnt']??0 ;
   $status = $_POST['status'];
 
-  // if (empty($name)) {
-  //     echo "<script>
-  //         alert('강좌명을 입력하세요.');    
-  //         history.back();            
-  //     </script>";
-  //     exit;
-  // }
+  if (empty($name)) {
+      echo "<script>
+          alert('강좌명을 입력하세요.');    
+          history.back();            
+      </script>";
+      exit;
+  }
   
   $thumbnail = $_FILES["thumbnail"]["name"];
-  $sale_end_date =  $_POST['sale_end_date'];
-  $content =  rawurldecode($_POST['content']); //encodeURIComponent통해 변경된 코드를 원래코드로 변경
+  $sale_end_date = $_POST['sale_end_date'];
+  $content = rawurldecode($_POST['content']); //encodeURIComponent통해 변경된 코드를 원래코드로 변경
   $video_url = $_POST['video_url'];
   $file_table_id = $_POST['file_table_id']??0;
   $file_table_id = $_POST['file_table_id'];
@@ -90,12 +90,9 @@ try{
   isrecom, userid, reg_date, sale_end_date, video_url, file_table_id)
   VALUES
   ('{$name}', '{$cate}', '{$content}', '{$thumbnail}',{$price}, {$sale_price}, {$sale_cnt},
-  '{$isnew}', '{$isrecom}', '{$_SESSION['AUID']}', now(), '{$sale_end_date}', '{$video_url}', '{$file_table_id}')";
+  '{$isnew}', '{$isrecom}', '{$_SESSION['AUID']}', now(), {$sale_end_date}, '{$video_url}', '{$file_table_id}')";
 
-
-
-
-$result = $mysqli -> query($sql);
+  $result = $mysqli -> query($sql);
 
 
 if (!$result) {
@@ -103,7 +100,7 @@ if (!$result) {
 } 
 echo "실행된 쿼리: " . $sql;
 var_dump($result);
-// $pid = $mysqli -> insert_id; //테이블에 저장되는 값의 고유 번호
+$pid = $mysqli -> insert_id; //테이블에 저장되는 값의 고유 번호
 
 
 if($result){ //상품이 등록되면
@@ -123,5 +120,6 @@ if($result){ //상품이 등록되면
   </script>";
   exit;
   }
+
 
 ?>
