@@ -99,37 +99,37 @@ nav{
 nav{
   z-index: 100;
 }
-.nav_top > div{
+.nav_top > div {
   gap: 100px;
 }
-.user img{
+.user img {
   width: 30px;
   height: 30px;
   object-fit: cover;
 }
-.logo a{
+.logo a {
   display: block;
   text-indent: -9999rem;
-  background-image: url('../img/logo.png');
+  background-image: url("../img/keepcoding_logo.svg");
   background-size: cover;
   width: 130px;
   height: 25px;
   background-repeat: no-repeat;
 }
-.nav_top{
+.nav_top {
   background-color: #fff;
   padding: 20px 40px;
   border-bottom: 0.3px silver solid;
-  position:fixed;
-  left:0;
-  right:0;
-  top:0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
 }
-.nav_side{
+.nav_side {
   position: fixed;
   width: 250px;
-  top:71px;
-  bottom:0;
+  top: 71px;
+  bottom: 0;
   left: 0px;
   display: flex;
   justify-content: space-between;
@@ -138,17 +138,17 @@ nav{
   background-color: #fff;
   border-right: 0.3px silver solid;
 }
-.nav_side ul{
+.nav_side ul {
   width: 100%;
 }
-.nav_side > ul > li{
+.nav_side > ul > li {
   padding: 30px 37px;
   border-bottom: 0.3px silver solid;
 }
-.nav-link{
+.nav-link {
   padding: 0;
 }
-.nav_side > ul > li ul{
+.nav_side > ul > li ul {
   display: flex;
   flex-direction: column;
   gap:20px;
@@ -175,33 +175,57 @@ nav{
   box-sizing: border-box;
   gap: 20px;
 }
-.kcard h6{
-  margin-bottom: 30px;
-}
-.kcard_text span{
-  display: block;
-}
-.rate{
-  height: 25px;
-  position: relative;
-  width:100%;
-  border:2px solid #ccc;
-  border-radius: 12.5px;
-}
-.rate .bar{
-  z-index: 1;
-  position: absolute;
-  left: 0;top: 0;bottom: 0;
-  width: 0;
-  background: #4E75FF;
-}
-.ratebar{
+
+/* 이은서 index.html 시작 */
+
+.sell_report {
+  width: 100%;
   gap: 30px;
 }
-.ratebar.front{
+.member {
+  width: 100%;
+}
+.kcard.big {
+  width: 100%;
+}
+.kcard {
+  width: 600px;
+  /* height: 144px; */
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+.kcard h6 {
+  margin-bottom: 30px;
+}
+.kcard_text span {
+  display: block;
+}
+.rate {
+  height: 25px;
+  position: relative;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 12.5px;
+}
+.rate .bar {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: #4e75ff;
+}
+.ratebar {
+  gap: 30px;
+}
+.ratebar.front {
   padding-bottom: 20px;
 }
-.callout span{
+.callout span {
   font-weight: bold;
 }
 .callout i {
@@ -274,7 +298,6 @@ i.i-empty{
 }
 
 /* 이은서 category.html 끝 */
-
 
 /* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 */
 /* .notice_list_table thead th, .qna_list_table thead th, .smember_list_table thead th, .tmember_list_table thead th{
