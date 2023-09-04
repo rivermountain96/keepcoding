@@ -5,7 +5,7 @@ var popup_closeBtn = popup.find("#close");
 var popup_input = popup.find("#daycheck");
 
 popup.find('.figma').click(function() {
-  window.open('figma', '_blank');
+  window.open('https://www.figma.com/file/uNjm1oLLgycPRqu5iTJ6eV/%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84?type=design&node-id=0%3A1&mode=design&t=Q5eBnCRyS4PfGxTa-1', '_blank');
 });
 
 popup.find('.git').click(function() {
