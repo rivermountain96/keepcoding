@@ -44,7 +44,7 @@
           <span><i class="bi bi-bell mc-gray3"></i></span>
           <div class="user d-flex align-items-center gap-3">
             <p class="mc-gray3">총관리자</p>
-            <img src="../img/Ellipse 3.png" alt="">
+            <img src="../img/Ellipse_3.png" alt="">
           </div>
         </div>
       </div>
@@ -101,42 +101,42 @@
 <!-- 최성희 notice_up 시작 -->
 <div class="content notice_up">
   <h2 class="pd72 fs-4">공지 등록</h2>
-    <form class="pd48" action="" method="" id="" enctype="">
+    <form class="pd48" action="#.php" id="notice_up_submit">
       <div class="pd24">
-        <label class="pd10 h6" for="">제목</label>
-        <input class="form-control" type="text" placeholder="제목 입력하기" aria-label="default input example">
+        <label class="pd10 h6" for="notice_up_title">제목</label>
+        <input class="form-control form-control-lg" id="notice_up_title" type="text" placeholder="제목 입력하기" aria-label="default input example">
       </div>
       
-      <div class="d-flex row pd24">
-        <div class="col-4">
-          <p class="pd10 h6" for="">공지 기한</p>
-          <select class="form-select form-select" aria-label="Small select example">
-          <option value="1"selected>제한</option>
+      <div class="row pd24 gap-3">
+        <div class="col p-0">
+          <p class="pd10 h6">공지 기한</p>
+          <select class="form-select form-select-lg" aria-label="Small select example">
+          <option value="1" selected>제한</option>
           <option value="2">무제한</option>
           </select>
         </div>
-        <div class="notice_up_regdate col-4 datepicker">
-          <label class="pd10 h6" for="">시작일</label>
-          <input type="text" id="datepicker_start" name="datepicker" class="form-control">
+        <div class="notice_up_regdate col p-0 datepicker">
+          <label class="pd10 h6" for="datepicker_start">시작일</label>
+          <input type="text" id="datepicker_start" name="datepicker" class="form-control form-control-lg"  placeholder="2023.09.09">
         </div> 
-        <div class="notice_up_enddate col-4 datepicker">
-          <label class="pd10 h6" for="">만료일</label>
-          <input type="text" id="datepicker_end" name="datepicker" class="form-control">
+        <div class="notice_up_enddate col p-0 datepicker">
+          <label class="pd10 h6" for="datepicker_end">만료일</label>
+          <input type="text" id="datepicker_end" name="datepicker" class="form-control form-control-lg"  placeholder="2023.09.09">
         </div>
       </div>
 
       <div class="pd24">
-        <p class="pd10 h6" for="">내용</p>
+        <p class="pd10 h6">내용</p>
         <div id="summernote"></div>
       </div>
 
       <div class="pd48">
         <label for="formFile" class="form-label pd10 h6">이미지</label>
-        <input class="form-control form-control" id="formFile" type="file">
+        <input class="form-control form-control-lg" id="formFile" type="file">
       </div>
 
       <div class="d-flex justify-content-end gap-3">
-        <button type="button" class="btn btn-primary">등록</button>
+        <button type="button" class="btn btn-primary" form="notice_up_submit">등록</button>
         <button type="button" class="btn btn-secondary" onClick="location.href='notice_list.html'"> 취소</button>
       </div>
     </form>
@@ -152,8 +152,12 @@
       height: 100
     });
 
-    $("#datepicker_start").datepicker();
-    $("#datepicker_end").datepicker();
+    $("#datepicker_start").datepicker({
+      dateFormat:'yy.mm.dd'
+    });
+    $("#datepicker_end").datepicker({
+      dateFormat:'yy.mm.dd'
+    });
   </script>
   </body>
   </html>
