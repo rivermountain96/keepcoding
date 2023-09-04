@@ -81,7 +81,7 @@
   </div>
 
   <div class="pd24">
-    <div class="product_detail col p-0">
+    <div class="product_up_detail col p-0">
       <h6 class="pd10">상세설명</h6>
       <form method="post">
         <textarea id="product_detail" name="product_detail"></textarea>
@@ -98,8 +98,8 @@
 
   <div class="d-flex pd48 gap-3">
     <div class="product_up_video_url col p-0">
-      <label for="product_url" class="pd10 h6">강의 영상 주소</label>
-      <input type="url" id="product_url" name="product_url" class="form-control form-control-lg" placeholder="URL을 입력하세요">
+      <label for="video_url" class="pd10 h6">강의 영상 주소</label>
+      <input type="url" id="video_url" name="video_url" class="form-control form-control-lg" placeholder="URL을 입력하세요">
     </div>
   </div>
 
@@ -123,11 +123,13 @@
       alert('상품 설명을 입력하세요');
       return false;
     }
+    
   });
 
   $('#btn-cancel').click(function() {
     window.location.href = 'product_list.php'; // 취소버튼
   });
+
 
   $('#product_detail').summernote({
       placeholder: '상세 설명을 입력하세요',
@@ -138,24 +140,26 @@
   $('#reg_date').datepicker({
     dateFormat:'yy.mm.dd',
     minDate: 'today',
-    maxDate: '+1Y',
-    onSelect: function (dateText, inst) {
-      // 선택한 날짜를 Date 객체로 파싱합니다.
-      var selectedDate = new Date(dateText);
+    maxDate: '+1Y'
+    // onSelect: function (dateText, inst) {
+    //   // 선택한 날짜를 Date 객체로 파싱합니다.
+    //   var selectedDate = new Date(dateText);
       
 
-      // 1년을 더합니다.
-      selectedDate.setFullYear(selectedDate.getFullYear() + 1);
+    //   // 1년을 더합니다.
+    //   selectedDate.setFullYear(selectedDate.getFullYear() + 1);
       
-      // 새로운 날짜를 출력합니다.
-      var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
-      console.log(formattedDate);
-      $('#sale_end_date').datepicker( "setDate", selectedDate);
-        }
+    //   // 새로운 날짜를 출력합니다.
+    //   var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
+    //   console.log(formattedDate);
+    //   $('#sale_end_date').datepicker( "setDate", selectedDate);
+    //     }
   });
   
   $('#sale_end_date').datepicker({
-    dateFormat:'yy.mm.dd'
+    dateFormat:'yy.mm.dd',
+    minDate: '+1D',
+    maxDate: '+1Y'
   });
 
 
@@ -220,11 +224,6 @@
 
     });
   }
-
-
-
-
-
 </script>
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
