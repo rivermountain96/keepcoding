@@ -114,6 +114,7 @@
 
 <script>
 
+
   $('#product_up_form').submit(function(){
     let markupStr = $('#product_detail').summernote('code');
     let content = encodeURIComponent(markupStr);
@@ -121,13 +122,14 @@
 
     if ($('#product_detail').summernote('isEmpty')) {
       alert('상품 설명을 입력하세요');
-      return false;
+      // return false;
     }
   });
 
   $('#btn-cancel').click(function() {
     window.location.href = 'product_list.php'; // 취소버튼
   });
+
 
   $('#product_detail').summernote({
       placeholder: '상세 설명을 입력하세요',
@@ -139,19 +141,19 @@
     dateFormat:'yy.mm.dd',
     minDate: 'today',
     maxDate: '+1Y',
-    onSelect: function (dateText, inst) {
-      // 선택한 날짜를 Date 객체로 파싱합니다.
-      var selectedDate = new Date(dateText);
+    // onSelect: function (dateText, inst) {
+    //   // 선택한 날짜를 Date 객체로 파싱합니다.
+    //   var selectedDate = new Date(dateText);
       
 
-      // 1년을 더합니다.
-      selectedDate.setFullYear(selectedDate.getFullYear() + 1);
+    //   // 1년을 더합니다.
+    //   selectedDate.setFullYear(selectedDate.getFullYear() + 1);
       
-      // 새로운 날짜를 출력합니다.
-      var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
-      console.log(formattedDate);
-      $('#sale_end_date').datepicker( "setDate", selectedDate);
-        }
+    //   // 새로운 날짜를 출력합니다.
+    //   var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
+    //   console.log(formattedDate);
+    //   $('#sale_end_date').datepicker( "setDate", selectedDate);
+    //     }
   });
   
   $('#sale_end_date').datepicker({
@@ -220,8 +222,6 @@
 
     });
   }
-
-
 
 
 
