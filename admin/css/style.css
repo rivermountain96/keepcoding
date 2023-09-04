@@ -6,6 +6,67 @@
   margin-left: 0;
 }
 
+/* DIALOG POPUP */
+.popup {
+  background: var(--white);
+  position: fixed;
+  top: 40px;
+	left: 40px;
+  padding: 20px 30px;
+  z-index: 9999;
+  border-color: var(--dark-blue);
+	border-width: 7px;
+	box-sizing: border-box;
+	margin: 0;
+	z-index: 99999;
+	font-size: 16px;
+	line-height: 25px;
+}
+
+.popup a {
+	text-decoration: underline;
+}
+
+.popup h2 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-bottom: 10px;
+	color: var(--black);
+}
+
+.popup hr {
+  margin: 15px 0;
+  border: none;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.popup .info a,
+.popup span {
+  color: var(--black);
+}
+
+.popup #close {
+  cursor: pointer;
+  background: transparent;
+  border-radius: 3px;
+}
+
+.popup .checkbox label {
+  cursor: pointer;
+  color: var(--light-gray);
+	font-weight: lighter;
+}
+
+.popup #daycheck:checked + label {
+  font-weight: bold;
+  color: var(--dark-blue);
+	font-weight: bold;
+}
+/* DIALOG POPUP */
+
+
+
 /* header navbar */
 
 nav{

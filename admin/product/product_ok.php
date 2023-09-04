@@ -87,10 +87,10 @@ try{
 
   $sql = "INSERT INTO products
   (name, cate, content, thumbnail, price, sale_price, sale_cnt, isnew,
-  isrecom, userid, reg_date, sale_end_date, video_url, file_table_id)
+  isrecom, userid, reg_date, sale_end_date, video_url)
   VALUES
   ('{$name}', '{$cate}', '{$content}', '{$thumbnail}',{$price}, {$sale_price}, {$sale_cnt},
-  '{$isnew}', '{$isrecom}', '{$_SESSION['AUID']}', now(), {$sale_end_date}, '{$video_url}', '{$file_table_id}')";
+  '{$isnew}', '{$isrecom}', '{$_SESSION['AUID']}', now(), {$sale_end_date}, '{$video_url}')";
 
   $result = $mysqli -> query($sql);
 
