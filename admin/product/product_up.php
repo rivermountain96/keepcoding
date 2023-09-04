@@ -81,7 +81,7 @@
   </div>
 
   <div class="pd24">
-    <div class="product_detail col p-0">
+    <div class="product_up_detail col p-0">
       <h6 class="pd10">상세설명</h6>
       <form method="post">
         <textarea id="product_detail" name="product_detail"></textarea>
@@ -140,7 +140,7 @@
   $('#reg_date').datepicker({
     dateFormat:'yy.mm.dd',
     minDate: 'today',
-    maxDate: '+1Y',
+    maxDate: '+1Y'
     // onSelect: function (dateText, inst) {
     //   // 선택한 날짜를 Date 객체로 파싱합니다.
     //   var selectedDate = new Date(dateText);
@@ -157,7 +157,9 @@
   });
   
   $('#sale_end_date').datepicker({
-    dateFormat:'yy.mm.dd'
+    dateFormat:'yy.mm.dd',
+    minDate: '+1D',
+    maxDate: '+1Y'
   });
 
 

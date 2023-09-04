@@ -35,6 +35,7 @@ try{
   //     </script>";
   //     exit;
   // }
+  
   $thumbnail = $_FILES["thumbnail"]["name"];
   $sale_end_date =  $_POST['sale_end_date'];
   $content =  rawurldecode($_POST['content']); //encodeURIComponent통해 변경된 코드를 원래코드로 변경
