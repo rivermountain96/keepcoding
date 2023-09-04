@@ -6,7 +6,8 @@
     width: 400px;
     height: 442px;
     background-color: #fff;
-    background-image: url(/admin/img/logo\(login\).png);
+    background-image: url(/admin/img/keepcoding_logo.svg);
+    background-size: 55%;
     background-repeat: no-repeat;
     background-position: center 43px;
     border: 1px solid #fff;
@@ -83,3 +84,14 @@
     margin-top: 0;
 }
 /* 정이원 login 끝 */
+
+/* 정이원 coupon_up 시작 */
+.coupon_up_status_on{
+    margin-right: 16px;
+}
+.coupon_up_status_on.form-check,
+.coupon_up_status_off.form-check{
+    min-height: 0;
+    margin-bottom: 0;
+}
+/* 정이원 coupon_up 끝 */
