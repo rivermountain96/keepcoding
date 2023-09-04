@@ -1,12 +1,11 @@
 @charset "utf-8";
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@font-face {
-  font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
+/* @font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
-}
+} */
 
 /* root 변경 */
 
@@ -48,6 +47,9 @@
 /* primary color */
 
 .pc {
+  color: var(--primary-color);
+}
+.pc2 {
   color: var(--primary-color);
 }
 .pcbg {
@@ -289,22 +291,7 @@ input:focus {
 }
 
 /* datepicker 색상 변경 */
-.ui-state-highlight,
-.ui-widget-content .ui-state-highlight,
-.ui-widget-header .ui-state-highlight {
-  border: 1px solid var(--primary-color);
-  background: rgba(78, 117, 255, 0.15);
-  color: var(--primary-color);
-}
 
-.ui-state-active,
-.ui-widget-content .ui-state-active {
-  border: 1px solid var(--primary-color);
-  background: var(--primary-color);
-  color: var(--mc-white);
-}
-
-/* datepicker 색상 변경 */
 .ui-state-highlight, 
 .ui-widget-content .ui-state-highlight, 
 .ui-widget-header .ui-state-highlight {
@@ -320,21 +307,13 @@ input:focus {
   color: var(--mc-white);
 }
 
-/* datepicker 색상 변경 */
-.ui-state-highlight, 
-.ui-widget-content .ui-state-highlight, 
-.ui-widget-header .ui-state-highlight {
-  border: 1px solid var(--primary-color);
-  background: rgba(78, 117, 255, 0.15);
-  color: var(--primary-color);
+.datepicker input{
+  background: url(admin/img/calendar.svg) no-repeat 96% center; 
 }
 
-.ui-state-active, 
-.ui-widget-content .ui-state-active{
-  border: 1px solid var(--primary-color);
-  background: var(--primary-color);
-  color: var(--mc-white);
-}
+
+
+
 
 /* 확인용으로 만든 css, 사용금지*/
 
