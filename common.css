@@ -7,6 +7,9 @@
     format("woff");
   font-style: normal;
 }
+hr {
+  margin: 0;
+}
 
 /* root 변경 */
 
@@ -38,6 +41,7 @@
   --mc-gray1: #212529;
   --mc-gray2: #f2f3f5;
   --mc-gray3: #495057;
+  --mc-gray4: #969696;
   --mc-white: #fff;
   /* rgba */
   --mc-b-rgba: rgba(0, 0, 0, 0.55);
@@ -330,6 +334,10 @@ input:focus {
   border: 1px solid var(--primary-color);
   background: var(--primary-color);
   color: var(--mc-white);
+}
+
+.datepicker input {
+  background: url(admin/img/calendar.svg) no-repeat 96% center;
 }
 
 /* 확인용으로 만든 css, 사용금지*/
