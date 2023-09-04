@@ -1,31 +1,13 @@
-p {
-  margin-bottom: 0;
+/* bootstrap 초기화 */
+
+.row {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0;
-}
-dl,
-ol,
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-ol,
-ul {
-  padding-left: 0;
-}
+/* header navbar */
+
 nav {
   z-index: 100;
 }
@@ -40,7 +22,7 @@ nav {
 .logo a {
   display: block;
   text-indent: -9999rem;
-  background-image: url("../img/logo.png");
+  background-image: url("../img/keepcoding_logo.svg");
   background-size: cover;
   width: 130px;
   height: 25px;
@@ -83,28 +65,26 @@ nav {
   flex-direction: column;
   gap: 20px;
 }
+
+/* 이은서 index.html 시작 */
+
 .sell_report {
   width: 100%;
   gap: 30px;
 }
-.bd-callout {
-  width: 100%;
-  padding: 38.5px 52.5px;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  color: var(--bd-callout-color, inherit);
-  background-color: #fff;
-  border-left: 0.25rem solid var(--bd-callout-border, #4e75ff);
-}
 .member {
+  width: 100%;
+}
+.kcard.big {
   width: 100%;
 }
 .kcard {
   width: 600px;
   /* height: 144px; */
-  padding: 47px;
+  padding: 40px;
   background-color: #fff;
   border-radius: 10px;
+  box-sizing: border-box;
   gap: 20px;
 }
 .kcard h6 {
@@ -140,4 +120,148 @@ nav {
 }
 .callout i {
   font-size: 25px;
+}
+.smile_icons i {
+  font-size: 20px;
+}
+i.i-fill {
+  color: var(--primary-color);
+}
+i.i-empty {
+  color: var(--mc-gray2);
+}
+.coupon_report i {
+  font-size: 35px;
+}
+
+/* 이은서 index.html 끝 */
+
+/* 이은서 coupon_list.html-table 시작 */
+
+.table {
+  margin-bottom: 48px;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+  /* vertical-align: top; */
+  border-top: 1px solid #dee2e6;
+}
+
+.table tbody {
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* 이은서 coupon_list.html-table 끝 */
+
+/* 이은서 category.html 시작 */
+
+.cate_edit_btns a,
+.cate_size {
+  text-decoration: none;
+  color: var(--mc-gray3);
+  opacity: 0.7;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+.cate_edit_btns a:hover {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.list-group-item {
+  transition: 0.3s ease-in;
+}
+.list-group-item:hover {
+  background-color: var(--mc-gray2);
+}
+.list-group-item:hover .cate_size {
+  color: var(--mc-gray1);
+  opacity: 1;
+}
+
+.form-control.big,
+.form-select.big,
+.list-group-item.big {
+  padding: 16px;
+}
+
+/* 이은서 category.html 끝 */
+
+/* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 */
+/* .notice_list_table thead th, .qna_list_table thead th, .smember_list_table thead th, .tmember_list_table thead th{
+  padding: 1rem 0 1rem 1.5rem;
+}
+.notice_list_table td, .notice_list_table th,
+.qna_list_table td, .qna_list_table th,
+.smember_list_table td, .smember_list_table th,
+.tmember_list_table td, .tmember_list_table th{
+padding: 0.53rem 0 0.53rem 1.5rem;} */
+
+.notice_view hr,
+.qna_view hr,
+.product_view hr,
+.coupon_view hr {
+  border-color: var(--mc-black);
+}
+.notice_view img,
+.qna_view img {
+  height: 150px;
+}
+
+.coupon_view img {
+  height: 120px;
+}
+
+.btn-outline-primary.active,
+.active > .page-link {
+  background-color: var(--primary-color);
+}
+
+.notice_list a,
+.qna_list a,
+.smember_list a,
+.tmember_list a {
+  color: var(--primary-color);
+}
+/* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 끝 */
+
+.coupon_no_status,
+.product_no_status {
+  margin-left: 16px;
+}
+.coupon_up_status_input.form-check-input,
+.product_status_input.form-check-input,
+.coupon_change_status_input.form-check-input {
+  margin-top: 0;
+}
+
+.form-control-lg::placeholder {
+  font-size: var(--font-size-14);
+  color: var(--mc-gray4);
+}
+.form-control,
+.form-control-lg,
+.form-select-lg,
+.btn-lg {
+  font-size: var(--font-size-16);
+  height: 48px;
+  line-height: 30px;
+}
+
+#videoModal iframe {
+  width: 100%;
+  height: 300px;
+}
+#videoModal h2 {
+  padding-top: 24px;
+}
+
+.form-width-973 {
+  width: 97.3%;
 }
