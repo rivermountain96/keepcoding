@@ -111,28 +111,33 @@
       </div>
     </div>
 
-<div class="pd24">
-  <div class="product_up_name">
-      <label class="pd10 h6" for="product_up_title">강좌명</label>
-      <input class="form-control form-control-lg" id="product_up_title" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
-  </div>
-</div>
-
-<div class="row justify-content-start pd24 gap-3 form-width-973">
-  <div class="product_up_usedate col-4 p-0">
-    <h6 class="pd10 h6">수강 기한</h6>
-    <select class="form-select form-control-lg" aria-label="Small select example">
-        <option value="1" selected>제한</option>
-        <option value="2">무제한</option>
-    </select>
+  <div class="pd24">
+    <div class="product_up_name">
+        <label class="pd10 h6" for="product_up_title">강좌명</label>
+        <input class="form-control form-control-lg" id="product_up_title" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
+    </div>
   </div>
 
-  <div class="product_up_regdat col-4 p-0 datepicker">
-    <label class="pd10 h6" for="product_start">시작일</label>
-    <input type="text" id="product_start" name="product_start" class="form-control form-control-lg" placeholder="시작일 선택">
-  </div>
+  <div class="row justify-content-start pd24 gap-3 form-width-973">
+    <div class="product_up_usedate col-4 p-0">
+      <h6 class="pd10 h6">수강 기한</h6>
+      <select class="form-select form-control-lg" aria-label="Small select example">
+          <option value="1" selected>제한</option>
+          <option value="2">무제한</option>
+      </select>
+    </div>
 
-</div>
+    <div class="product_up_regdat col-4 p-0 datepicker">
+      <label class="pd10 h6" for="regdate">시작일</label>
+      <input type="text" id="regdate" name="regdate" class="form-control form-control-lg" placeholder="시작일 선택">
+    </div>
+
+    <div class="product_up_enddate col p-0 datepicker">
+      <label class="pd10 h6" for="sale_end_date">종료일</label>
+      <input type="text" id="sale_end_date" name="sale_end_date" class="form-control form-control-lg" placeholder="종료일">
+    </div>
+
+  </div>
 
 <div class="row justify-content-start pd24 row-cols-8 gap-3 form-width-973">
   <div class="product_up_price col-4 p-0">
@@ -166,27 +171,20 @@
 <div class="pd24">
   <div class="product_up_thumbnail">
     <label for="thumbnail" class="form-label pd10 h6">썸네일</label>
-    <input class="form-control form-control-lg form-control form-control-lg" id="thumbnail" type="file">
+    <input class="form-control form-control-lg" id="thumbnail" name="thumbnail" type="file">
   </div>
 </div>
 
 <div class="d-flex pd48 gap-3">
-  <div class="product_up_video col-4 p-0">
-    <label for="product_name" class="pd10 h6">강의 영상 업로드</label>
-    <input type="text" id="product_name" name="product_name" class="form-control form-control-lg" placeholder="강의명 입력하기">
-  </div>
-  <div class="product_up_video_url col-7 p-0 align-self-end">
-    <label for="product_url" class="pd10 h6" hidden>강의 영상 주소</label>
-    <input type="url" id="product_url" name="product_url" class="form-control form-control-lg" placeholder="영상 주소">
-  </div>
-  <div class="product_up_video_plus col-1 p-0 align-self-end">
-    <button type="button" class="btn btn-lg btn-outline-primary align-items-end">추가</button>
+  <div class="product_up_video_url col p-0">
+    <label for="product_url" class="pd10 h6">강의 영상 주소</label>
+    <input type="url" id="product_url" name="product_url" class="form-control form-control-lg" placeholder="URL을 입력하세요">
   </div>
 </div>
 
   <div class="product_up_btn d-flex justify-content-end gap-3 p-0">
       <button type="button" class="btn btn-primary">등록</button>
-      <button type="button" class="product_up_cancel btn btn-primary">취소</button>
+      <button type="button" id="btn-cancel" class="product_up_cancel btn btn-secondary">취소</button>
   </div>
 
 </div>
@@ -198,13 +196,51 @@
       height: 100
     });
 
-  $('#product_start').datepicker({
-    dateFormat:'yy.mm.dd'
+  $('#regdate').datepicker({
+    dateFormat:'yy.mm.dd',
+    minDate: 'today',
+    maxDate: '+1Y'
   });
 
-  $('#product_end').datepicker({
-    dateFormat:'yy.mm.dd'
+  $('#regdate').datepicker({
+    dateFormat:'yy.mm.dd',
+    minDate: 'today',
+    maxDate: '+1Y',
+    onSelect: function (dateText, inst) {
+      // 선택한 날짜를 Date 객체로 파싱합니다.
+      var selectedDate = new Date(dateText);
+      
+
+      // 1년을 더합니다.
+      selectedDate.setFullYear(selectedDate.getFullYear() + 1);
+      
+      // 새로운 날짜를 출력합니다.
+      var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
+      console.log(formattedDate);
+      $('#sale_end_date').datepicker( "setDate", selectedDate);
+        }
   });
+
+  $('#sale_end_date').datepicker({
+    dateFormat:'yy.mm.dd',
+  });
+
+  let usedate = $('#usedate');
+  usedate.change(function(){
+    let value = usedate.val();
+    if(value == 2){
+      $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
+      $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
+    }else{
+      $("#reg_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      $("#sale_end_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+    }
+  });
+
+  $('#btn-cancel').click(function() {
+    window.location.href = 'product_list.php'; // 이동할 페이지 URL 설정
+  });
+
 </script>
 </body>
 </html>

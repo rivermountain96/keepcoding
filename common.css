@@ -5,7 +5,8 @@
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-} */
+}
+hr{margin:0;}
 
 /* root 변경 */
 
@@ -322,16 +323,16 @@ input:focus {
 }
 
 /* datepicker 색상 변경 */
-.ui-state-highlight, 
-.ui-widget-content .ui-state-highlight, 
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
   border: 1px solid var(--primary-color);
   background: rgba(78, 117, 255, 0.15);
   color: var(--primary-color);
 }
 
-.ui-state-active, 
-.ui-widget-content .ui-state-active{
+.ui-state-active,
+.ui-widget-content .ui-state-active {
   border: 1px solid var(--primary-color);
   background: var(--primary-color);
   color: var(--mc-white);
