@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <script src="resources/js/plugin/datepicker/bootstrap-datepicker.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  
   <!-- summernote 시작-->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   <!-- summernote 끝 -->
   <script src="../js/makeoption.js"></script>
-  <link href="/common.css" rel="stylesheet" />
-  <link href="../css/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/admin/css/product_up.css">
+  <link rel="stylesheet" href="/common.css">
+  <link href="/admin/css/ewon.css" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/style.css">
   <title>강좌 수정</title>
 </head>
-
 <body>
-  <!-- 이은서 header 시작 -->
+<!-- 이은서 header 시작 -->
   <nav class="navbar">
     <div class="nav_top container-fluid">
       <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
@@ -98,154 +86,161 @@
       </ul>
     </div>
   </nav>
-  <!-- 이은서 header 끝 -->
+<!-- 이은서 header 끝 -->
 
-  <div class="product_change content">
-    <h4 class="fs-4 pd72">강좌 수정</h4>
+<div class="product_up content">
+  <h2 class="fs-4 pd72">강좌 수정</h2>
 
-    <div class="product_change_category">
-      <h6 class="pd10 h6">카테고리</h6>
+    <div class="product_up_category">
+      <h3 class="pd10 h6">카테고리</h3>
       <div class="row pd24 gap-3">
         <select class="form-select form-control-lg col" aria-label="Small select example" id="cate1" name="cate1">
-          <option value="" disabled>대분류</option>
+          <option value="" selected disabled>대분류</option>
           <option value="">기초강의</option>
-          <option value="" selected>프론트엔드</option>
+          <option value="">프론트엔드</option>
           <option value="">백엔드</option>
         </select>
 
         <select class="form-select form-control-lg col" aria-label="Small select example" id="cate2" name="cate2">
-          <option value="" disabled>중분류</option>
-          <option value="" selected>javascript</option>
+          <option value="" selected disabled>중분류</option>
         </select>
 
         <select class="form-select form-control-lg col" aria-label="Small select example" id="cate3" name="cate3">
-          <option value="" disabled>소분류</option>
-          <option value="" selected>중급</option>
+          <option value="" selected disabled>소분류</option>
         </select>
       </div>
-  </div>
+    </div>
 
   <div class="pd24">
-    <div class="product_change_name">
-      <label class="pd10 h6" for="product_name_title">강좌명</label>
-      <input class="form-control form-control-lg" id="product_name_title" type="text" value="WEB2 JavaScript" aria-label="default input example">
+    <div class="product_up_name">
+        <label class="pd10 h6" for="product_up_title">강좌명</label>
+        <input class="form-control form-control-lg" id="product_up_title" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
     </div>
   </div>
 
-  <div class="d-flex justify-content-start pd24 gap-3 form-width-973">
-    <div class="product_change_usedate col-4 p-0">
+  <div class="row justify-content-start pd24 gap-3 form-width-973">
+    <div class="product_up_usedate col-4 p-0">
       <h6 class="pd10 h6">수강 기한</h6>
       <select class="form-select form-control-lg" aria-label="Small select example">
-        <option value="1" selected>제한</option>
-        <option value="2">무제한</option>
+          <option value="1" selected>제한</option>
+          <option value="2">무제한</option>
       </select>
     </div>
 
-    <div class="pd24">
-      <div class="product_change_name">
-        <label class="pd10 h6" for="product_name_title">강좌명</label>
-        <input class="form-control form-control-lg" id="product_name_title" type="text" value="WEB2 JavaScript"
-          aria-label="default input example">
-      </div>
+    <div class="product_up_regdat col-4 p-0 datepicker">
+      <label class="pd10 h6" for="regdate">시작일</label>
+      <input type="text" id="regdate" name="regdate" class="form-control form-control-lg" placeholder="시작일 선택">
     </div>
 
-    <div class="d-flex justify-content-start pd24 gap-3 form-width-973">
-      <div class="product_change_usedate col-4 p-0">
-        <h6 class="pd10 h6">수강 기한</h6>
-        <select class="form-select form-control-lg" aria-label="Small select example">
-          <option value="1" selected>제한</option>
-          <option value="2">무제한</option>
-        </select>
-      </div>
-
-      <div class="product_change_regdate col-4 p-0 datepicker">
-        <label class="pd10 h6" for="datepicker_start">시작일</label>
-        <input type="text" id="datepicker_start" name="datepicker_start" class="form-control form-control-lg"
-          value="2023.09.09">
-      </div>
-
-    </div>
-
-    <div class="row justify-content-start pd24 row-cols-8 gap-3 form-width-973">
-      <div class="product_change_price col-4 p-0">
-        <label class="pd10 h6" for="product_change_price">판매 금액</label>
-        <input class="form-control form-control-lg" id="product_change_price" type="number" value="100000" min="5000"
-          max="100000" step="5000" aria-label="default input example">
-      </div>
-      <div class="product_status row col p-0">
-        <h4 class="pd10 h6">판매 상태</h4>
-        <div class="product_status_checkbox d-flex">
-          <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="" id="issale">
-            <label class="form-check-lsabel" for="issale">판매중</label>
-          </div>
-          <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="" id="isnotsale" checked>
-            <label class="form-check-label" for="isnotsale">판매중지</label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="pd24">
-      <div class="product_detail col p-0">
-        <h6 class="pd10">상세설명</h6>
-        <form method="post">
-          <textarea id="product_detail" name="product_detail">
-            <p>
-              <br>
-              <h1>1. 수업소개</h1>  
-              <br> a. 생활코딩 주력 수업인 WEBn은 프로그래밍이 처음인 분들을 위해서 고안된 수업입니다. 
-              <br> b. WEBn을 통해서 교양으로 코딩을 공부하려는 분들에게는 출구를, 직업으로 코딩을 공부하려는 분들에게는 입구를 제공해드리려고 노력하고 있습니다.
-            </p>
-        </textarea>
-        </form>
-      </div>
-    </div>
-
-    <div class="pd24">
-      <div class="product_change_thumbnail">
-        <label for="thumbnail" class="form-label pd10 h6">썸네일</label>
-        <input class="form-control form-control-lg" id="thumbnail" type="file">
-      </div>
-    </div>
-
-    <div class="d-flex pd48 gap-3">
-      <div class="product_change_video col-4 p-0">
-        <label for="product_name" class="pd10 h6">강의 영상 업로드</label>
-        <input type="text" id="product_name" name="product_name" class="form-control form-control-lg"
-          value="WEB2 JavaScript - 1.수업소개">
-      </div>
-      <div class="product_change_video_url col-7 p-0 align-self-end">
-        <label for="product_url" class="pd10 h6" hidden>강의 영상 주소</label>
-        <input type="url" id="product_url" name="product_url" class="form-control form-control-lg"
-          value="https://youtu.be/dPRtcRwKo-Y?feature=shared">
-      </div>
-      <div class="product_change_video_plus col-1 p-0 align-self-end">
-        <button type="button" class="btn btn-lg btn-outline-primary align-items-end">추가</button>
-      </div>
-    </div>
-
-    <div class="product_change_btn d-flex justify-content-end gap-3 p-0">
-      <button type="button" class="btn btn-primary">등록</button>
-      <button type="button" class="product_change_cancel btn btn-primary">취소</button>
+    <div class="product_up_enddate col p-0 datepicker">
+      <label class="pd10 h6" for="sale_end_date">종료일</label>
+      <input type="text" id="sale_end_date" name="sale_end_date" class="form-control form-control-lg" placeholder="종료일">
     </div>
 
   </div>
 
-  <script>
-    $('#product_detail').summernote({
-      placeholder: 'Hello keep coding',
+<div class="row justify-content-start pd24 row-cols-8 gap-3 form-width-973">
+  <div class="product_up_price col-4 p-0">
+    <label class="pd10 h6" for="product_up_price">판매 금액</label>
+    <input class="form-control form-control-lg" id="product_up_price" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example">
+  </div>
+  <div class="product_status row col p-0">
+    <h6 class="pd10 h6">판매 상태</h6>
+    <div class="product_status_checkbox d-flex">
+      <div class="form-check">
+          <input class="product_status_input form-check-input" type="radio" name="flexRadioDefault" id="issale">
+          <label class="form-check-lsabel" for="issale">판매중</label>
+        </div>
+        <div class="form-check product_no_status">
+          <input class="product_status_input form-check-input" type="radio" name="flexRadioDefault" id="isnotsale" checked>
+          <label class="form-check-label" for="isnotsale">판매중지</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pd24">
+  <div class="product_detail col p-0">
+  <h6 class="pd10">상세설명</h6>
+    <form method="post">
+      <textarea id="product_detail" name="product_detail"></textarea>
+    </form>
+  </div>
+</div>
+
+<div class="pd24">
+  <div class="product_up_thumbnail">
+    <label for="thumbnail" class="form-label pd10 h6">썸네일</label>
+    <input class="form-control form-control-lg" id="thumbnail" name="thumbnail" type="file">
+  </div>
+</div>
+
+<div class="d-flex pd48 gap-3">
+  <div class="product_up_video_url col p-0">
+    <label for="product_url" class="pd10 h6">강의 영상 주소</label>
+    <input type="url" id="product_url" name="product_url" class="form-control form-control-lg" placeholder="URL을 입력하세요">
+  </div>
+</div>
+
+  <div class="product_up_btn d-flex justify-content-end gap-3 p-0">
+      <button type="button" class="btn btn-primary">수정</button>
+      <button type="button" id="btn-cancel" class="product_up_cancel btn btn-secondary">취소</button>
+  </div>
+
+</div>
+
+<script>
+  $('#product_detail').summernote({
+      placeholder: '상세 설명을 입력하세요',
       tabsize: 2,
       height: 100
     });
-    $("#datepicker_start").datepicker({
-      dateFormat: 'yy.mm.dd'
-    });
-    $("#datepicker_end").datepicker({
-      dateFormat: 'yy.mm.dd'
-    });
-  </script>
-</body>
 
+  $('#regdate').datepicker({
+    dateFormat:'yy.mm.dd',
+    minDate: 'today',
+    maxDate: '+1Y'
+  });
+
+  $('#regdate').datepicker({
+    dateFormat:'yy.mm.dd',
+    minDate: 'today',
+    maxDate: '+1Y',
+    onSelect: function (dateText, inst) {
+      // 선택한 날짜를 Date 객체로 파싱합니다.
+      var selectedDate = new Date(dateText);
+      
+
+      // 1년을 더합니다.
+      selectedDate.setFullYear(selectedDate.getFullYear() + 1);
+      
+      // 새로운 날짜를 출력합니다.
+      var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
+      console.log(formattedDate);
+      $('#sale_end_date').datepicker( "setDate", selectedDate);
+        }
+  });
+
+  $('#sale_end_date').datepicker({
+    dateFormat:'yy.mm.dd',
+  });
+
+  let usedate = $('#usedate');
+  usedate.change(function(){
+    let value = usedate.val();
+    if(value == 2){
+      $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
+      $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
+    }else{
+      $("#reg_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      $("#sale_end_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+    }
+  });
+
+  $('#btn-cancel').click(function() {
+    window.location.href = 'product_list.php'; // 이동할 페이지 URL 설정
+  });
+
+</script>
+</body>
 </html>
