@@ -12,13 +12,13 @@ popup.find('.git').click(function() {
   window.open('https://github.com', '_blank');
 });
 
-//쿠키 있는지 확인해서 popup 보일지 결정
+// 쿠키 있는지 확인해서 popup 보일지 결정
 function cookieCheck(name) {
   var cookieArr = document.cookie.split(';');
   var visited = false;
 
   for (var i = 0; i < cookieArr.length; i++) {
-    if (cookieArr[i].indexOf(name) > -1) {
+    if (cookieArr[i].trim().indexOf(name) === 0) {
       visited = true;
       break;
     }
@@ -29,23 +29,24 @@ function cookieCheck(name) {
   }
 }
 
+// 쿠키 생성 함수
+function setCookie(name, value, days) {
+  var date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 현재 날짜에 일 수를 더해 만료일 설정
+  var expires = "expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
 cookieCheck('keepcoding');
 
 popup_closeBtn.click(function() {
   popup.removeAttr('open');
 
   if (popup_input.prop('checked')) {
-    setCookie('keepcoding', 'popup', 1);
-  } else {
-    setCookie('keepcoding', 'popup', -1);
+    setCookie('keepcoding', 'visited', 1); // 1일 동안 쿠키 설정
   }
 });
 
-//쿠키 만들기
-function setCookie(name, value, day) {
-  var date = new Date();
-  date.setDate(date.getDate() + day);
 
-  document.cookie = name + '=' + value + ';expires=' + date.toUTCString();
-}
+
 /* DIALOG POPUP - 이강산 */
