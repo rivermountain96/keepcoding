@@ -35,10 +35,10 @@ try{
   //     </script>";
   //     exit;
   // }
-
+  $thumbnail = $_FILES["thumbnail"]["name"];
   $sale_end_date =  $_POST['sale_end_date'];
-  $sale_end_date = date('Y.m.d H:i:s', strtotime('+1 year'));
   $content =  rawurldecode($_POST['content']); //encodeURIComponent통해 변경된 코드를 원래코드로 변경
+  $video_url = $_POST['video_url'];
   $file_table_id = $_POST['file_table_id']??0;
   $file_table_id = $_POST['file_table_id'];
   $file_table_id = rtrim($file_table_id, ',');//최우측 콤마 제거
@@ -86,20 +86,22 @@ try{
 
   $sql = "INSERT INTO products
   (name, cate, content, thumbnail, price, sale_price, sale_cnt, isnew,
-  isrecom, userid, reg_date, sale_end_date, file_table_id)
+  isrecom, userid, reg_date, sale_end_date, video_url, file_table_id)
   VALUES
-  ('{$name}', '{$cate}', '{$content}', '{$thumbnail}',{$price}, {$sale_price},{$sale_cnt},
-  '{$isnew}', '{$isrecom}', '{$_SESSION['AUID']}', now(), '{$sale_end_date}', '{$file_table_id}')";
+  ('{$name}', '{$cate}', '{$content}', '{$thumbnail}',{$price}, {$sale_price}, {$sale_cnt},
+  '{$isnew}', '{$isrecom}', '{$_SESSION['AUID']}', now(), '{$sale_end_date}', '{$video_url}', '{$file_table_id}')";
 
 
 
 
 $result = $mysqli -> query($sql);
+
+
 if (!$result) {
   echo "쿼리 실행 중 오류: " . $mysqli->error;
 } 
 echo "실행된 쿼리: " . $sql;
-// var_dump($result);
+var_dump($result);
 // $pid = $mysqli -> insert_id; //테이블에 저장되는 값의 고유 번호
 
 

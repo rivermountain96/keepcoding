@@ -98,8 +98,8 @@
 
   <div class="d-flex pd48 gap-3">
     <div class="product_up_video_url col p-0">
-      <label for="product_url" class="pd10 h6">강의 영상 주소</label>
-      <input type="url" id="product_url" name="product_url" class="form-control form-control-lg" placeholder="URL을 입력하세요">
+      <label for="video_url" class="pd10 h6">강의 영상 주소</label>
+      <input type="url" id="video_url" name="video_url" class="form-control form-control-lg" placeholder="URL을 입력하세요">
     </div>
   </div>
 
@@ -114,7 +114,6 @@
 
 <script>
 
-
   $('#product_up_form').submit(function(){
     let markupStr = $('#product_detail').summernote('code');
     let content = encodeURIComponent(markupStr);
@@ -122,8 +121,9 @@
 
     if ($('#product_detail').summernote('isEmpty')) {
       alert('상품 설명을 입력하세요');
-      // return false;
+      return false;
     }
+    
   });
 
   $('#btn-cancel').click(function() {
@@ -222,9 +222,6 @@
 
     });
   }
-
-
-
 </script>
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
