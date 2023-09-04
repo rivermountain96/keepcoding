@@ -221,7 +221,7 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
 
 .form-control-lg::placeholder{
     font-size: var(--font-size-14);    
-    /* color: var(--mc-gray3); */
+    color: var(--mc-gray4);
 }
 .form-control, .form-control-lg, .form-select-lg, .btn-lg{
   font-size: var(--font-size-16);
