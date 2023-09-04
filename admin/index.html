@@ -1,7 +1,3 @@
-<!-- <?php
-  session_start(); 
-  include_once $_SERVER['DOCUMENT_ROOT'].'/abcmall/admin/inc/dbcon.php';
-?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,163 +16,173 @@
   <link href="../common.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <style>
-    body{background-color: var(--mc-gray2);}
+    body{
+      background-color: var(--mc-gray2);
+    }
   </style>
   <!-- script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <!-- <title><?php if(isset($title)){echo $title;}else{echo 'home';} ?>KEEP CODING</title> -->
+  <!-- <title><?php if(isset($title)){echo $title;}else{echo '홈';} ?> - KEEP CODING</title> -->
   <title>KEEP CODING</title>
 </head>
 <body>
-  <!-- <?php  
-  if(isset($_SESSION['AUID'])){
-    if($_SESSION['AUID'] == 'admin'){
-  ?> -->
-  <nav class="navbar">
-    <div class="nav_top container-fluid">
-      <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
-      <div class="d-flex align-items-center">
-        <div class="d-flex gap-3 align-items-center">
-          <span><i class="bi bi-bell mc-gray3"></i></span>
-          <div class="user d-flex align-items-center gap-3">
-            <p class="mc-gray3">총관리자</p>
-            <img src="/admin/img/admin_img.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="nav_side navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">대시보드</a>
-        </li>
-        <li>
-          <ul>
-            <li class="nav-item">
-              <a class="nav-link" href="#">카테고리 관리</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-disabled="true">강좌 관리</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li class="nav-item">
-              <a class="nav-link" href="#">강사 관리</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-disabled="true">수강생 관리</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">쿠폰 관리</a>
-        </li>
-        <li>
-          <ul>
-            <li class="nav-item">
-              <a class="nav-link" href="#">공지사항</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-disabled="true">Q&A 게시판</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li class="nav-item d-flex justify-content-between">
-          <a class="nav-link mc-b-rgba" aria-current="page" href="#">로그아웃</a>
-          <a class="nav-link mc-b-rgba" aria-current="page" href="#"><i class="bi bi-gear-wide-connected"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
-
-  <div class="content">
-    <h4 class="pd72">홈</h4>
-    <h6 class="pd10">이번달 판매 현황</h6>
-    <div class="sell_report d-flex pd48">
-      <div class="callout bd-callout d-flex justify-content-between align-items-center">
-        <span>판매 강좌 수</span>
-        <span data-num="0" class="pc">0건</span>
-        <i class="bi bi-arrow-up-circle pc"></i>
-      </div>
-      <div class="callout bd-callout d-flex justify-content-between align-items-center">
-        <span>총 판매액</span>
-        <span data-num="0" class="pc">0만원</span>
-        <i class="bi bi-arrow-up-circle pc"></i>
-      </div>
-      <div class="callout bd-callout d-flex justify-content-between align-items-center">
-        <span>직전달 대비 수익율</span>
-        <span data-num="0" class="pc">0%</span>
-        <i class="bi bi-arrow-up-circle pc"></i>
-      </div>
-    </div>
-    <div class="member d-flex justify-content-between pd48 gap-4">
-      <div class="kcard d-flex align-items-center justify-content-center align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="37.5" height="50" fill="currentColor" class="bi bi-file-person pc" viewBox="0 0 16 16">
-          <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
-          <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-        </svg>
-        <div calss="kcard_text">
-          <p class="fw-bold mc-gray1">총 수강생 수</p>
-          <p data-num="0" class="fw-bold pc">0명</p>
-        </div>
-      </div>
-      <div class="kcard d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="35.66" height="50" fill="currentColor" class="bi bi-award pc" viewBox="0 0 16 16">
-          <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
-          <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-        </svg>
-        <div calss="kcard_text">
-          <p class="fw-bold mc-gray1">완강률</p>
-          <p data-num="0" class="fw-bold pc">0%</p>
+<nav class="navbar">
+  <div class="nav_top container-fluid">
+    <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+    <div class="d-flex align-items-center">
+      <div class="d-flex gap-3 align-items-center">
+        <span><i class="bi bi-bell mc-gray3"></i></span>
+        <div class="user d-flex align-items-center gap-3">
+          <p class="mc-gray3">총관리자</p>
+          <img src="img/admin_img.png" alt="">
         </div>
       </div>
     </div>
-    <div class="like d-flex justify-content-between pd48 gap-4">
-      <div class="kcard align-items-center">
-        <h6 class="mc-gray1">대분류별 인기도</h6>
-        <div class="d-flex ratebar front">
-          <span class="fw-bold pc">front</span>
-          <div class="rate" data-num="45">
-            <div class="bar"></div>
-          </div>
-        </div>
-        <div class="d-flex ratebar back">
-          <span class="fw-bold mc-gray3">back</span>
-          <div class="rate" data-num="45">
-            <div class="bar"></div>
-          </div>
+  </div>
+  <div class="nav_side navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/keepcoding/admin/index.php">대시보드</a>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/keepcoding/admin/product/category_list.php">카테고리 관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/keepcoding/admin/product/product_list.php" aria-disabled="true">강좌 관리</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="">강사 관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="" aria-disabled="true">수강생 관리</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/keepcoding/admin/coupon/coupon_list.php">쿠폰 관리</a>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/keepcoding/admin/notice/notice_list.php">공지사항</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/keepcoding/admin/qna/qna_list.php" aria-disabled="true">Q&A 게시판</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="nav-item d-flex justify-content-between">
+        <a class="nav-link mc-b-rgba" aria-current="page" href="">로그아웃</a>
+        <a class="nav-link mc-b-rgba" aria-current="page" href=""><i class="bi bi-gear-wide-connected"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- 이은서 index 시작-->
+<div class="content">
+  <h4 class="pd72 fs-4 fw-bold">홈</h4>
+  <h6 class="pd10">이번달 판매 현황</h6>
+  <div class="sell_report pd48 row">
+    <div class="col callout bd-callout d-flex justify-content-between align-items-center">
+      <span>판매 강좌 수</span>
+      <span data-num="0" class="pc2">0 건</span>
+      <i class="bi bi-arrow-up-circle pc2"></i>
+    </div>
+    <div class="col callout bd-callout d-flex justify-content-between align-items-center">
+      <span>총 판매액</span>
+      <span data-num="0" class="pc2">0 만원</span>
+      <i class="bi bi-arrow-up-circle pc2"></i>
+    </div>
+    <div class="col callout bd-callout d-flex justify-content-between align-items-center">
+      <span>직전달 대비 수익율</span>
+      <span data-num="0" class="pc2">0 %</span>
+      <i class="bi bi-arrow-up-circle pc2"></i>
+    </div>
+  </div>
+  <div class="member row pd48 gap-4">
+    <div class="col kcard d-flex align-items-center justify-content-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="37.5" height="50" fill="currentColor" class="bi bi-file-person pc2" viewBox="0 0 16 16">
+        <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+        <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+      </svg>
+      <div calss="kcard_text">
+        <p class="fw-bold mc-gray1 pd10">총 수강생 수</p>
+        <p data-num="0" class="fw-bold pc2">0 명</p>
+      </div>
+    </div>
+    <div class="col kcard d-flex align-items-center justify-content-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35.66" height="50" fill="currentColor" class="bi bi-award pc2" viewBox="0 0 16 16">
+        <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+        <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+      </svg>
+      <div calss="kcard_text">
+        <p class="fw-bold mc-gray1 pd10">완강률</p>
+        <p data-num="0" class="fw-bold pc2">0 %</p>
+      </div>
+    </div>
+  </div>
+  <div class="row like_report pd48 gap-4">
+    <div class="col kcard align-items-center">
+      <h6 class="mc-gray1">대분류별 인기도</h6>
+      <div class="d-flex ratebar front">
+        <span class="fw-bold pc2">front</span>
+        <div class="rate" data-num="45">
+          <div class="bar"></div>
         </div>
       </div>
-      <div class="kcard align-items-center">
-        <h6>수강생 총 만족도</h6>
-        <div class="d-flex ratebar front">
-          <span>front</span>
-          <div class="rate" data-num="45">
-            <div class="bar"></div>
-          </div>
-        </div>
-        <div class="d-flex ratebar back">
-          <span>back</span>
-          <div class="rate" data-num="45">
-            <div class="bar"></div>
-          </div>
+      <div class="d-flex ratebar back">
+        <span class="fw-bold mc-gray3">back</span>
+        <div class="rate" data-num="45">
+          <div class="bar"></div>
         </div>
       </div>
     </div>
-    
+    <div class="col d-flex flex-column kcard align-items-center justify-content-center">
+      <p class="fw-bold">수강생 총 만족도</p>
+      <div class="smile_icons d-flex gap-2">
+        <i class="bi bi-emoji-smile i-fill"></i>
+        <i class="bi bi-emoji-smile i-fill"></i>
+        <i class="bi bi-emoji-smile i-fill"></i>
+        <i class="bi bi-emoji-smile i-fill"></i>
+        <i class="bi bi-emoji-smile i-empty"></i>
+      </div>
+      
+      
+    </div>
+  </div>
+  <div class="coupon_report kcard big d-flex align-items-center justify-content-center gap-5">
+    <i class="bi bi-ticket-fill pc2"></i>
+    <div class="d-flex gap-5">
+      <div class="c_report d-flex gap-4">
+        <p class="fw-bold">활성화 쿠폰 갯수</p>
+        <span class="pc2 fw-bold">0개</span>
+      </div>
+      <div class="c_report d-flex gap-4">
+        <p class="fw-bold">비활성화 쿠폰 갯수</p>
+        <span class="pc2 fw-bold">0개</span>
+      </div>
+      <div class="c_report d-flex gap-4">
+        <p class="fw-bold">만료임박 쿠폰 갯수</p>
+        <span class="pc2 fw-bold">0개</span>
+      </div>
+    </div>
   </div>
   
-  <!-- <?php
-      }
-    }
-  ?> -->
+</div>
+<!-- 이은서 index 끝-->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="/keepcoding/admin/js/jquery.number.min.js"></script>
+<script src="/keepcoding/admin/js/active.js"></script>
 </body>
 </html>

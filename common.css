@@ -1,10 +1,11 @@
 @charset "utf-8";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@font-face {
-  font-family: "Pretendard";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css");
+/* @font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
 }
 hr{margin:0;}
@@ -39,6 +40,7 @@ hr{margin:0;}
   --mc-gray1: #212529;
   --mc-gray2: #f2f3f5;
   --mc-gray3: #495057;
+  --mc-gray4: #969696;
   --mc-white: #fff;
   /* rgba */
   --mc-b-rgba: rgba(0, 0, 0, 0.55);
@@ -49,6 +51,9 @@ hr{margin:0;}
 /* primary color */
 
 .pc {
+  color: var(--primary-color);
+}
+.pc2 {
   color: var(--primary-color);
 }
 .pcbg {
@@ -177,6 +182,8 @@ hr{margin:0;}
   padding-bottom: calc(var(--base-unit) * 3);
 }
 
+hr{margin:0;}
+
 /* component */
 
 .bd-callout {
@@ -263,7 +270,7 @@ body {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btn-outline-secondary {
+/* .btn-outline-secondary {
   --bs-btn-color: #4e75ff;
   --bs-btn-border-color: #4e75ff;
   --bs-btn-hover-color: #fff;
@@ -295,7 +302,7 @@ body {
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #4e75ff;
   --bs-gradient: none;
-}
+} */
 
 /* 마우스 호버나 액티브 상태 컬러 변경 */
 
