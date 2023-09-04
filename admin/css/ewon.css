@@ -6,7 +6,8 @@
     width: 400px;
     height: 442px;
     background-color: #fff;
-    background-image: url(/admin/img/logo\(login\).png);
+    background-image: url(/admin/img/keepcoding_logo.svg);
+    background-size: 55%;
     background-repeat: no-repeat;
     background-position: center 43px;
     border: 1px solid #fff;

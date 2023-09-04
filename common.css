@@ -334,38 +334,6 @@ input:focus {
   color: var(--mc-white);
 }
 
-/* datepicker 색상 변경 */
-.ui-state-highlight, 
-.ui-widget-content .ui-state-highlight, 
-.ui-widget-header .ui-state-highlight {
-  border: 1px solid var(--primary-color);
-  background: rgba(78, 117, 255, 0.15);
-  color: var(--primary-color);
-}
-
-.ui-state-active, 
-.ui-widget-content .ui-state-active{
-  border: 1px solid var(--primary-color);
-  background: var(--primary-color);
-  color: var(--mc-white);
-}
-
-/* datepicker 색상 변경 */
-.ui-state-highlight, 
-.ui-widget-content .ui-state-highlight, 
-.ui-widget-header .ui-state-highlight {
-  border: 1px solid var(--primary-color);
-  background: rgba(78, 117, 255, 0.15);
-  color: var(--primary-color);
-}
-
-.ui-state-active, 
-.ui-widget-content .ui-state-active{
-  border: 1px solid var(--primary-color);
-  background: var(--primary-color);
-  color: var(--mc-white);
-}
-
 .datepicker input{
   background: url(admin/img/calendar.svg) no-repeat 96% center; 
 }
