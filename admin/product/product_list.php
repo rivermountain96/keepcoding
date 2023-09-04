@@ -1,49 +1,98 @@
+
 <?php
   $title = '제품 목록';
 
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
-
-// 카테고리 검색
-
-  $cate1 = $_GET['cate1'] ?? '';
-  $cate2 = $_GET['cate2'] ?? '';
-  $cate3 = $_GET['cate3'] ?? '';
-
-  $search_where = '';
-
-  $cates = $cates1.$cate2.$cate3;
-
-  if($cates){
-    $search_where .= " and cate like '{$cates}%'";
-  }
-
-  if($search_keyword){
-    $search_where .= " and (name like '%{$search_keyword}%' or content like '%{$search_keyword}%')";
-    //제목과 내용에 키워드가 포함된 상품 조회
-  }
-
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 
 
 //SQL 쿼리를 통해 데이터를 조회
-$sql = "SELECT * FROM products";
-$result = $mysqli->query($sql);
+$sql = "SELECT * FROM products where 1=1";
+$order = " order by pid desc";//최근순 정렬
 
-while($rs = $result -> fetch_object()){
-  $rsc[] = $rs;
+
+  $cates1 = $_GET['cate1'] ?? '';
+  $cate2 = $_GET['cate2'] ?? '';
+  $cate3 = $_GET['cate3'] ?? '';
+  $search_keyword = $_GET['search_keyword'] ?? '';
+  $result = $mysqli->query($sql);
+  $cates = $cates1.$cate2.$cate3;
+  while($rs = $result -> fetch_object()){
+    $rsc[] = $rs;
+  }
+
+  $search_where = '';
+  $cate = '';
+  $sql .= $search_where;
+
+// 카테고리 검색
+
+if($search_keyword){
+  $search_where .= " and (name like '%{$search_keyword}%' or content like '%{$search_keyword}%')";
+  //제목과 내용에 키워드가 포함된 상품 조회
+}
+if($cates){
+  $search_where .= " and cate like '{$cate}%'";
 }
 
 
-  ?>
+//페이지네이션
 
-<body>
+  $pagenationTarget = 'products';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/pagenation.php';
+      
+  $limit = " limit $startLimit, $endLimit";
+  // $limit = " limit 0, 10";
+  $query = $sql.$order.$limit;
+var_dump($query);
+  $result = $mysqli -> query($query);
+  
+
+  
+  while($rs = $result -> fetch_object()){
+    $rsc[] = $rs;
+  }
+  ?>
 
   <!-- 박민용 product_list 시작 -->
 
   <div class="  content mcbg-white">
     <h2 class=" h4 pd72">강의 리스트</h2>
 
-    <!-- product_list_sec1 강의리스트 분류단 -->
-    <div class=" product_list_sec1 row pd48">
+    <!-- product_list_sec1 강의리스트 카테고리 -->
+
+
+
+    <form action="" class="mt-5 pd48" id="search_form">
+    <div class="row">
+      <div class="col-md-4">
+        <select class="form-select" aria-label="Default select example" id="cate1" name="cate1">
+          <option selected disabled>대분류</option>
+          <?php
+          foreach($cate1 as $c){            
+        ?>
+          <option value="<?php echo $c->cid ?>"><?php echo $c->name ?></option>
+          <?php } ?>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <select class="form-select" aria-label="Default select example" id="cate2" name="cate2">
+          <option selected disabled>중분류</option>
+         
+        </select>
+      </div>
+      <div class="col-md-4">
+        <select class="form-select" aria-label="Default select example" id="cate3" name="cate3">
+          <option selected disabled>소분류</option>
+          
+        </select>
+      </div>
+    </div>
+
+  </form>
+
+
+    <!-- <div class=" product_list_sec1 row pd48">
       <div class="col">
         <select class="form-select" aria-label="Default select example" id="cate1" name="cate1">
           <option selected disabled>대분류</option>
@@ -79,7 +128,7 @@ while($rs = $result -> fetch_object()){
           <option>고급</option>
         </select>
       </div>
-    </div>
+    </div> -->
     </nav>
 
     <!-- product_list_sec2 검색단 -->
@@ -112,7 +161,7 @@ while($rs = $result -> fetch_object()){
             ?>
 
         <tr>
-          <th scope="row"> <a href="#"><?php echo $item->name ?></a></th>
+          <th scope="row"> <a href="product_view.php?pid=<?php echo $item->pid ?>"><?php echo $item->name ?></a></th>
           <td><?php 
           if($item -> status == 1){
             echo '판매중';
@@ -121,9 +170,12 @@ while($rs = $result -> fetch_object()){
           } 
           ?></td>
           <td><?php echo $item->cate ?></td>
-          <td><?php echo $item->price ?></td>
+
+          
+          <td><?php echo '₩' . number_format($item->price); ?></td>
+      
           <td><a href="product_change.php?pid=<?php echo $item->pid ?>" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="product_delete.php?pid=<?php echo $item->pid ?>"  class="btn btn-outline-primary">삭제</a></td>
+          <td><a href="product_del.php?pid=<?php echo $item->pid ?>"  class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
         <?php
@@ -149,21 +201,35 @@ while($rs = $result -> fetch_object()){
 
     <div class="d-flex justify-content-between align-items-center">
 
-      <nav id="pagenation" class="mx-auto" aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-
+      <ul id="pagenation" class="pagination mx-auto" aria-label="Page navigation example">
+      <?php
+          if($pageNumber>1){                   
+              echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?pageNumber=1\">&lt;&lt;</a></li>";
+              if($block_num > 1){
+                  $prev = ($block_num - 2) * $block_ct + 1;
+                  echo "<li class=\"page-item\"><a href='?pageNumber=$prev' class=\"page-link\">이전</a></li>";
+              }
+          }
+          for($i=$block_start;$i<=$block_end;$i++){
+            if($pageNumber == $i){
+                echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?pageNumber=$i\" class=\"page-link\">$i</a></li>";
+            }else{
+                echo "<li class=\"page-item\"><a href=\"?pageNumber=$i\" class=\"page-link\">$i</a></li>";
+            }
+          }
+          if($pageNumber<$total_page){
+            if($total_block > $block_num){
+                $next = $block_num * $block_ct + 1;
+                echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">다음</a></li>";
+            }
+            echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\"></a></li>";
+          }
+        ?>           
+      </ul>
 
       <!-- 강의등록 -->
 
-      <td><a href="/product_up.php" class="btn btn-primary">등록</a></td>
-      </nav>
+      <td><a href="/keepcoding/admin/product/product_up.php" class="btn btn-primary">등록</a></td>
     </div>
 
 
@@ -171,10 +237,9 @@ while($rs = $result -> fetch_object()){
 
 
 
-</body>
-
-</html>
-
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
 ?>
+
+
+
