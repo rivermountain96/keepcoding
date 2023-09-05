@@ -26,14 +26,14 @@ if($_SESSION['AUNAME']){
       
       <div class="row pd24 gap-3 form-width-973">
         <div class="col-4 p-0">
-          <p class="pd10 h6" for="">공지 기한</p>
+          <p class="pd10 h6">공지 기한</p>
           <select class="form-select form-select-lg" id="usedate" aria-label="Small select example">
-          <option value="1"selected>제한</option>
+          <option value="1" selected>제한</option>
           <option value="2">무제한</option>
           </select>
         </div>
         <div class="notice_up_regdate col-4 p-0 datepicker">
-          <label class="pd10 h6" for="regdate">시작일</label>
+          <label class="pd10 h6" for="datepicker">시작일</label>
           <input type="text" id="datepicker" name="regdate" class="form-control form-control-lg">
         </div> 
         <!-- <div class="notice_up_enddate col p-0 datepicker">
@@ -43,7 +43,7 @@ if($_SESSION['AUNAME']){
       </div>
 
       <div class="pd24">
-        <p class="pd10 h6" for="">내용</p>
+        <p class="pd10 h6">내용</p>
         <textarea id="summernote" name="content"></textarea>
       </div>
 
@@ -54,7 +54,7 @@ if($_SESSION['AUNAME']){
 
       <div class="d-flex justify-content-end gap-3">
         <button type="submit" class="btn btn-primary">등록</button>
-       <button type="button" class="btn btn-secondary" onclick="history.back(1)">취소</button></a>
+       <button type="button" class="btn btn-secondary" onclick="history.back(1)">취소</button>
       </div>
     </form>
 </div>
