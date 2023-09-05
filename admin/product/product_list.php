@@ -114,12 +114,12 @@ $sql .= $search_where;//쿼리조합
     <table class=" product_list_sec3 table pd48">
       <thead>
         <tr>
-          <th scope="col" class="fw-bold col-4">강좌명</th>
-          <th scope="col" class="fw-bold col-1.5">상태</th>
-          <th scope="col" class="fw-bold col-3">카테고리</th>
-          <th scope="col" class="fw-bold col-1.5">가격</th>
-          <th scope="col" class="fw-bold col-1">수정</th>
-          <th scope="col" class="fw-bold col-1">삭제</th>
+          <th class="fw-bold col-4">강좌명</th>
+          <th class="fw-bold col-1.5">상태</th>
+          <th class="fw-bold col-3">카테고리</th>
+          <th class="fw-bold col-1.5">가격</th>
+          <th class="fw-bold col-1">수정</th>
+          <th class="fw-bold col-1">삭제</th>
         </tr>
       </thead>
       <tbody>
@@ -130,7 +130,7 @@ $sql .= $search_where;//쿼리조합
               foreach($rsc as $item){            
             ?>
 
-        <tr scope="row">
+        <tr>
 
           <th > <a href="product_view.php?pid=<?php echo $item->pid ?>"><?php echo $item->name ?></a></th>
           

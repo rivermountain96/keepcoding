@@ -1,6 +1,6 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
-
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 
 $pid = $_GET['pid'];
 $sql = "SELECT * FROM products WHERE pid = '$pid'";
@@ -15,7 +15,7 @@ $row = $result -> fetch_object();
 <div class="product_up content">
   <h4 class="fs-4 pd48">강좌 수정</h4>
 
-<form action="product_change_ok.php?idx=<?= $pid ?>" method="POST" id="product_up_form" enctype="multipart/form-data">
+<form action="product_change_ok.php?pid=<?= $pid ?>" method="POST" id="product_up_form" enctype="multipart/form-data">
     <input type="hidden" name="file_table_id" id="file_table_id" value="">
     <input type="hidden" name="content" id="content" value="">
     <div class="d-flex justify-content-between pd24">
@@ -99,9 +99,11 @@ $row = $result -> fetch_object();
   <div class="pd24">
   <div class="product_detail col p-0">
   <h6 class="pd10">상세설명</h6>
-    <form method="post">
-      <textarea id="product_detail" name="product_detail"></textarea>
-    </form>
+
+      <textarea id="product_detail" name="product_detail">
+      <?php echo $row->content?>;
+      </textarea>
+
   </div>
 </div>
 
@@ -115,13 +117,13 @@ $row = $result -> fetch_object();
   <div class="d-flex pd48 gap-3">
       <div class="product_up_video_url col p-0">
         <label for="product_url" class="pd10 h6">강의 영상 주소</label>
-        <input type="url" id="product_url" name="product_url" class="form-control form-control-lg"
-          placeholder="<?php echo $row->video_url?>">
+        <input type="url" id="product_url" name="video_url" class="form-control form-control-lg"
+          value="<?php echo $row->video_url?>">
       </div>
     </div>  
 
     <div class="product_up_btn d-flex justify-content-end gap-3 p-0">
-     <button type="button" class="btn btn-primary" onclick="location.href='/keepcoding/admin/product/product_change_ok.php?pid=<?= $row->pid ?>'">수정</button>
+     <button type="submit" class="btn btn-primary">수정</button>
      <button type="button" class="product_up_cancel btn btn-secondary" onclick="location.href='/keepcoding/admin/product/product_list.php?>'">취소</button>
  
     </div>
@@ -131,7 +133,6 @@ $row = $result -> fetch_object();
 
 <script>
       $("#product_detail").summernote({
-        placeholder: "<?php echo $row->content?>",
         tabsize: 2,
         height: 100,
       });
@@ -179,6 +180,40 @@ $row = $result -> fetch_object();
       $("#btn-cancel").click(function () {
         window.location.href = "product_list.php"; // 이동할 페이지 URL 설정
       });
+
+      
+      //카테고리
+
+      $("#cate1").on("change", function () {
+        console.log("click");
+        makeOption($(this), 2, $("#cate2"));
+      }); //cate1 change
+
+      $("#cate2").on("change", function () {
+        makeOption($(this), 3, $("#cate3"));
+      }); //cate2 change
+
+
+      function makeOption(evt, step, target) {
+        let cid = evt.val();
+        console.log(cid);
+
+
+        $.ajax({
+          async: false, //sucess의 결과 나오면 이후 작업 수행
+          type: "_GET", //변수명cate1의 값을 전달할 방식 post
+          url: "printOption.php?cate=" + cid + "&step=" + step,
+          dataType: "html", //success성공후 printOption.php가 반환하는 데이터의 형식  <option></option>
+          success: function (result) {
+            console.log(result);
+            target.html(result);
+          },
+        }); //ajax
+      }
+
+
+
+
     </script>
   </body>
 </html>
