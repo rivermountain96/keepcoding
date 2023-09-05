@@ -1,0 +1,174 @@
+<!-- 이은서 header 시작-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+  integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="../../common.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <!-- script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- <title><?php if(isset($title)){echo $title;}else{echo '홈';} ?> - KEEP CODING</title> -->
+  <title>쿠폰 관리 - KEEP CODING</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav_top container-fluid">
+      <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+      <div class="d-flex align-items-center">
+        <div class="d-flex gap-3 align-items-center">
+          <span><i class="bi bi-bell mc-gray3"></i></span>
+          <div class="user d-flex align-items-center gap-3">
+            <p class="mc-gray3">총관리자</p>
+            <img src="/admin/img/admin_img.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav_side navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/admin/index.html">대시보드</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/product/category_list.html">카테고리 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/product/product_list.html">강좌 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/members/tmember_list.html">강사 관리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/members/smember_list.html">수강생 관리</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/admin/coupon/coupon_list.html">쿠폰 관리</a>
+        </li>
+        <li>
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/notice/notice_list.html">공지사항</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/qna/qna_list.html">Q&A 게시판</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li class="nav-item d-flex justify-content-between">
+          <a class="nav-link mc-b-rgba" aria-current="page" href="">로그아웃</a>
+          <a class="nav-link mc-b-rgba" aria-current="page" href=""><i class="bi bi-gear-wide-connected"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- 이은서 header 끝-->
+
+<!-- 이은서 coupon_list 시작-->
+<div class="content">
+  <h4 class="pd72 fs-4 fw-bold">쿠폰 관리</h4>
+    <form class="d-flex justify-content-between align-items-center pd48">
+      <div class="d-flex gap-3">
+        <div class="form-check d-flex align-items-center gap-3">
+          <input class="form-check-input" type="radio" name="status" id="statusAll" value="">
+          <label class="form-check-label" for="statusAll">
+            전체
+          </label>
+        </div>
+        <div class="form-check d-flex align-items-center gap-3">
+          <input class="form-check-input" type="radio" name="status" id="status1" value="1">
+          <label class="form-check-label" for="status1">
+            활성화 쿠폰
+          </label>
+        </div>
+        <div class="form-check d-flex align-items-center gap-3">
+          <input class="form-check-input" type="radio" name="status" id="status0" value="0">
+          <label class="form-check-label" for="status0">
+            비활성화 쿠폰
+          </label>
+        </div>
+      </div>
+      <!-- <h5> 검색 결과: 총 <?= $row_num; ?> 개가 있습니다.</h5> -->
+      <div class="d-flex gap-3 row">
+        <input class="form-control form-control-lg me-2 col" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
+        <button class="btn btn-outline-primary nowrap col-4" type="submit">쿠폰 검색</button>
+      </div>
+    </form>
+
+    <!-- <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
+      <button class="btn btn-outline-primary nowrap" type="submit">쿠폰 검색</button>
+    </form> -->
+  <table class="table pd48">
+    <thead>
+      <tr>
+        <th class="fw-bold col-4">쿠폰명</th>
+        <th class="col-2 fw-bold">상태</th>
+        <th class="col-2 fw-bold">할인액</th>
+        <th class="col-2 fw-bold">사용기한</th>
+        <th class="col-1 fw-bold">수정</th>
+        <th class="col-1 fw-bold">삭제</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="fw-bold align-middle"><a href="/admin/coupon/coupon_view.html">쿠폰이름</a></th>
+        <td class="align-middle">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked disabled>
+          </div>
+        </td>
+        <td class="align-middle">₩<span class="number">할인금액</span></td>
+        <td class="align-middle">사용기한</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm"  onClick="location.href='coupon_change.html'">수정</button>
+        </td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex align-items-center">
+    <nav aria-label="Page navigation" class="col-11">
+      <ul class="pagination justify-content-center align-items-center">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="btn btn-primary col-1" onClick="location.href='coupon_up.html'">쿠폰등록</button>
+  </div>
+</div>
+<!-- 이은서 coupon_list 끝-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="/keepcoding/admin/js/jquery.number.min.js"></script>
+<script src="/keepcoding/admin/js/active.js"></script>
+</body>
+</html>

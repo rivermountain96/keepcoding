@@ -117,17 +117,6 @@ $title = '쿠폰등록';
       }
      
     })
-
-    // 활성화, 비활성화 체크박스 하나씩 체크하기
-//     function doOpenCheck(chk){
-//     var obj = document.getElementsByName("status");
-//     for(var i=0; i<obj.length; i++){
-//         if(obj[i] != chk){
-//             obj[i].checked = false;
-//         }
-//     }
-// }
-
 </script>
 
 <?php
