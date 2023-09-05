@@ -85,11 +85,10 @@
 <!-- 이은서 header 끝-->
 
 <!-- 이은서 category_list 시작-->
-
-  <div class="content">
-    <div class="row">
-      <div class="col-md-4">
-        <ul class="list-group" id="cate1">
+<div class="content">
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group" id="cate1">
           <li class="selected_cate list-group-item big d-flex justify-content-between align-items-center">
             대분류
           </li>
@@ -115,10 +114,10 @@
               </div>
             </li>
         </ul>
-      </div>
+    </div>
       <!-- 대분류 -->
       <div class="col-md-4">
-        <ul class="list-group" id="cate1">
+        <ul class="list-group" id="cate2">
           <li class="selected_cate list-group-item big d-flex justify-content-between align-items-center">
             중분류
           </li>
@@ -167,6 +166,7 @@
             </li>
         </ul>
       </div>
+      </div>
       <!-- 소분류 -->
       <div class="cate-add-btns mt-5 d-flex justify-content-around">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate1Modal">대분류 등록</button>
@@ -174,53 +174,53 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cate3Modal">소분류 등록</button>
       </div><!-- //btns -->
 
-    
-
-    <!-- Modal 1 -->
-    <div class="modal fade" id="cate1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fs-5">대분류 등록</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <input type="text" class="form-control big" name="name1" id="name1" placeholder="대분류명">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-            <button type="submit" class="btn btn-primary" data-step="1">등록</button>
+<!-- Modal 1 -->
+  <div class="modal fade" id="cate1Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5">대분류 등록</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <input type="text" class="form-control big" name="name1" id="name1" placeholder="대분류명">
           </div>
         </div>
-      </div>
-    </div> <!-- //Modal 1 -->
-    <!-- Modal 2 -->
-<div class="modal fade" id="cate2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title fs-5">중분류 등록</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body d-flex flex-column gap-4">
-        <select class="form-select big" aria-label="Default select example" id="pcode2">
-          <option selected disabled>대분류를 선택해주세요.</option>
-          <option value=""></option>
-        </select>       
-        <input type="text" class="form-control big" name="name2" id="name2" placeholder="중분류명">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-        <button type="submit" class="btn btn-primary" data-step="2">등록</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          <button type="submit" class="btn btn-primary" data-step="1">등록</button>
+        </div>
       </div>
     </div>
-  </div>
-</div> <!-- //Modal 2 -->
+  </div> 
+<!-- //Modal 1 -->
+
+<!-- Modal 2 -->
+  <div class="modal fade" id="cate2Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5">중분류 등록</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-column gap-4">
+          <select class="form-select big" aria-label="Default select example" id="pcode2">
+            <option selected disabled>대분류를 선택해주세요.</option>
+          </select>       
+          <input type="text" class="form-control big" name="name2" id="name2" placeholder="중분류명">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          <button type="submit" class="btn btn-primary" data-step="2">등록</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+<!-- //Modal 2 -->
 
 <!-- Modal 3 -->
-<div class="modal fade" id="cate3Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="cate3Modal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -230,7 +230,6 @@
       <div class="modal-body d-flex flex-column gap-4">
         <select class="form-select big" aria-label="Default select example" id="pcode2_1">
         <option selected disabled>대분류</option>
-          <option value=""></option>
         </select>
         <select class="form-select big" aria-label="Default select example" id="pcode3">
           <option selected disabled>중분류</option>
@@ -246,11 +245,11 @@
     </div>
   </div>
 </div> <!-- //Modal 3 -->
+</div>
 
 <!-- 이은서 category_list 끝-->
 
 <!-- script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
 </body>
 </html>
