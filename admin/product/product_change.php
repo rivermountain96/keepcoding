@@ -183,3 +183,7 @@ $row = $result -> fetch_object();
   </body>
 </html>
 
+
+<?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
+?>

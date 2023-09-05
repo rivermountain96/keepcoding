@@ -7,7 +7,7 @@
 
   if ($result) {
      echo "<script>
-     alert('삭제되었습니다.');
+     alert('삭제 완료.');
      location.href='/keepcoding/admin/product/product_list.php';
      </script>";
   } else {
