@@ -29,13 +29,13 @@
     <div class="product_view_sec2 row pd24">
         <div class="col p-0">
         <h6 class="pd24 text-secondary">강좌명</h6>
-        <p class="h6"><?php echo $row->name ?></p>
+        <p class="h6"><?php echo $row->name; ?></p>
     </div>
     <div class="col p-0">
     <h6 class="pd24 text-secondary">카테고리</h6>
 
     프론트엔드>javascript>중급
-        <!-- <p class="h6"><?php echo $row->cate ?> -->
+        <!-- <p class="h6"><?php echo $row->cate; ?> -->
 
       </div>
     </div>
@@ -48,13 +48,13 @@
         <h6 class="pd24 text-secondary">수강 기한</h6>
         <p class="">
           무제한
-        <!-- <?php echo $row->reg_date ?> -->
+        <!-- <?php echo $row->reg_date; ?> -->
       </p>
       </div>
 
       <div class="col p-0">
       <h6 class="pd24 text-secondary">시작일</h6>
-      <p><?php echo $row->reg_date ?> </p>
+      <p><?php echo $row->reg_date; ?> </p>
       </div>
 
     </div>
@@ -66,7 +66,7 @@
     <div class="col pd24">
     <h6 class="pd24 text-secondary">강좌설명</h6>
       <p class="">
-      <?php echo $row->content ?>
+      <?php echo $row->content; ?>
 
       </p>
     </div>
@@ -76,7 +76,7 @@
 
     <div class="col pd24">
     <h6 class="pd24 text-secondary">썸네일</h6>
-    <img src="../img/hello_world.svg" alt="">
+    <img src="<?= $row->thumbnail; ?>" alt="">
 
     </div>
     <hr class="pd24">

@@ -142,13 +142,15 @@ $sql .= $search_where;//쿼리조합
           <td ><?php 
           
           
-          $cids = explode('/', $item->cate);
-          $conditions = implode(' OR ', array_map(function ($cid) {
-            return "cid = " . (int)$cid;
-            }, $cids));
-          $query = "SELECT `name` FROM category WHERE $conditions ORDER BY step ASC";
-          // $cids = (explode('/', $item-> cate ));
-          // $query = "select `name` from category where cid=".$cids[0]." or cid=".$cids[1]." or cid=".$cids[2]." order by step asc"; //step이 1~3 오름차순
+          // $cids = explode('/', $item->cate);
+          // $conditions = implode(' OR ', array_map(function ($cid) {
+          //   return "cid = " . (int)$cid;
+          //   }, $cids));
+          // $query = "SELECT `name` FROM category WHERE $conditions ORDER BY step ASC";
+
+
+          $cids = (explode('/', $item-> cate ));
+          $query = "select `name` from category where cid=".$cids[0]." or cid=".$cids[1]." or cid=".$cids[2]." order by step asc"; //step이 1~3 오름차순
           $names = array();
 
           $result = $mysqli->query($query);

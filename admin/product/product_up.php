@@ -174,6 +174,32 @@
     }
   });
 
+  $("#cate1").on("change", function () {
+  console.log("click");
+  makeOption($(this), 2, $("#cate2"));
+  }); //cate1 change
+
+  $("#cate2").on("change", function () {
+    makeOption($(this), 3, $("#cate3"));
+  }); //cate2 change
+
+
+  function makeOption(evt, step, target) {
+  let cid = evt.val();
+  console.log(cid);
+
+
+  $.ajax({
+    async: false, //sucess의 결과 나오면 이후 작업 수행
+    type: "_GET", //변수명cate1의 값을 전달할 방식 post
+    url: "printOption.php?cate=" + cid + "&step=" + step,
+    dataType: "html", //success성공후 printOption.php가 반환하는 데이터의 형식  <option></option>
+    success: function (result) {
+      console.log(result);
+      target.html(result);
+      },
+    }); //ajax
+  }
   // function attachFile(file) {
   //   console.log(file);
   //   let formData = new FormData(); //페이지 전환없이 이페이지 바로 이미지 등록
