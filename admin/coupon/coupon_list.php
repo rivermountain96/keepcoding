@@ -57,7 +57,7 @@
       <div class="d-flex gap-3">
         <div class="form-check d-flex align-items-center gap-3">
           <input class="form-check-input" type="radio" name="status" id="statusAll" value="">
-          <label class="form-check-label" for="status2">
+          <label class="form-check-label" for="statusAll">
             전체
           </label>
         </div>
@@ -178,7 +178,7 @@
     </nav>
     <a class="btn btn-primary col-1" href="/keepcoding/admin/coupon/coupon_up.php">쿠폰 등록</a>
   </div>
-<div>
+</div>
 <!-- 이은서 coupon_list 끝-->
 
 <script>
@@ -198,7 +198,7 @@
         },
         success:function(data){
           if(data.result == 'ok'){
-              alert('삭제 완료.');
+              alert('삭제 완료');
               location.reload();
           } else{
               alert('삭제 취소');}
@@ -206,7 +206,7 @@
     });
 
     } else{// 삭제하시겠습니까 예를 누르면 할일 / 아니오를 누르면 할일
-      alert('삭제를 취소했습니다.');
+      alert('삭제 취소');
     }
     });//delete btn을 클릭하면 할일
 </script>
