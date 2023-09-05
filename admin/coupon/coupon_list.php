@@ -169,9 +169,9 @@
           if($pageNumber<$total_page){
             if($total_block > $block_num){
                 $next = $block_num * $block_ct + 1;
-                echo "<li class=\"page-item\"><a href=\"?status=$status&due=$duedate?pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
+                echo "<li class=\"page-item\"><a href=\"?status=$status&due=$duedate&pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
             }
-            echo "<li class=\"page-item\"><a href=\"?status=$status&due=$duedate?pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
+            echo "<li class=\"page-item\"><a href=\"?status=$status&due=$duedate&pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
           }
         ?>
       </ul>
