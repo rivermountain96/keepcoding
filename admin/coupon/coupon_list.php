@@ -93,7 +93,7 @@
     </form>
   <table class="table pd48">
     <thead>
-      <tr scope="row">
+      <tr>
         <th class="col-4 fw-bold">쿠폰명</th>
         <th class="col-2 fw-bold">상태</th>
         <th class="col-2 fw-bold">할인액</th>
@@ -108,7 +108,7 @@
           foreach($rsc as $item){
       ?>
       <tr data-cid="<?= $item-> cid ?>">
-        <th scope="row" class="fw-bold align-middle"><?= $item -> coupon_name ?></th>
+        <th class="fw-bold align-middle"><?= $item -> coupon_name ?></th>
         <td class="align-middle">
           <div class="form-check form-switch">
             <?php
