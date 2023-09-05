@@ -1,3 +1,17 @@
+<?php
+  // include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
+  // include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  
+  if(isset($_SESSION['AUID'])){
+    if($_SESSION['AUID'] == 'admin'){
+      echo "<script>
+        alert('이미 로그인 하셨습니다.');
+        location.href = '/keepcoding/admin/index.php';
+      </script>";
+    }
+  }
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +31,9 @@
     integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="/common.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <style>
+  <link href="/keepcoding/common.css" rel="stylesheet">
+  <link href="/keepcoding/admin/css/style.css" rel="stylesheet">
+<style>
     body {
       background-color: var(--mc-gray2);
     }
@@ -33,11 +47,11 @@
   <title>login</title>
 </head>
 
+<!-- 정이원 login 시작--> 
 <body>
 
-  <!-- 정이원 login 시작-->
-  <div class="login">
-    <form action="" class="login_content">
+<div class="login">
+    <form action="login_ok.php" class="login_content" method="POST">
       <div class="login_id row">
         <label for="userid" class="fw-medium">ID</label>
         <input type="text" name="userid" id="userid">
@@ -49,7 +63,6 @@
         <a href="" class="fw-medium">Forgot password?</a>
       </div>
 
-
       <div class="login_ir d-flex justify-content-end">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
         <label class="form-check-label" for="flexCheckDefault">ID 저장</label>
@@ -60,9 +73,6 @@
   </div>
   <!-- 정이원 login 끝-->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-  </script>
-</body>
-
-</html>
+<?php
+include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
+?>
