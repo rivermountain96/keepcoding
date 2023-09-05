@@ -38,7 +38,7 @@
         <span><i class="bi bi-bell mc-gray3"></i></span>
         <div class="user d-flex align-items-center gap-3">
           <p class="mc-gray3">총관리자</p>
-          <img src="/keepcoding/admin/img/admin_img.svg" alt="">
+          <img src="/keepcoding/admin/img/admin.png" alt="">
         </div>
       </div>
     </div>
