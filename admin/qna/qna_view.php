@@ -1,4 +1,5 @@
 <?php
+  $title =  'Q&A 상세보기';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 ?>
 

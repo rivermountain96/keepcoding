@@ -1,10 +1,11 @@
 <?php
+  $title =  'Q&A 게시판';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 ?>
 
 <!-- 최성희 qna_list 시작 -->
 <div class="content">
-  <h2 class="pd72 fs-4">Q&A 게시판</h2>
+  <h2 class="pd72 fs-4">Q&amp;A 게시판</h2>
     <form class="d-flex pd48" role="search">
       <input class="form-control form-control-lg me-4" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search">
       <button class="btn btn-outline-primary nowrap col-1" type="submit">검색</button>

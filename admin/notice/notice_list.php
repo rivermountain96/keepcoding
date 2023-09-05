@@ -1,4 +1,5 @@
 <?php
+  $title =  '공지 사항';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 ?>
 

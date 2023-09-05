@@ -1,4 +1,5 @@
 <?php
+  $title =  '공지 등록';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 ?>
 
@@ -41,7 +42,7 @@
 
       <div class="d-flex justify-content-end gap-3">
         <button type="button" class="btn btn-primary" form="notice_up_submit">등록</button>
-        <button type="button" class="btn btn-secondary" onClick="location.href='notice_list.html'"> 취소</button>
+        <button type="button" class="btn btn-secondary" onClick="location.href='notice_list.php'"> 취소</button>
       </div>
     </form>
 </div>

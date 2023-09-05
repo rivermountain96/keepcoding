@@ -1,4 +1,5 @@
 <?php
+  $title =  '쿠폰 수정';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 ?>
 
@@ -71,7 +72,7 @@
     </div>
 
     <div class="product_up_btn d-flex justify-content-end gap-3 p-0">
-      <button type="button" class="btn btn-primary">수정</button>
+      <button type="button" class="btn btn-primary" onClick="location.href='coupon_change.php'">수정</button>
       <button type="button" class="product_up_cancel btn btn-primary">취소</button>
   </div>
 

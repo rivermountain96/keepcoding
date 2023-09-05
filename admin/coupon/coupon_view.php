@@ -1,4 +1,5 @@
 <?php
+  $title =  '쿠폰 상세보기';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 ?>
 
@@ -47,9 +48,9 @@
     </div>
   <hr class="pd48">
     <div class="d-flex justify-content-end gap-3">
-      <button type="button" class="btn btn-primary">수정</button>
+      <button type="button" class="btn btn-primary" onClick="location.href='coupon_change.php'">수정</button>
       <button type="button" class="btn btn-secondary">삭제</button>
-      <button type="button" class="btn btn-primary">쿠폰 리스트</button>
+      <button type="button" class="btn btn-primary" onClick="location.href='coupon_list.php'">쿠폰 리스트</button>
     </div>
 </div>
 <!-- 최성희 coupon_view 끝 -->
