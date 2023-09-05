@@ -1,14 +1,16 @@
 <?php
+$title = '쿠폰등록';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
   // include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
 
-  // if(!$_SESSION['AUID']){
-  //   echo "<script>
-  //   altert ('관리자 권한이 없습니다');
-  //   history.back();</script>";
-  //   exit;
-  // }
+  if(!$_SESSION['AUID']){
+    echo "<script>
+    altert ('관리자 권한이 없습니다');
+    history.back();</script>";
+    exit;
+  }
 ?>
+
   <!-- 정이원 coupon_up 시작-->
   <div class="content coupon_up">
     <h2 class="fs-4 pd72">쿠폰 등록</h2>
@@ -29,7 +31,7 @@
               <label class="form-check-lsabel" for="flexCheckDefault">활성화</label>
             </div>
             <div class="coupon_up_status_off form-check text-center">
-              <input class="coupon_up_status_input form-check-input" type="radio" value="1" name="status" id="status" checked>
+              <input class="coupon_up_status_input form-check-input" type="radio" value="0" name="status" id="status" checked>
               <label class="form-check-label" for="flexCheckChecked">비활성화</label>
             </div>
           </div>
@@ -39,14 +41,14 @@
       <div class="d-flex pd48 row gap-3 form-width-973">
         <div class="coupon_up_price col-4 p-0">
           <label class="pd10 h6" for="">할인가</label>
-          <input class="form-control form-control-lg" type="number" name="coupon_price" id="coupon_price" min="1000" max="100000"
-            step="1000" placeholder="" aria-label="default input example">
+          <input class="form-control form-control-lg" type="number" name="coupon_price" id="coupon_price" min="5000" max="100000"
+            step="5000" placeholder="" aria-label="default input example">
         </div>
 
         <div class="coupon_up_min_price col-4 p-0">
           <label class="pd10 h6" for="">최소사용금액</label>
-          <input class="form-control form-control-lg" type="number" name="use_min_price" id="use_min_price" min="1000" max="110000"
-            step="1000" aria-label="default input example">
+          <input class="form-control form-control-lg" type="number" name="use_min_price" id="use_min_price" min="10000" max="110000"
+            step="5000" aria-label="default input example">
         </div>
       </div>
 
@@ -79,11 +81,8 @@
 
       <div class="coupon_up_btn d-flex justify-content-end gap-3 p-0">
         <button type="submit" class="btn btn-primary">등록</button>
-        <button type="button" class="btn btn-secondary">취소</button>
+        <a href="notice_list.php"><button type="submit" class="btn btn-secondary">취소</button></a>
     </div>
-
-    </form>
-  </div>
 
     </form>
   </div>
@@ -118,17 +117,6 @@
       }
      
     })
-
-    // 활성화, 비활성화 체크박스 하나씩 체크하기
-//     function doOpenCheck(chk){
-//     var obj = document.getElementsByName("status");
-//     for(var i=0; i<obj.length; i++){
-//         if(obj[i] != chk){
-//             obj[i].checked = false;
-//         }
-//     }
-// }
-
 </script>
 
 <?php
