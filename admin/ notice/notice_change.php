@@ -31,7 +31,7 @@ if($_SESSION['AUNAME']){
           </select>
         </div>
         <div class="notice_change_regdate col-4 p-0 datepicker">
-          <label class="pd10 h6" for="regdate">시작일</label>
+          <label class="pd10 h6" for="datepicker">시작일</label>
           <input type="text" id="datepicker" name="regdate" class="form-control form-control-lg" value="<?= $rs -> regdate; ?>">
         </div> 
         <!-- <div class="notice_change_enddate col p-0 datepicker">
