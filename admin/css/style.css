@@ -150,150 +150,44 @@ nav{
   width: 600px;
   /* height: 144px; */
   padding:40px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 10px;
   box-sizing: border-box;
   gap: 20px;
-}/* bootstrap 초기화 */
-
-.row {
-  margin-top: 0;
-  margin-right: 0;
-  margin-left: 0;
+  transition: 0.3s ease-in;
+  box-shadow: none;
 }
-
-/* header navbar */
-
-nav{
-  z-index: 100;
+.kcard:hover{
+  background-color: rgba(255, 255, 255, .5);
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }
-.nav_top > div {
-  gap: 100px;
-}
-.user img {
-  width: 30px;
-  height: 30px;
-  object-fit: cover;
-}
-.logo a {
-  display: block;
-  text-indent: -9999rem;
-  background-image: url("../img/keepcoding_logo.svg");
-  background-size: cover;
-  width: 130px;
-  height: 25px;
-  background-repeat: no-repeat;
-}
-.nav_top {
-  background-color: #fff;
-  padding: 20px 40px;
-  border-bottom: 0.3px silver solid;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-}
-.nav_side {
-  position: fixed;
-  width: 250px;
-  top: 71px;
-  bottom: 0;
-  left: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  /* right:250px; */
-  background-color: #fff;
-  border-right: 0.3px silver solid;
-}
-.nav_side ul {
-  width: 100%;
-}
-.nav_side > ul > li {
-  padding: 30px 37px;
-  border-bottom: 0.3px silver solid;
-}
-.nav-link {
-  padding: 0;
-}
-.nav_side > ul > li ul {
-  display: flex;
-  flex-direction: column;
-  gap:20px;
-}
-
-/* 이은서 index.html 시작 */
-
-.sell_report{
-  width: 100%;
-  gap:30px;
-}
-.member{
-  width:100%;
-}
-.kcard.big{
-  width: 100%;
-}
-.kcard{
-  width: 600px;
-  /* height: 144px; */
-  padding:40px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  gap: 20px;
-}
-
-/* 이은서 index.html 시작 */
-
-.sell_report {
-  width: 100%;
-  gap: 30px;
-}
-.member {
-  width: 100%;
-}
-.kcard.big {
-  width: 100%;
-}
-.kcard {
-  width: 600px;
-  /* height: 144px; */
-  padding: 40px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  gap: 20px;
-}
-.kcard h6 {
+.kcard h6{
   margin-bottom: 30px;
 }
-.kcard_text span {
+.kcard_text span{
   display: block;
 }
-.rate {
+.rate{
   height: 25px;
   position: relative;
-  width: 100%;
-  border: 2px solid #ccc;
+  width:100%;
+  border:2px solid #ccc;
   border-radius: 12.5px;
 }
-.rate .bar {
+.rate .bar{
   z-index: 1;
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  left: 0;top: 0;bottom: 0;
   width: 0;
-  background: #4e75ff;
+  background: #4E75FF;
 }
-.ratebar {
+.ratebar{
   gap: 30px;
 }
-.ratebar.front {
+.ratebar.front{
   padding-bottom: 20px;
 }
-.callout span {
+.callout span{
   font-weight: bold;
 }
 .callout i {
@@ -310,6 +204,12 @@ i.i-empty{
 }
 .coupon_report i{
   font-size: 35px;
+}
+.chart{ 
+  width:25%;
+  height:100%;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 /* 이은서 index.html 끝 */
@@ -360,12 +260,45 @@ i.i-empty{
   color: var(--mc-gray1);
   opacity: 1;
 }
-
 .form-control.big, .form-select.big, .list-group-item.big{
   padding: 16px;
 }
-
+.cate-list{
+  width: 100%;
+}
+.cate-list button{
+  width: 30%;
+}
 /* 이은서 category.html 끝 */
+
+/* 이은서 coupon_deit.php 시작 */
+
+.img_container{
+  width: 100%;
+  padding: 24px;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+}
+.img_container img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.coupon_up_image .row> .col-4{
+  padding-left: 0;
+}
+.coupon_up_image .row> .col-8{
+  padding-right: 0;
+}
+
+.path_container{
+  padding: 24px;
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+}
+
+/* 이은서 coupon_deit.php 끝 */
 
 /* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 */
 /* .notice_list_table thead th, .qna_list_table thead th, .smember_list_table thead th, .tmember_list_table thead th{

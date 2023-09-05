@@ -13,14 +13,10 @@
   crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
   integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  crossorigin="anonymous" referrerpolicy="no-referrer">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <!-- summernote 시작--> 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-  <!-- summernote 끝 -->
   <link href="/keepcoding/common.css" rel="stylesheet">
   <link href="/keepcoding/admin/css/style.css" rel="stylesheet">
   <!-- script -->
@@ -32,18 +28,17 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   <!-- summernote 끝 -->
   <title><?php if(isset($title)){echo $title;}else{echo '홈';} ?> - KEEP CODING</title>
-  <title>KEEP CODING</title>
 </head>
 <body>
 <nav class="navbar">
   <div class="nav_top container-fluid">
-    <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+    <h1 class="logo"><a href="/keepcoding/admin/index.php"><span>keep coding</span></a></h1>
     <div class="d-flex align-items-center">
       <div class="d-flex gap-3 align-items-center">
         <span><i class="bi bi-bell mc-gray3"></i></span>
         <div class="user d-flex align-items-center gap-3">
           <p class="mc-gray3">총관리자</p>
-          <img src="/keepcoding/admin/img/admin.png" alt="">
+          <img src="/keepcoding/admin/img/admin_img.svg" alt="">
         </div>
       </div>
     </div>
@@ -59,7 +54,7 @@
             <a class="nav-link" href="/keepcoding/admin/product/category_list.php">카테고리 관리</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/keepcoding/admin/product/product_list.php" aria-disabled="true">강좌 관리</a>
+            <a class="nav-link" href="/keepcoding/admin/product/product_list.php">강좌 관리</a>
           </li>
         </ul>
       </li>

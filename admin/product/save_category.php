@@ -2,46 +2,39 @@
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
   $name = $_POST['name'];
-  // $code = $_POST['code'];
+  $search_where = '';
 
-  $search_where ='';
-
-  if(isset($_POST['pcode'])){
-    $pcode = $_POST['pcode'];  
-    $search_where .= " and pcode='".$pcode."'";
-  } else {
-    $pcode = '';
+  if(isset($_POST['pcid'])){
+    $pcid = $_POST['pcid'];
+    $search_where .= " and pcid = '".$pcid."'";
+  }else{
+    $pcid = '';
   }
+
   $step = $_POST['step'];
 
-  
-  
-  // 코드와 분류명을 사용하고 있는지 확인
-  $query = "select cid from category where step=".$step." and name='".$name."'";
+  $query = "SELECT cid from category WHERE step=".$step." and name='".$name."'";
   $query .= $search_where;
 
-  $result = $mysqli->query($query);
+  $result = $mysqli -> query($query);
 
   $rs = $result->fetch_object();
-  
-  
+
   if(isset($rs->cid)){
-    $return_data = array("result"=>"-1"); //cid 있다면, 중복
-    echo json_encode($return_data);
+    $rdata = array("result" => "-1");
+    echo json_encode($rdata);
     exit;
   }
-  
-  
-  $sql="INSERT INTO category 
-  (pcode, name, step) VALUES('".$pcode."', '".$name."', ".$step.")";
-  $result=$mysqli->query($sql);
 
-  if($result){
-      $retun_data = array("result"=>1);
-      echo json_encode($retun_data);
+  $sql = "INSERT INTO category (pcid, name, step) VALUES ('".$pcid."', '".$name."', '".$step."')";
+  $result = $mysqli ->query($sql);
+
+  if(isset($result)){
+    $rdata = array("result"=>1);
+    echo json_encode($rdata);
   }else{
-      $retun_data = array("result"=>0);
-      echo json_encode($retun_data);
+    $rdata = array("result"=>0);
+    echo json_encode($rdata);
   }
   
 

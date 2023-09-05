@@ -6,6 +6,7 @@
 
   //검색, 조회 대상 지정
   $status = $_GET['status'] ?? ''; //받아올값
+  $duedate = $_GET['due'] ?? ''; //받아올값
   $search_keyword = $_GET['search_keyword'] ?? ''; //받아올값
 
   $search_where = ''; //빈 문자열 생성
@@ -14,6 +15,12 @@
     $search_where .= " and status = 1";
   }else if($status == 0){
     $search_where .= " and status = 0";
+  }
+
+  if($duedate == 0){
+    $search_where .= " and duedate = ''";
+  }else if($duedate == 1){
+    $search_where .= " and duedate IS NOT NULL AND duedate <> ''";
   }
 
   if($search_keyword){
@@ -45,7 +52,7 @@
 
 <!-- 이은서 coupon_list 시작-->
 <div class="content">
-  <h4 class="pd72">쿠폰 관리</h4>
+  <h4 class="pd72 fs-4 fw-bold">쿠폰 관리</h4>
     <form class="d-flex justify-content-between align-items-center pd48">
       <div class="d-flex gap-3">
         <div class="form-check d-flex align-items-center gap-3">
@@ -66,27 +73,33 @@
             비활성화 쿠폰
           </label>
         </div>
+        <div class="form-check d-flex align-items-center gap-3">
+          <input class="form-check-input" type="radio" name="due" id="due1" value="0">
+          <label class="form-check-label" for="status1">
+            무제한 쿠폰
+          </label>
+        </div>
+        <div class="form-check d-flex align-items-center gap-3">
+          <input class="form-check-input" type="radio" name="due" id="due2" value="1">
+          <label class="form-check-label" for="status1">
+            기간제한 쿠폰
+          </label>
+        </div>
       </div>
-      <!-- <h5> 검색 결과: 총 <?= $row_num; ?> 개가 있습니다.</h5> -->
-      <div class="d-flex gap-3">
-        <input class="form-control me-2" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
-        <button class="btn btn-outline-primary nowrap" type="submit">쿠폰 검색</button>
+      <div class="d-flex gap-3 row">
+        <input class="form-control form-control-lg me-2 col" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
+        <button class="btn btn-outline-primary nowrap col-4" type="submit">쿠폰 검색</button>
       </div>
     </form>
-
-    <!-- <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" name="search_keyword" placeholder="쿠폰명으로 검색하기" aria-label="Search">
-      <button class="btn btn-outline-primary nowrap" type="submit">쿠폰 검색</button>
-    </form> -->
   <table class="table pd48">
     <thead>
-      <tr scope="row">
-        <th class="fw-bold col-4">쿠폰명</th>
-        <th class="col-2">상태</th>
-        <th class="col-2">할인액</th>
-        <th class="col-2">사용기한</th>
-        <th class="col-1">수정</th>
-        <th class="col-1">삭제</th>
+      <tr>
+        <th class="col-4 fw-bold">쿠폰명</th>
+        <th class="col-2 fw-bold">상태</th>
+        <th class="col-2 fw-bold">할인액</th>
+        <th class="col-2 fw-bold">사용기한</th>
+        <th class="col-1 fw-bold">수정</th>
+        <th class="col-1 fw-bold">삭제</th>
       </tr>
     </thead>
     <tbody>
@@ -94,8 +107,8 @@
         if(isset($rsc)){
           foreach($rsc as $item){
       ?>
-      <tr>
-        <th scope="row" class="fw-bold align-middle"><?= $item -> coupon_name ?></th>
+      <tr data-cid="<?= $item-> cid ?>">
+        <th class="fw-bold align-middle"><?= $item -> coupon_name ?></th>
         <td class="align-middle">
           <div class="form-check form-switch">
             <?php
@@ -115,14 +128,18 @@
         <td class="align-middle">₩<span class="number"><?= $item -> coupon_price;?></span></td>
         <td class="align-middle"><?php
           $itemDate = $item -> duedate;
-          $dateResult = str_replace("-",".",$itemDate);
+            if($itemDate == ''){
+              $dateResult = '무제한';
+            }else{
+              $dateResult = str_replace("-",".",$itemDate);
+            }
           echo $dateResult;
         ?></td>
         <td class="align-middle">
-          <button type="button" class="btn btn-outline-primary btn-sm">수정</button>
+          <a href="/keepcoding/admin/coupon/coupon_edit.php?cid=<?= $item->cid ?>" class="btn btn-outline-primary btn-sm">수정</a>
         </td>
         <td class="align-middle">
-          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+          <button type="button" class="btn btn-outline-primary btn-sm delete_btn">삭제</button>
         </td>
       </tr>
       <?php
@@ -136,33 +153,63 @@
       <ul class="pagination justify-content-center align-items-center ">
       <?php
           if($pageNumber>1){                   
-              echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?status=$status&pageNumber=1\">Previous</a></li>";
+              echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?status=$status&due=$duedate&pageNumber=1\">Previous</a></li>";
               if($block_num > 1){
                   $prev = ($block_num - 2) * $block_ct + 1;
-                  echo "<li class=\"page-item\"><a href='?status=$status&pageNumber=$prev' class=\"page-link\">&lt;</a></li>";
+                  echo "<li class=\"page-item\"><a href='?status=$status&due=$duedate&pageNumber=$prev' class=\"page-link\">&lt;</a></li>";
               }
           }
           for($i=$block_start;$i<=$block_end;$i++){
             if($pageNumber == $i){
-                echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?status=$status&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+                echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?status=$status&due=$duedate&pageNumber=$i\" class=\"page-link\">$i</a></li>";
             }else{
-                echo "<li class=\"page-item\"><a href=\"?status=$status&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+                echo "<li class=\"page-item\"><a href=\"?status=$status&due=$duedate&pageNumber=$i\" class=\"page-link\">$i</a></li>";
             }
           }
           if($pageNumber<$total_page){
             if($total_block > $block_num){
                 $next = $block_num * $block_ct + 1;
-                echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
+                echo "<li class=\"page-item\"><a href=\"?status=$status&due=$duedate?pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
             }
-            echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
+            echo "<li class=\"page-item\"><a href=\"?status=$status&due=$duedate?pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
           }
         ?>
       </ul>
     </nav>
-    <button type="button" class="btn btn-primary col-1">쿠폰 등록</button>
+    <a class="btn btn-primary col-1" href="/keepcoding/admin/coupon/coupon_up.php">쿠폰 등록</a>
   </div>
 <div>
 <!-- 이은서 coupon_list 끝-->
+
+<script>
+  $('.delete_btn').click(function(){
+    if(confirm('정말 삭제하시겠습니까?')){
+      let cid = $(this).closest('tr').attr('data-cid');
+      let data = {cid : cid}
+      console.log(data);
+      $.ajax({
+        async:false,
+        type:'POST',
+        url:'coupon_delete.php',
+        data: data,
+        dataType:'json',
+        error:function(error){
+            console.log(error);
+        },
+        success:function(data){
+          if(data.result == 'ok'){
+              alert('삭제 완료.');
+              location.reload();
+          } else{
+              alert('삭제 취소');}
+        }
+    });
+
+    } else{// 삭제하시겠습니까 예를 누르면 할일 / 아니오를 누르면 할일
+      alert('삭제를 취소했습니다.');
+    }
+    });//delete btn을 클릭하면 할일
+</script>
 
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
