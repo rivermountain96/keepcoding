@@ -32,16 +32,11 @@
         <h6 class="pd24 text-secondary">강좌명</h6>
         <p class="h6"><?php echo $row->name ?></p>
     </div>
-
     <div class="col p-0">
     <h6 class="pd24 text-secondary">카테고리</h6>
 
     프론트엔드>javascript>중급
         <!-- <p class="h6"><?php echo $row->cate ?> -->
-        
-
-
-      </p>
 
       </div>
     </div>
@@ -69,33 +64,32 @@
 
     <!-- product_view_sec3 강좌설명 -->
 
-    <div class="pd24">
+    <div class="col pd24">
     <h6 class="pd24 text-secondary">강좌설명</h6>
       <p class="">
       <?php echo $row->content ?>
-    
+
       </p>
     </div>
     <hr class="pd24" />
 
-
-
     <!-- product_view_sec4 썸네일이미지 -->
 
-    <div class="pd24">
+    <div class="col pd24">
     <h6 class="pd24 text-secondary">썸네일</h6>
-    <img src="../img/Ellipse 3.png" alt="">
+    <img src="../img/hello_world.svg" alt="">
 
     </div>
+    <hr class="pd24">
 
-    <hr class="pd24" />
      <!-- product_view_sec5 영상업로드 -->
      <div class="product_view_sec2 pd24">
         <h6 class="pd24 text-secondary">강의 영상</h6>
-        <div>
-          <p class="pd24">
-            <a href="#" data-toggle="modal" data-target="#videoModal"> <?php echo $row->video_url ?></a>
-          </p>
+        <div class="row">
+          <p class="col-7 pd24">
+            <a href="#" data-toggle="modal" data-target="#videoModal"> <?php echo $row->video_url ?></a></p>
+            <div class="col-1"><a class="btn btn-outline-primary" href="#" data-toggle="modal"
+            data-target="#videoModal">보기</a></div>
         </div>
       </div>
       <hr class="pd24" />
@@ -136,12 +130,12 @@
   <!-- contents끝 -->
 
   <!-- 박민용 product_list 끝 -->
-<Style>
-/* hr{
+<!-- <Style>
+hr{
   border-color:#495057;
-} */
+}
 
-</Style>
+</Style> -->
 
 
 
@@ -151,3 +145,10 @@
       crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
+?>
+
+
+
