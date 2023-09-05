@@ -1,6 +1,4 @@
 
-
-
 <?php
   $title = '제품 목록';
 
@@ -23,7 +21,6 @@ $cate = '';
 $cates = $cates1.$cate2.$cate3;
 
 
-
 // 카테고리 검색
 
 if($search_keyword){
@@ -34,6 +31,9 @@ if($cates){
 $search_where .= " and cate like '{$cates}%'"; //조건
 }
 $sql .= $search_where;//쿼리조합
+
+// var_dump($query);
+
 
 
 //페이지네이션
@@ -57,10 +57,12 @@ $sql .= $search_where;//쿼리조합
   ?>
 
 
+
+
   <!-- 박민용 product_list 시작 -->
 
   <div class="  content mcbg-white">
-  <h2 class="fs-4 pd72">강의 리스트</h2>
+    <h2 class=" h4 pd72">강의 리스트</h2>
 
     <!-- product_list_sec1 강의리스트 카테고리 -->
 
@@ -97,12 +99,12 @@ $sql .= $search_where;//쿼리조합
 
     <!-- product_list_sec2 검색단 -->
 
-    <form class="roduct_list_sec2 d-flex pd48 gap-3 " id="search_form">
+    <form class="product_list_sec2 d-flex pd48 " id="search_form">
       <input type="hidden" name="step" id="step">
       <input type="hidden" name="cate_name" id="cate_name">
-      <input class="form-control form-control-lg me-2" type="search" placeholder="강좌명으로 검색하기" name="search_keyword" id="search_keyword" aria-label="Search">
+      <input class="form-control me-2" type="search" placeholder="강좌명으로 검색하기" name="search_keyword" id="search_keyword" aria-label="Search">
       
-      <button class="btn btn-outline-primary btn col-sm-1" type="submit">강좌검색 </button>
+      <button class="btn btn-outline-primary btn-sm col-sm-1" type="submit">강좌검색 </button>
     </form>
 <?php
 
@@ -116,27 +118,29 @@ $sql .= $search_where;//쿼리조합
     <table class=" product_list_sec3 table pd48">
       <thead>
         <tr>
-          <th class="fw-bold col-4">강좌명</th>
-          <th class="fw-bold col-1.5">상태</th>
-          <th class="fw-bold col-3">카테고리</th>
-          <th class="fw-bold col-1.5">가격</th>
-          <th class="fw-bold col-1">수정</th>
-          <th class="fw-bold col-1">삭제</th>
+          <th scope="col" class="fw-bold col-4">강좌명</th>
+          <th scope="col" class="fw-bold col-1.5">상태</th>
+          <th scope="col" class="fw-bold col-3">카테고리</th>
+          <th scope="col" class="fw-bold col-1.5">가격</th>
+          <th scope="col" class="fw-bold col-1">수정</th>
+          <th scope="col" class="fw-bold col-1">삭제</th>
         </tr>
       </thead>
       <tbody>
-    
+
     <?php
 
             if(isset($rsc)){
-              foreach($rsc as $item){            
+              foreach($rsc as $item){      
+ 
             ?>
 
-        <tr>
 
-          <th > <a href="product_view.php?pid=<?php echo $item->pid ?>"><?php echo $item->name ?></a></th>
+        <tr scope="row">
+
+          <th> <a href="product_view.php?pid=<?php echo $item->pid ?>"><?php echo $item->name ?></a></th>
           
-          <td ><?php 
+          <td><?php 
           if($item -> status == 1){
             echo '판매중';
           } else if ($item -> status == 2){
@@ -144,8 +148,8 @@ $sql .= $search_where;//쿼리조합
           } 
           ?></td>
 
-          <td ><?php 
-          var_dump($item->cate);
+          <td><?php 
+          
           $cids = (explode('/', $item-> cate ));
           $query = "select `name` from category where cid=".$cids[0]." or cid=".$cids[1]." or cid=".$cids[2]." order by step asc"; //step이 1~3 오름차순
           $names = array();
@@ -190,13 +194,13 @@ $sql .= $search_where;//쿼리조합
     <ul id="pagenation" class="pagination mx-auto" aria-label="Page navigation example">
     <?php
     if ($pageNumber > 1) {
-        echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?pageNumber=1\">Previous</a></li>";
+        echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?pageNumber=1\">이전</a></li>";
         if ($block_num > 1) {
             $prev = ($block_num - 2) * $block_ct + 1;
-            echo "<li class=\"page-item\"><a href='?pageNumber=$prev' class=\"page-link\">Previous</a></li>";
+            echo "<li class=\"page-item\"><a href='?pageNumber=$prev' class=\"page-link\">이전</a></li>";
         }
     } else {
-        echo "<li class=\"page-item disabled\"><span class=\"page-link\">Previous</span></li>";
+        echo "<li class=\"page-item disabled\"><span class=\"page-link\">이전</span></li>";
   
     }
 
@@ -211,23 +215,23 @@ $sql .= $search_where;//쿼리조합
     if ($pageNumber < $total_page) {
         if ($total_block > $block_num) {
             $next = $block_num * $block_ct + 1;
-            echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">Next</a></li>";
+            echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">다음</a></li>";
         }
-        echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
+        echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">다음</a></li>";
     } else {
-        echo "<li class=\"page-item disabled\"><span class=\"page-link\">Next</span></li>";
+        echo "<li class=\"page-item disabled\"><span class=\"page-link\">다음</span></li>";
+        
 
     }
     ?>
 </ul>
-
 
       <!-- 강의등록 -->
 
       <td><a href="/keepcoding/admin/product/product_up.php" class="btn btn-primary">등록</a></td>
     </div>
 
-
+ 
 <script> 
 $("#cate1").on("change", function () {
   console.log("click");
