@@ -13,9 +13,9 @@
   crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
   integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  crossorigin="anonymous" referrerpolicy="no-referrer">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="/keepcoding/common.css" rel="stylesheet">
   <link href="/keepcoding/admin/css/style.css" rel="stylesheet">
@@ -28,7 +28,6 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   <!-- summernote 끝 -->
   <title><?php if(isset($title)){echo $title;}else{echo '홈';} ?> - KEEP CODING</title>
-  <title>KEEP CODING</title>
 </head>
 <body>
 <nav class="navbar">
@@ -55,7 +54,7 @@
             <a class="nav-link" href="/keepcoding/admin/product/category_list.php">카테고리 관리</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/keepcoding/admin/product/product_list.php" aria-disabled="true">강좌 관리</a>
+            <a class="nav-link" href="/keepcoding/admin/product/product_list.php">강좌 관리</a>
           </li>
         </ul>
       </li>
