@@ -31,7 +31,7 @@
 <body>
 <nav class="navbar">
   <div class="nav_top container-fluid">
-    <h1 class="logo"><a href="index.html"><span>keep coding</span></a></h1>
+    <h1 class="logo"><a href="/keepcoding/admin/index.php"><span>keep coding</span></a></h1>
     <div class="d-flex align-items-center">
       <div class="d-flex gap-3 align-items-center">
         <span><i class="bi bi-bell mc-gray3"></i></span>
