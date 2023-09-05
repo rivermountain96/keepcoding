@@ -88,7 +88,7 @@ try{
   (name, cate, content, thumbnail, price, sale_price, sale_cnt, status,
   userid, reg_date, sale_end_date, video_url)
   VALUES
-  ('{$name}', '{$cate}', '{$content}', '{$thumbnail}',{$price}, {$sale_price}, {$sale_cnt},
+  ('{$name}', '{$cate}', '{$content}', '{$thumbnail}', {$price}, {$sale_price}, {$sale_cnt},
   '{$status}', '{$_SESSION['AUID']}', now(), now(), '{$video_url}')";
 
   $result = $mysqli -> query($sql);
