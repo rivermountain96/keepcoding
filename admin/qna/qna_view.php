@@ -1,6 +1,7 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  $title =  'Q&A 게시판 상세보기';
 
   $qid = $_GET['qid'];
 
