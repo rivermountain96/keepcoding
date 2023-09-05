@@ -6,7 +6,7 @@
 
   if ($mysqli->query($sql) === TRUE) {
       echo "<script>
-      alert('글삭제 완료되었습니다.');
+      alert('게시글 삭제완료.');
       location.href='qna_list.php';</script>";
   } else {
       echo "Error: " . $sql . "<br>" . $mysqli->error;

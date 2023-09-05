@@ -21,7 +21,7 @@
       <div class="col-md-4">
         <select class="form-select" aria-label="Default select example" id="cate2">
           <option selected disabled>중분류</option>
-         
+        
         </select>
       </div>
       <div class="col-md-4">

@@ -105,7 +105,7 @@
     if(confirm('삭제하시겠습니까?')){
       window.location = 'qna_del.php?qid='+qid;
     } else {
-      alert('취소되었습니다.');
+      alert('취소완료');
     }
   });
 </script>

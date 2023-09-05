@@ -47,7 +47,6 @@ $sql .= $search_where;//쿼리조합
   // select * from 테이블이름 where 검색조건1 and 검색조건2 and 검색조건3 order by pid desc limit (페이지번호-1) * 10, 10; 
   $result = $mysqli -> query($query);
   
-
   while($rs = $result -> fetch_object()){
     $rsc[] = $rs;
   }
@@ -77,7 +76,7 @@ $sql .= $search_where;//쿼리조합
       <div class="col p-0">
       <select class="form-select form-select-lg" aria-label="Default select example" id="cate2" name="cate2">
           <option selected  value="0" disabled>중분류</option>
-         
+        
         </select>
       </div>
       <div class="col p-0">
@@ -125,37 +124,46 @@ $sql .= $search_where;//쿼리조합
       <tbody>
     
     <?php
-
-            if(isset($rsc)){
-              foreach($rsc as $item){            
-            ?>
-
-        <tr scope="row">
+      if(isset($rsc)){
+        foreach($rsc as $item){            
+    ?>
+<tr scope="row">
 
           <th > <a href="product_view.php?pid=<?php echo $item->pid ?>"><?php echo $item->name ?></a></th>
           
           <td ><?php 
-          if($item -> status == 1){
+          if($item -> status == 0){
             echo '판매중';
-          } else if ($item -> status == 2){
+          } else if ($item -> status == 1){
             echo '판매중지';
           } 
           ?></td>
 
           <td ><?php 
           
-          $cids = (explode('/', $item-> cate ));
-          $query = "select `name` from category where cid=".$cids[0]." or cid=".$cids[1]." or cid=".$cids[2]." order by step asc"; //step이 1~3 오름차순
+          
+          $cids = explode('/', $item->cate);
+          $conditions = implode(' OR ', array_map(function ($cid) {
+            return "cid = " . (int)$cid;
+            }, $cids));
+          $query = "SELECT `name` FROM category WHERE $conditions ORDER BY step ASC";
+          // $cids = (explode('/', $item-> cate ));
+          // $query = "select `name` from category where cid=".$cids[0]." or cid=".$cids[1]." or cid=".$cids[2]." order by step asc"; //step이 1~3 오름차순
           $names = array();
 
           $result = $mysqli->query($query);
+          if (!$result) {
+            echo "쿼리 실행 오류: " . $mysqli->error;
+          } else {
+            // 나머지 코드
+          
           while($row = $result->fetch_object())
           {
             $names[]= $row->name;
           }
     
           echo implode('>',$names);
-  
+        }
           ?></td>
 
           <td><?php echo '₩' . number_format($item->price); ?></td>
@@ -165,13 +173,9 @@ $sql .= $search_where;//쿼리조합
         </tr>
 
         <?php
-          }
-      ?>
-
-
-        <?php
+            }
           }   
-      ?>
+        ?>
 
         <div>
 
