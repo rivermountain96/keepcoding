@@ -42,7 +42,7 @@
     </div>
   <hr class="pd48">
       <div class="d-flex justify-content-end gap-3">
-        <button type="button" class="btn btn-secondary">삭제</button>
+        <button type="button" class="btn btn-secondary qna_view_del">삭제</button>
         <button type="button" class="btn btn-primary" onClick="location.href='qna_list.php'">Q&amp;A 게시판</button>
       </div>
     </div>
