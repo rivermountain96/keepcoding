@@ -145,7 +145,7 @@ $sql .= $search_where;//쿼리조합
           ?></td>
 
           <td ><?php 
-          
+          var_dump($item->cate);
           $cids = (explode('/', $item-> cate ));
           $query = "select `name` from category where cid=".$cids[0]." or cid=".$cids[1]." or cid=".$cids[2]." order by step asc"; //step이 1~3 오름차순
           $names = array();

@@ -10,6 +10,9 @@ $row = $result -> fetch_object();
 ?>
 
 
+
+
+
 <body>
 <!-- 박민용 product_change 시작 -->
 <div class="product_up content">
