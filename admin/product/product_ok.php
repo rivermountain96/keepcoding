@@ -20,18 +20,17 @@ try{
 
   $cate = $cate1.'/'.$cate2.'/'.$cate3;
   $name = $_POST['name'];
-  $price = $_POST['price']??'' ;
-  $sale_price =  $_POST['sale_price']??0 ;
+  $price = (int)$_POST['price']??'' ;
+  $sale_price =  (int)$_POST['sale_price']??0 ;
   
-  $isnew = $_POST['isnew']??0 ;
-  $isrecom = $_POST['isrecom']??0 ;
-  $sale_cnt =  $_POST['sale_cnt']??0 ;
-  $status = $_POST['status'];
+  $status = $_POST['status']??0 ;
+  $sale_cnt =  (int)$_POST['sale_cnt']??0 ;
+  
 
   if (empty($name)) {
       echo "<script>
           alert('강좌명을 입력하세요.');    
-          history.back();            
+          history.back(); 
       </script>";
       exit;
   }
@@ -47,38 +46,38 @@ try{
 
 
   if($_FILES['thumbnail']['name']){
-      //파일 사이즈 검사
-      if($_FILES['thumbnail']['size']> 10240000){
-        echo "<script>
-          alert('10MB 이하만 첨부할 수 있습니다.');    
-          history.back();      
-        </script>";
-        exit;
-      }
-      //이미지 여부 검사
-      if(strpos($_FILES['thumbnail']['type'], 'image') === false){
-        echo "<script>
-          alert('이미지만 첨부할 수 있습니다.');    
-          history.back();            
-        </script>";
-        exit;
-      }
-      //파일 업로드
-      $save_dir = $_SERVER['DOCUMENT_ROOT']."/keepcoding/pdata/";
-      $filename = $_FILES['thumbnail']['name']; //insta.jpg
-      $ext = pathinfo($filename, PATHINFO_EXTENSION); //jpg
-      $newfilename = date("YmdHis").substr(rand(), 0,6); //20238171184015
-      $thumbnail = $newfilename.".".$ext; //20238171184015.jpg
+    //파일 사이즈 검사
+    if($_FILES['thumbnail']['size']> 10240000){
+      echo "<script>
+        alert('10MB 이하만 첨부할 수 있습니다.');    
+        history.back();      
+      </script>";
+      exit;
+    }
+    //이미지 여부 검사
+    if(strpos($_FILES['thumbnail']['type'], 'image') === false){
+      echo "<script>
+        alert('이미지만 첨부할 수 있습니다.');    
+        history.back();            
+      </script>";
+      exit;
+    }
+    //파일 업로드
+    $save_dir = $_SERVER['DOCUMENT_ROOT']."/keepcoding/pdata/";
+    $filename = $_FILES['thumbnail']['name']; //insta.jpg
+    $ext = pathinfo($filename, PATHINFO_EXTENSION); //jpg
+    $newfilename = date("YmdHis").substr(rand(), 0,6); //20238171184015
+    $thumbnail = $newfilename.".".$ext; //20238171184015.jpg
 
 
-      if(move_uploaded_file($_FILES['thumbnail']['tmp_name'], $save_dir.$thumbnail)){  
-        $thumbnail = "/keepcoding/pdata/".$thumbnail;
-      } else{
-        echo "<script>
-          alert('이미지등록 실패!');    
-          history.back();            
-        </script>";
-      }
+    if(move_uploaded_file($_FILES['thumbnail']['tmp_name'], $save_dir.$thumbnail)){  
+      $thumbnail = "/keepcoding/pdata/".$thumbnail;
+    } else{
+      echo "<script>
+        alert('이미지등록 실패!');    
+        history.back();            
+      </script>";
+    }
 
 
   } //첨부파일 있다면 할일
@@ -86,11 +85,11 @@ try{
 
 
   $sql = "INSERT INTO products
-  (name, cate, content, thumbnail, price, sale_price, sale_cnt, isnew,
-  isrecom, userid, reg_date, sale_end_date, video_url, file_table_id)
+  (name, cate, content, thumbnail, price, sale_price, sale_cnt, status,
+  userid, reg_date, sale_end_date, video_url)
   VALUES
-  ('{$name}', '{$cate}', '{$content}', '{$thumbnail}',{$price}, {$sale_price}, {$sale_cnt},
-  '{$isnew}', '{$isrecom}', '{$_SESSION['AUID']}', now(), {$sale_end_date}, '{$video_url}', '{$file_table_id}')";
+  ('{$name}', '{$cate}', '{$content}', '{$thumbnail}', {$price}, {$sale_price}, {$sale_cnt},
+  '{$status}', '{$_SESSION['AUID']}', now(), now(), '{$video_url}')";
 
   $result = $mysqli -> query($sql);
 

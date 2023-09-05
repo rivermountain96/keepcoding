@@ -1,5 +1,6 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 ?>
 
 <body>
@@ -69,12 +70,12 @@
       <h6 class="pd10 h6">판매 상태</h6>
       <div class="product_status_checkbox d-flex">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="0" id="status_0" name="status">
-            <label class="form-check-lsabel" for="status_0">판매중</label>
+            <input class="product_status_input form-check-input" type="radio" value="0" id="status" name="status">
+            <label class="form-check-lsabel" for="status">판매중</label>
         </div>
         <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="1" id="status_1" name="status" checked>
-            <label class="form-check-label" for="status_1">판매중지</label>
+            <input class="product_status_input form-check-input" type="radio" value="1" id="status" name="status" checked>
+            <label class="form-check-label" for="status">판매중지</label>
         </div>
       </div>
     </div>
@@ -173,54 +174,80 @@
     }
   });
 
-  function attachFile(file) {
-    console.log(file);
-    let formData = new FormData(); //페이지 전환없이 이페이지 바로 이미지 등록
-    formData.append('savefile', file) //<input type="file" name="savefile" value="파일명">
-    console.log(formData);
-    $.ajax({
-      url: 'product_save_video.php',
-      data: formData,
-      cache: false,
-      contentType: false,
-      processData: false,
-      dataType: 'json',
-      type: 'POST',
-      error: function (error) {
-        console.log('error:', error)
+  $("#cate1").on("change", function () {
+  console.log("click");
+  makeOption($(this), 2, $("#cate2"));
+  }); //cate1 change
+
+  $("#cate2").on("change", function () {
+    makeOption($(this), 3, $("#cate3"));
+  }); //cate2 change
+
+
+  function makeOption(evt, step, target) {
+  let cid = evt.val();
+  console.log(cid);
+
+
+  $.ajax({
+    async: false, //sucess의 결과 나오면 이후 작업 수행
+    type: "_GET", //변수명cate1의 값을 전달할 방식 post
+    url: "printOption.php?cate=" + cid + "&step=" + step,
+    dataType: "html", //success성공후 printOption.php가 반환하는 데이터의 형식  <option></option>
+    success: function (result) {
+      console.log(result);
+      target.html(result);
       },
-      success: function (return_data) {
-
-        console.log(return_data);
-
-        if (return_data.result == 'member') {
-          alert('로그인을 하십시오.');
-          return;
-        } else if (return_data.result == 'image') {
-          alert('이미지파일만 첨부할 수 있습니다.');
-          return;
-        } else if (return_data.result == 'size') {
-          alert('10메가 이하만 첨부할 수 있습니다.');
-          return;
-        } else if (return_data.result == 'error') {
-          alert('관리자에게 문의하세요');
-          return;
-        } else {
-          //첨부이미지 테이블에 저장하면 할일
-          let vid = $('#file_table_id').val() + return_data.vid + ',';
-          $('#file_table_id').val(vid);
-          let html = `
-              <div class="thumb" id="f_${return_data.vid}" data-vid="${return_data.vid}">
-                <img src="/keepcoding/pdata/${return_data.savefile}" alt="">
-                <button type="button" class="btn btn-warning">삭제</button>
-            </div>
-          `;
-          $('#thumbnails').append(html);
-        }
-      }
-
-    });
+    }); //ajax
   }
+  // function attachFile(file) {
+  //   console.log(file);
+  //   let formData = new FormData(); //페이지 전환없이 이페이지 바로 이미지 등록
+  //   formData.append('savefile', file) //<input type="file" name="savefile" value="파일명">
+  //   console.log(formData);
+  //   $.ajax({
+  //     url: 'product_save_video.php',
+  //     data: formData,
+  //     cache: false,
+  //     contentType: false,
+  //     processData: false,
+  //     dataType: 'json',
+  //     type: 'POST',
+  //     error: function (error) {
+  //       console.log('error:', error)
+  //     },
+  //     success: function (return_data) {
+
+  //       console.log(return_data);
+
+  //       if (return_data.result == 'member') {
+  //         alert('로그인을 하십시오.');
+  //         return;
+  //       } else if (return_data.result == 'image') {
+  //         alert('이미지파일만 첨부할 수 있습니다.');
+  //         return;
+  //       } else if (return_data.result == 'size') {
+  //         alert('10메가 이하만 첨부할 수 있습니다.');
+  //         return;
+  //       } else if (return_data.result == 'error') {
+  //         alert('관리자에게 문의하세요');
+  //         return;
+  //       } else {
+  //         //첨부이미지 테이블에 저장하면 할일
+  //         let vid = $('#file_table_id').val() + return_data.vid + ',';
+  //         $('#file_table_id').val(vid);
+  //         let html = `
+  //             <div class="thumb" id="f_${return_data.vid}" data-vid="${return_data.vid}">
+  //               <img src="/keepcoding/pdata/${return_data.savefile}" alt="">
+  //               <button type="button" class="btn btn-warning">삭제</button>
+  //           </div>
+  //         `;
+  //         $('#thumbnails').append(html);
+  //       }
+  //     }
+
+  //   });
+  // }
   
 </script>
 <?php

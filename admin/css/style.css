@@ -6,6 +6,74 @@
   margin-left: 0;
 }
 
+/* DIALOG POPUP */
+.popup {
+  background: var(--mc-white);
+  position: fixed;
+  top: 40px;
+	left: 40px;
+  padding: 20px 30px;
+  border-color: var(--primary-color);
+	border-width: 7px;
+	box-sizing: border-box;
+	margin: 0;
+	z-index: 99999;
+	font-size: 16px;
+	line-height: 25px;
+}
+
+.popup a {
+	text-decoration: underline;
+}
+
+.popup h2 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-bottom: 10px;
+	color: var(--mc-black);
+}
+
+.popup hr {
+  margin: 15px 0;
+  border: none;
+  border-bottom: 1px solid var(--mc-gray4);
+}
+
+.popup .info a,
+.popup span {
+  color: var(--mc-black);
+}
+
+.popup #close {
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  background: var(--mc-white);
+  color: var(--primary-color);
+  border-radius: 3px;
+  border-color: var(--primary-color);
+}
+.popup #close:hover {
+  background: var(--primary-color-hover);
+  color: var(--mc-white);
+}
+
+.popup .checkbox label {
+  cursor: pointer;
+  color: var(--mc-gray4);
+	font-weight: lighter;
+}
+
+.popup #daycheck:checked + label {
+  font-weight: bold;
+  color: var(--primary-color-hover);
+	font-weight: bold;
+}
+/* DIALOG POPUP */
+
+
+
 /* header navbar */
 
 nav{
