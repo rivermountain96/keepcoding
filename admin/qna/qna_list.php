@@ -1,9 +1,19 @@
 <?php
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
   $title =  'Q&A 게시판 목록';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  
+  $pagenationTarget = 'qna';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/pagenation.php';
 
   $qid = $_GET['qid'];
+  $search_keyword = $_GET['search_keyword'] ?? '';
+  $search_where = '';
+
+  if($search_keyword){
+    $search_where .= " and (name like '%{$search_keyword}%' or content like '%{$search_keyword}%')";
+    //제목과 내용에 키워드가 포함된 상품 조회
+  }
+
   $sql = "SELECT * FROM qna WHERE qid='{$qid}'";
   $result = $mysqli->query($sql);
   $row = $result ->fetch_assoc();
