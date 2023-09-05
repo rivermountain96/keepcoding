@@ -75,13 +75,13 @@
         </div>
         <div class="form-check d-flex align-items-center gap-3">
           <input class="form-check-input" type="radio" name="due" id="due1" value="0">
-          <label class="form-check-label" for="status1">
+          <label class="form-check-label" for="due1">
             무제한 쿠폰
           </label>
         </div>
         <div class="form-check d-flex align-items-center gap-3">
           <input class="form-check-input" type="radio" name="due" id="due2" value="1">
-          <label class="form-check-label" for="status1">
+          <label class="form-check-label" for="due2">
             기간제한 쿠폰
           </label>
         </div>
