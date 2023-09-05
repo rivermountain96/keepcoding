@@ -112,7 +112,8 @@
 
   <div class="info">
     <p><span>제작기간</span> : 2023. 08. 11 - 09. 08</p>
-    <p><span>특징</span> : html, css, jQuery, php (Flex, Bootstrap, jQuery Library)</p>
+    <p><span>특징</span> : html, css, jQuery (Bootstrap, jQuery Library)</p>
+    <p>local: Windows, XAMPP(PHP, APACHE, MYSQL) | remote : PHP, LINUX, MYSQL</p>
     <p><span>기획</span> : <a href="#" target="_blank" class="figma"><span class="font_green">발표 자료</span></a>  |  <span>코드</span> : <a href="https://github.com/rivermountain96/keepcoding" target="_blank" class="git"><span>깃허브</span><i class="fa-brands fa-github"></i></a></p>
     <p><span>구현 완료 페이지</span> : </p>
   </div>

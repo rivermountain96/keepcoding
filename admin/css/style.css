@@ -46,9 +46,17 @@
 }
 
 .popup #close {
+  width: 50px;
+  height: 30px;
   cursor: pointer;
-  background: transparent;
+  background: var(--mc-white);
+  color: var(--primary-color);
   border-radius: 3px;
+  border-color: var(--primary-color);
+}
+.popup #close:hover {
+  background: var(--primary-color-hover);
+  color: var(--mc-white);
 }
 
 .popup .checkbox label {
