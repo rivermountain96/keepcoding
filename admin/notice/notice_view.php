@@ -1,6 +1,18 @@
 <?php
-  $title =  '공지 상세보기';
+  $title = '공지 상세보기';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
+  
+  $bno = $_GET['idx'];
+  $sql = "SELECT * FROM notice where idx='{$bno}'";
+  $result = $mysqli -> query($sql);
+  $rs = $result -> fetch_object();
+  
+  
+  $hit = $rs->hit + 1;
+  $sql2 = "UPDATE notice set hit = {$hit} where idx='{$bno}'";
+  var_dump($sql2);
+  $result2 = $mysqli -> query($sql2);
 ?>
 
 <!-- 최성희 notice_view 시작 -->
@@ -43,6 +55,25 @@
 
 </div>
   <!-- 최성희 notice_view 끝 -->
+
+  <script>
+  $('#summernote').summernote({
+placeholder: 'Hello keep coding',
+tabsize: 2,
+height: 100
+});
+
+  let btn = document.querySelector('#delete');
+
+  btn.addEventListener('click',(e)=>{
+  e.preventDefault();
+  if(confirm('삭제하시겠습니까?')){
+    window.location = 'notice_del.php?idx=<?= $bno; ?>';
+  }else{
+    alert('취소되었습니다');
+  }
+});
+  </script>
   
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';

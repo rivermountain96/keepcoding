@@ -1,6 +1,15 @@
 <?php
-  $title =  '공지 수정';
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+$title = '공지사항 수정';
+include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+
+$bno = $_GET['idx'];
+$sql = "SELECT * FROM notice where idx='{$bno}'";
+$result = $mysqli -> query($sql);
+$rs = $result -> fetch_object();
+
+if($_SESSION['AUNAME']){
+  $name = $_SESSION['AUNAME'];
+}
 ?>
 
 <!-- 최성희 notice_change 시작 -->
@@ -54,12 +63,40 @@
     tabsize: 2,
     height: 100
     });
-    $("#datepicker_start").datepicker({
+    $("#regdate").datepicker({
       dateFormat:'yy.mm.dd'
     });
-    $("#datepicker_end").datepicker({
+    $("#duedate").datepicker({
       dateFormat:'yy.mm.dd'
     });
+
+    $("#datepicker").datepicker({
+      dateFormat: 'yy.mm.dd',
+      minDate: 'today',
+      maxDate: '+1Y'
+    });
+    $("#datepicker").datepicker("setDate", new Date());
+    $("#datepicker2").datepicker({
+      dateFormat: 'yy.mm.dd',
+      minDate: 'today',
+      maxDate: '+1Y'
+    });
+    $("#datepicker2").datepicker("setDate", new Date());
+
+    let usedate = $('#usedate');
+    console.log(usedate);
+    usedate.change(function(){
+      let value = usedate.val();
+      console.log(value);
+      if(value == 2){
+        $("#datepicker").datepicker("option", {disabled:true, dateFormat: 'yy.mm.dd'});
+        $("#datepicker2").datepicker("option", {disabled:true, dateFormat: 'yy.mm.dd'});
+      }else{
+        $("#datepicker").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+        $("#datepicker2").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      }
+     
+    })
   </script>
 
 <?php

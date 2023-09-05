@@ -1,6 +1,30 @@
 <?php
-  $title =  '공지 사항';
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+$title = '공지사항 리스트';
+include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+
+$pagenationTarget = 'notice';
+include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/pagenation.php';
+
+$bno = $_GET['idx'];
+$search_keyword = $_GET['search_keyword'] ?? '';
+$search_where = '';
+
+if($search_keyword){
+  $search_where .= " and (name like '%{$search_keyword}%' or content like '%{$search_keyword}%')";
+  //제목과 내용에 키워드가 포함된 상품 조회
+}
+
+$sql = "SELECT * from notice where 1=1" ;
+$sql .= $search_where;
+$order = " order by idx desc";//최근순 정렬
+$limit = " limit $statLimit, $endLimit";
+$query = $sql.$order.$limit; //쿼리 문장 조합
+$result = $mysqli->query($query);
+// $newhit = $row['hit'] + 1;
+while($rs = $result -> fetch_object()){
+  $rsc[] = $rs;
+}
+
 ?>
 
 <!-- 최성희 notice_list 시작 -->

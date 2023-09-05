@@ -1,6 +1,11 @@
 <?php
-  $title =  '공지 등록';
+  $title = '공지 등록';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
+
+  if($_SESSION['AUNAME']){
+    $name = $_SESSION['AUNAME'];
+  }
 ?>
 
 <!-- 최성희 notice_up 시작 -->
@@ -44,20 +49,43 @@
     </form>
 </div>
   <!-- 최성희 notice_up 끝 -->
-  <script>    
+
+ <script>    
     $('#summernote').summernote({
       placeholder: 'Hello keep coding',
       tabsize: 2,
       height: 100
     });
 
-    $("#datepicker_start").datepicker({
-      dateFormat:'yy.mm.dd'
+    $("#datepicker").datepicker({
+      dateFormat: 'yy.mm.dd',
+      minDate: 'today',
+      maxDate: '+1Y'
     });
-    $("#datepicker_end").datepicker({
-      dateFormat:'yy.mm.dd'
+    $("#datepicker").datepicker("setDate", new Date());
+    $("#datepicker2").datepicker({
+      dateFormat: 'yy.mm.dd',
+      minDate: 'today',
+      maxDate: '+1Y'
     });
+    $("#datepicker2").datepicker("setDate", new Date());
+
+    let usedate = $('#usedate');
+    console.log(usedate);
+    usedate.change(function(){
+      let value = usedate.val();
+      console.log(value);
+      if(value == 2){
+        $("#datepicker").datepicker("option", {disabled:true, dateFormat: 'yy.mm.dd'});
+        $("#datepicker2").datepicker("option", {disabled:true, dateFormat: 'yy.mm.dd'});
+      }else{
+        $("#datepicker").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+        $("#datepicker2").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      }
+     
+    })
   </script>
+  
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
 ?>
