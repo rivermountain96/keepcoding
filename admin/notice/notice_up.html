@@ -103,21 +103,17 @@
       </div>
       
       <div class="row pd24 gap-3">
-        <div class="col p-0">
+        <div class="col-4 p-0">
           <p class="pd10 h6">공지 기한</p>
           <select class="form-select form-select-lg" aria-label="Small select example">
           <option value="1" selected>제한</option>
           <option value="2">무제한</option>
           </select>
         </div>
-        <div class="notice_up_regdate col p-0 datepicker">
+        <div class="notice_up_regdate col-4 p-0 datepicker">
           <label class="pd10 h6" for="datepicker_start">시작일</label>
           <input type="text" id="datepicker_start" name="datepicker" class="form-control form-control-lg"  placeholder="2023.09.09">
         </div> 
-        <div class="notice_up_enddate col p-0 datepicker">
-          <label class="pd10 h6" for="datepicker_end">만료일</label>
-          <input type="text" id="datepicker_end" name="datepicker" class="form-control form-control-lg"  placeholder="2023.09.09">
-        </div>
       </div>
 
       <div class="pd24">
@@ -147,9 +143,6 @@
   });
 
   $("#datepicker_start").datepicker({
-    dateFormat:'yy.mm.dd'
-  });
-  $("#datepicker_end").datepicker({
     dateFormat:'yy.mm.dd'
   });
 </script>
