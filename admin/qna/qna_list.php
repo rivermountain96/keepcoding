@@ -1,12 +1,37 @@
 <?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 
-  $sql = "SELECT * FROM qna";
-  $result = $mysqli -> query($sql);
+  $qid = $_GET['qid'];
+  $sql = "SELECT * FROM qna WHERE qid='{$qid}'";
+  $result = $mysqli->query($sql);
+  $row = $result ->fetch_assoc();
 
+  if(isset($_GET['page'])){
+    $page = $_GET['page'];
+  }else{
+    $page = 1;
+  }
+  //전체글 개수 확인
+  $pagesql = "SELECT COUNT(*) AS cnt FROM qna";
+  $page_result = $mysqli->query($pagesql); 
+  $page_row = $page_result->fetch_assoc();
+  $row_num = $page_row['cnt'];  //글의 총 개수 57
+  var_dump($row_num);
+
+  $list = 10; //페이지당 보여줄 개수
+  $block_ct = 5; //페이지네이션 개수
+
+  $block_num = ceil($page/$block_ct);
+  $block_start = (($block_num - 1) * $block_ct) + 1; 
+  $block_end = $block_start + $block_ct - 1;   
+  $total_page = ceil($row_num/$list); //총 페이지 수 7
+  $total_block = ceil($total_page/$block_ct); // 7/5   2
+  if( $block_end > $total_page) $block_end = $total_page;
+  $start_num = ($page-1)*$list;
 ?>
 
-<!-- 최성희 qna_list 시작 -->
+<!-- 이강산 qna_list 시작 -->
 <div class="content">
   <h2 class="pd72 fs-4">Q&A 게시판</h2>
     <form class="d-flex pd48" role="search">
@@ -26,21 +51,35 @@
       </tr>
     </thead>
     <tbody>
-      <!-- qna_list_tr 시작 -->
-      <tr>
-        <td class="align-middle">50</td>
-        <td class="align-middle"><a href="qna_view.html">안녕하세요. aws관련 질문 드립니다.</a></td>
-        <td class="align-middle">roja1212</td>
-        <td class="align-middle">완료</td>
-        <td class="align-middle">12</td>
-        <td class="align-middle">2023.09.09</td>
-        <td class="align-middle">
-          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
-        </td>
-      </tr>
-      <!-- qna_list_tr 끝 -->
-      
-      
+    <?php
+      $sql = "SELECT * FROM qna ORDER BY qid DESC LIMIT $start_num, $list";
+      $result = $mysqli->query($sql); 
+
+      while($row = $result->fetch_array(MYSQLI_ASSOC)){
+        //var_dump($row);
+        
+        $post_time = $row['date']; //포스트의 등록일
+        $time_now = date('Y-m-d'); //오늘 날짜
+        $current_qid = $row['qid']; // 현재 행의 qid
+
+    ?>
+
+
+    <tr>
+      <td class="align-middle"><?= $row['qid']; ?></td>
+      <td class="align-middle"><a href="qna_view.php?qid=<?= $current_qid; ?>"><?= $row['qna_title']; ?></a></td>
+      <td class="align-middle"><?= $row['username']; ?></td>
+      <td class="align-middle"><?= $row['isanswer']; ?></td>
+      <td class="align-middle"><?= $row['views']; ?></td>
+      <td class="align-middle"><?= date("Y.m.d"); ?></td>
+      <td class="align-middle">
+        <button type="button" class="btn btn-outline-primary btn-sm qna_list_del" data-qid="<?= $current_qid; ?>">삭제</button>
+      </td>
+    </tr>
+
+    <?php
+      }
+    ?> 
     </tbody>
   </table>
   <div class="d-flex align-items-center pd48">
@@ -58,7 +97,18 @@
   </div>
 
   </div>
-<!-- 최성희 qna_list 끝 -->
+<!-- 이강산 qna_list 끝 -->
+<script>
+  $('.qna_list_del').click(function(e){
+    e.preventDefault();
+    var qid = $(this).data('qid');
+    if(confirm('삭제하시겠습니까?')){
+      window.location = 'qna_del.php?qid='+qid;
+    } else {
+      alert('취소되었습니다.');
+    }
+  });
+</script>
 
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
