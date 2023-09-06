@@ -125,7 +125,7 @@
           ?>
         </select>
         <select class="form-select big" aria-label="Default select example" id="pcid3">
-          <option selected disabled>중분류</option>
+          <option selected disabled id="second">대분류를 먼저 선택하세요</option>
         </select>
         <div class="row">
           <input type="hidden" class="form-control big" name="pcate3" id="pcate3">
@@ -238,12 +238,10 @@
     $('#pcate2').val($(this).val());
   });
 
-  $('#pcid3').click(function(){
-    if(!$('#pcid1-1').val()){
-      alert('대분류를 먼저 선택하세요.');
-    }
-  })
-
+  $('#pcid1-1').change(function(){
+    $('#second').text('중분류');
+  });
+  
 
   $('#pcid3').change(function(){
     $('#pcate3').val($(this).val());
