@@ -64,8 +64,8 @@
       </div>
 
       <div class="login_ir d-flex justify-content-end">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">ID 저장</label>
+        <input class="form-check-input" type="checkbox" name="checkId" id="saveId">
+        <label class="form-check-label" for="saveId">ID 저장</label>
       </div>
 
       <button type="submit" class="btn btn-outline-primary btn-lg text-uppercase fw-bold fs-5">login</button>
@@ -74,7 +74,7 @@
   <!-- 정이원 login 끝-->
 
   <!-- 이강산 DIALOG POPUP 시작 -->
-<dialog class="popup">
+  <dialog class="popup">
   <h2>KEEPCODING LMS 학습사이트(포트폴리오)</h2>
   <p>
     <span>본 사이트는 구직용 포트폴리오 사이트입니다.</span>
@@ -119,6 +119,63 @@
   </div>
 </dialog>
 <!-- 이강산 DIALOG POPUP 끝 -->
+<!-- 
+<script>
+$(document).ready(function(){
+  var key = getCookie('admin'); 
+  if(key!=""){
+    $("#userid").val(key); 
+  }
+   
+  if($("#userid").val() != ""){ 
+    $("#saveId").attr("checked", true); 
+  }
+   
+  $("#saveId").change(function(){ 
+    if($("#saveId").is(":checked")){ 
+      setCookie('admin', $("#userid").val(), 7); 
+    }else{ 
+      deleteCookie('admin');
+    }
+  });
+   
+  $("#userid").keyup(function(){ 
+    if($("#saveId").is(":checked")){
+      setCookie('admin', $("#userid").val(), 7); 
+    }
+  });
+});
+
+function setCookie(cookieName, value, exdays){
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+    document.cookie = cookieName + "=" + cookieValue;
+}
+ 
+// 쿠키삭제
+function deleteCookie(cookieName){
+  var expireDate = new Date();
+  expireDate.setDate(expireDate.getDate() - 1);
+  document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
+
+// 쿠키 가져오기
+function getCookie(cookieName) {
+  cookieName = cookieName + '=';
+  var cookieData = document.cookie;
+  var start = cookieData.indexOf(cookieName);
+  var cookieValue = '';
+  if(start != -1){
+    start += cookieName.length;
+    var end = cookieData.indexOf(';', start);
+    if(end == -1)end = cookieData.length;
+    cookieValue = cookieData.substring(start, end);
+  }
+  return unescape(cookieValue);
+}
+</script> -->
+
 
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';

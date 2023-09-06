@@ -1,6 +1,7 @@
 <?php
   $myclass = '<link href="/keepcoding/admin/css/index.css" rel="stylesheet">';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   //이번달 총 판매건수
 
   $sqlA = "SELECT * FROM category WHERE step=2;";

@@ -1,12 +1,16 @@
 <?php
   $title =  '쿠폰 수정';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
-  $cid = $_GET['cid'];
-  $sql = "SELECT * FROM coupons WHERE cid={$cid}";
-  $result = $mysqli -> query($sql);
-  while($rs = $result -> fetch_object()){
-    $rsArr[]=$rs;
-  }
+
+
+$cid = $_GET['cid'];
+
+$sql = "SELECT * FROM coupons WHERE cid={$cid}";
+$result = $mysqli -> query($sql);
+
+while($rs = $result -> fetch_object()){
+  $rsArr[]=$rs;
+}
 ?>
   <!-- 이은서 coupon_edit 시작 -->
 <div class="content">
@@ -111,7 +115,7 @@
     <?php
         }
     ?>
-    <div class="pd48">
+    <div class="pd48 p-0 form-width-973">
       <div class="coupon_up_image">
         <div class="row pd48">
           <div class="col-4">
@@ -120,10 +124,6 @@
               <img src="<?= $item-> coupon_image ?>" alt="">
               <input type="hidden" name="origin_image" id="origin_image" value="<?= $item-> coupon_image ?>">
             </div>
-          </div>
-          <div class="col-8">
-            <h6 class="pd10">기존 이미지 경로</h6>
-            <p class="path_container"><?= $item-> coupon_image ?></p>
           </div>
         </div>
         <label class="pd10 h6 form-label" for="coupon_image">이미지 수정</label>

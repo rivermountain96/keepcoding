@@ -1,6 +1,7 @@
 <?php
   $title =  '카테고리 관리';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 ?>
 <div class="content">
@@ -125,7 +126,7 @@
           ?>
         </select>
         <select class="form-select big" aria-label="Default select example" id="pcid3">
-          <option selected disabled>중분류</option>
+          <option selected disabled id="second">대분류를 먼저 선택하세요</option>
         </select>
         <div class="row">
           <input type="hidden" class="form-control big" name="pcate3" id="pcate3">
@@ -237,6 +238,11 @@
   $('#pcid2').change(function(){
     $('#pcate2').val($(this).val());
   });
+
+  $('#pcid1-1').change(function(){
+    $('#second').text('중분류');
+  });
+  
 
   $('#pcid3').change(function(){
     $('#pcate3').val($(this).val());

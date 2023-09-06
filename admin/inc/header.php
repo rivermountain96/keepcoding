@@ -17,7 +17,7 @@
   <!-- summernote 끝 -->
   <link href="/keepcoding/common.css" rel="stylesheet">
   <link href="/keepcoding/admin/css/style.css" rel="stylesheet">
-  <?= $myclass ?>
+  <?php if(isset($myclass)){ echo $myclass; } ?>
   <!-- script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -83,7 +83,7 @@
     </ul>
     <ul>
       <li class="nav-item d-flex justify-content-between">
-        <a class="nav-link mc-b-rgba" aria-current="page" href="">로그아웃</a>
+        <a class="nav-link mc-b-rgba" aria-current="page" href="/keepcoding/admin/logout.php">로그아웃</a>
         <a class="nav-link mc-b-rgba" aria-current="page" href=""><i class="bi bi-gear-wide-connected"></i></a>
       </li>
     </ul>

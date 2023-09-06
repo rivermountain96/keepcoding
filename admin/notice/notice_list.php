@@ -2,24 +2,32 @@
 $title = '공지사항 리스트';
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
 
-$pagenationTarget = 'notice';
-include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/pagenation.php';
+$pageNumber = $_GET['pageNumber'] ?? 1;
 
 $bno = $_GET['idx'];
 $search_keyword = $_GET['search_keyword'] ?? '';
 $search_where = '';
 
 if($search_keyword){
-  $search_where .= " and (title like '%".$search_keyword."%' or content like '%".$search_keyword."%')";
+  $search_where .= " and (title like '%{$search_keyword}%' or content like '%{$search_keyword}%')";
   }
+
 
 $sql = "SELECT * from notice where 1=1" ;
 $sql .= $search_where;
 $order = " order by idx desc";//최근순 정렬
-$limit = " limit $statLimit, $endLimit";
+
+
+$pagenationTarget = 'notice';
+include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/pagenation.php';
+$limit = " limit $startLimit, $endLimit";
 $query = $sql.$order.$limit; //쿼리 문장 조합
 $result = $mysqli->query($query);
 // $newhit = $row['hit'] + 1;
+if (!$result) {
+  die("쿼리 실행 중 오류 발생: " . mysqli_error($mysqli));
+}
+
 while($rs = $result -> fetch_object()){
   $rsc[] = $rs;
 }
@@ -81,17 +89,17 @@ while($rs = $result -> fetch_object()){
       <ul class="pagination justify-content-center">
       <?php
         if($pageNumber>1){                   
-            echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?pageNumber=1\">&lt;&lt;</a></li>";
+            echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?search_keyword=$search_keyword&pageNumber=1\">&lt;&lt;</a></li>";
             if($block_num > 1){
                 $prev = ($block_num - 2) * $block_ct + 1;
-                echo "<li class=\"page-item\"><a href='?pageNumber=$prev' class=\"page-link\">이전</a></li>";
+                echo "<li class=\"page-item\"><a href='?search_keyword=$search_keyword&pageNumber=$prev' class=\"page-link\">이전</a></li>";
             }
         }
         for($i=$block_start;$i<=$block_end;$i++){
           if($pageNumber == $i){
-              echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?pageNumber=$i\" class=\"page-link\">$i</a></li>";
+              echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?search_keyword=$search_keyword&pageNumber=1\pageNumber=$i\" class=\"page-link\">$i</a></li>";
           }else{
-              echo "<li class=\"page-item\"><a href=\"?pageNumber=$i\" class=\"page-link\">$i</a></li>";
+              echo "<li class=\"page-item\"><a href=\"?search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
           }
         }
         if($pageNumber<$total_page){
