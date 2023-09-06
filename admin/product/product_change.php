@@ -1,16 +1,13 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
+  // include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 
 $pid = $_GET['pid'];
 $sql = "SELECT * FROM products WHERE pid = '$pid'";
-$result = $mysqli ->query($sql);
-$row = $result -> fetch_object();
+$result2 = $mysqli ->query($sql);
+$row = $result2 -> fetch_object();
 
 ?>
-
-
-
 
 
 <body>
