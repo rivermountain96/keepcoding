@@ -32,7 +32,7 @@
   <hr class="pd24">
     <div class="pd24">
       <h3 class="pd24 h6 text-secondary">이미지</h3>
-      <img src="/keepcoding/admin/img/qna_qna.png" alt="">
+      <img src="<?= $rs->thumbnail ;?>" alt="">
     </div>
   <hr class="pd24">
     <div class="pd24">
