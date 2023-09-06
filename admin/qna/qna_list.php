@@ -2,44 +2,55 @@
   $title =  'Q&A 게시판 목록';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
   
-  $pagenationTarget = 'qna';
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/pagenation.php';
+  $pageNumber = $_GET['pageNumber'] ?? 1;
 
   $qid = $_GET['qid'];
+  $regdate = $_GET['regdate'] ?? ''; //받아올값
   $search_keyword = $_GET['search_keyword'] ?? '';
+
   $search_where = '';
 
+
+  if($regdate == 0){
+    $search_where .= " and regdate IS NULL";
+  }else if($regdate == 1){
+      $search_where .= " and regdate IS NOT NULL";
+  }
+
+  // if($regdate == 0){
+  //   $search_where .= " and regdate = ''";
+  // }else if($regdate == 1){
+  //   $search_where .= " and regdate IS NOT NULL AND regdate <> ''";
+  // }
+  
   if($search_keyword){
-    $search_where .= " and (name like '%{$search_keyword}%' or content like '%{$search_keyword}%')";
+    $search_where .= " and (username like '%{$search_keyword}%' or qna_content like '%{$search_keyword}%')";
     //제목과 내용에 키워드가 포함된 상품 조회
   }
 
-  $sql = "SELECT * FROM qna WHERE qid='{$qid}'";
-  $result = $mysqli->query($sql);
-  $row = $result ->fetch_assoc();
+  $sql = "SELECT * FROM qna WHERE 1=1";
+  
+  $sql .= $search_where;
+  $order = ' order by qid desc'; //최신순 정렬
 
-  if(isset($_GET['page'])){
-    $page = $_GET['page'];
-  }else{
-    $page = 1;
+  //페이지네이션
+  $pagenationTarget = 'qna';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/pagenation.php';
+
+  $limit = " limit $startLimit, $endLimit";
+  // $limit = " limit 0, 10";
+  $query = $sql.$order.$limit;
+
+  $result = $mysqli->query($query);
+
+  if (!$result) {
+    die("쿼리 실행 중 오류 발생: " . mysqli_error($mysqli));
   }
-  //전체글 개수 확인
-  $pagesql = "SELECT COUNT(*) AS cnt FROM qna";
-  $page_result = $mysqli->query($pagesql); 
-  $page_row = $page_result->fetch_assoc();
-  $row_num = $page_row['cnt'];  //글의 총 개수 57
-  var_dump($row_num);
 
-  $list = 10; //페이지당 보여줄 개수
-  $block_ct = 5; //페이지네이션 개수
+  while($rs = $result -> fetch_object()){
+    $rsc[] = $rs;
+  }
 
-  $block_num = ceil($page/$block_ct);
-  $block_start = (($block_num - 1) * $block_ct) + 1; 
-  $block_end = $block_start + $block_ct - 1;   
-  $total_page = ceil($row_num/$list); //총 페이지 수 7
-  $total_block = ceil($total_page/$block_ct); // 7/5   2
-  if( $block_end > $total_page) $block_end = $total_page;
-  $start_num = ($page-1)*$list;
 ?>
 
 <!-- 이강산 qna_list 시작 -->
@@ -63,25 +74,23 @@
     </thead>
     <tbody>
     <?php
-      $sql = "SELECT * FROM qna ORDER BY qid DESC LIMIT $start_num, $list";
-      $result = $mysqli->query($sql); 
-
-      while($row = $result->fetch_array(MYSQLI_ASSOC)){
-        //var_dump($row);
+      if(isset($rsc)){
+        foreach($rsc as $item){
+    
         
-        $post_time = $row['date']; //포스트의 등록일
+        $post_time = $item -> date; //포스트의 등록일
         $time_now = date('Y-m-d'); //오늘 날짜
-        $current_qid = $row['qid']; // 현재 행의 qid
+        $current_qid = $item -> qid ; // 현재 행의 qid
 
     ?>
 
 
     <tr>
-      <td class="align-middle"><?= $row['qid']; ?></td>
-      <td class="align-middle"><a href="qna_view.php?qid=<?= $current_qid; ?>"><?= $row['qna_title']; ?></a></td>
-      <td class="align-middle"><?= $row['username']; ?></td>
-      <td class="align-middle"><?= $row['isanswer']; ?></td>
-      <td class="align-middle"><?= $row['views']; ?></td>
+      <td class="align-middle"><?= $item->qid; ?></td>
+      <td class="align-middle"><a href="qna_view.php?qid=<?= $current_qid; ?>"><?= $item->qna_title; ?></a></td>
+      <td class="align-middle"><?= $item -> username; ?></td>
+      <td class="align-middle"><?= $item -> isanswer; ?></td>
+      <td class="align-middle"><?= $item -> views; ?></td>
       <td class="align-middle"><?= date("Y.m.d"); ?></td>
       <td class="align-middle">
         <button type="button" class="btn btn-outline-primary btn-sm qna_list_del" data-qid="<?= $current_qid; ?>">삭제</button>
@@ -89,25 +98,42 @@
     </tr>
 
     <?php
+        }
       }
     ?> 
     </tbody>
   </table>
-  <div class="d-flex align-items-center pd48">
-    <nav aria-label="Page navigation example" class="col-11">
-      <ul class="pagination justify-content-center">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item active"><a class="page-link" href="#">4</a></li>
-        <li class="page-item"><a class="page-link" href="#">5</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  <div class="d-flex align-items-center">
+    <nav aria-label="Page navigation" class="col-11">
+      <ul class="pagination justify-content-center align-items-center ">
+      <?php
+          if($pageNumber>1){                   
+              echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?&due=$regdate&pageNumber=1\">Previous</a></li>";
+              if($block_num > 1){
+                  $prev = ($block_num - 2) * $block_ct + 1;
+                  echo "<li class=\"page-item\"><a href='?&due=$regdate&pageNumber=$prev' class=\"page-link\">&lt;</a></li>";
+              }
+          }
+          for($i=$block_start;$i<=$block_end;$i++){
+            if($pageNumber == $i){
+                echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?&due=$regdate&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+            }else{
+                echo "<li class=\"page-item\"><a href=\"?&due=$regdate&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+            }
+          }
+          if($pageNumber<$total_page){
+            if($total_block > $block_num){
+                $next = $block_num * $block_ct + 1;
+                echo "<li class=\"page-item\"><a href=\"?&due=$regdate?pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
+            }
+            echo "<li class=\"page-item\"><a href=\"?&due=$regdate?pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
+          }
+        ?>
       </ul>
     </nav>
   </div>
 
-  </div>
+</div>
 <!-- 이강산 qna_list 끝 -->
 <script>
   $('.qna_list_del').click(function(e){
