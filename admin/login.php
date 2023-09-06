@@ -1,7 +1,5 @@
 <?php
-  header("Access-Control-Allow-Origin: *"); // 모든 출처에서의 요청 허용
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
-  
+
   if(isset($_SESSION['AUID'])){
     if($_SESSION['AUID'] == 'admin'){
       echo "<script>
@@ -10,6 +8,7 @@
       </script>";
     }
   }
+
 ?> 
 
 <!DOCTYPE html>
@@ -64,8 +63,8 @@
       </div>
 
       <div class="login_ir d-flex justify-content-end">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">ID 저장</label>
+        <input class="form-check-input" type="checkbox" name="checkId" id="saveId">
+        <label class="form-check-label" for="saveId">ID 저장</label>
       </div>
 
       <button type="submit" class="btn btn-outline-primary btn-lg text-uppercase fw-bold fs-5">login</button>
@@ -73,52 +72,61 @@
   </div>
   <!-- 정이원 login 끝-->
 
-  <!-- 이강산 DIALOG POPUP 시작 -->
-<dialog class="popup">
-  <h2>KEEPCODING LMS 학습사이트(포트폴리오)</h2>
-  <p>
-    <span>본 사이트는 구직용 포트폴리오 사이트입니다.</span>
-  </p>
+<script>
+$(document).ready(function(){
+	var key = getCookie('admin'); 
+	if(key!=""){
+		$("#userid").val(key); 
+	}
+	 
+	if($("#userid").val() != ""){ 
+		$("#saveId").attr("checked", true); 
+	}
+	 
+	$("#saveId").change(function(){ 
+		if($("#saveId").is(":checked")){ 
+			setCookie('admin', $("#userid").val(), 7); 
+		}else{ 
+			deleteCookie('admin');
+		}
+	});
+	 
+	$("#userid").keyup(function(){ 
+		if($("#saveId").is(":checked")){
+			setCookie('admin', $("#userid").val(), 7); 
+		}
+	});
+});
 
-  <hr>
+function setCookie(cookieName, value, exdays){
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+    document.cookie = cookieName + "=" + cookieValue;
+}
+ 
+// 쿠키삭제
+function deleteCookie(cookieName){
+	var expireDate = new Date();
+	expireDate.setDate(expireDate.getDate() - 1);
+	document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
 
-  <div class="info">
-    <p><span>제작기간</span> : 2023. 08. 11 - 09. 08</p>
-    <p><span>특징</span> : html, css, jQuery (Bootstrap, jQuery Library)</p>
-    <p>local: Windows, XAMPP(PHP, APACHE, MYSQL) | remote : PHP, LINUX, MYSQL</p>
-    <p><span>기획</span> : <a href="#" target="_blank" class="figma"><span class="font_green">발표 자료</span></a>  |  <span>코드</span> : <a href="https://github.com/rivermountain96/keepcoding" target="_blank" class="git"><span>깃허브</span><i class="fa-brands fa-github"></i></a></p>
-    <p><span>구현 완료 페이지</span> : </p>
-  </div>
-
-  <hr>
-
-  <div class="work">
-    <p><span>팀원</span> : 정*원, 박*용, 이*산, 이*서, 최*희</p>
-    <p><span>기획</span> : 전원참가(공동)</p>
-    <dl>
-      <dt><span>- 디자인 및 구현 -</span></dt>
-      <dd><span>정*원</span> : Main</dd>
-      <dd><span>박*용</span> : Main</dd>
-      <dd><span>이*산</span> : Main</dd>
-      <dd><span>이*서</span> : Main</dd>
-      <dd><span>최*희</span> : Main</dd>
-    </dl>
-  </div>
-
-  <hr>
-
-  <div class="close_wrap d-flex justify-content-between">
-    <div class="checkbox">
-      <input type="checkbox" id="daycheck" class="hidden">
-      <label for="daycheck">
-        <i class="fa-solid fa-check"></i>
-        오늘 하루 안보기
-      </label>
-    </div>
-    <button type="button" id="close">닫기</button>
-  </div>
-</dialog>
-<!-- 이강산 DIALOG POPUP 끝 -->
+// 쿠키 가져오기
+function getCookie(cookieName) {
+	cookieName = cookieName + '=';
+	var cookieData = document.cookie;
+	var start = cookieData.indexOf(cookieName);
+	var cookieValue = '';
+	if(start != -1){
+		start += cookieName.length;
+		var end = cookieData.indexOf(';', start);
+		if(end == -1)end = cookieData.length;
+		cookieValue = cookieData.substring(start, end);
+	}
+	return unescape(cookieValue);
+}
+</script>
 
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
