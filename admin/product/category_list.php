@@ -3,50 +3,56 @@
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 ?>
-  <div class="content">
+<div class="content">
   <h4 class="pd72 fs-4 fw-bold">카테고리 관리</h4>
-    <div class="d-flex justify-content-between gap-5">
-      <div class="cate-list d-flex flex-column">
-        <h6 class="pd10 fs-6 fw-bold text-center">대분류</h6>
-        <ul class="list-group pd72" id="cate1">
-          <li id="bigCate" class="list-group-item big d-flex justify-content-between align-items-center" data-step="0" data-cid="0">
-            대분류 목록
-            <i class="bi bi-chevron-down"></i>
-          </li>
+  <div class="d-flex justify-content-between gap-5">
+    <div class="cate-list d-flex flex-column">
+      <h6 class="pd10 fs-6 fw-bold text-center">대분류</h6>
+      <ul class="list-group pd72" id="cate1">
+        <li id="bigCate" class="list-group-item big d-flex justify-content-between align-items-center" data-step="0" data-cid="0">
+          대분류 목록
+          <i class="bi bi-chevron-down"></i>
+        </li>
+        <li>
             <ul class="cateview cate1">
             </ul>
-        </ul>
-        <button type="button" class="btn btn-primary align-self-center" data-bs-toggle="modal" data-bs-target="#cate1Modal">대분류 등록</button>
-      </div>
-      <!-- 대분류 -->
-      <div class="cate-list d-flex flex-column">
-        <h6 class="pd10 fs-6 fw-bold text-center">중분류</h6>
-        <ul class="list-group pd72" id="cate2">
-          <li class="list-group-item big d-flex justify-content-between align-items-center">
-            중분류 목록
-            <i class="bi bi-chevron-down"></i>
-          </li>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-primary align-self-center" data-bs-toggle="modal" data-bs-target="#cate1Modal">대분류 등록</button>
+    </div>
+    <!-- 대분류 -->
+    <div class="cate-list d-flex flex-column">
+      <h6 class="pd10 fs-6 fw-bold text-center">중분류</h6>
+      <ul class="list-group pd72" id="cate2">
+        <li class="list-group-item big d-flex justify-content-between align-items-center">
+          중분류 목록
+          <i class="bi bi-chevron-down"></i>
+        </li>
+        <li>
           <ul class="cateview cate2">
           </ul>
-        </ul>
-        <button type="button" class="btn btn-primary align-self-center" data-bs-toggle="modal" data-bs-target="#cate2Modal">중분류 등록</button>
-      </div>
-      <!-- 중분류 -->
-      <div class="cate-list d-flex flex-column">
-        <h6 class="pd10 fs-6 fw-bold text-center">소분류</h6>
-        <ul class="list-group pd72" id="cate3">
-          <li class="selected_cate list-group-item big d-flex justify-content-between align-items-center">
-            소분류 목록
-            <i class="bi bi-chevron-down"></i>
-          </li>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-primary align-self-center" data-bs-toggle="modal" data-bs-target="#cate2Modal">중분류 등록</button>
+    </div>
+    <!-- 중분류 -->
+    <div class="cate-list d-flex flex-column">
+      <h6 class="pd10 fs-6 fw-bold text-center">소분류</h6>
+      <ul class="list-group pd72" id="cate3">
+        <li class="selected_cate list-group-item big d-flex justify-content-between align-items-center">
+          소분류 목록
+          <i class="bi bi-chevron-down"></i>
+        </li>
+        <li>
           <ul class="cateview cate3">
           </ul>
-        </ul>
-        <button type="button" class="btn btn-primary align-self-center" data-bs-toggle="modal" data-bs-target="#cate3Modal">소분류 등록</button>
-      </div>
-      <!-- 소분류 -->
+        </li>
+      </ul>
+      <button type="button" class="btn btn-primary align-self-center" data-bs-toggle="modal" data-bs-target="#cate3Modal">소분류 등록</button>
     </div>
-
+    <!-- 소분류 -->
+  </div>
+</div>
     
 
 <!-- Modal 1 -->
@@ -88,7 +94,7 @@
             }
           ?>
         </select>       
-        <input type="hidden" class="form-control big" name="pcate2" id="pcate2" value="" placeholder="대분류값">
+        <input type="hidden" class="form-control big" name="pcate2" id="pcate2" value="">
         <input type="text" class="form-control big" name="name2" id="name2" placeholder="중분류명">
       </div>
       <div class="modal-footer">
@@ -122,7 +128,7 @@
           <option selected disabled>중분류</option>
         </select>
         <div class="row">
-          <input type="hidden" class="form-control big" name="pcate3" id="pcate3" placeholder="소분류명">
+          <input type="hidden" class="form-control big" name="pcate3" id="pcate3">
           <input type="text" class="form-control big" name="name3" id="name3" placeholder="소분류명">
         </div>
       </div>
@@ -271,13 +277,13 @@
       },
       success: function(rdata){
         if(rdata.result == 1){
-          alert('카테고리를 성공적으로 등록했습니다.');
+          alert('카테고리 등록 성공.');
           location.reload();
         }else if(rdata.result == -1){
           alert('카테고리명이 이미 사용중입니다.');
           location.reload();
         }else {
-          alert('카테고리 등록을 실패했습니다.');
+          alert('카테고리 등록 실패');
         }
       }
     });
@@ -303,15 +309,15 @@
         },
         success: function(rdata){
           if(rdata.result == 1){
-            alert('카테고리를 성공적으로 삭제했습니다.');
+            alert('카테고리 삭제 성공');
             location.reload();
           }else{
-            alert('카테고리 삭제를 실패했습니다.');
+            alert('카테고리 삭제 실패');
             location.reload();
         }
       }});
     }else{
-      alert('카테고리 삭제를 취소했습니다.');
+      alert('카테고리 삭제 취소');
     }
   });
 
@@ -339,10 +345,10 @@
         },
         success: function(rdata){
           if(rdata.result == 1){
-            alert('카테고리명을 성공적으로 수정했습니다.');
+            alert('카테고리명 수정 성공');
             location.reload();
           }else{
-            alert('카테고리명 수정을 실패했습니다.');
+            alert('카테고리명 수정 실패');
             location.reload();
           }
         }
@@ -397,6 +403,7 @@
   }
 
 </script>
-</body>
-</html>
+<?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
+?>
 

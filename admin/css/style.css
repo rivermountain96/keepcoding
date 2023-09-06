@@ -90,7 +90,7 @@ nav{
 .logo a{
   display: block;
   text-indent: -9999rem;
-  background-image: url('../img/keepcoding_logo.svg');
+  background-image: url('../img/logo.png');
   background-size: cover;
   width: 130px;
   height: 25px;
@@ -483,7 +483,6 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
 .form-width-973{
   width: 97.3%;
 }
-
 /* 정이원 login 시작 */
 .login .row>*{
   padding: 0px;
@@ -492,7 +491,7 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
   width: 400px;
   height: 442px;
   background-color: #fff;
-  background-image: url(/admin/img/keepcoding_logo.svg);
+  background-image: url(/keepcoding/admin/img/keepcoding_logo.svg);
   background-size: 55%;
   background-repeat: no-repeat;
   background-position: center 43px;

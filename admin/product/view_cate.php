@@ -20,7 +20,6 @@
     }
     if(isset($rsc)){
       foreach($rsc as $ct){
-
         $html .= "<li class=\"list-group-item big d-flex justify-content-between align-items-center\" data-cid=\"".$ct -> cid."\" data-step=\"".$ct -> step."\">
             <span class=\"cate_size\">".$ct -> name."</span>
             <div class=\"cate_edit_btns d-flex gap-3\">
