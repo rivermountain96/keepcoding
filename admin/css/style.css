@@ -466,7 +466,7 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
 .notice_view hr, .qna_view hr, .product_view hr, .coupon_view hr{
   border-color: var(--mc-black);
 }
-.notice_view img, .qna_view img{
+.notice_view img, .qna_view img, .product_view img{
   height: 150px;}
 
 .coupon_view img{height: 120px;}

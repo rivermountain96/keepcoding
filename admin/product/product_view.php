@@ -76,14 +76,14 @@
     <!-- product_view_sec4 썸네일이미지 -->
 
     <div class="col pd24">
-    <h6 class="pd24 text-secondary">썸네일</h6>
+    <h6 class="pd24 text-secondary product_view">썸네일</h6>
     <img src="<?= $row->thumbnail; ?>" alt="">
 
     </div>
     <hr class="pd24">
 
-     <!-- product_view_sec5 영상업로드 -->
-     <div class="product_view_sec2 pd24">
+    <!-- product_view_sec5 영상업로드 -->
+    <div class="product_view_sec2 pd24">
         <h6 class="pd24 text-secondary">강의 영상</h6>
         <div class="row">
           <p class="col-7 pd24">
