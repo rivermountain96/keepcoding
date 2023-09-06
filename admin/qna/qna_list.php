@@ -64,7 +64,7 @@
     <?php
       if(isset($rsc)){
         foreach($rsc as $item){
-        $post_time = $item -> date; //포스트의 등록일
+        $post_time = $item -> regdate; //포스트의 등록일
         $time_now = date('Y-m-d'); //오늘 날짜
         $current_qid = $item -> qid; // 현재 행의 qid
     ?>
