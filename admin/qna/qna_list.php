@@ -10,18 +10,6 @@
 
   $search_where = '';
 
-
-  if($regdate == 0){
-    $search_where .= " and regdate IS NULL";
-  }else if($regdate == 1){
-      $search_where .= " and regdate IS NOT NULL";
-  }
-
-  // if($regdate == 0){
-  //   $search_where .= " and regdate = ''";
-  // }else if($regdate == 1){
-  //   $search_where .= " and regdate IS NOT NULL AND regdate <> ''";
-  // }
   
   if($search_keyword){
     $search_where .= " and (username like '%{$search_keyword}%' or qna_content like '%{$search_keyword}%')";
@@ -57,7 +45,7 @@
 <div class="content">
   <h2 class="pd72 fs-4">Q&A 게시판</h2>
     <form class="d-flex pd48" role="search">
-      <input class="form-control form-control-lg me-4" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search">
+      <input class="form-control form-control-lg me-4" type="search" name="search_keyword" placeholder="제목 및 내용 검색하기" aria-label="Search">
       <button class="btn btn-outline-primary nowrap col-1" type="submit">검색</button>
     </form>
   <table class="table qna_list_table">
@@ -76,21 +64,18 @@
     <?php
       if(isset($rsc)){
         foreach($rsc as $item){
-    
-        
         $post_time = $item -> date; //포스트의 등록일
         $time_now = date('Y-m-d'); //오늘 날짜
-        $current_qid = $item -> qid ; // 현재 행의 qid
-
+        $current_qid = $item -> qid; // 현재 행의 qid
     ?>
 
 
     <tr>
       <td class="align-middle"><?= $item->qid; ?></td>
       <td class="align-middle"><a href="qna_view.php?qid=<?= $current_qid; ?>"><?= $item->qna_title; ?></a></td>
-      <td class="align-middle"><?= $item -> username; ?></td>
-      <td class="align-middle"><?= $item -> isanswer; ?></td>
-      <td class="align-middle"><?= $item -> views; ?></td>
+      <td class="align-middle"><?= $item->username; ?></td>
+      <td class="align-middle"><?= $item->isanswer; ?></td>
+      <td class="align-middle"><?= $item->views; ?></td>
       <td class="align-middle"><?= date("Y.m.d"); ?></td>
       <td class="align-middle">
         <button type="button" class="btn btn-outline-primary btn-sm qna_list_del" data-qid="<?= $current_qid; ?>">삭제</button>

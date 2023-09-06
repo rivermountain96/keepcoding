@@ -6,6 +6,13 @@
   margin-left: 0;
 }
 
+/* link style 초기화 */
+
+a{
+  text-decoration: none;
+  color: var(--mc-gray1);
+}
+
 /* DIALOG POPUP */
 .popup {
   background: var(--mc-white);
@@ -318,8 +325,23 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
 
 .coupon_view img{height: 120px;}
 
-.btn-outline-primary.active, .active>.page-link {
-  background-color: var(--primary-color);}
+/* 앞에 content 추가하여 기존 bootstrap보다 선택자 우선순위를 높임*/
+.content .btn.btn-outline-primary.active,
+.active>.page-link,
+.pagination .page-item.active>.page-link{
+  background-color: var(--primary-color);
+}
+
+
+.content .btn.btn-outline-primary:hover{
+  background-color: var(--primary-color-hover);
+}
+.pagination .page-item:hover>.page-link{
+  background-color: var(--primary-color-hover);
+  color: var(--mc-white);
+  border-color: #007bff;
+}
+
 
 .notice_list a, .qna_list a, .smember_list a, .tmember_list a{color: var(--primary-color);}
 /* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 끝 */
