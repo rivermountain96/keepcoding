@@ -4,6 +4,10 @@
   $pagesql = "SELECT COUNT(*) as cnt from $pagenationTarget WHERE 1=1";
   $pagesql .= $search_where;
   $page_result = $mysqli->query($pagesql);
+
+  if (!$page_result) {
+    die("쿼리 실행 중 오류 발생: " . mysqli_error($mysqli));
+  }
   $page_row = $page_result->fetch_object();
   $row_num = $page_row->cnt; //전체 게시물 수
 

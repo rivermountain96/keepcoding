@@ -1,6 +1,6 @@
 
 <?php
-  $title = '제품 목록';
+  $title = '강좌 목록';
 
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
