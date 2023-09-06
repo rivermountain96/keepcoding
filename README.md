@@ -7,7 +7,7 @@
   <img width=200px src="https://github.com/rivermountain96/keepcoding/assets/103012829/dbb67d1a-d4f4-4b4c-b912-43fbca4ffae7">
 </a>
 <br>
-<a href= "https://teastz.github.io/Team_StarBucks/" target="_blank">
+<a href= "https://github.com/rivermountain96/keepcoding/tree/main" target="_blank">
  https://teastz.github.io/Team_StarBucks/
 </a>
 
