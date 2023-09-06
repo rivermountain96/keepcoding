@@ -8,7 +8,7 @@
 </a>
 <br>
 <a href= "https://github.com/rivermountain96/keepcoding/tree/main" target="_blank">
- https://teastz.github.io/Team_StarBucks/
+https://github.com/rivermountain96/keepcoding/tree/main
 </a>
 
 📆 **2023. 08. 21. ~ 2023. 09. 08.** 
