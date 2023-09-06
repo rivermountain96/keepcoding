@@ -1,4 +1,3 @@
-
 <?php
   $title = '제품수정확인';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
