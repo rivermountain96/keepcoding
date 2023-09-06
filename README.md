@@ -17,7 +17,6 @@ https://github.com/rivermountain96/keepcoding/tree/main
 
 **🥾 [주토피아의 기획과 디자인](https://www.figma.com/file/uNjm1oLLgycPRqu5iTJ6eV/%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84?type=design&node-id=0-1&mode=design)**
 
-
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>
 <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jQuery&logoColor=white"/>
@@ -40,7 +39,7 @@ https://github.com/rivermountain96/keepcoding/tree/main
 
 |대시보드|
 |:-:|
-|<img width=600 src="https://github.com/rivermountain96/keepcoding/assets/103012829/634bf0b9-6a79-43a4-af28-591e2defad38">|
+|<img width=600 src="https://github.com/rivermountain96/keepcoding/assets/103012829/c850a53f-5854-4d86-9ec0-e9bc4d0cffb6">|
 <br>
 
 |카테고리|
@@ -100,9 +99,9 @@ https://github.com/rivermountain96/keepcoding/tree/main
 |HTML|5|
 |CSS|3|
 |Jquery|3.7.0|
-|Github|2.42.0|
 |Bootstrap|4.4.1|
 |PHP|8.2.4|
+|Github|2.42.0|
 
 <br>
 
