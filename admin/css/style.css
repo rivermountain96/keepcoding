@@ -6,6 +6,13 @@
   margin-left: 0;
 }
 
+/* link style 초기화 */
+
+a{
+  text-decoration: none;
+  color: var(--mc-gray1);
+}
+
 /* DIALOG POPUP */
 .popup {
   background: var(--mc-white);
