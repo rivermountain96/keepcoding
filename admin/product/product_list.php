@@ -295,6 +295,3 @@ $('#search_form').submit(function(){
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
 ?>
-
-
-
