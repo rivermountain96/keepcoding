@@ -60,30 +60,30 @@
 
     </div>
 
-    <hr class="pd24" />
+    <hr class="pd24">
 
     <!-- product_view_sec3 강좌설명 -->
 
-    <div class="col pd24">
+    <div class="pd24">
     <h6 class="pd24 text-secondary">강좌설명</h6>
       <p class="">
       <?php echo $row->content; ?>
 
       </p>
     </div>
-    <hr class="pd24" />
+    <hr class="pd24">
 
     <!-- product_view_sec4 썸네일이미지 -->
 
-    <div class="col pd24">
+    <div class="pd24">
     <h6 class="pd24 text-secondary">썸네일</h6>
-    <img src="<?= $row->thumbnail; ?>" alt="">
+    <img src="<?= $row->thumbnail; ?>" alt="" class="product_view_thumbnail">
 
     </div>
     <hr class="pd24">
 
-     <!-- product_view_sec5 영상업로드 -->
-     <div class="product_view_sec2 pd24">
+    <!-- product_view_sec5 영상업로드 -->
+    <div class="product_view_sec2 pd24">
         <h6 class="pd24 text-secondary">강의 영상</h6>
         <div class="row">
           <p class="col-7 pd24">
@@ -92,7 +92,7 @@
             data-target="#videoModal">보기</a></div>
         </div>
       </div>
-      <hr class="pd24" />
+      <hr class="pd24">
 
     <!-- 3buttons -->
 
