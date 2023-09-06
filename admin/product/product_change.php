@@ -1,227 +1,115 @@
 <?php
+  $title = '제품 상세보기';
+
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 
-$pid = $_GET['pid'];
-$sql = "SELECT * FROM products WHERE pid = '$pid'";
-$result = $mysqli ->query($sql);
-$row = $result -> fetch_object();
+
+  $pid = $_GET['pid'];
+  $sql = "SELECT * FROM products WHERE pid = '$pid'";
+  $result = $mysqli ->query($sql);
+  $row = $result -> fetch_object();
 
 ?>
 
+  <!-- 박민용 product_view 시작 -->
+  <div class="product_view product_view_sec1 content mcbg-white d-flex flex-column">
+    <div>
+      <h4 class="fs-4 pd48">강좌 상세보기</h4>
+      <hr class="pd24">
+    </div>
 
-
-
-
-<body>
-<!-- 박민용 product_change 시작 -->
-<div class="product_up content">
-  <h4 class="fs-4 pd48">강좌 수정</h4>
-
-<form action="product_change_ok.php?pid=<?= $pid ?>" method="POST" id="product_up_form" enctype="multipart/form-data">
-    <input type="hidden" name="file_table_id" id="file_table_id" value="">
-    <input type="hidden" name="content" id="content" value="">
-    <div class="d-flex justify-content-between pd24">
-      
-      <div class="product_up_category">
-        <h6 class="pd10">카테고리</h6>
-        <select class="form-select form-select-sm" aria-label="Small select example" id="cate1" name="cate1">
-          <option selected disabled>대분류</option>
-          <?php
-            foreach($cate1 as $c){            
-          ?>
-            <option value="<?php echo $c->cid ?>"><?php echo $c->name ?></option>
-          <?php } ?>
-        </select>
+    <!-- product_view_sec1  강좌명 -->
+    <div class="product_view_sec2 row pd24">
+      <div class="col p-0">
+        <h6 class="pd24 text-secondary">강좌명</h6>
+        <p class="h6"><?php echo $row->name; ?></p>
       </div>
-      <div class="product_up_category">
-        <h6 class="category_name pd10">중분류</h6>
-        <select class="form-select form-\select-sm" aria-label="Small select example" id="cate2" name="cate2">
-          <option selected disabled>중분류</option>
-        </select>
+      <div class="col p-0">
+        <h6 class="pd24 text-secondary">카테고리</h6>
+        <p class="">기초강의>CSS>고급</p>
       </div>
-      <div class="product_up_category">
-        <h6 class="category_name pd10">소분류</h6>
-        <select class="form-select form-select-sm" aria-label="Small select example" id="cate3" name="cate3">
-          <option selected disabled>소분류</option>
-        </select>
+    </div>
+    <hr class="pd24">
+
+    <!-- product_view_sec2 수강기간, 판매금액,상태 -->
+    <div class="product_view_sec2 row pd24">
+      <div class="col p-0">
+        <h6 class="pd24 text-secondary">수강 기한</h6>
+        <p class="">무제한</p>
       </div>
+      <div class="col p-0">
+        <h6 class="pd24 text-secondary">시작일</h6>
+        <p class=""><?php echo $row->reg_date; ?></p>
+      </div>
+    </div>
+    <hr class="pd24">
+
+     <!-- product_view_sec3 강좌설명 -->
+     <div class="pd24">
+      <h6 class="pd24 text-secondary">강좌설명</h6>
+      <p class="">
+      <?php echo $row->content; ?>
+
+      <!-- 1.수업소개<br><br>
+        &nbsp; &nbsp; a. 생활코딩 주력 수업인 WEBn은 프로그래밍이 처음인 분들을 위해서 고안된 수업입니다. <br><br>
+        &nbsp; &nbsp; b. WEBn을 통해서 교양으로 코딩을 공부하려는 분들에게는 출구를, 직업으로 코딩을 공부하려는 분들에게는 입구를 제공해드리려고 노력하고 있습니다. -->
+      </p>
+    </div>
+    <hr class="pd24">
+
+    <!-- product_view_sec4 썸네일이미지 -->
+    <div class="pd24">
+      <h6 class="pd24 text-secondary">썸네일</h6>
+      <img src="../pdata/<?php echo $row->thumnail ?>" alt="">
+    </div>
+    <hr class="pd24">
+
+    <!-- product_view_sec5 영상업로드 -->
+    <div class="product_view_sec2 pd24">
+      <h6 class="pd24 text-secondary">강의 영상</h6>
+      <div class="row">
+        <p class="col-4 p-0"><?php echo $row->name ?></p>
+          <!-- WEB2 JavaScript &#45; 1&#46; 수업소개 -->
+        <p class="col-7 pd24"><a href="#" data-toggle="modal"
+            data-target="#videoModal"><?php echo $row->video_url ?></a></p>
+        <div class="col-1"><a class="btn btn-outline-primary" href="#" data-toggle="modal"
+            data-target="#videoModal">보기</a></div>
+      </div>
+    </div>
+    <hr class="pd24">
+
+    <!-- 3buttons -->
+    <div class="d-flex gap-3 justify-content-end">
+      <a href="/keepcoding/admin/product/product_change.php?pid=<?= $row->pid ?>" class="btn btn-outline-primary" class="btn btn-primary ">수정</a>
+      <a href="/keepcoding/admin/product/product_del.php?pid=<?= $row->pid ?>" class="btn btn-secondary" class="btn btn-secondary">삭제</a>
+      <a href="/keepcoding/admin/product/product_list.php" class="btn btn-primary  ">강좌 리스트</a>
+    </div>
   </div>
 
-  <div class="d-flex pd24">
-    <div class="product_up_name col">
-        <h6 class="pd10">강좌명</h6>
-        <label for="name"></label>
-        <input class="form-control" name="name" id="name" type="text" value ="<?php echo $row->name ?>" placeholder="" aria-label="default input example">
-    </div>
-  </div>
+  <!-- modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-static" role="document">
+      <div class="modal-content">
+        <div class="modal-body p10">
+          <iframe src="<?php echo $row->video_url?>" 
+            title="WEB2 JavaScript - 1.수업소개" class="pd24"sandbox=""></iframe>
+          <h4 class="pd10"><?php echo $row->name ?></h4>
+          <p class="pd24">기초강의 > javascript > 중급</p>
 
-  <div class="d-flex justify-content-start pd24">
-    <div class="product_up_usedate">
-      <h6 class="pd10">수강 기한</h6>
-      <!-- <select class="form-select form-select-sm" name="usedate" id="usedate" require aria-label="Small select example"> -->
-      <select class="form-select form-select-sm" name="usedate" id="usedate" aria-label="Small select example">
-          <option value="1"  <?php echo $row->status == 1?"checked":""; ?>>제한 </option>
-          <option value="2" <?php echo $row->status == 1?"checked":""; ?>>무제한</option>
-      </select>
-    </div>
-
-    <div class="product_up_regdate">
-      <h6 class="pd10">시작일</h6>
-      <label for="reg_date"></label>
-      <input type="text" id="reg_date" name="reg_date" class="form-control" placeholder="<?php echo date("Y.m.d");?>"></p>
-      <!-- <input type="text" id="reg_date" name="reg_date" class="form-control" require placeholder="<?php echo date("Y.m.d");?>"></p> -->
-    </div>
-
-    <!-- 1년뒤 날짜 date("Y-m-d", strtotime("+1 year", strtotime($today))); -->
-
-  </div>
-
-  <div class="d-flex justify-content-start pd24">
-    <div class="product_up_price">
-      <h6 class="pd10">판매 금액</h6>
-      <label for="price"></label>
-      <input class="form-control" value ="<?php echo $row->price?>"  name="price" id="price" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example">
-      <!-- <input class="form-control" name="price" id="price" type="number" require placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example"> -->
-    </div>
-    <div class="product_status d-flex row">
-      <h4>판매 상태</h4>
-      <div class="product_status_checkbox d-flex">
-        <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="1" <?php echo $row->status == 1?"checked":""; ?> id="status_0" name="status">
-            <label class="form-check-label" for="status_0">판매중</label>
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal" aria-label="Close">닫기</button>
+          </div>
         </div>
-        <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="2" <?php echo $row->status == 2?"checked":""; ?> id="status_1" name="status" >
-            <label class="form-check-label" for="status_1">판매중지</label>
-        </div>
       </div>
     </div>
   </div>
+  <!-- contents끝 -->
 
-  <div class="pd24">
-  <div class="product_detail col p-0">
-  <h6 class="pd10">상세설명</h6>
+  <!-- 박민용 product_list 끝 -->
 
-      <textarea id="product_detail" name="product_detail">
-      <?php echo $row->content?>;
-      </textarea>
-
-  </div>
-</div>
-
-  <div class="pd24">
-    <div class="product_up_thumbnail">
-    <label for="thumbnail" class="form-label pd10 h6">썸네일</label>
-      <input class="form-control form-control-lg" name="thumbnail" id="thumbnail" type="file">
-    </div>
-  </div>
-
-  <div class="d-flex pd48 gap-3">
-      <div class="product_up_video_url col p-0">
-        <label for="product_url" class="pd10 h6">강의 영상 주소</label>
-        <input type="url" id="product_url" name="video_url" class="form-control form-control-lg"
-          value="<?php echo $row->video_url?>">
-      </div>
-    </div>  
-
-    <div class="product_up_btn d-flex justify-content-end gap-3 p-0">
-     <button type="submit" class="btn btn-primary">수정</button>
-     <button type="button" class="product_up_cancel btn btn-secondary" onclick="location.href='/keepcoding/admin/product/product_list.php?>'">취소</button>
- 
-    </div>
-
-  </div>
-</form> 
-
-<script>
-      $("#product_detail").summernote({
-        tabsize: 2,
-        height: 100,
-      });
-
-      $("#regdate").datepicker({
-        dateFormat: "yy.mm.dd",
-        minDate: "today",
-        maxDate: "+1Y",
-      });
-
-      $("#regdate").datepicker({
-        dateFormat: "yy.mm.dd",
-        minDate: "today",
-        maxDate: "+1Y",
-        onSelect: function (dateText, inst) {
-          // 선택한 날짜를 Date 객체로 파싱합니다.
-          var selectedDate = new Date(dateText);
-
-          // 1년을 더합니다.
-          selectedDate.setFullYear(selectedDate.getFullYear() + 1);
-
-          // 새로운 날짜를 출력합니다.
-          var formattedDate = $.datepicker.formatDate("yy.mm.dd", selectedDate);
-          console.log(formattedDate);
-          $("#sale_end_date").datepicker("setDate", selectedDate);
-        },
-      });
-
-      $("#sale_end_date").datepicker({
-        dateFormat: "yy.mm.dd",
-      });
-
-      let usedate = $("#usedate");
-      usedate.change(function () {
-        let value = usedate.val();
-        if (value == 2) {
-          $("#reg_date").datepicker("option", { disabled: true, dateFormat: "" });
-          $("#sale_end_date").datepicker("option", { disabled: true, dateFormat: "" });
-        } else {
-          $("#reg_date").datepicker("option", { disabled: false, dateFormat: "yy.mm.dd" });
-          $("#sale_end_date").datepicker("option", { disabled: false, dateFormat: "yy.mm.dd" });
-        }
-      });
-
-      $("#btn-cancel").click(function () {
-        window.location.href = "product_list.php"; // 이동할 페이지 URL 설정
-      });
-
-      
-      //카테고리
-
-      $("#cate1").on("change", function () {
-        console.log("click");
-        makeOption($(this), 2, $("#cate2"));
-      }); //cate1 change
-
-      $("#cate2").on("change", function () {
-        makeOption($(this), 3, $("#cate3"));
-      }); //cate2 change
-
-
-      function makeOption(evt, step, target) {
-        let cid = evt.val();
-        console.log(cid);
-
-
-        $.ajax({
-          async: false, //sucess의 결과 나오면 이후 작업 수행
-          type: "_GET", //변수명cate1의 값을 전달할 방식 post
-          url: "printOption.php?cate=" + cid + "&step=" + step,
-          dataType: "html", //success성공후 printOption.php가 반환하는 데이터의 형식  <option></option>
-          success: function (result) {
-            console.log(result);
-            target.html(result);
-          },
-        }); //ajax
-      }
-
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
-  </body>
+</body>
+
 </html>
-
-
-<?php
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
-?>
