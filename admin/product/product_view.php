@@ -2,6 +2,7 @@
   $title = '제품 상세보기';
 
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
 
 
   $pid = $_GET['pid'];
