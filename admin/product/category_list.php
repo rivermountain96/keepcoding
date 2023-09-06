@@ -238,6 +238,13 @@
     $('#pcate2').val($(this).val());
   });
 
+  $('#pcid3').click(function(){
+    if(!$('#pcid1-1').val()){
+      alert('대분류를 먼저 선택하세요.');
+    }
+  })
+
+
   $('#pcid3').change(function(){
     $('#pcate3').val($(this).val());
   });
