@@ -41,8 +41,8 @@
     </div>
   </div>
 
-  <div class="row justify-content-start pd24 gap-3 form-width-973">
-    <div class="product_up_usedate col-4 p-0">
+  <div class="row justify-content-start pd24 gap-3">
+    <div class="product_up_usedate col p-0">
       <h6 class="pd10 h6">수강 기한</h6>
       <select class="form-select form-select-lg" name="usedate" id="usedate" aria-label="Small select example">
           <option value="1" selected>제한</option>
@@ -50,7 +50,7 @@
       </select>
     </div>
 
-    <div class="product_up_regdate col-4 p-0 datepicker">
+    <div class="product_up_regdate col p-0 datepicker">
       <label class="pd10 h6" for="reg_date">시작일</label>
       <input type="text" id="reg_date" name="reg_date" class="form-control form-control-lg" placeholder="<?php echo date("Y.m.d");?>">
     </div>
