@@ -55,13 +55,13 @@ if($_FILES['notice_img']['name']){
 
   if($result){
     echo "<script>
-      alert('공지사항 등록 완료');
+      alert('공지 등록 완료');
       location.href = '/keepcoding/admin/notice/notice_list.php';
     </script>";
   } else {
   $mysqli -> rollback();//저장한 테이블이 있다면 롤백한다.
     echo "<script>
-    alert('공지사항 등록 실패');
+    alert('공지 등록 실패');
     history.back();
     </script>";
 }  

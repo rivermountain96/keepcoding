@@ -270,7 +270,7 @@
       </svg>
       <div class="kcard_text">
         <p class="fw-bold mc-gray1 pd10">총 수강생 수</p>
-        <p data-num="0" class="fw-bold pc2"><span class="fw-bold pc2 number">113029</span> 명</p>
+        <p class="fw-bold pc2 d-flex gap-1"><span class="fw-bold pc2 number">113029</span>명</p>
       </div>
     </div>
     <div class="col kcard d-flex align-items-center justify-content-center">
