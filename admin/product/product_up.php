@@ -54,12 +54,6 @@
       <label class="pd10 h6" for="reg_date">시작일</label>
       <input type="text" id="reg_date" name="reg_date" class="form-control form-control-lg" placeholder="<?php echo date("Y.m.d");?>">
     </div>
-
-    <div class="product_up_enddate col p-0 datepicker">
-      <label class="pd10 h6" for="sale_end_date">종료일</label>
-      <input type="text" id="sale_end_date" name="sale_end_date" class="form-control form-control-lg" placeholder="<?php echo $sale_end_date;?>">
-    </div>
-
   </div>
 
   <div class="row justify-content-start pd24 row-cols-8 gap-3 form-width-973">
