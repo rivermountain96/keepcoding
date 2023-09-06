@@ -52,12 +52,12 @@
 
     <div class="product_up_regdate col p-0 datepicker">
       <label class="pd10 h6" for="reg_date">시작일</label>
-      <input type="text" id="reg_date" name="reg_date" class="form-control form-control-lg" placeholder="<?php echo date("Y.m.d");?>">
+      <input type="text" id="reg_date" name="reg_date" class="form-control form-control-lg" placeholder="시작일 선택">
     </div>
 
     <div class="product_up_enddate col p-0 datepicker">
       <label class="pd10 h6" for="sale_end_date">종료일</label>
-      <input type="text" id="sale_end_date" name="sale_end_date" class="form-control form-control-lg" placeholder="<?php echo $sale_end_date;?>">
+      <input type="text" id="sale_end_date" name="sale_end_date" class="form-control form-control-lg" placeholder="종료일 선택">
     </div>
 
   </div>
