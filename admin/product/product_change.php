@@ -58,8 +58,8 @@ $row = $result -> fetch_object();
         <h6 class="pd10 h6">수강 기한</h6>
       <!-- <select class="form-select form-select-sm" name="usedate" id="usedate" require aria-label="Small select example"> -->
       <select class="form-select form-control-lg" name="usedate" id="usedate" aria-label="Small select example">
-          <option value="1"  <?php echo $row->status == 1?"checked":""; ?>>제한 </option>
-          <option value="2" <?php echo $row->status == 1?"checked":""; ?>>무제한</option>
+          <option value="0"  <?php echo $row->status == 0?"checked":""; ?>>제한 </option>
+          <option value="1" <?php echo $row->status == 1?"checked":""; ?>>무제한</option>
       </select>
     </div>
 
