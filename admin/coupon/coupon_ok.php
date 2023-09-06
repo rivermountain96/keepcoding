@@ -54,7 +54,6 @@ if($_FILES['coupon_image']['name']){
       (coupon_name, coupon_image, coupon_price, status, regdate, duedate, use_min_price) 
       VALUES 
       ('{$coupon_name}', '{$coupon_image}', '{$coupon_price}', '{$status}', '{$regdate}', '{$duedate}', {$use_min_price})";
-    var_dump($sql);
     $result = $mysqli -> query($sql);
     $mysqli->commit();//디비에 커밋한다.
   

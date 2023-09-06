@@ -347,14 +347,14 @@
       <div class="c_report d-flex gap-4">
         <p class="fw-bold">활성화 쿠폰 갯수</p>
         <span class="pc2 fw-bold">
-          <?= $cnt0 ?>
+          <?= $cnt1 ?>
           개
         </span>
       </div>
       <div class="c_report d-flex gap-4">
         <p class="fw-bold">비활성화 쿠폰 갯수</p>
         <span class="pc2 fw-bold">
-        <?= $cnt1 ?>
+        <?= $cnt0 ?>
           개
         </span>
       </div>

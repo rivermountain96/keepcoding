@@ -56,12 +56,10 @@ $sql .= $search_where;//쿼리조합
   ?>
 
 
-
-
   <!-- 박민용 product_list 시작 -->
 
-  <div class="  content mcbg-white">
-    <h2 class=" h4 pd72">강의 리스트</h2>
+  <div class="content mcbg-white">
+    <h2 class="fs-4 pd72">강좌 관리</h2>
 
     <!-- product_list_sec1 강의리스트 카테고리 -->
 
@@ -98,12 +96,12 @@ $sql .= $search_where;//쿼리조합
 
     <!-- product_list_sec2 검색단 -->
 
-    <form class="product_list_sec2 d-flex pd48 " id="search_form">
+    <form class="product_list_sec2 d-flex pd48 gap-3 " id="search_form">
       <input type="hidden" name="step" id="step">
       <input type="hidden" name="cate_name" id="cate_name">
       <input class="form-control me-2" type="search" placeholder="강좌명으로 검색하기" name="search_keyword" id="search_keyword" aria-label="Search">
       
-      <button class="btn btn-outline-primary btn-sm col-sm-1" type="submit">강좌검색 </button>
+      <button class="btn btn-outline-primary btn col-sm-1" type="submit">강좌검색 </button>
     </form>
 <?php
 

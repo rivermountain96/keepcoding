@@ -194,8 +194,15 @@ nav{
 .ratebar.front{
   padding-bottom: 20px;
 }
+.callout{
+  transition: 0.3s ease-in;
+}
 .callout span{
   font-weight: bold;
+}
+.callout:hover{
+  background-color: rgba(255, 255, 255, .5);
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }
 .callout i {
   font-size: 25px;
@@ -293,6 +300,7 @@ i.i-empty{
 
 .coupon_up_image .row> .col-4{
   padding-left: 0;
+  padding-right: 0;
 }
 .coupon_up_image .row> .col-8{
   padding-right: 0;
@@ -377,12 +385,6 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
 }
 .ratebar.front{
   padding-bottom: 20px;
-}
-.callout span{
-  font-weight: bold;
-}
-.callout i {
-  font-size: 25px;
 }
 .smile_icons i{
   font-size: 20px;
