@@ -83,7 +83,7 @@
     </ul>
     <ul>
       <li class="nav-item d-flex justify-content-between">
-        <a class="nav-link mc-b-rgba" aria-current="page" href="">로그아웃</a>
+        <a class="nav-link mc-b-rgba" aria-current="page" href="/keepcoding/admin/logout.php">로그아웃</a>
         <a class="nav-link mc-b-rgba" aria-current="page" href=""><i class="bi bi-gear-wide-connected"></i></a>
       </li>
     </ul>
