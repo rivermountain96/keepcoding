@@ -12,7 +12,7 @@
 ?>
 
   <!-- 박민용 product_view 시작 -->
-  <div class="product_view product_view_sec1 content mcbg-white d-flex flex-column">
+  <div class="product_view_sec1 content mcbg-white d-flex flex-column">
     <div>
       <h4 class="fs-4 pd48">강좌 상세보기</h4>
       <hr class="pd24">
