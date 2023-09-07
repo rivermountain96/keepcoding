@@ -92,6 +92,13 @@
 
   <hr>
 
+  <div class="admin">
+    <p><span>관리자 아이디</span> : admin</p>
+    <p><span>관리자 비밀번호</span> : 1111</p>
+  </div>
+
+  <hr>
+
   <div class="work">
     <p><span>팀원</span> : 정*원, 박*용, 이*산, 이*서, 최*희</p>
     <p><span>기획</span> : 전원참가(공동)</p>
