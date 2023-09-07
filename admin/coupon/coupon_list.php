@@ -12,17 +12,22 @@
 
   $search_where = ''; //빈 문자열 생성
 
-  if($status > 0){
-    $search_where .= " and status = 1";
-  }else if($status == 0){
-    $search_where .= " and status = 0";
+  if($status !== ''){
+    if($status > 0){
+      $search_where .= " and status = 1";
+    }else if($status == 0){
+      $search_where .= " and status = 0";
+    }
   }
 
-  if($duedate == 0){
-    $search_where .= " and duedate = ''";
-  }else if($duedate == 1){
-    $search_where .= " and duedate IS NOT NULL AND duedate <> ''";
+  if($duedate !== ''){
+    if($duedate == 0){
+      $search_where .= " and duedate = ''";
+    }else if($duedate == 1){
+      $search_where .= " and duedate IS NOT NULL AND duedate <> ''";
+    }
   }
+
 
   if($search_keyword){
     $search_where .= " and (coupon_name like '%{$search_keyword}%')";
@@ -54,6 +59,9 @@
 <!-- 이은서 coupon_list 시작-->
 <div class="content">
   <h4 class="pd72 fs-4 fw-bold">쿠폰 관리</h4>
+  <?php
+    var_dump($query);
+  ?>
     <form class="d-flex justify-content-between align-items-center pd48">
       <div class="d-flex gap-3">
         <div class="form-check d-flex align-items-center gap-3">
