@@ -42,7 +42,7 @@ $result2 = $mysqli -> query($sql2);
       while($rs3 = $result3->fetch_object()){
       ?>
       <h3 class="pd24 h6 text-secondary">이미지</h3>
-      <img src="<?= $rs3 -> notice_img; ?>" alt="">
+      <img src="<?= $rs3 -> notice_img; ?>" alt="<?= $rs -> title; ?>">
       <?php }?>
     </div>
   <hr class="pd24">

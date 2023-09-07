@@ -18,6 +18,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/keepcoding/admin/img/keepcoding_favicon/logo_favicon.ico">
+  <link rel="manifest" href="/keepcoding/admin/img/keepcoding_favicon/manifest.json">
+  <meta name="msapplication-TileColor" >
+
   <!-- style -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -87,7 +93,7 @@
     <p><span>특징</span> : html, css, jQuery (Bootstrap, jQuery Library)</p>
     <p>local: Windows, XAMPP(PHP, APACHE, MYSQL) | remote : PHP, LINUX, MYSQL</p>
     <p><span>기획</span> : <a href="#" target="_blank" class="figma"><span class="font_green">발표 자료</span></a>  |  <span>코드</span> : <a href="https://github.com/rivermountain96/keepcoding/tree/main" target="_blank" class="git"><span>깃허브</span><i class="fa-brands fa-github"></i></a></p>
-    <p><span>구현 완료 페이지</span> : </p>
+    <p><span>구현 완료 페이지</span> : <a href="http://keepcoding.dothome.co.kr/keepcoding/admin/login.php" target="_blank" class="dothome"><span>관리자 로그인 페이지</span></a></p>
   </div>
 
   <hr>

@@ -34,7 +34,7 @@
   <hr class="pd24">
     <div class="pd24">
       <h3 class="pd24 h6 text-secondary">이미지</h3>
-      <img src="<?= $rs->thumbnail ;?>" alt="">
+      <img src="<?= $rs->thumbnail ;?>" alt="<?= $rs->thumbnail ;?>">
     </div>
   <hr class="pd24">
     <div class="pd24">

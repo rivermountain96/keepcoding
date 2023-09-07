@@ -90,11 +90,6 @@ $sql .= $search_where;//쿼리조합
       </div>
     </div>
 
-  </form>
-
-
-    </nav>
-
     <!-- product_list_sec2 검색단 -->
 
     <form class="product_list_sec2 d-flex pd48 gap-3 " id="search_form">
@@ -104,18 +99,13 @@ $sql .= $search_where;//쿼리조합
       
       <button class="btn btn-outline-primary btn col-sm-1" type="submit">강좌검색 </button>
     </form>
-<?php
 
-
-
-
-?>
     <!-- product_list_sec3 강좌내용 테이블 -->
 
 
     <table class=" product_list_sec3 table pd48">
       <thead>
-        <tr">
+        <tr>
           <th class="fw-bold col-4">강좌명</th>
           <th class="fw-bold col-1.5">상태</th>
           <th class="fw-bold col-3">카테고리</th>
@@ -130,7 +120,7 @@ $sql .= $search_where;//쿼리조합
 
             if(isset($rsc)){
               foreach($rsc as $item){      
- 
+
             ?>
 
 
@@ -201,13 +191,13 @@ $sql .= $search_where;//쿼리조합
     <ul id="pagenation" class="pagination mx-auto" aria-label="Page navigation example">
     <?php
     if ($pageNumber > 1) {
-        echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?pageNumber=1\">이전</a></li>";
+        echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?pageNumber=1\">Previous</a></li>";
         if ($block_num > 1) {
             $prev = ($block_num - 2) * $block_ct + 1;
-            echo "<li class=\"page-item\"><a href='?pageNumber=$prev' class=\"page-link\">이전</a></li>";
+            echo "<li class=\"page-item\"><a href='?pageNumber=$prev' class=\"page-link\">Previous</a></li>";
         }
     } else {
-        echo "<li class=\"page-item disabled\"><span class=\"page-link\">이전</span></li>";
+        echo "<li class=\"page-item disabled\"><span class=\"page-link\">Previous</span></li>";
   
     }
 
@@ -222,11 +212,11 @@ $sql .= $search_where;//쿼리조합
     if ($pageNumber < $total_page) {
         if ($total_block > $block_num) {
             $next = $block_num * $block_ct + 1;
-            echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">다음</a></li>";
+            echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">Next</a></li>";
         }
-        echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">다음</a></li>";
+        echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
     } else {
-        echo "<li class=\"page-item disabled\"><span class=\"page-link\">다음</span></li>";
+        echo "<li class=\"page-item disabled\"><span class=\"page-link\">Next</span></li>";
         
 
     }
@@ -283,6 +273,7 @@ $('#search_form').submit(function(){
 
   });
 });
+
 
 </script>
 
