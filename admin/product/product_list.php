@@ -201,13 +201,13 @@ $sql .= $search_where;//쿼리조합
     <ul id="pagenation" class="pagination mx-auto" aria-label="Page navigation example">
     <?php
     if ($pageNumber > 1) {
-        echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?pageNumber=1\">이전</a></li>";
+        echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?pageNumber=1\">Previous</a></li>";
         if ($block_num > 1) {
             $prev = ($block_num - 2) * $block_ct + 1;
-            echo "<li class=\"page-item\"><a href='?pageNumber=$prev' class=\"page-link\">이전</a></li>";
+            echo "<li class=\"page-item\"><a href='?pageNumber=$prev' class=\"page-link\">Previous</a></li>";
         }
     } else {
-        echo "<li class=\"page-item disabled\"><span class=\"page-link\">이전</span></li>";
+        echo "<li class=\"page-item disabled\"><span class=\"page-link\">Previous</span></li>";
   
     }
 
@@ -222,11 +222,11 @@ $sql .= $search_where;//쿼리조합
     if ($pageNumber < $total_page) {
         if ($total_block > $block_num) {
             $next = $block_num * $block_ct + 1;
-            echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">다음</a></li>";
+            echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">Next</a></li>";
         }
-        echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">다음</a></li>";
+        echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
     } else {
-        echo "<li class=\"page-item disabled\"><span class=\"page-link\">다음</span></li>";
+        echo "<li class=\"page-item disabled\"><span class=\"page-link\">Next</span></li>";
         
 
     }
