@@ -54,13 +54,13 @@
     <form action="login_ok.php" class="login_content" method="POST">
       <div class="login_id row">
         <label for="userid" class="fw-medium">ID</label>
-        <input type="text" name="userid" id="userid">
+        <input type="text" name="userid" id="userid" placeholder="admin">
       </div>
 
       <div class="login_pw row">
         <label for="userpw" class="fw-medium">Password</label>
-        <input type="password" name="userpw" id="userpw">
-        <a href="" class="fw-medium">Forgot password?</a>
+        <input type="password" name="userpw" id="userpw" placeholder="1111">
+        <a href="#" class="fw-medium">Forgot password?</a>
       </div>
 
       <div class="login_ir d-flex justify-content-end">
