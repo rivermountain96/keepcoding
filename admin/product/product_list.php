@@ -284,6 +284,7 @@ $('#search_form').submit(function(){
   });
 });
 
+
 </script>
 
     <!-- 박민용 product_list 끝 -->
