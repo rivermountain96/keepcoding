@@ -8,10 +8,7 @@
 
 /* link style 초기화 */
 
-a{
-  text-decoration: none;
-  color: var(--mc-gray1);
-}
+a{color: var(--primary-color);}
 
 /* DIALOG POPUP */
 .popup {

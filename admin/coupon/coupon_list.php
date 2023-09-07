@@ -137,7 +137,7 @@
           foreach($rsc as $item){
       ?>
       <tr data-cid="<?= $item-> cid ?>">
-        <th class="fw-bold align-middle"><a href="/keepcoding/admin/coupon/coupon_view.php?cid=<?= $item-> cid ?>"><?= $item -> coupon_name ?></a></th>
+        <th class="align-middle"><a href="/keepcoding/admin/coupon/coupon_view.php?cid=<?= $item-> cid ?>"><?= $item -> coupon_name ?></a></th>
         <td class="align-middle">
           <div class="form-check form-switch">
             <?php
