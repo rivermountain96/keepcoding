@@ -236,13 +236,7 @@
 
 
 ?>
-<style>
-  body{
-    background-Color: var(--mc-gray2);
-  }
-</style>
 <!-- 이은서 index 시작-->
-<body>
 <div class="content">
   <h4 class="pd72 fs-4 fw-bold">홈</h4>
   <h6 class="pd24 fw-bold">이번달 판매 현황</h6>
