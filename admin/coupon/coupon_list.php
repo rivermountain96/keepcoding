@@ -28,7 +28,6 @@
     }
   }
 
-
   if($search_keyword){
     $search_where .= " and (coupon_name like '%{$search_keyword}%')";
   }
@@ -59,9 +58,6 @@
 <!-- 이은서 coupon_list 시작-->
 <div class="content">
   <h4 class="pd72 fs-4 fw-bold">쿠폰 관리</h4>
-  <?php
-    var_dump($query);
-  ?>
     <form class="d-flex justify-content-between align-items-center pd48">
       <div class="d-flex gap-3">
         <div class="form-check d-flex align-items-center gap-3">

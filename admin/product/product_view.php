@@ -2,6 +2,7 @@
   $title = '제품 상세보기';
 
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
 
 
   $pid = $_GET['pid'];
@@ -60,7 +61,7 @@
     <!-- product_view_sec4 썸네일이미지 -->
     <div class="pd24">
       <h6 class="pd24 text-secondary">썸네일</h6>
-      <img src="keepcoding/pdata/<?php echo $row->thumbnail ?>" alt="">
+      <img src="<?php echo $row->thumbnail ?>" alt="">
     </div>
     <hr class="pd24">
 
@@ -91,8 +92,10 @@
     <div class="modal-dialog modal-static" role="document">
       <div class="modal-content">
         <div class="modal-body p10">
-          <iframe src="<?php echo $row->video_url?>" 
-            title="WEB2 JavaScript - 1.수업소개" class="pd24"sandbox=""></iframe>
+
+        <iframe width="400" height="315" src="<?php echo $row->video_url?> " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          
+
           <h4 class="pd10"><?php echo $row->name ?></h4>
           <p class="pd24">기초강의 > javascript > 중급</p>
 

@@ -1,7 +1,7 @@
 <?php
   $title =  '쿠폰 수정';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
-
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
 
 $cid = $_GET['cid'];
 

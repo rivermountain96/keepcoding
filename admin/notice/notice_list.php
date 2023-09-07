@@ -1,6 +1,7 @@
 <?php
 $title = '공지사항 리스트';
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
 
 $pageNumber = $_GET['pageNumber'] ?? 1;
 
