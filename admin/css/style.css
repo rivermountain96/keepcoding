@@ -515,7 +515,7 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
   width: 400px;
   height: 442px;
   background-color: #fff;
-  background-image: url(/keepcoding/admin/img/keepcoding_logo.svg);
+  background-image: url(/admin/img/keepcoding_logo.svg);
   background-size: 55%;
   background-repeat: no-repeat;
   background-position: center 43px;
@@ -535,6 +535,11 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
 .login input[type="text"],
 .login input[type="password"]{
   padding: .8em .8em;
+}
+.login_id input::placeholder,
+.login_pw input::placeholder{
+  font-size: var(--font-size-14);
+  color: #D0D0D0;
 }
 .login_content > div{
   margin: 0 40px;
