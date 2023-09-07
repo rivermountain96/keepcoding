@@ -539,6 +539,11 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
 .login input[type="password"]{
   padding: .8em .8em;
 }
+.login_id input::placeholder,
+.login_pw input::placeholder{
+  font-size: var(--font-size-14);
+  color: #D0D0D0;
+}
 .login_content > div{
   margin: 0 40px;
 }

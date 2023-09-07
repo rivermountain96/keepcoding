@@ -44,7 +44,7 @@ if($_SESSION['AUNAME']){
 
       <div class="d-flex justify-content-end gap-3">
         <button type="submit" class="btn btn-primary">등록</button>
-       <button type="button" class="btn btn-secondary" onclick="history.back(1)">취소</button></a>
+       <button type="button" class="btn btn-secondary" onclick="history.back(1)">취소</button>
       </div>
     </form>
 </div>

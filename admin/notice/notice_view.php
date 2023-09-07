@@ -35,20 +35,29 @@ $result2 = $mysqli -> query($sql2);
         </div>
     </div>
   <hr class="pd24">
-    <div class="pd24">
+  <div class="pd24">
     <?php
       $query3="select * from notice where idx=".$bno;
       $result3 = $mysqli->query($query3);
       while($rs3 = $result3->fetch_object()){
       ?>
       <h3 class="pd24 h6 text-secondary">이미지</h3>
-      <img src="<?= $rs3 -> notice_img; ?>" alt="<?= $rs -> title; ?>">
-      <?php }?>
+      <?php
+        if($rs3 -> notice_img){
+      ?>
+        <img src="<?= $rs3 -> notice_img; ?>" alt="<?= $rs3 -> title; ?>">
+      <?php
+        }else{
+      ?>
+        <p>이미지 없음</p>
+      <?php
+        }}
+      ?>
     </div>
   <hr class="pd24">
     <div class="pd24">
       <h3 class="pd24 h6 text-secondary">내용</h3>
-      <p><?= $rs -> content; ?></p>  
+      <?= $rs -> content; ?>
     </div>
 
 
