@@ -8,7 +8,14 @@
 
 /* link style 초기화 */
 
-a{color: var(--primary-color);}
+a{
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover{
+  color: var(--primary-color-hover);
+  text-decoration: underline;
+}
 
 /* DIALOG POPUP */
 .popup {
