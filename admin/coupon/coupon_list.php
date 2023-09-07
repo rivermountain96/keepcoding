@@ -12,16 +12,20 @@
 
   $search_where = ''; //빈 문자열 생성
 
-  if($status > 0){
-    $search_where .= " and status = 1";
-  }else if($status == 0){
-    $search_where .= " and status = 0";
+  if($status !== ''){
+    if($status > 0){
+      $search_where .= " and status = 1";
+    }else if($status == 0){
+      $search_where .= " and status = 0";
+    }
   }
 
-  if($duedate == 0){
-    $search_where .= " and duedate = ''";
-  }else if($duedate == 1){
-    $search_where .= " and duedate IS NOT NULL AND duedate <> ''";
+  if($duedate !== ''){
+    if($duedate == 0){
+      $search_where .= " and duedate = ''";
+    }else if($duedate == 1){
+      $search_where .= " and duedate IS NOT NULL AND duedate <> ''";
+    }
   }
 
   if($search_keyword){
@@ -57,31 +61,55 @@
     <form class="d-flex justify-content-between align-items-center pd48">
       <div class="d-flex gap-3">
         <div class="form-check d-flex align-items-center gap-3">
-          <input class="form-check-input" type="radio" name="status" id="statusAll" value="">
+          <input class="form-check-input" type="radio" name="status" id="statusAll" value="" <?php
+            if($status == '' && $duedate == '' && $search_keyword == ''){
+            echo 'checked';
+          }
+          ?>>
           <label class="form-check-label" for="statusAll">
             전체
           </label>
         </div>
         <div class="form-check d-flex align-items-center gap-3">
-          <input class="form-check-input" type="radio" name="status" id="status1" value="1">
+          <input class="form-check-input" type="radio" name="status" id="status1" value="1" <?php
+            if($status == 1){
+              echo 'checked';
+            }
+          ?>>
           <label class="form-check-label" for="status1">
             활성화 쿠폰
           </label>
         </div>
         <div class="form-check d-flex align-items-center gap-3">
-          <input class="form-check-input" type="radio" name="status" id="status0" value="0">
+          <input class="form-check-input" type="radio" name="status" id="status0" value="0" <?php
+            if($status !== ''){
+              if($status == 0){
+                echo 'checked';
+              }
+            }
+          ?>>
           <label class="form-check-label" for="status0">
             비활성화 쿠폰
           </label>
         </div>
         <div class="form-check d-flex align-items-center gap-3">
-          <input class="form-check-input" type="radio" name="due" id="due1" value="0">
+          <input class="form-check-input" type="radio" name="due" id="due1" value="0" <?php
+            if($duedate !== ''){
+              if($duedate == 0){
+                echo 'checked';
+              }
+            } 
+          ?>>
           <label class="form-check-label" for="due1">
             무제한 쿠폰
           </label>
         </div>
         <div class="form-check d-flex align-items-center gap-3">
-          <input class="form-check-input" type="radio" name="due" id="due2" value="1">
+          <input class="form-check-input" type="radio" name="due" id="due2" value="1" <?php
+            if($duedate == 1){
+              echo 'checked';
+            }
+          ?>>
           <label class="form-check-label" for="due2">
             기간제한 쿠폰
           </label>
@@ -109,7 +137,7 @@
           foreach($rsc as $item){
       ?>
       <tr data-cid="<?= $item-> cid ?>">
-        <th class="fw-bold align-middle"><?= $item -> coupon_name ?></th>
+        <th class="fw-bold align-middle"><a href="/keepcoding/admin/coupon/coupon_view.php?cid=<?= $item-> cid ?>"><?= $item -> coupon_name ?></a></th>
         <td class="align-middle">
           <div class="form-check form-switch">
             <?php
@@ -183,6 +211,14 @@
 <!-- 이은서 coupon_list 끝-->
 
 <script>
+  $('#statusAll').click(function(){
+    $('input[type="radio"]').prop('checked', false);
+  })
+  $('input[name="due"]').click(function(){
+    $('#statusAll').prop('checked', false);
+  })
+
+  
   $('.delete_btn').click(function(){
     if(confirm('정말 삭제하시겠습니까?')){
       let cid = $(this).closest('tr').attr('data-cid');

@@ -27,13 +27,9 @@ if($_SESSION['AUNAME']){
           </select>
         </div>
         <div class="notice_up_regdate col-4 p-0 datepicker">
-          <label class="pd10 h6" for="regdate">시작일</label>
+          <label class="pd10 h6" for="regdate">등록일</label>
           <input type="text" id="datepicker" name="regdate" class="form-control form-control-lg">
         </div> 
-        <!-- <div class="notice_up_enddate col p-0 datepicker">
-          <label class="pd10 h6" for="duedate">만료일</label>
-          <input type="text" id="datepicker2" name="duedate" class="form-control form-control-lg">
-        </div> -->
       </div>
 
       <div class="pd24">

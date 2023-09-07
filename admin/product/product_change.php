@@ -1,11 +1,15 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 
 $pid = $_GET['pid'];
 $sql = "SELECT * FROM products WHERE pid = '$pid'";
 $result = $mysqli ->query($sql);
 $row = $result -> fetch_object();
+
+
+
 
 ?>
 
@@ -31,7 +35,7 @@ $row = $result -> fetch_object();
             <option value="<?php echo $c->cid ?>"><?php echo $c->name ?></option>
           <?php } ?>
         </select>
-     
+    
 
         <select class="form-select form-control-lg col" aria-label="Small select example" id="cate2" name="cate2" >
           <option selected disabled>중분류</option>
@@ -58,8 +62,8 @@ $row = $result -> fetch_object();
         <h6 class="pd10 h6">수강 기한</h6>
       <!-- <select class="form-select form-select-sm" name="usedate" id="usedate" require aria-label="Small select example"> -->
       <select class="form-select form-control-lg" name="usedate" id="usedate" aria-label="Small select example">
-          <option value="1"  <?php echo $row->status == 1?"checked":""; ?>>제한 </option>
-          <option value="2" <?php echo $row->status == 1?"checked":""; ?>>무제한</option>
+          <option value="0"  <?php echo $row->status == 0?"checked":""; ?>>제한 </option>
+          <option value="1" <?php echo $row->status == 1?"checked":""; ?>>무제한</option>
       </select>
     </div>
 
@@ -216,4 +220,5 @@ $row = $result -> fetch_object();
 
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
+
 ?>

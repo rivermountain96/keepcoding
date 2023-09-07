@@ -96,12 +96,14 @@
     <p><span>팀원</span> : 정*원, 박*용, 이*산, 이*서, 최*희</p>
     <p><span>기획</span> : 전원참가(공동)</p>
     <dl>
-      <dt><span>- 디자인 및 구현 -</span></dt>
-      <dd><span>정*원</span> : Main</dd>
-      <dd><span>박*용</span> : Main</dd>
-      <dd><span>이*산</span> : Main</dd>
-      <dd><span>이*서</span> : Main</dd>
-      <dd><span>최*희</span> : Main</dd>
+      <dt><span>- 퍼블리싱 구현 -</span></dt>
+      <dd><span>최*희</span> : 강좌관리/쿠폰등록/공지사항/QNA/강사&수강생 관리</dd>
+      <dt><span>- 백엔드 구현 -</span></dt>
+      <dd><span>박*용</span> : 강좌리스트</dd>
+      <dd><span>이*산</span> : 강좌관리/강좌등록</dd>
+      <dt><span>- 퍼블리싱/백엔드 구현 -</span></dt>
+      <dd><span>정*원</span> : 로그인/쿠폰등록/공지사항</dd>
+      <dd><span>이*서</span> : 헤더/대시보드/카테고리관리/쿠폰관리/</dd>
     </dl>
   </div>
 
@@ -119,7 +121,7 @@
   </div>
 </dialog>
 <!-- 이강산 DIALOG POPUP 끝 -->
-<!-- 
+
 <script>
 $(document).ready(function(){
   var key = getCookie('admin'); 
@@ -145,36 +147,7 @@ $(document).ready(function(){
     }
   });
 });
-
-function setCookie(cookieName, value, exdays){
-    var exdate = new Date();
-    exdate.setDate(exdate.getDate() + exdays);
-    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-    document.cookie = cookieName + "=" + cookieValue;
-}
- 
-// 쿠키삭제
-function deleteCookie(cookieName){
-  var expireDate = new Date();
-  expireDate.setDate(expireDate.getDate() - 1);
-  document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
-}
-
-// 쿠키 가져오기
-function getCookie(cookieName) {
-  cookieName = cookieName + '=';
-  var cookieData = document.cookie;
-  var start = cookieData.indexOf(cookieName);
-  var cookieValue = '';
-  if(start != -1){
-    start += cookieName.length;
-    var end = cookieData.indexOf(';', start);
-    if(end == -1)end = cookieData.length;
-    cookieValue = cookieData.substring(start, end);
-  }
-  return unescape(cookieValue);
-}
-</script> -->
+</script>
 
 
 <?php
