@@ -9,8 +9,12 @@
 /* link style 초기화 */
 
 a{
+  color: var(--primary-color);
   text-decoration: none;
-  color: var(--mc-gray1);
+}
+a:hover{
+  color: var(--primary-color-hover);
+  text-decoration: underline;
 }
 
 /* DIALOG POPUP */
@@ -249,6 +253,10 @@ i.i-empty{
   border-bottom: 2px solid #dee2e6;
 }
 
+.coupon_list .form-check.radio{
+  padding-left: 2.5rem;
+}
+
 /* 이은서 coupon_list.html-table 끝 */
 
 /* 이은서 category.html 시작 */
@@ -314,16 +322,6 @@ i.i-empty{
 }
 
 /* 이은서 coupon_deit.php 끝 */
-
-/* 최성희 notice_list, qna_list, smember_list, tmember_list 시작 */
-/* .notice_list_table thead th, .qna_list_table thead th, .smember_list_table thead th, .tmember_list_table thead th{
-  padding: 1rem 0 1rem 1.5rem;
-}
-.notice_list_table td, .notice_list_table th,
-.qna_list_table td, .qna_list_table th,
-.smember_list_table td, .smember_list_table th,
-.tmember_list_table td, .tmember_list_table th{
-padding: 0.53rem 0 0.53rem 1.5rem;} */
 
 .notice_view hr, .qna_view hr, .product_view hr, .coupon_view hr{
   border-color: var(--mc-black);
@@ -515,7 +513,7 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
   width: 400px;
   height: 442px;
   background-color: #fff;
-  background-image: url(/keepcoding/admin/img/keepcoding_logo.svg);
+  background-image: url(../img/keepcoding_logo.svg);
   background-size: 55%;
   background-repeat: no-repeat;
   background-position: center 43px;
@@ -531,6 +529,11 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
   outline: none;
   border: var(--primary-color);
   box-shadow: 0 0 5px 0 var(--primary-color);
+}
+.login_id input::placeholder,
+.login_pw input::placeholder{
+  font-size: var(--font-size-16);
+  color: #C5C5C5;
 }
 .login input[type="text"],
 .login input[type="password"]{

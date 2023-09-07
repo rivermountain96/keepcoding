@@ -56,7 +56,7 @@
 ?>
 
 <!-- 이은서 coupon_list 시작-->
-<div class="content">
+<div class="content coupon_list">
   <h4 class="pd72 fs-4 fw-bold">쿠폰 관리</h4>
     <form class="d-flex justify-content-between align-items-center pd48">
       <div class="d-flex gap-3">
@@ -137,9 +137,9 @@
           foreach($rsc as $item){
       ?>
       <tr data-cid="<?= $item-> cid ?>">
-        <th class="fw-bold align-middle"><a href="/keepcoding/admin/coupon/coupon_view.php?cid=<?= $item-> cid ?>"><?= $item -> coupon_name ?></a></th>
+        <th class="align-middle"><a href="/keepcoding/admin/coupon/coupon_view.php?cid=<?= $item-> cid ?>"><?= $item -> coupon_name ?></a></th>
         <td class="align-middle">
-          <div class="form-check form-switch">
+          <div class="form-check form-switch radio">
             <?php
               if($item->status > 0){
             ?>
@@ -151,7 +151,7 @@
             <?php
               }
             ?>
-            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+            <!-- <label class="form-check-label" for="flexSwitchCheckDefault"></label> -->
           </div>
         </td>
         <td class="align-middle">₩<span class="number"><?= $item -> coupon_price;?></span></td>

@@ -18,6 +18,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/keepcoding/admin/img/keepcoding_favicon/logo_favicon.ico">
+  <link rel="manifest" href="/keepcoding/admin/img/keepcoding_favicon/manifest.json">
+  <meta name="msapplication-TileColor" >
+
   <!-- style -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -54,13 +60,13 @@
     <form action="login_ok.php" class="login_content" method="POST">
       <div class="login_id row">
         <label for="userid" class="fw-medium">ID</label>
-        <input type="text" name="userid" id="userid">
+        <input type="text" name="userid" id="userid" placeholder="admin">
       </div>
 
       <div class="login_pw row">
         <label for="userpw" class="fw-medium">Password</label>
-        <input type="password" name="userpw" id="userpw">
-        <a href="" class="fw-medium">Forgot password?</a>
+        <input type="password" name="userpw" id="userpw" placeholder="1111">
+        <a href="#" class="fw-medium">Forgot password?</a>
       </div>
 
       <div class="login_ir d-flex justify-content-end">
@@ -86,8 +92,15 @@
     <p><span>제작기간</span> : 2023. 08. 11 - 09. 08</p>
     <p><span>특징</span> : html, css, jQuery (Bootstrap, jQuery Library)</p>
     <p>local: Windows, XAMPP(PHP, APACHE, MYSQL) | remote : PHP, LINUX, MYSQL</p>
-    <p><span>기획</span> : <a href="#" target="_blank" class="figma"><span class="font_green">발표 자료</span></a>  |  <span>코드</span> : <a href="https://github.com/rivermountain96/keepcoding" target="_blank" class="git"><span>깃허브</span><i class="fa-brands fa-github"></i></a></p>
-    <p><span>구현 완료 페이지</span> : </p>
+    <p><span>기획</span> : <a href="#" target="_blank" class="figma"><span class="font_green">발표 자료</span></a>  |  <span>코드</span> : <a href="https://github.com/rivermountain96/keepcoding/tree/main" target="_blank" class="git"><span>깃허브</span><i class="fa-brands fa-github"></i></a></p>
+    <p><span>구현 완료 페이지</span> : <a href="http://keepcoding.dothome.co.kr/keepcoding/admin/login.php" target="_blank" class="dothome"><span>관리자 로그인 페이지</span></a></p>
+  </div>
+
+  <hr>
+
+  <div class="admin">
+    <p><span>관리자 아이디</span> : admin</p>
+    <p><span>관리자 비밀번호</span> : 1111</p>
   </div>
 
   <hr>
@@ -97,13 +110,13 @@
     <p><span>기획</span> : 전원참가(공동)</p>
     <dl>
       <dt><span>- 퍼블리싱 구현 -</span></dt>
-      <dd><span>최*희</span> : 강좌관리/쿠폰등록/공지사항/QNA/강사&수강생 관리</dd>
+      <dd><span>최*희</span> : 강좌관리/쿠폰등록/공지사항/Q&amp;A게시판/강사&amp;수강생 관리</dd>
       <dt><span>- 백엔드 구현 -</span></dt>
       <dd><span>박*용</span> : 강좌리스트</dd>
-      <dd><span>이*산</span> : 강좌관리/강좌등록</dd>
+      <dd><span>이*산</span> : 강좌관리/강좌등록/Q&amp;A게시판</dd>
       <dt><span>- 퍼블리싱/백엔드 구현 -</span></dt>
       <dd><span>정*원</span> : 로그인/쿠폰등록/공지사항</dd>
-      <dd><span>이*서</span> : 헤더/대시보드/카테고리관리/쿠폰관리/</dd>
+      <dd><span>이*서</span> : 헤더/대시보드/카테고리관리/쿠폰관리</dd>
     </dl>
   </div>
 

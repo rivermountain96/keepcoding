@@ -13,7 +13,7 @@
 ?>
 
   <!-- 박민용 product_view 시작 -->
-  <div class="product_view_sec1 content mcbg-white d-flex flex-column">
+  <div class="product_view_sec1 content product_view mcbg-white d-flex flex-column">
     <div>
       <h4 class="fs-4 pd48">강좌 상세보기</h4>
       <hr class="pd24">
@@ -61,7 +61,7 @@
     <!-- product_view_sec4 썸네일이미지 -->
     <div class="pd24">
       <h6 class="pd24 text-secondary">썸네일</h6>
-      <img src="<?php echo $row->thumbnail ?>" alt="">
+      <img src="<?php echo $row->thumbnail ?>" alt="<?php echo $row->name;?>">
     </div>
     <hr class="pd24">
 

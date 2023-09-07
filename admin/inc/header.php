@@ -7,6 +7,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/keepcoding/admin/img/keepcoding_favicon/logo_favicon.ico">
+  <link rel="manifest" href="/keepcoding/admin/img/keepcoding_favicon/manifest.json">
+
   <!-- style -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -37,7 +42,7 @@
         <span><i class="bi bi-bell mc-gray3"></i></span>
         <div class="user d-flex align-items-center gap-3">
           <p class="mc-gray3">총관리자</p>
-          <img src="/keepcoding/admin/img/admin_img.svg" alt="">
+          <img src="/keepcoding/admin/img/admin_img.svg" alt="관리자 프로필 이미지">
         </div>
       </div>
     </div>
