@@ -253,6 +253,10 @@ i.i-empty{
   border-bottom: 2px solid #dee2e6;
 }
 
+.coupon_list .form-check.radio{
+  padding-left: 2.5rem;
+}
+
 /* 이은서 coupon_list.html-table 끝 */
 
 /* 이은서 category.html 시작 */
