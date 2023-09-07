@@ -1,11 +1,10 @@
 <?php
+  $title =  '강좌등록';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
-  $title =  '강좌등록';
 ?>
 
-<body>
 <!-- 이강산 product_up 시작 -->
 <div class="product_up content">
   <h4 class="fs-4 pd72">강좌 등록</h4>
@@ -72,12 +71,12 @@
       <h6 class="pd10 h6">판매 상태</h6>
       <div class="product_status_checkbox d-flex">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="0" id="status" name="status">
-            <label class="form-check-lsabel" for="status">판매중</label>
+            <input class="product_status_input form-check-input" type="radio" value="0" name="status" id="status_sale">
+            <label class="form-check-lsabel" for="status_sale">판매중</label>
         </div>
         <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="1" id="status" name="status" checked>
-            <label class="form-check-label" for="status">판매중지</label>
+            <input class="product_status_input form-check-input" type="radio" value="1" name="status" id="status_notsale" checked>
+            <label class="form-check-label" for="status_notsale">판매중지</label>
         </div>
       </div>
     </div>
@@ -86,7 +85,7 @@
   <div class="pd24">
     <div class="product_up_detail col p-0">
       <h6 class="pd10">상세설명</h6>
-        <div id="product_detail" name="product_detail"></div>
+        <textarea id="product_detail" name="product_detail"></textarea>
     </div>
   </div>
 
