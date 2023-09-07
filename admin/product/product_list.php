@@ -3,6 +3,7 @@
   $title = '강좌 목록';
 
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 
 
@@ -114,13 +115,13 @@ $sql .= $search_where;//쿼리조합
 
     <table class=" product_list_sec3 table pd48">
       <thead>
-        <tr>
-          <th scope="col" class="fw-bold col-4">강좌명</th>
-          <th scope="col" class="fw-bold col-1.5">상태</th>
-          <th scope="col" class="fw-bold col-3">카테고리</th>
-          <th scope="col" class="fw-bold col-1.5">가격</th>
-          <th scope="col" class="fw-bold col-1">수정</th>
-          <th scope="col" class="fw-bold col-1">삭제</th>
+        <tr">
+          <th class="fw-bold col-4">강좌명</th>
+          <th class="fw-bold col-1.5">상태</th>
+          <th class="fw-bold col-3">카테고리</th>
+          <th class="fw-bold col-1.5">가격</th>
+          <th class="fw-bold col-1">수정</th>
+          <th class="fw-bold col-1">삭제</th>
         </tr>
       </thead>
       <tbody>
@@ -133,11 +134,11 @@ $sql .= $search_where;//쿼리조합
             ?>
 
 
-        <tr scope="row">
+        <tr>
 
-          <th> <a href="product_view.php?pid=<?php echo $item->pid ?>"><?php echo $item->name ?></a></th>
+          <th class="align-middle"> <a href="product_view.php?pid=<?php echo $item->pid ?>"><?php echo $item->name ?></a></th>
           
-          <td ><?php 
+          <td class="align-middle"><?php 
           if($item -> status == 0){
             echo '판매중';
           } else if ($item -> status == 1){
@@ -145,7 +146,7 @@ $sql .= $search_where;//쿼리조합
           } 
           ?></td>
 
-          <td><?php 
+          <td class="align-middle"><?php 
           
           
           // $cids = explode('/', $item->cate);
@@ -174,10 +175,10 @@ $sql .= $search_where;//쿼리조합
         }
           ?></td>
 
-          <td><?php echo '₩' . number_format($item->price); ?></td>
+          <td class="align-middle"><?php echo '₩' . number_format($item->price); ?></td>
       
-          <td><a href="product_change.php?pid=<?php echo $item->pid ?>" class="btn btn-outline-primary">수정</a></td>
-          <td><a href="product_del.php?pid=<?php echo $item->pid ?>"  class="btn btn-outline-primary">삭제</a></td>
+          <td class="align-middle"><a href="product_change.php?pid=<?php echo $item->pid ?>" class="btn btn-outline-primary">수정</a></td>
+          <td class="align-middle"><a href="product_del.php?pid=<?php echo $item->pid ?>"  class="btn btn-outline-primary">삭제</a></td>
         </tr>
 
         <?php

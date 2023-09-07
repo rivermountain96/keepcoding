@@ -9,8 +9,12 @@
 /* link style 초기화 */
 
 a{
+  color: var(--primary-color);
   text-decoration: none;
-  color: var(--mc-gray1);
+}
+a:hover{
+  color: var(--primary-color-hover);
+  text-decoration: underline;
 }
 
 /* DIALOG POPUP */
@@ -531,6 +535,11 @@ padding: 0.53rem 0 0.53rem 1.5rem;} */
   outline: none;
   border: var(--primary-color);
   box-shadow: 0 0 5px 0 var(--primary-color);
+}
+.login_id input::placeholder,
+.login_pw input::placeholder{
+  font-size: var(--font-size-16);
+  color: #C5C5C5;
 }
 .login input[type="text"],
 .login input[type="password"]{
