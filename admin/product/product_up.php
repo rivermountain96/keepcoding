@@ -1,11 +1,10 @@
 <?php
+  $title =  '강좌등록';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
-  $title =  '강좌등록';
 ?>
 
-<body>
 <!-- 이강산 product_up 시작 -->
 <div class="product_up content">
   <h4 class="fs-4 pd72">강좌 등록</h4>
