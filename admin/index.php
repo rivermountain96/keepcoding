@@ -418,8 +418,6 @@ const stackedBar = new Chart(ctx, configB);
 
   var name = <?php echo $jsonName; ?>;
   var volume = <?php echo $jsonVolume; ?>;
-  console.log(typeof(volume));
-  console.log(volume);
   var names = name.split(',');
 
   const data = {
@@ -453,8 +451,6 @@ const myPieChart = new Chart(
   
   var name2 = <?php echo $jsonName2; ?>;
   var volume2 = <?php echo $jsonVolume2; ?>;
-  console.log(typeof(volum2));
-  console.log(volume2);
 
 
   const data2 = {
@@ -488,8 +484,6 @@ const myPieChart2 = new Chart(
   
   var name3 = <?php echo $jsonName3; ?>;
   var volume3 = <?php echo $jsonVolume3; ?>;
-  console.log(typeof(volume3));
-  console.log(volume3);
 
 
   const data3 = {
