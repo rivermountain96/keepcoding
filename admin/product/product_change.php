@@ -1,5 +1,6 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
 
 $pid = $_GET['pid'];
@@ -7,7 +8,11 @@ $sql = "SELECT * FROM products WHERE pid = '$pid'";
 $result = $mysqli ->query($sql);
 $row = $result -> fetch_object();
 
+
+
+
 ?>
+
 
 
 <body>
@@ -31,7 +36,7 @@ $row = $result -> fetch_object();
             <option value="<?php echo $c->cid ?>"><?php echo $c->name ?></option>
           <?php } ?>
         </select>
-     
+    
 
         <select class="form-select form-control-lg col" aria-label="Small select example" id="cate2" name="cate2" >
           <option selected disabled>중분류</option>
@@ -216,4 +221,5 @@ $row = $result -> fetch_object();
 
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/footer.php';
+
 ?>

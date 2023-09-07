@@ -1,6 +1,7 @@
 <?php
   $title =  'Q&A 게시판 목록';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   
   $pageNumber = $_GET['pageNumber'] ?? 1;
 
@@ -64,7 +65,7 @@
     <?php
       if(isset($rsc)){
         foreach($rsc as $item){
-        $post_time = $item -> date; //포스트의 등록일
+        $post_time = $item -> regdate; //포스트의 등록일
         $time_now = date('Y-m-d'); //오늘 날짜
         $current_qid = $item -> qid; // 현재 행의 qid
     ?>
