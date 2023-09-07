@@ -90,11 +90,6 @@ $sql .= $search_where;//쿼리조합
       </div>
     </div>
 
-  </form>
-
-
-    </nav>
-
     <!-- product_list_sec2 검색단 -->
 
     <form class="product_list_sec2 d-flex pd48 gap-3 " id="search_form">
@@ -104,18 +99,13 @@ $sql .= $search_where;//쿼리조합
       
       <button class="btn btn-outline-primary btn col-sm-1" type="submit">강좌검색 </button>
     </form>
-<?php
 
-
-
-
-?>
     <!-- product_list_sec3 강좌내용 테이블 -->
 
 
     <table class=" product_list_sec3 table pd48">
       <thead>
-        <tr">
+        <tr>
           <th class="fw-bold col-4">강좌명</th>
           <th class="fw-bold col-1.5">상태</th>
           <th class="fw-bold col-3">카테고리</th>
@@ -130,7 +120,7 @@ $sql .= $search_where;//쿼리조합
 
             if(isset($rsc)){
               foreach($rsc as $item){      
- 
+
             ?>
 
 
@@ -283,6 +273,7 @@ $('#search_form').submit(function(){
 
   });
 });
+
 
 </script>
 
