@@ -60,13 +60,13 @@
     <form action="login_ok.php" class="login_content" method="POST">
       <div class="login_id row">
         <label for="userid" class="fw-medium">ID</label>
-        <input type="text" name="userid" id="userid">
+        <input type="text" name="userid" id="userid" placeholder="admin">
       </div>
 
       <div class="login_pw row">
         <label for="userpw" class="fw-medium">Password</label>
-        <input type="password" name="userpw" id="userpw">
-        <a href="" class="fw-medium">Forgot password?</a>
+        <input type="password" name="userpw" id="userpw" placeholder="1111">
+        <a href="#" class="fw-medium">Forgot password?</a>
       </div>
 
       <div class="login_ir d-flex justify-content-end">
@@ -94,6 +94,13 @@
     <p>local: Windows, XAMPP(PHP, APACHE, MYSQL) | remote : PHP, LINUX, MYSQL</p>
     <p><span>기획</span> : <a href="#" target="_blank" class="figma"><span class="font_green">발표 자료</span></a>  |  <span>코드</span> : <a href="https://github.com/rivermountain96/keepcoding/tree/main" target="_blank" class="git"><span>깃허브</span><i class="fa-brands fa-github"></i></a></p>
     <p><span>구현 완료 페이지</span> : </p>
+  </div>
+
+  <hr>
+
+  <div class="admin">
+    <p><span>관리자 아이디</span> : admin</p>
+    <p><span>관리자 비밀번호</span> : 1111</p>
   </div>
 
   <hr>
