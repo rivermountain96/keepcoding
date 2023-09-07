@@ -61,7 +61,7 @@
     <!-- product_view_sec4 썸네일이미지 -->
     <div class="pd24">
       <h6 class="pd24 text-secondary">썸네일</h6>
-      <img src="<?php echo $row->thumbnail ?>" alt="">
+      <img src="<?php echo $row->thumbnail ?>" alt="<?php echo $row->name;?>">
     </div>
     <hr class="pd24">
 
