@@ -121,7 +121,7 @@ while($rs = $result -> fetch_object()){
           <div class="col-4">
             <h6 class="pd10">기존 이미지</h6>
             <div class="img_container">
-              <img src="<?= $item-> coupon_image ?>" alt="">
+              <img src="<?= $item-> coupon_image ?>" alt="<?= $item->coupon_name?>">
               <input type="hidden" name="origin_image" id="origin_image" value="<?= $item-> coupon_image ?>">
             </div>
           </div>
