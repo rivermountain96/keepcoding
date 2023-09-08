@@ -87,7 +87,7 @@ while($rs = $result -> fetch_object()){
               echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?search_keyword=$search_keyword&pageNumber=1\">&lt;&lt;</a></li>";
               if($block_num > 1){
                   $prev = ($block_num - 2) * $block_ct + 1;
-                  echo "<li class=\"page-item\"><a href=\"?search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">이전</a></li>";
+                  echo "<li class=\"page-item\"><a href=\"?search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">Previous</a></li>";
               }
           }
           for($i=$block_start;$i<=$block_end;$i++){
@@ -100,7 +100,7 @@ while($rs = $result -> fetch_object()){
           if($pageNumber<$total_page){
             if($total_block > $block_num){
                 $next = $block_num * $block_ct + 1;
-                echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">다음</a></li>";
+                echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">Next</a></li>";
             }
             echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">&gt;&gt;</a></li>";
           }
