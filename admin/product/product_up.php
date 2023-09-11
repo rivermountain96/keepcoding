@@ -80,6 +80,23 @@
         </div>
       </div>
     </div>
+
+    <div class="product_status row col p-24">
+      <h6 class="pd10 h6">강의옵션</h6>
+      <div class="product_option_checkbox d-flex justify-content-start gap-3">
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isnew" id="isnew">
+            <label class="form-check-lsabel" for="isnew">신규강의</label>
+        </div>
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isbest" id="isbest">
+            <label class="form-check-lsabel" for="isbest">추천강의</label>
+        </div>
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="checkbox" value="0" name="shortform" id="shortform">
+            <label class="form-check-lsabel" for="shortform">숏폼컨텐츠</label>
+        </div>
+      </div>
   </div>
 
   <div class="pd24">
