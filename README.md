@@ -3,12 +3,12 @@
 <br>
 <div align="center">
 
-<a href="https://github.com/rivermountain96/keepcoding/tree/main">
+<a href="https://github.com/rivermountain96/keepcoding">
   <img width=200px src="https://github.com/rivermountain96/keepcoding/assets/103012829/dbb67d1a-d4f4-4b4c-b912-43fbca4ffae7">
 </a>
 <br>
-<a href= "https://github.com/rivermountain96/keepcoding/tree/main" target="_blank">
-https://github.com/rivermountain96/keepcoding/tree/main
+<a href= "https://github.com/rivermountain96/keepcoding" target="_blank">
+https://github.com/rivermountain96/keepcoding
 </a>
 <br>
 📆 2023. 08. 21. ~ 2023. 09. 08. 

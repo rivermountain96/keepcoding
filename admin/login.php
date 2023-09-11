@@ -20,9 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- favicon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="/keepcoding/admin/img/keepcoding_favicon/logo_favicon.ico">
-  <link rel="manifest" href="/keepcoding/admin/img/keepcoding_favicon/manifest.json">
-  <meta name="msapplication-TileColor" >
+  <link rel="icon" type="image/png" href="/keepcoding/admin/img/logo_favicon.ico" ccrossorigin="anonymous">
 
   <!-- style -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -70,7 +68,7 @@
       </div>
 
       <div class="login_ir d-flex justify-content-end">
-        <input class="form-check-input" type="checkbox" name="checkId" id="saveId">
+        <input class="form-check-input" type="checkbox" name="checkId" id="saveId" >
         <label class="form-check-label" for="saveId">ID 저장</label>
       </div>
 
