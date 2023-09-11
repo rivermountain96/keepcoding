@@ -10,30 +10,30 @@
 <div class="product_up content">
   <h4 class="fs-4 pd72">강좌 등록</h4>
 
-<form action="product_ok.php" method="POST" id="product_up_form" enctype="multipart/form-data">
-    <input type="hidden" name="file_table_id" id="file_table_id" value="">
-    <input type="hidden" name="content" id="content" value="">
-      <div class="product_up_category">
-        <h3 class="pd10 h6">카테고리</h3>
-        <div class="row pd24 gap-3">
-          <select class="form-select form-select-lg col" aria-label="Small select example" id="cate1" name="cate1">
-            <option selected disabled>대분류</option>
-            <?php
-              foreach($cate1 as $c){            
-            ?>
-              <option value="<?php echo $c->cid ?>"><?php echo $c->name ?></option>
-            <?php } ?>
-          </select>
-        
-          <select class="form-select form-control-lg col" aria-label="Small select example" id="cate2" name="cate2">
-            <option selected disabled>중분류</option>
-          </select>
-    
-          <select class="form-select form-control-lg col" aria-label="Small select example" id="cate3" name="cate3">
-            <option selected disabled>소분류</option>
-          </select>
+  <form action="product_ok.php" method="POST" id="product_up_form" enctype="multipart/form-data">
+      <input type="hidden" name="file_table_id" id="file_table_id" value="">
+      <input type="hidden" name="content" id="content" value="">
+        <div class="product_up_category">
+          <h3 class="pd10 h6">카테고리</h3>
+          <div class="row pd24 gap-3">
+            <select class="form-select form-select-lg col" aria-label="Small select example" id="cate1" name="cate1">
+              <option selected disabled>대분류</option>
+              <?php
+                foreach($cate1 as $c){            
+              ?>
+                <option value="<?php echo $c->cid ?>"><?php echo $c->name ?></option>
+              <?php } ?>
+            </select>
+          
+            <select class="form-select form-control-lg col" aria-label="Small select example" id="cate2" name="cate2">
+              <option selected disabled>중분류</option>
+            </select>
+      
+            <select class="form-select form-control-lg col" aria-label="Small select example" id="cate3" name="cate3">
+              <option selected disabled>소분류</option>
+            </select>
+          </div>
         </div>
-      </div>
 
   <div class="pd24">
     <div class="product_up_name">
@@ -108,7 +108,8 @@
     <button type="submit" class="btn btn-primary" id="product_up_btn_up">등록</button>
     <button type="button" id="btn-cancel" class="product_up_cancel btn btn-secondary">취소</button>
   </div>
-</form> 
+  </form> 
+</div>
 
 <!-- 이강산 product_up 끝 -->
 <script src="/keepcoding/admin/js/makeoption.js"></script>
