@@ -81,13 +81,9 @@
       </div>
     </div>
 
-    <div class="product_status row col p-0">
+    <!-- <div class="product_status row col p-0">
       <h6 class="pd10 h6">강의옵션</h6>
       <div class="product_status_checkbox d-flex justify-content-start gap-3">
-        <div class="form-check">
-            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isnew" id="isnew">
-            <label class="form-check-lsabel" for="isnew">신규강의</label>
-        </div>
         <div class="form-check">
             <input class="product_status_input form-check-input" type="checkbox" value="0" name="isbest" id="isbest">
             <label class="form-check-lsabel" for="isbest">추천강의</label>
@@ -95,6 +91,29 @@
         <div class="form-check">
             <input class="product_status_input form-check-input" type="checkbox" value="0" name="shortform" id="shortform">
             <label class="form-check-lsabel" for="shortform">숏폼컨텐츠</label>
+        </div>
+      </div>
+  </div> -->
+
+  <div class="product_status row col p-0">
+      <h6 class="pd10 h6">추천강의여부</h6>
+      <div class="product_status_checkbox d-flex justify-content-start gap-3">
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isbest" id="isbest">
+            <label class="form-check-lsabel" for="isbest">추천강의</label>
+        </div>
+      </div>
+  </div>
+  <div class="product_status row col p-0">
+      <h6 class="pd10 h6">컨텐츠유형</h6>
+      <div class="product_status_checkbox d-flex justify-content-start gap-3">
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="radio" value="0" name="isbest" id="isbest">
+            <label class="form-check-lsabel" for="isbest">숏강의</label>
+        </div>
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="radio" value="1" name="shortform" id="shortform">
+            <label class="form-check-lsabel" for="shortform">일반강의</label>
         </div>
       </div>
   </div>
@@ -113,7 +132,7 @@
     </div>
   </div>
 
-  <div class="d-flex pd48 gap-3">
+  <div class="d-flex pd48 gap-3 row">
     <div class="product_up_video_url col p-0">
       <label for="video_url" class="pd10 h6">강의 영상 주소</label>
       <input type="url" id="video_url" name="video_url" class="form-control form-control-lg" placeholder="URL을 입력하세요">
