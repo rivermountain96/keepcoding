@@ -1,0 +1,149 @@
+body{
+  background-color: #E9ECEF;
+  padding-top: calc(var(--base-unit)*4);
+}
+
+/* header 시작 */
+  .header_wrap{
+    background-color: #212529;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+  }
+  .nav-tabs{
+    border-bottom:none ;
+    height: calc(var(--base-unit)*4);
+    padding-top: calc(var(--base-unit)*1.5);
+  }
+  .nav-tabs a{
+  color: var(--mc-white);
+  font-weight: 500;
+  text-decoration: none;
+  }
+  .nav-login a{
+    font-weight: 400;
+  }
+  .nav .dropdown{
+    width:calc(var(--base-unit)*6);
+    text-align: center;
+  }
+  .nav .dropdown a{
+    padding-bottom:calc(var(--base-unit)*1.4 + .5px);
+    padding-left: calc(var(--base-unit)*1.8);
+  }
+
+  .dropdown-menu{
+    padding:0;
+  }
+  /* 로고 */
+  .main_logo{
+    display: block;
+    text-indent: -9999rem;
+    background-image: url('../img/keepcoding_logo_white.png');
+    background-size: cover;
+    width: 130px;
+    height: 25px;
+    background-repeat: no-repeat;
+  }
+
+  /* 카트 */
+  .item_cart{
+    display: block;
+    text-indent: -9999rem;
+    background-image: url('../img/cart.svg');
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    margin-right:18px ;
+  }
+
+  /* 드롭다운에 호버하면 생기도록 변경 */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    margin-top: calc(var(--base-unit)*1.4 + .8px);
+    margin-left: 16px;
+  }
+
+  /* 호버하면 있는 관리자 보라색 속성 없앰 */
+  .nav-tabs a:hover{
+    text-decoration: none;
+    color: var(--mc-white);
+  }
+
+  /* 드롭다운 보더 기본 라인속성 없앰 */
+  .nav-tabs .nav_dropdown{
+    border: 0;
+  }
+  /* 드롭다운 전체 글자색상과 폰트와 문자 가운데로 오도록 */
+  .nav-tabs .nav_dropdown a{
+    color: var(--mc-gray1);
+    font-weight: 400;
+    text-align: center;
+    padding: 14px;
+  }
+  /* 드롭다운 마지막 아이 보더 라디어스 추가  */
+  .nav-tabs .nav_dropdown li:last-child a{
+    border-bottom-left-radius: var(--bs-border-radius);
+    border-bottom-right-radius: var(--bs-border-radius);
+  }
+  /* 드롭다운 색상변경 */
+  .nav-tabs .nav_dropdown a:active{
+  background-color: var(--mc-gray1);
+  color: var(--mc-white);
+  }
+
+  /* 기본화살표없앰 */
+  .dropdown-toggle::after{
+    display: none;
+  }
+
+  /* 회원파트 사이에 | 추가 */
+  .nav-login li:last-child::before{
+    content: "|";
+    padding: 0 10px;
+    color: var(--mc-white);
+  }
+
+/* header 끝 */
+
+/* footer 시작 */
+.main_footer{
+  background-color: #212529;
+  height: calc(var(--base-unit)*12);
+  color: var(--mc-white);
+}
+.main_footer ul{
+  margin-top: calc(var(--base-unit)*2);
+  font-weight: 500;
+}
+
+.main_footer ul li a{
+  text-decoration-line: none;
+  color: var(--mc-white);
+}
+.main_footer ul li a:hover{
+  color: var(--primary-color);
+}
+
+.main_footer ul li+li::before{
+  content:"|";
+  padding: 0 20px;
+  font-weight:200;
+}
+.footer_address>*{
+  text-align: center;
+}
+.footer_address span{
+  font-weight:300;
+  padding:0 10px;
+}
+.main_footer address, .main_footer .footer_item{
+  margin-top: 30px;
+}
+
+.main_footer .footer_copyright{ 
+  margin-top: 10px;
+  font-size: var(--font-size-14);
+}
+/* footer 끝 */
