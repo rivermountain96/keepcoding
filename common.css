@@ -40,6 +40,8 @@
   --mc-gray6: #ECECEC;
   --mc-gray7: #393939;
   --mc-white: #fff;
+  --mc-body: #E9ECEF;
+  --mc-login:#6C757D;
   /* rgba */
   --mc-b-rgba: rgba(0, 0, 0, 0.55);
 };
