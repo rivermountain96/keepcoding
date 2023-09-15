@@ -35,7 +35,7 @@ body{
     padding:0;
   }
   /* 로고 */
-  .main_logo{
+  .main_logo a{
     display: block;
     text-indent: -9999rem;
     background-image: url('../img/keepcoding_logo_white.png');
@@ -46,7 +46,7 @@ body{
   }
 
   /* 카트 */
-  .item_cart{
+  .item_cart a{
     display: block;
     text-indent: -9999rem;
     background-image: url('../img/cart.svg');
@@ -136,7 +136,7 @@ body{
 }
 .footer_address span{
   font-weight:300;
-  padding:0 10px;
+  padding-left: 10px;
 }
 .main_footer address, .main_footer .footer_item{
   margin-top: 30px;
