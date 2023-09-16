@@ -211,16 +211,20 @@ body a{
   }
   /* main_section02_starter, main_section03_shorts 끝*/
 
+  .main_section02_starter p, .main_section03_shorts p, .main_section05_etc p{
+    color: var(--mc-white);
+  }
 
   /* main_section04_banner 시작*/
-  .banner2 .btn{background-color: var(--primary-color);color: var(--mc-white);}
-  .banner2 .btn:active {background-color: var(--primary-color); color: var(--mc-white);}
-  .banner2{
+  .main_section04_banner .banner{width: 100%;}
+  .main_section04_banner .banner2 .btn{background-color: var(--primary-color);color: var(--mc-white);}
+  .main_section04_banner .banner2 .btn:active {background-color: var(--primary-color); color: var(--mc-white);}
+  .main_section04_banner .banner2{
     background-color: var(--mc-white); 
     margin-top: var(--base-unit);
     margin-bottom: calc(var(--base-unit)*4)
   }
-  .banner2 span{color: var(--primary-color);}
+  .main_section04_banner .banner2 span{color: var(--primary-color);}
   
   /* main_section04_banner 끝*/
   
