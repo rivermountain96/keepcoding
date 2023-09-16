@@ -204,9 +204,11 @@ body a{
   .main_section02_starter, .main_section03_shorts{
     margin-bottom: calc(var(--base-unit)*4);
   }
-  .main_section02_starter>p, .main_section03_shorts>p{
+  .main_section02_starter>p>span, .main_section03_shorts>p>span{
     color: var(--primary-color);
     font-weight: 600;
+  }
+  .main_section02_starter>p, .main_section03_shorts>p{
     padding: 5px 0 18px;
   }
   /* main_section02_starter, main_section03_shorts 끝*/
