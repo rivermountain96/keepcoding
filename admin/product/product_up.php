@@ -1,39 +1,38 @@
 <?php
+  $title =  '강좌등록';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/header.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/admin_check.php';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/category_func.php';
-  $title =  '강좌등록';
 ?>
 
-<body>
 <!-- 이강산 product_up 시작 -->
 <div class="product_up content">
   <h4 class="fs-4 pd72">강좌 등록</h4>
 
-<form action="product_ok.php" method="POST" id="product_up_form" enctype="multipart/form-data">
-    <input type="hidden" name="file_table_id" id="file_table_id" value="">
-    <input type="hidden" name="content" id="content" value="">
-      <div class="product_up_category">
-        <h3 class="pd10 h6">카테고리</h3>
-        <div class="row pd24 gap-3">
-          <select class="form-select form-select-lg col" aria-label="Small select example" id="cate1" name="cate1">
-            <option selected disabled>대분류</option>
-            <?php
-              foreach($cate1 as $c){            
-            ?>
-              <option value="<?php echo $c->cid ?>"><?php echo $c->name ?></option>
-            <?php } ?>
-          </select>
-        
-          <select class="form-select form-control-lg col" aria-label="Small select example" id="cate2" name="cate2">
-            <option selected disabled>중분류</option>
-          </select>
-    
-          <select class="form-select form-control-lg col" aria-label="Small select example" id="cate3" name="cate3">
-            <option selected disabled>소분류</option>
-          </select>
+  <form action="product_ok.php" method="POST" id="product_up_form" enctype="multipart/form-data">
+      <input type="hidden" name="file_table_id" id="file_table_id" value="">
+      <input type="hidden" name="content" id="content" value="">
+        <div class="product_up_category">
+          <h3 class="pd10 h6">카테고리</h3>
+          <div class="row pd24 gap-3">
+            <select class="form-select form-select-lg col" aria-label="Small select example" id="cate1" name="cate1">
+              <option selected disabled>대분류</option>
+              <?php
+                foreach($cate1 as $c){            
+              ?>
+                <option value="<?php echo $c->cid ?>"><?php echo $c->name ?></option>
+              <?php } ?>
+            </select>
+          
+            <select class="form-select form-control-lg col" aria-label="Small select example" id="cate2" name="cate2">
+              <option selected disabled>중분류</option>
+            </select>
+      
+            <select class="form-select form-control-lg col" aria-label="Small select example" id="cate3" name="cate3">
+              <option selected disabled>소분류</option>
+            </select>
+          </div>
         </div>
-      </div>
 
   <div class="pd24">
     <div class="product_up_name">
@@ -72,21 +71,57 @@
       <h6 class="pd10 h6">판매 상태</h6>
       <div class="product_status_checkbox d-flex">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="0" id="status" name="status">
-            <label class="form-check-lsabel" for="status">판매중</label>
+            <input class="product_status_input form-check-input" type="radio" value="0" name="status" id="status_sale">
+            <label class="form-check-lsabel" for="status_sale">판매중</label>
         </div>
         <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="1" id="status" name="status" checked>
-            <label class="form-check-label" for="status">판매중지</label>
+            <input class="product_status_input form-check-input" type="radio" value="1" name="status" id="status_notsale" checked>
+            <label class="form-check-label" for="status_notsale">판매중지</label>
         </div>
       </div>
     </div>
+
+    <!-- <div class="product_status row col p-0">
+      <h6 class="pd10 h6">강의옵션</h6>
+      <div class="product_status_checkbox d-flex justify-content-start gap-3">
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isbest" id="isbest">
+            <label class="form-check-lsabel" for="isbest">추천강의</label>
+        </div>
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="checkbox" value="0" name="shortform" id="shortform">
+            <label class="form-check-lsabel" for="shortform">숏폼컨텐츠</label>
+        </div>
+      </div>
+  </div> -->
+
+  <div class="product_status row col p-0">
+      <h6 class="pd10 h6">추천강의여부</h6>
+      <div class="product_status_checkbox d-flex justify-content-start gap-3">
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isbest" id="isbest">
+            <label class="form-check-lsabel" for="isbest">추천강의</label>
+        </div>
+      </div>
+  </div>
+  <div class="product_status row col p-0">
+      <h6 class="pd10 h6">컨텐츠유형</h6>
+      <div class="product_status_checkbox d-flex justify-content-start gap-3">
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="radio" value="0" name="isbest" id="isbest">
+            <label class="form-check-lsabel" for="isbest">숏강의</label>
+        </div>
+        <div class="form-check">
+            <input class="product_status_input form-check-input" type="radio" value="1" name="shortform" id="shortform">
+            <label class="form-check-lsabel" for="shortform">일반강의</label>
+        </div>
+      </div>
   </div>
 
   <div class="pd24">
     <div class="product_up_detail col p-0">
       <h6 class="pd10">상세설명</h6>
-        <div id="product_detail" name="product_detail"></div>
+        <textarea id="product_detail" name="product_detail"></textarea>
     </div>
   </div>
 
@@ -97,7 +132,7 @@
     </div>
   </div>
 
-  <div class="d-flex pd48 gap-3">
+  <div class="d-flex pd48 gap-3 row">
     <div class="product_up_video_url col p-0">
       <label for="video_url" class="pd10 h6">강의 영상 주소</label>
       <input type="url" id="video_url" name="video_url" class="form-control form-control-lg" placeholder="URL을 입력하세요">
@@ -108,7 +143,8 @@
     <button type="submit" class="btn btn-primary" id="product_up_btn_up">등록</button>
     <button type="button" id="btn-cancel" class="product_up_cancel btn btn-secondary">취소</button>
   </div>
-</form> 
+  </form> 
+</div>
 
 <!-- 이강산 product_up 끝 -->
 <script src="/keepcoding/admin/js/makeoption.js"></script>

@@ -59,65 +59,58 @@ while($rs = $result -> fetch_object()){
         if(isset($rsc)){
           foreach($rsc as $item){            
       ?>
-
       <tr>
         <td class="align-middle listIdx"><?= $item -> idx; ?></td>
         <td class="align-middle"><a href="/keepcoding/admin/notice/notice_view.php?idx=<?= $item-> idx; ?>"><?= $item -> title; ?></a></td>
         <td class="align-middle"><?= $item -> name; ?></td>        
         <td class="align-middle"><?= $item -> hit; ?> </td>
-     
-
         <td class="align-middle">
         <?php $date = str_replace('-', '.', $item -> regdate ); 
         echo $date;
         ?>
-
         </td>
-        
         <td class="align-middle">
-          <a href="/keepcoding/admin/notice/notice_del.php?idx=<?= $item-> idx?>" id="delete" class="btn btn-outline-primary btn-sm">삭제</a>
+          <a href="/keepcoding/admin/notice/notice_del.php?idx=<?= $item-> idx?>" id="delete<?= $item-> idx?>" class="btn btn-outline-primary btn-sm">삭제</a>
         </td>
       </tr>
       <?php
         } 
       } 
       ?>  
-
     </tbody>
   </table>
   <div class="d-flex align-items-center pd48">
     <nav aria-label="Page navigation example" class="col-11">
       <ul class="pagination justify-content-center">
-      <?php
-        if($pageNumber>1){                   
-            echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?search_keyword=$search_keyword&pageNumber=1\">&lt;&lt;</a></li>";
-            if($block_num > 1){
-                $prev = ($block_num - 2) * $block_ct + 1;
-                echo "<li class=\"page-item\"><a href='?search_keyword=$search_keyword&pageNumber=$prev' class=\"page-link\">이전</a></li>";
+        <?php
+          if($pageNumber>1){                   
+              echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?search_keyword=$search_keyword&pageNumber=1\">&lt;&lt;</a></li>";
+              if($block_num > 1){
+                  $prev = ($block_num - 2) * $block_ct + 1;
+                  echo "<li class=\"page-item\"><a href=\"?search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">Previous</a></li>";
+              }
+          }
+          for($i=$block_start;$i<=$block_end;$i++){
+            if($pageNumber == $i){
+                echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?search_keyword=$search_keyword&pageNumber=1\pageNumber=$i\" class=\"page-link\">$i</a></li>";
+            }else{
+                echo "<li class=\"page-item\"><a href=\"?search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
             }
-        }
-        for($i=$block_start;$i<=$block_end;$i++){
-          if($pageNumber == $i){
-              echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?search_keyword=$search_keyword&pageNumber=1\pageNumber=$i\" class=\"page-link\">$i</a></li>";
-          }else{
-              echo "<li class=\"page-item\"><a href=\"?search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
           }
-        }
-        if($pageNumber<$total_page){
-          if($total_block > $block_num){
-              $next = $block_num * $block_ct + 1;
-              echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">다음</a></li>";
+          if($pageNumber<$total_page){
+            if($total_block > $block_num){
+                $next = $block_num * $block_ct + 1;
+                echo "<li class=\"page-item\"><a href=\"?pageNumber=$next\" class=\"page-link\">Next</a></li>";
+            }
+            echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">&gt;&gt;</a></li>";
           }
-          echo "<li class=\"page-item\"><a href=\"?pageNumber=$total_page\" class=\"page-link\">&gt;&gt;</a></li>";
-        }
-      ?>           
+        ?>           
       </ul>
     </nav>
     <a href="notice_up.php" class="btn btn-primary col-1">공지등록</a>
- 
   </div>
   
-<div>
+</div>
 <!-- 최성희 notice_list 끝 -->
 
 <?php

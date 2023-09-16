@@ -32,13 +32,9 @@ if($_SESSION['AUNAME']){
           </select>
         </div>
         <div class="notice_change_regdate col-4 p-0 datepicker">
-          <label class="pd10 h6" for="regdate">시작일</label>
+          <label class="pd10 h6" for="datepicker">시작일</label>
           <input type="text" id="datepicker" name="regdate" class="form-control form-control-lg" value="<?= $rs -> regdate; ?>">
         </div> 
-        <!-- <div class="notice_change_enddate col p-0 datepicker">
-          <label class="pd10 h6" for="duedate">만료일</label>
-          <input type="text" id="datepicker2" name="duedate" class="form-control form-control-lg" value="<?= $rs -> duedate; ?>">
-        </div> -->
       </div>
 
       <div class="pd24">
@@ -51,7 +47,7 @@ if($_SESSION['AUNAME']){
         <label for="notice_img" class="form-label pd10 h6">이미지</label>
         <p><?php echo $rs->notice_img;?></p>
         <br>
-        <input class="form-control form-control-lg form-control form-control-lg" id="notice_img" name="notice_img" value="<?php echo $rs->notice_img;?>" type="file">
+        <input class="form-control form-control-lg form-control form-control-lg" id="notice_img" name="notice_img" type="file">
         
       </div>
 
