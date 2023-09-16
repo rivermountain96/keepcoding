@@ -2,12 +2,17 @@ body{
   background-color: #E9ECEF;
   padding-top: calc(var(--base-unit)*4);
 }
+body a{
+  text-decoration-line: none;
+}
+
 
 /* header 시작 */
   .header_wrap{
     background-color: #212529;
     position: fixed;
     top: 0; left: 0; right: 0;
+    z-index: 99999;
   }
   .nav-tabs{
     border-bottom:none ;
@@ -15,9 +20,9 @@ body{
     padding-top: calc(var(--base-unit)*1.5);
   }
   .nav-tabs a{
-  color: var(--mc-white);
-  font-weight: 500;
-  text-decoration: none;
+    color: var(--mc-white);
+    font-weight: 500;
+    text-decoration: none;
   }
   .nav-login a{
     font-weight: 400;
@@ -147,3 +152,83 @@ body{
   font-size: var(--font-size-14);
 }
 /* footer 끝 */
+
+/* main 시작 */
+  .container h2 a{
+    color: var(--mc-gray1);
+  }
+  /* main_section01_search 시작 */
+  .main_section01_search{
+    margin-top: calc(var(--base-unit)*7);
+  }
+  .main_section01_search a{
+    color: var(--mc-gray1);
+  }
+  .main_section01_search li:hover img {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
+  }
+  .main_section01_search li img.restore {
+    transform: scale(1); 
+    transition: transform 0.3s ease; 
+  }
+  .main_section01_search h2 span, 
+  .main_section01_search li:hover a{
+    color: var(--primary-color);
+  }
+  .main_section01_search h2 span{
+    padding-left: 10px;
+  }
+  .main_section01_search h2{
+    font-size: 34px;
+    font-weight: 600;
+    padding-bottom: 28px;
+  }
+
+  .main_middlec_icon{
+    margin-top:calc(var(--base-unit)*3);
+    margin-bottom:calc(var(--base-unit)*6);
+    text-align: center;
+  }
+  .main_middlec_icon li {
+    box-sizing: content-box;
+    width: 50px;
+    height: 77px;
+  }
+  .main_middlec_icon li img, .main_middlec_icon li svg{
+    margin-bottom: 10px;
+  }
+  /* main_section01_search 끝 */
+  
+  /* main_section02_starter, main_section03_shorts 시작*/
+  .main_section02_starter, .main_section03_shorts{
+    margin-bottom: calc(var(--base-unit)*4);
+  }
+  .main_section02_starter>p, .main_section03_shorts>p{
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 5px 0 18px;
+  }
+  /* main_section02_starter, main_section03_shorts 끝*/
+
+
+  /* main_section04_banner 시작*/
+  .banner2 .btn{background-color: var(--primary-color);color: var(--mc-white);}
+  .banner2 .btn:active {background-color: var(--primary-color); color: var(--mc-white);}
+  .banner2{
+    background-color: var(--mc-white); 
+    margin-top: var(--base-unit);
+    margin-bottom: calc(var(--base-unit)*4)
+  }
+  .banner2 span{color: var(--primary-color);}
+  
+  /* main_section04_banner 끝*/
+  
+  .main_section05_etc{
+    padding-bottom: calc(var(--base-unit)*8);
+  }
+  .main_section05_etc h2{
+    padding-bottom: 18px;
+  }
+
+/* main 끝 */

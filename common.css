@@ -367,6 +367,7 @@ input:focus {
   background-color: transparent;
   color: var(--mc-gray5);
   padding-left: 50px;
+  padding-right: 10px;
 }
 .search_input::placeholder{
   color:var(--mc-gray4);
@@ -391,6 +392,21 @@ input:focus {
 .card{
   border-radius: 10px;
   border:none;
+  overflow: hidden;
+}
+.card a{
+  color: var(--mc-white);
+}
+.card-img-top-wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card-img-top{
+  transition: 0.3s;
+}
+.card-img-top:hover {
+  transform: scale(1.1); /* 호버 시 이미지 크기를 120%로 확대합니다. */
 }
 .card.sec2 .btn{
   padding: 4px 8px;
