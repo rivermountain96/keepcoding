@@ -12,7 +12,7 @@ body a{
     background-color: #212529;
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 99999;
+    z-index: 10;
   }
   .nav-tabs{
     border-bottom:none ;
