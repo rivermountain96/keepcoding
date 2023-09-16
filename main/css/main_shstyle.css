@@ -236,5 +236,38 @@ body a{
   .main_section05_etc h2{
     padding-bottom: 18px;
   }
-
 /* main 끝 */
+
+/* pshop 시작 */
+.pshop_title{
+  margin: calc(var(--base-unit)*7) auto calc(var(--base-unit)*2);
+}
+.pshop_section01{
+  margin-right: var(--base-unit);
+}
+.pshop_section01_category{
+  margin-top: var(--base-unit);
+  background-color: var(--mc-white);
+  border-radius: 4px;
+  padding: var(--base-unit);
+}
+.pshop_section01_recommend, .pshop_section01_type, .pshop_section01_level{
+  margin-top: calc(var(--base-unit)*2);
+}
+.pshop_section01_list .form-check{
+  padding-top: calc(var(--base-unit)*.3);
+}
+.pshop_section02 h2{
+  margin-bottom: var(--base-unit);
+}
+.pshop_section02 .card{
+  width:calc(var(--base-unit)*13);
+}
+.pshop_section02 form{
+  height: calc(var(--base-unit)*2);
+  margin-bottom: var(--base-unit);
+}
+.pshop_section02 nav{
+  margin: calc(var(--base-unit)*2) auto calc(var(--base-unit)*8);
+}
+/* pshop 끝 */
