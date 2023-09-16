@@ -254,6 +254,60 @@
         </div>
       </div>
     </section>
+
+    <!-- main_section04 Modal 시작 -->
+    <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">1분 숏테스트</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex align-items-center justify-content-center">
+            <div class="test_card shadow text-center d-flex flex-column align-items-center gap-4">
+              <h5 class="mc-gray2 fw-semibold test_title">1분만에 적성 찾기</h5>
+        
+              <div id="start" class="view active flex-column align-items-center gap-4">
+                <img src="../main/img/bannerimg1.png" alt="bannerimg1">
+                <p class="mc-gray2 text-center fs-14">나에게 맞는 IT 직군은 뭘까?<br>킵코딩 1분 숏테스트로 쉽게 찾아보자!</p>
+                <button class="btn btn-light fs-14" id="start_btn">1분 테스트 시작하기</button>
+              </div>
+        
+              <div id="progress" class="view flex-column">
+                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" style="width: 0%"></div>
+                </div>        
+                <p class="question mc-gray1"></p>
+                <div class="answer d-flex flex-column">
+                </div>
+              </div>
+        
+              <div id="result" class="view flex-column align-items-center gap-4">
+                <img src="" alt="" class="result_img">
+                <h5 class="name mc-gray2 fw-semibold">직업 이름</h5>
+                <p class="sub mc-gray5 fw-semibold">한줄소개</p>
+                <p class="desc mc-gray2 fs-14">설명</p>
+                <p class="mc-gray5 fw-bold fs-14">하는일</p>
+                <ul class="work mc-gray2 fs-12 text-left d-flex flex-column gap-3">
+                  <li>하는일1</li>
+                  <li>하는일2</li>
+                  <li>하는일3</li>
+                  <li>하는일4</li>
+                  <li>하는일5</li>
+                </ul>
+                <a href="./common.html" class="btn btn-outline-light fs-14 mt-4">나에게 맞는 강의 찾으러 가기</a>
+              </div>
+        
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- main_section04 Modal 끝 -->
+    
     <!-- main_section04_banner 끝 -->
     
     <!-- main_section05_etc 시작 -->
