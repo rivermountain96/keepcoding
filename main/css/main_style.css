@@ -238,10 +238,11 @@ body a{
   }
 /* main 끝 */
 
-/* pshop 시작 */
-.pshop_title{
+/* pshop 공통 시작 */
+.pshop_title, .pshop_details_title{
   margin: calc(var(--base-unit)*7) auto calc(var(--base-unit)*2);
 }
+/* pshop 시작 */
 .pshop_section01{
   margin-right: var(--base-unit);
 }
@@ -271,6 +272,45 @@ body a{
   margin: calc(var(--base-unit)*2) auto calc(var(--base-unit)*8);
 }
 /* pshop 끝 */
+
+/* pshop_details 시작 */
+.pshop_details_01{
+  margin-bottom: calc(var(--base-unit)*2)
+}
+.pshop_details_01 .cate_icon{
+  width: 50px;
+}
+.pshop_details_01>img{
+  width: 647px;
+  height: 406px;
+  border-radius: 10px;
+}
+.pshop_details_text img, .pshop_details_text h3 {
+  margin-bottom: var(--base-unit);
+}
+.pshop_details_01_contetn{
+  margin: calc(var(--base-unit)*2) 0 calc(var(--base-unit)*5.5);
+}
+.pshop_details_02{
+  background-color: var(--mc-white);
+  padding: var(--base-unit);
+  border-radius: 10px;
+}
+.pshop_details_02 button{
+  padding: 11px;
+}
+.pshop_details_02 div{
+  padding: 13px;
+}
+.pshop_details_03{
+  margin: calc(var(--base-unit)*2) 0 calc(var(--base-unit)*3);
+}
+.pshop_details_04{
+  margin-bottom: calc(var(--base-unit)*8);
+}
+/* pshop_details 끝 */
+
+
 /* cart_section 시작 */
 .cart_section_title{
   margin: calc(var(--base-unit)*7) auto calc(var(--base-unit)*2);
@@ -297,5 +337,4 @@ body a{
 .cart_section_calc div ul:nth-child(3){
   margin-top: calc(var(--base-unit)*3);
 }
-
 /* cart_section 끝 */
