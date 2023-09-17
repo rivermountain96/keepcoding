@@ -271,3 +271,31 @@ body a{
   margin: calc(var(--base-unit)*2) auto calc(var(--base-unit)*8);
 }
 /* pshop 끝 */
+/* cart_section 시작 */
+.cart_section_title{
+  margin: calc(var(--base-unit)*7) auto calc(var(--base-unit)*2);
+}
+.cart_section .cart, .cart_section_select h4{
+  margin-bottom: var(--base-unit);
+}
+.cart_trash:hover{
+  text-decoration: underline;
+}
+.cart_card div img{
+  width: 200px;
+  border-radius: 10px;
+}
+.cart_section_calc div{
+  margin: calc(var(--base-unit)*5) 0 ;
+  background-color: var(--mc-white);
+  border-radius: 10px;
+  padding: var(--base-unit);
+}
+.cart_section_calc div ul{
+  margin-bottom: var(--base-unit);
+}
+.cart_section_calc div ul:nth-child(3){
+  margin-top: calc(var(--base-unit)*3);
+}
+
+/* cart_section 끝 */

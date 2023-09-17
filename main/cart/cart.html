@@ -78,129 +78,124 @@
   </header>
   <!-- header 끝 -->
 
-  <h2 class="h4 container pshop_title">강의탐색</h2>
-  <div class="container d-flex justify-content-between">
-    <!-- pshop_section01 시작 -->
-  <section class="pshop_section01 col-3">
-    <div class="d-flex justify-content-between">
-      <p class="h6"><img src="../img/pshop_sliders.svg" alt="필터"> 필터</p>
-      <p class="h6"><a href="#" class="mc-gray1">초기화 <img src="../img/pshop_repeat.svg" alt="초기화"></a></p>
-    </div>
-    
-    <div class="pshop_section01_list">
-    <div class="pshop_section01_category">
-      <h3 class="h6">카테고리</h3>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="category" id="category01">
-        <label class="form-check-label" for="category01">
-          프론트엔드
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="category" id="category02">
-        <label class="form-check-label" for="category02">
-          백엔드
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="category" id="category03" checked>
-        <label class="form-check-label" for="category03">
-          풀스택
-        </label>
-      </div>
-
-    <div class="pshop_section01_recommend">
-      <h3 class="h6">추천</h3>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="recommend">
-        <label class="form-check-label" for="recommend">
-          BEST 강의
-        </label>
-      </div>
-    </div>
-    
-    <div class="pshop_section01_type">
-      <h3 class="h6">유형</h3>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="type" id="type01">
-        <label class="form-check-label" for="type01">
-          숏강의
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="type" id="type02">
-        <label class="form-check-label" for="type02">
-          일반강의
-        </label>
-      </div>
+  <!-- cart_section 시작 -->
+  <section class="container cart_section">
+    <div class="d-flex justify-content-between cart_section_title">
+      <h2 class="h4">장바구니</h2>
+      <p class="fs-6"><a href="#" class="mc-gray1 cart_trash">전체 삭제 
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+        </svg>
+      </a></p>
     </div>
 
-    <div class="pshop_section01_level">
-      <h3 class="h6">난이도</h3>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="level01">
-        <label class="form-check-label" for="level01">
-          초급
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="level02">
-        <label class="form-check-label" for="level02">
-          중급
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="level03">
-        <label class="form-check-label" for="level03">
-          고급
-        </label>
-      </div>
-    </div>
-  </div>
-  </div>
-  </section>
-  <!-- pshop_section01 끝 -->
 
-  <!-- pshop_section02 시작 -->
-  <section class="pshop_section02 col-9">
-    <h2 class="h6"><span>24개</span>의 강의</h2>
-    <div>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search">
-        <button class="btn btn-outline-primary col-1" type="submit">검색</button>
-      </form>
-    </div>
-
-    <div class="card_list d-flex justify-content-between gap-3 row m-0">
-      <!-- <div class="card sec2 text-center" data-bs-theme="dark">
-        <a href="#">
-          <div class="card-img-top-wrap">
-            <img src="../img/example01.png" class="card-img-top" alt="example img">
+    <div class="cart">
+      <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
+        <div class="d-flex gap-4">
+          <img src="../img/example11.png" alt="cart img" class="shadow-sm">
+          <div class="cart_info d-flex flex-column justify-content-between">
+            <div class="cart_about d-flex flex-column gap-1">
+              <h3 class="h5">HTML - 기본문법</h3><br>
+              <p class="mc-gray4">프론트엔드>HTML>초급</p>
+            </div>
+            <p class="d-flex gap-1"><span>수강기한</span><span class="pc2">무제한</span></p>
           </div>
-        </a>
-          <div class="card-body z-3">
-            <p class="card-title text-center fw-semibold">HTML - 기본 문법 학습</p>
-            <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
-            <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
-            <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
+        </div>
+        <div class="d-flex flex-column justify-content-between align-items-end">
+          <h5>₩5,000</h5>
+          <a href="" class="mc-gray1 cart_trash">삭제
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cart">
+      <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
+        <div class="d-flex gap-4">
+          <img src="../img/example05.png" alt="cart img" class="shadow-sm">
+          <div class="cart_info d-flex flex-column justify-content-between">
+            <div class="cart_about d-flex flex-column gap-1">
+              <h3 class="h5">HTML - 기본문법</h3><br>
+              <p class="mc-gray4">프론트엔드>HTML>초급</p>
+            </div>
+            <p class="d-flex gap-1"><span>수강기한</span><span class="pc2">무제한</span></p>
           </div>
-      </div> -->
+        </div>
+        <div class="d-flex flex-column justify-content-between align-items-end">
+          <h5>₩5,000</h5>
+          <a href="" class="mc-gray1 cart_trash">삭제
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="cart">
+      <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
+        <div class="d-flex gap-4">
+          <img src="../img/example09.png" alt="cart img" class="shadow-sm">
+          <div class="cart_info d-flex flex-column justify-content-between">
+            <div class="cart_about d-flex flex-column gap-1">
+              <h3 class="h5">HTML - 기본문법</h3><br>
+              <p class="mc-gray4">프론트엔드>HTML>초급</p>
+            </div>
+            <p class="d-flex gap-1"><span>수강기한</span><span class="pc2">무제한</span></p>
+          </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between align-items-end">
+          <h5>₩5,000</h5>
+          <a href="" class="mc-gray1 cart_trash">삭제
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <div class="d-flex justify-content-center">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
+    
+    <div class="container d-flex justify-content-between g-0">
+      <div class="cart_section_select col-4">
+        <h4 class="h6">쿠폰선택</h4>
+        <select class="form-select form-select-lg mb-3 fs-6 p-3" aria-label="Large select example">
+          <option selected>쿠폰선택</option>
+          <option value="1">쿠폰 One</option>
+          <option value="2">쿠폰 Two</option>
+          <option value="3">쿠폰 Three</option>
+        </select>
+      </div>
+
+      <div class="cart_section_calc d-flex justify-content-end col-8">
+        <div class="shadow-sm col-6">
+          <ul class="d-flex justify-content-between">
+            <li>전체상품금액</li>
+            <li>₩15,000</li>
+          </ul>
+          <ul class="d-flex justify-content-between">
+            <li>할인예상금액</li>
+            <li>₩5,000</li>
+          </ul>
+          <ul class="h4 d-flex justify-content-between">
+            <li>결제금액</li>
+            <li>₩10,000</li>
+          </ul>
+          <button class="btn btn-primary btn-lg col-12 fs-6 p-3 h6">결제하기</button>
+        </div>
+
+      </div>
     </div>
   </section>
-  <!-- pshop_section02 끝 -->
-  </div>
+  <!-- cart 끝 -->
+  
+
 
   <!-- footer 시작  -->
   <footer class="main_footer d-flex flex-column">
