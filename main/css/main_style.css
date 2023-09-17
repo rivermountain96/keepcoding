@@ -365,4 +365,8 @@ body a{
 .myproduct_list div nav{
   margin: var(--base-unit) auto calc(var(--base-unit)*8) ;
 }
+.mycoupon_list img{
+  padding: 24px;
+  height: 110px;
+}
 /* mypage 끝 */
