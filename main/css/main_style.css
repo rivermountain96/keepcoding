@@ -326,7 +326,7 @@ body a{
   border-radius: 10px;
 }
 .cart_section_calc div{
-  margin: calc(var(--base-unit)*5) 0 ;
+  margin: calc(var(--base-unit)*5) 0 calc(var(--base-unit)*8) ;
   background-color: var(--mc-white);
   border-radius: 10px;
   padding: var(--base-unit);
@@ -338,3 +338,31 @@ body a{
   margin-top: calc(var(--base-unit)*3);
 }
 /* cart_section 끝 */
+
+/* mypage 시작 */
+.myproduct_list{
+  margin-top: calc(var(--base-unit)*7);
+}
+.myproduct_list_my{
+  margin-right: var(--base-unit);
+}
+.myproduct_list_list .h4{
+  margin-bottom: calc(var(--base-unit)*2);
+}
+.myproduct_list_my ul li{
+  background-color: var(--mc-white);
+  padding: 14px 0 15px 24px;
+  margin-top: var(--base-unit);
+  border-radius: 4px;
+}
+.myproduct_list_list form input, .myproduct_list_list form button{
+  padding:12px;
+  margin-bottom: var(--base-unit) ;
+}
+.myproduct_list_list .cart{
+  margin-bottom: var(--base-unit) ;
+}
+.myproduct_list div nav{
+  margin: var(--base-unit) auto calc(var(--base-unit)*8) ;
+}
+/* mypage 끝 */
