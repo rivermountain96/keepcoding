@@ -261,6 +261,9 @@ body a{
 .pshop_section02 h2{
   margin-bottom: var(--base-unit);
 }
+.pshop_section02 h2 span{
+  color: var(--primary-color);
+}
 .pshop_section02 .card{
   width:calc(var(--base-unit)*13);
 }
@@ -307,6 +310,9 @@ body a{
 }
 .pshop_details_04{
   margin-bottom: calc(var(--base-unit)*8);
+}
+.pshop_details_04 button{
+  padding: 11px 12px;
 }
 /* pshop_details 끝 */
 

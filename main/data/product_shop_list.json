@@ -1,6 +1,6 @@
 [
   {
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example02.png",
     "card_title": "HTML과 CSS가 만나는 법",
     "card_text": "HTML에 CSS를 삽입하는 방법",
@@ -10,7 +10,7 @@
     "btn_price": "￦1000"
   },
   {    
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example03.png",
     "card_title": "선택자의 타입들",
     "card_text": "태그 / 클래스 / 아이디 선택자",
@@ -20,7 +20,7 @@
     "btn_price": "￦5000"
   },
   {    
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example04.png",
     "card_title": "Flex 1 : intro",
     "card_text": "레이아웃을 효과적으로 표현",
@@ -30,7 +30,7 @@
     "btn_price": "￦5000"
   },
   {
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example05.png",
     "card_title": "HTML과 CSS가 만나는 법",
     "card_text": "HTML에 CSS를 삽입하는 방법",
@@ -40,7 +40,7 @@
     "btn_price": "￦1000"
   },
   {    
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example06.png",
     "card_title": "선택자의 타입들",
     "card_text": "태그 / 클래스 / 아이디 선택자",
@@ -50,7 +50,7 @@
     "btn_price": "￦5000"
   },
   {    
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example07.png",
     "card_title": "Flex 1 : intro",
     "card_text": "레이아웃을 효과적으로 표현",
@@ -60,7 +60,7 @@
     "btn_price": "￦5000"
   },
   {
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example08.png",
     "card_title": "HTML과 CSS가 만나는 법",
     "card_text": "HTML에 CSS를 삽입하는 방법",
@@ -70,7 +70,7 @@
     "btn_price": "￦1000"
   },
   {    
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example09.png",
     "card_title": "선택자의 타입들",
     "card_text": "태그 / 클래스 / 아이디 선택자",
@@ -80,7 +80,7 @@
     "btn_price": "￦5000"
   },
   {    
-    "href":"#",
+    "href":"../product/product_shop_details.html",
     "image": "../img/example10.png",
     "card_title": "Flex 1 : intro",
     "card_text": "레이아웃을 효과적으로 표현",
