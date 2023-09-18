@@ -77,7 +77,7 @@
           <li class="nav-item item_cart"><a class="fs-6" href="../cart/cart.html">장바구니</a></li>
           <li class="nav-item"><a class="fs-6" href="../login.html">로그인</a></li>
           <!-- <li class="nav-item"><a class="fs-6" href="../mypage/myproduct_list.html">아이디</a></li> -->
-          <li class="nav-item"><a class="fs-6" href="../signup.html">회원가입</a></li>
+          <li class="nav-item"><a class="fs-6" href="../members/signup.html">회원가입</a></li>
           <!-- <li class="nav-item"><a class="fs-6" href="../login_out.php">로그아웃</a></li> -->
         </ul>
       <!-- 장바구니,로그인 끝 -->
