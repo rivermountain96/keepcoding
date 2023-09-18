@@ -67,7 +67,7 @@ $thumbnail = $_FILES["thumbnail"]["name"];
   $name = $_POST['name'];
   $content = $_POST['product_detail'];
   $price = $_POST['price'];
-  // $reg_date = date('Y-m-d');
+  // $regdate = date('Y-m-d');
   $status = $_POST['status'];
   $video_url = $_POST['video_url'];
   

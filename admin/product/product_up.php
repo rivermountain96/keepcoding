@@ -56,8 +56,8 @@
     </div>
 
     <div class="product_up_regdate col p-0 datepicker">
-      <label class="pd10 h6" for="reg_date">시작일</label>
-      <input type="text" id="reg_date" name="reg_date" class="form-control form-control-lg" placeholder="시작일 선택">
+      <label class="pd10 h6" for="regdate">시작일</label>
+      <input type="text" id="regdate" name="regdate" class="form-control form-control-lg" placeholder="시작일 선택">
     </div>
 
     <div class="product_up_enddate col p-0 datepicker">
@@ -165,7 +165,7 @@
       height: 100
     });
 
-  $('#reg_date').datepicker({
+  $('#regdate').datepicker({
     dateFormat:'yy.mm.dd',
     minDate: 'today',
     maxDate: '+1Y'
@@ -195,10 +195,10 @@
   usedate.change(function(){
     let value = usedate.val();
     if(value == 2){
-      $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
+      $("#regdate").datepicker("option", {disabled:true, dateFormat: ''});
       $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
     }else{
-      $("#reg_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      $("#regdate").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
       $("#sale_end_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
     }
   });
