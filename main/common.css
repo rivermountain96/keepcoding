@@ -437,7 +437,7 @@ input:focus {
 .card .btn.big-pd{
   padding: 17px 12px;
 }
-.card p{
+.card .card-body>p{
   color: var(--mc-white);
 }
 .btn.br-10{
