@@ -36,9 +36,14 @@
 
   <div class="pd24">
     <div class="product_up_name">
-        <label class="pd10 h6" for="name">강좌명</label>
-        <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
+        <label class="pd10 h6" for="name">강의명</label>
+        <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="강의명 입력하기" aria-label="default input example">
     </div>
+  </div>
+
+  <div class="pd24">
+      <label class="pd10 h6" for="product_intro">강의소개</label>
+      <textarea class="form-control form-control-lg" placeholder="강의소개 입력하기" id="product_intro"></textarea>
   </div>
 
   <div class="row justify-content-start pd24 gap-3">
@@ -51,8 +56,8 @@
     </div>
 
     <div class="product_up_regdate col p-0 datepicker">
-      <label class="pd10 h6" for="reg_date">시작일</label>
-      <input type="text" id="reg_date" name="reg_date" class="form-control form-control-lg" placeholder="시작일 선택">
+      <label class="pd10 h6" for="regdate">시작일</label>
+      <input type="text" id="regdate" name="regdate" class="form-control form-control-lg" placeholder="시작일 선택">
     </div>
 
     <div class="product_up_enddate col p-0 datepicker">
@@ -65,7 +70,7 @@
   <div class="row justify-content-start pd24 row-cols-8 gap-3 form-width-973">
     <div class="product_up_price col-4 p-0">
       <label class="pd10 h6" for="price">판매 금액</label>
-      <input class="form-control form-control-lg" name="price" id="price" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example">
+      <input class="form-control form-control-lg" name="price" id="price" type="number" placeholder="숫자만 입력하세요" min="0" max="100000" step="5000" aria-label="default input example">
     </div>
     <div class="product_status row col p-0">
       <h6 class="pd10 h6">판매 상태</h6>
@@ -160,23 +165,23 @@
       height: 100
     });
 
-  $('#reg_date').datepicker({
+  $('#regdate').datepicker({
     dateFormat:'yy.mm.dd',
     minDate: 'today',
-    maxDate: '+1Y'
-    // onSelect: function (dateText, inst) {
-    //   // 선택한 날짜를 Date 객체로 파싱합니다.
-    //   var selectedDate = new Date(dateText);
+    maxDate: '+1Y',
+    onSelect: function (dateText, inst) {
+      // 선택한 날짜를 Date 객체로 파싱합니다.
+      var selectedDate = new Date(dateText);
       
 
-    //   // 1년을 더합니다.
-    //   selectedDate.setFullYear(selectedDate.getFullYear() + 1);
+      // 1년을 더합니다.
+      selectedDate.setFullYear(selectedDate.getFullYear() + 1);
       
-    //   // 새로운 날짜를 출력합니다.
-    //   var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
-    //   console.log(formattedDate);
-    //   $('#sale_end_date').datepicker( "setDate", selectedDate);
-    //     }
+      // 새로운 날짜를 출력합니다.
+      var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
+      console.log(formattedDate);
+      $('#sale_end_date').datepicker( "setDate", selectedDate);
+    }
   });
   
   $('#sale_end_date').datepicker({
@@ -190,10 +195,10 @@
   usedate.change(function(){
     let value = usedate.val();
     if(value == 2){
-      $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
+      $("#regdate").datepicker("option", {disabled:true, dateFormat: ''});
       $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
     }else{
-      $("#reg_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      $("#regdate").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
       $("#sale_end_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
     }
   });
