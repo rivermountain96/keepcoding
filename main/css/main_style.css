@@ -312,6 +312,9 @@ body a{
 .pshop_details_03{
   margin: calc(var(--base-unit)*2) 0 calc(var(--base-unit)*3);
 }
+.pshop_details_03 iframe{
+  border-radius: 10px;
+}
 .pshop_details_04{
   margin-bottom: calc(var(--base-unit)*8);
 }
