@@ -83,7 +83,7 @@ $row = $result -> fetch_object();
   <div class="row justify-content-start pd24 row-cols-8 gap-3 form-width-973">
       <div class="product_change_price col-4 p-0">
       <label class="pd10 h6" for="product_change_price">판매 금액</label>
-      <input class="form-control form-control-lg" name="price" id="product_change_price" type="number" value="" min="5000"
+      <input class="form-control form-control-lg" name="price" id="product_change_price" type="number" value="" min="0"
           max="100000" step="5000" aria-label="default input example">
       </div>
     <div class="product_status row col p-0">
