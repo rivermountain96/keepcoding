@@ -70,7 +70,7 @@
   <div class="row justify-content-start pd24 row-cols-8 gap-3 form-width-973">
     <div class="product_up_price col-4 p-0">
       <label class="pd10 h6" for="price">판매 금액</label>
-      <input class="form-control form-control-lg" name="price" id="price" type="number" placeholder="숫자만 입력하세요" min="5000" max="100000" step="5000" aria-label="default input example">
+      <input class="form-control form-control-lg" name="price" id="price" type="number" placeholder="숫자만 입력하세요" min="0" max="100000" step="5000" aria-label="default input example">
     </div>
     <div class="product_status row col p-0">
       <h6 class="pd10 h6">판매 상태</h6>
@@ -168,20 +168,20 @@
   $('#regdate').datepicker({
     dateFormat:'yy.mm.dd',
     minDate: 'today',
-    maxDate: '+1Y'
-    // onSelect: function (dateText, inst) {
-    //   // 선택한 날짜를 Date 객체로 파싱합니다.
-    //   var selectedDate = new Date(dateText);
+    maxDate: '+1Y',
+    onSelect: function (dateText, inst) {
+      // 선택한 날짜를 Date 객체로 파싱합니다.
+      var selectedDate = new Date(dateText);
       
 
-    //   // 1년을 더합니다.
-    //   selectedDate.setFullYear(selectedDate.getFullYear() + 1);
+      // 1년을 더합니다.
+      selectedDate.setFullYear(selectedDate.getFullYear() + 1);
       
-    //   // 새로운 날짜를 출력합니다.
-    //   var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
-    //   console.log(formattedDate);
-    //   $('#sale_end_date').datepicker( "setDate", selectedDate);
-    //     }
+      // 새로운 날짜를 출력합니다.
+      var formattedDate = $.datepicker.formatDate('yy.mm.dd', selectedDate);
+      console.log(formattedDate);
+      $('#sale_end_date').datepicker( "setDate", selectedDate);
+    }
   });
   
   $('#sale_end_date').datepicker({
