@@ -36,9 +36,14 @@
 
   <div class="pd24">
     <div class="product_up_name">
-        <label class="pd10 h6" for="name">강좌명</label>
-        <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
+        <label class="pd10 h6" for="name">강의명</label>
+        <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="강의명 입력하기" aria-label="default input example">
     </div>
+  </div>
+
+  <div class="pd24">
+      <label class="pd10 h6" for="product_intro">강의소개</label>
+      <textarea class="form-control form-control-lg" placeholder="강의소개 입력하기" id="product_intro"></textarea>
   </div>
 
   <div class="row justify-content-start pd24 gap-3">
