@@ -81,20 +81,6 @@
       </div>
     </div>
 
-    <!-- <div class="product_status row col p-0">
-      <h6 class="pd10 h6">강의옵션</h6>
-      <div class="product_status_checkbox d-flex justify-content-start gap-3">
-        <div class="form-check">
-            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isbest" id="isbest">
-            <label class="form-check-lsabel" for="isbest">추천강의</label>
-        </div>
-        <div class="form-check">
-            <input class="product_status_input form-check-input" type="checkbox" value="0" name="shortform" id="shortform">
-            <label class="form-check-lsabel" for="shortform">숏폼컨텐츠</label>
-        </div>
-      </div>
-  </div> -->
-
   <div class="product_status row col p-0">
       <h6 class="pd10 h6">추천강의여부</h6>
       <div class="product_status_checkbox d-flex justify-content-start gap-3">
@@ -108,12 +94,12 @@
       <h6 class="pd10 h6">컨텐츠유형</h6>
       <div class="product_status_checkbox d-flex justify-content-start gap-3">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="0" name="isbest" id="isbest">
-            <label class="form-check-lsabel" for="isbest">숏강의</label>
+            <input class="product_status_input form-check-input" type="radio" value="0" name="shortform" id="shortform">
+            <label class="form-check-lsabel" for="shortform">숏강의</label>
         </div>
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="1" name="shortform" id="shortform">
-            <label class="form-check-lsabel" for="shortform">일반강의</label>
+            <input class="product_status_input form-check-input" type="radio" value="1" name="shortform" id="normalform" checked>
+            <label class="form-check-lsabel" for="normalform">일반강의</label>
         </div>
       </div>
   </div>

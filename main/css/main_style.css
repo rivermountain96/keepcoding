@@ -217,6 +217,10 @@ body a{
     color: var(--mc-white);
   }
 
+  .main_section03_shorts iframe{
+    border-radius: 10px;
+  }
+
   /* main_section04_banner 시작*/
   .main_section04_banner .banner{width: 100%;}
   .main_section04_banner .banner2 .btn{background-color: var(--primary-color);color: var(--mc-white);}
