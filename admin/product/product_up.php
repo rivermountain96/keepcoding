@@ -36,9 +36,14 @@
 
   <div class="pd24">
     <div class="product_up_name">
-        <label class="pd10 h6" for="name">강좌명</label>
-        <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="강좌명 입력하기" aria-label="default input example">
+        <label class="pd10 h6" for="name">강의명</label>
+        <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="강의명 입력하기" aria-label="default input example">
     </div>
+  </div>
+
+  <div class="pd24">
+      <label class="pd10 h6" for="product_intro">강의소개</label>
+      <textarea class="form-control form-control-lg" placeholder="강의소개 입력하기" id="product_intro"></textarea>
   </div>
 
   <div class="row justify-content-start pd24 gap-3">
@@ -51,8 +56,8 @@
     </div>
 
     <div class="product_up_regdate col p-0 datepicker">
-      <label class="pd10 h6" for="reg_date">시작일</label>
-      <input type="text" id="reg_date" name="reg_date" class="form-control form-control-lg" placeholder="시작일 선택">
+      <label class="pd10 h6" for="regdate">시작일</label>
+      <input type="text" id="regdate" name="regdate" class="form-control form-control-lg" placeholder="시작일 선택">
     </div>
 
     <div class="product_up_enddate col p-0 datepicker">
@@ -160,7 +165,7 @@
       height: 100
     });
 
-  $('#reg_date').datepicker({
+  $('#regdate').datepicker({
     dateFormat:'yy.mm.dd',
     minDate: 'today',
     maxDate: '+1Y'
@@ -190,10 +195,10 @@
   usedate.change(function(){
     let value = usedate.val();
     if(value == 2){
-      $("#reg_date").datepicker("option", {disabled:true, dateFormat: ''});
+      $("#regdate").datepicker("option", {disabled:true, dateFormat: ''});
       $("#sale_end_date").datepicker("option", {disabled:true, dateFormat: ''});
     }else{
-      $("#reg_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
+      $("#regdate").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
       $("#sale_end_date").datepicker("option", {disabled:false, dateFormat: 'yy.mm.dd'});
     }
   });

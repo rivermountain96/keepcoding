@@ -70,7 +70,7 @@ $row = $result -> fetch_object();
 
     <div class="product_change_regdate col p-0 datepicker">
       <label class="pd10 h6" for="regdate">시작일</label>
-      <input type="text" id="reg_date" name="reg_date" class="form-control" value="<?php echo $row->reg_date;?>"></p>
+      <input type="text" id="regdate" name="regdate" class="form-control" value="<?php echo $row->regdate;?>"></p>
     </div>
 
     <div class="product_change_enddate col p-0 datepicker">
@@ -143,7 +143,7 @@ $row = $result -> fetch_object();
       });
 
 
-      $("#reg_date").datepicker({
+      $("#regdate").datepicker({
         dateFormat: "yy.mm.dd",
         minDate: "today",
         maxDate: "+1Y",
@@ -169,10 +169,10 @@ $row = $result -> fetch_object();
       usedate.change(function () {
         let value = usedate.val();
         if (value == 2) {
-          $("#reg_date").datepicker("option", { disabled: true, dateFormat: "" });
+          $("#regdate").datepicker("option", { disabled: true, dateFormat: "" });
           $("#sale_end_date").datepicker("option", { disabled: true, dateFormat: "" });
         } else {
-          $("#reg_date").datepicker("option", { disabled: false, dateFormat: "yy.mm.dd" });
+          $("#regdate").datepicker("option", { disabled: false, dateFormat: "yy.mm.dd" });
           $("#sale_end_date").datepicker("option", { disabled: false, dateFormat: "yy.mm.dd" });
         }
       });

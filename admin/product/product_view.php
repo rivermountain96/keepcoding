@@ -40,7 +40,7 @@
       </div>
       <div class="col p-0">
         <h6 class="pd24 text-secondary">시작일</h6>
-        <p class=""><?php echo $row->reg_date; ?></p>
+        <p class=""><?php echo $row->regdate; ?></p>
       </div>
     </div>
     <hr class="pd24">
