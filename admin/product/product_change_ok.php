@@ -72,7 +72,7 @@ $thumbnail = $_FILES["thumbnail"]["name"];
   $video_url = $_POST['video_url'];
   
   //  SQL 쿼리
-   $sql = "UPDATE products SET
+    $sql = "UPDATE products SET
     name='{$name}',
     cate='{$cate}',
     content='{$content}',
