@@ -195,6 +195,9 @@ body a{
     width: 50px;
     height: 77px;
   }
+  .main_middlec_icon a:hover, .main_section02_starter a:hover, .main_section03_shorts a:hover, .main_section04_banner a:hover, .main_section05_etc a:hover{
+    text-decoration: none;
+  }
   .main_middlec_icon li img, .main_middlec_icon li svg{
     margin-bottom: 10px;
   }
