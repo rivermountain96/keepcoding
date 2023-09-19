@@ -14,7 +14,7 @@ $sql = "INSERT INTO members
 $result = $mysqli -> query($sql) or die($mysqli->error);
 
 if($result){
-  user_coupon($mysqli, $userid, 1,'회원가입');
+  user_coupon($mysqli, $userid, 13,'회원가입');
 }else{
   echo "<script>
   alert('회원가입 실패');
