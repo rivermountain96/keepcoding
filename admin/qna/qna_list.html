@@ -1,0 +1,260 @@
+<!-- 이은서 header 시작 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/admin/img/logo_favicon.ico">
+  <!-- style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+  integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="../../common.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <!-- script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <title>Q&A 게시판 - KEEP CODING</title>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav_top container-fluid">
+    <h1 class="logo"><a href="/admin/index.html"><span>keep coding</span></a></h1>
+    <div class="d-flex align-items-center">
+      <div class="d-flex gap-3 align-items-center">
+        <span><i class="bi bi-bell mc-gray3"></i></span>
+        <div class="user d-flex align-items-center gap-3">
+          <p class="mc-gray3">총관리자</p>
+          <img src="/admin/img/admin_img.svg" alt="관리자이미지">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav_side navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/admin/index.html">대시보드</a>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/product/category_list.html">카테고리 관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/product/product_list.html">강좌 관리</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/members/tmember_list.html">강사 관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/members/smember_list.html">수강생 관리</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/admin/coupon/coupon_list.html">쿠폰 관리</a>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/notice/notice_list.html">공지사항</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/qna/qna_list.html">Q&A 게시판</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="nav-item d-flex justify-content-between">
+        <a class="nav-link mc-b-rgba" aria-current="page" href="">로그아웃</a>
+        <a class="nav-link mc-b-rgba" aria-current="page" href=""><i class="bi bi-gear-wide-connected"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- 이은서 header 끝-->
+
+<!-- 최성희 qna_list 시작 -->
+<div class="content">
+  <h2 class="pd72 fs-4">Q&A 게시판</h2>
+    <form class="d-flex pd48" role="search">
+      <input class="form-control form-control-lg me-4" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search">
+      <button class="btn btn-outline-primary nowrap col-1" type="submit">검색</button>
+    </form>
+  <table class="table qna_list_table">
+    <thead>
+      <tr class="fw-bold">
+        <th class="col-1">No.</th>
+        <th class="col-5">제목</th>
+        <th class="col-1">작성자</th>
+        <th class="col-1">답변</th>
+        <th class="col-1">조회</th>
+        <th class="col-2">작성일</th>
+        <th class="col-1">삭제</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">50</td>
+        <td class="align-middle"><a href="qna_view.html">안녕하세요. aws관련 질문 드립니다.</a></td>
+        <td class="align-middle">roja1212</td>
+        <td class="align-middle">완료</td>
+        <td class="align-middle">12</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">49</td>
+        <td class="align-middle"><a href="qna_view.html">왜 틀렸는지 모르겠습니다 ㅠ</a></td>
+        <td class="align-middle">talia11</td>
+        <td class="align-middle">미완료</td>
+        <td class="align-middle">15</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">48</td>
+        <td class="align-middle"><a href="qna_view.html">패키지 구조에 대해서 궁금합니다!</a></td>
+        <td class="align-middle">ruby11</td>
+        <td class="align-middle">완료</td>
+        <td class="align-middle">11</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">47</td>
+        <td class="align-middle"><a href="qna_view.html">알고리즘 교안 68p 질문</a></td>
+        <td class="align-middle">robin07</td>
+        <td class="align-middle">완료</td>
+        <td class="align-middle">32</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">46</td>
+        <td class="align-middle"><a href="qna_view.html">github에 해당 레포를 찾을 수가 없어요.</a></td>
+        <td class="align-middle">sora2</td>
+        <td class="align-middle">완료</td>
+        <td class="align-middle">21</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">45</td>
+        <td class="align-middle"><a href="qna_view.html">커밋 메시지가 잘 이해 안됩니다</a></td>
+        <td class="align-middle">trudy03</td>
+        <td class="align-middle">완료</td>
+        <td class="align-middle">13</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">44</td>
+        <td class="align-middle"><a href="qna_view.html">스타일콤포넌트 스크립트의 색상</a></td>
+        <td class="align-middle">sean14</td>
+        <td class="align-middle">미완료</td>
+        <td class="align-middle">12</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">43</td>
+        <td class="align-middle"><a href="qna_view.html">강의 정리된 자료</a></td>
+        <td class="align-middle">richard0101</td>
+        <td class="align-middle">완료</td>
+        <td class="align-middle">17</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">42</td>
+        <td class="align-middle"><a href="qna_view.html">DevTools라고 옆에 결과 확인하는거 어떻게 하나요?</a></td>
+        <td class="align-middle">sasha77</td>
+        <td class="align-middle">완료</td>
+        <td class="align-middle">24</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      <!-- qna_list_tr 시작 -->
+      <tr>
+        <td class="align-middle">41</td>
+        <td class="align-middle"><a href="qna_view.html">section04 - 각각의 객체에 개별 애니메이션 적용하기</a></td>
+        <td class="align-middle">remy001</td>
+        <td class="align-middle">완료</td>
+        <td class="align-middle">31</td>
+        <td class="align-middle">2023.09.09</td>
+        <td class="align-middle">
+          <button type="button" class="btn btn-outline-primary btn-sm">삭제</button>
+        </td>
+      </tr>
+      <!-- qna_list_tr 끝 -->
+      
+    </tbody>
+  </table>
+  <div class="d-flex align-items-center pd48">
+    <nav aria-label="Page navigation example" class="col-11">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item active"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  </div>
+<!-- 최성희 qna_list 끝 -->
+</body>
+</html>

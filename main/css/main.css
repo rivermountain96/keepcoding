@@ -1,0 +1,225 @@
+/* bootstrap 초기화 */
+
+.row {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* link style 초기화 */
+
+a{
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover{
+  color: var(--primary-color-hover);
+  text-decoration: underline;
+}
+
+/* main(user) page body */
+body{
+  background-color: var(--mc-body);
+}
+
+
+/* DIALOG POPUP */
+.popup {
+  background: var(--mc-white);
+  position: fixed;
+  top: 40px;
+	left: 40px;
+  padding: 20px 30px;
+  border-color: var(--primary-color);
+	border-width: 7px;
+	box-sizing: border-box;
+	margin: 0;
+	z-index: 99999;
+	font-size: 16px;
+	line-height: 25px;
+}
+
+.popup a {
+	text-decoration: underline;
+}
+
+.popup h2 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-bottom: 10px;
+	color: var(--mc-black);
+}
+
+.popup hr {
+  margin: 15px 0;
+  border: none;
+  border-bottom: 1px solid var(--mc-gray4);
+}
+
+.popup .info a,
+.popup span {
+  color: var(--mc-black);
+}
+
+.popup #close {
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  background: var(--mc-white);
+  color: var(--primary-color);
+  border-radius: 3px;
+  border-color: var(--primary-color);
+}
+.popup #close:hover {
+  background: var(--primary-color-hover);
+  color: var(--mc-white);
+}
+
+.popup .checkbox label {
+  cursor: pointer;
+  color: var(--mc-gray4);
+	font-weight: lighter;
+}
+
+.popup #daycheck:checked + label {
+  font-weight: bold;
+  color: var(--primary-color-hover);
+	font-weight: bold;
+}
+/* DIALOG POPUP */
+
+/* 이강산 유저페이지 login 시작 */
+.login .row>*{
+  padding: 0px;
+}
+.login{
+  width: 423px;
+  height: 900px;
+  background-image: url(../img/keepcoding_logo.svg);
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center 43px;
+  border-radius: 0 20px;
+  transform: translate(0, 20%);
+}
+.login input:focus{
+  outline: none;
+  border: var(--primary-color);
+  box-shadow: 0 0 5px 0 var(--primary-color);
+}
+.login_id input::placeholder,
+.login_pw input::placeholder,
+.login_email input::placeholder{
+  font-size: var(--font-size-16);
+  color: var(--mc-login);
+}
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="email"]{
+  padding: .8em .8em;
+}
+.login_content .login_id{
+  padding-top: 120px;
+}
+.login_content .login_pw,
+.login_content .login_email{
+  margin-top: var(--base-unit);
+}
+.login_id input,
+.login_pw input,
+.login_email input{
+  width: 420px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #CED4DA;
+}
+.login button{
+  font-size: 16px;
+  color: var(--mc-white);
+  background: var(--primary-color);
+}
+.login button:hover{
+  background-color: var(--primary-color-hover);
+  color: var(--mc-black);
+}
+.login_pw{
+  margin-top: 20px;
+}
+.login_content a{
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-top: 10px;
+}
+/* 회원이 아니신가요? */
+.login .sign_content{
+  text-align: center;
+}
+.login .sign_content p{
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--mc-black);
+  text-decoration: none;
+  margin-top: 10px;
+}
+.login .sign_content a{
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-top: 10px;
+}
+.login button{
+  width: 423px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-color);
+  margin: 5px 0px 10px 0px;
+}
+.login_ir{
+  padding-top: 12px;
+}
+.login_ir label{
+  color: var(--mc-gray3);
+  font-size: 16px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.login_ir .form-check-input{
+  margin-top: 3px;
+}
+.login_ir .form-check-input{
+  margin-left: 0;
+}
+/* 이강산 login 끝 */
+
+/* 이강산 signup 시작 */
+.login_signup{
+  background-image: none;
+}
+.login_signup h2{
+  text-align: center;
+}
+.login_signup .signup_id{
+  padding-top: var(--base-unit);
+}
+.login_signup .sigup_info_agree{
+  padding: var(--base-unit) 0;
+}
+.login_signup .sigup_info_agree label{
+  color: var(--mc-gray1);
+}
+#infoagree{
+  padding-top: 0;
+}
+
+
+
+
+
+
+
+/* 이강산 signup 끝 */
