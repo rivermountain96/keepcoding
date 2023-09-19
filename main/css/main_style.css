@@ -342,6 +342,9 @@ body a{
 .cart_trash:hover{
   text-decoration: underline;
 }
+.cart_card{
+  margin-bottom: var(--base-unit);
+}
 .cart_card div img{
   width: 200px;
   border-radius: 10px;
