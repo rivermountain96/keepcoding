@@ -18,8 +18,8 @@ function user_coupon($mysqli, $uid, $num, $reason){
   $ucresult = $mysqli -> query($ucsql) or die($mysql->error);
 
   echo "<script>
-    alert('가입완료! $cname $cprice 권이 발행되었습니다.');
-    location.href= '/abcmall/index.php';
+    alert('가입완료! $cname이 발행되었습니다.');
+    location.href= '/keepcoding/main/index.php';
   </script>";
 
 }
