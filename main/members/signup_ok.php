@@ -1,6 +1,6 @@
 <?php
 $title =  '회원가입';
-require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
 $username = $_POST['username'];
 $userid = $_POST['userid'];
