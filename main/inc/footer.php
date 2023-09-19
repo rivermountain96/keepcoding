@@ -13,9 +13,9 @@
         <p>주소<span>서울특별시 종로구 관수동 수표로 96 2F 국일관</span></p>
           <div class="d-flex justify-content-center footer_item gap-4">
             <p><a aria-label="facebook" target="_blank" href="#">
-              <img src="keepcoding/main/img/footer_facebook.svg" alt="zootopiafacebook"></a></p>
+              <img src="/keepcoding/main/img/footer_facebook.svg" alt="zootopiafacebook"></a></p>
             <p><a aria-label="youtube" target="_blank" href="#">
-              <img src="keepcoding/main/img/footer_youtube.svg" alt="zootopiayoutube"></a></p>
+              <img src="/keepcoding/main/img/footer_youtube.svg" alt="zootopiayoutube"></a></p>
           </div>
         <p class="footer_copyright"><span>Copyright &copy; Zootopia Co. Ltd. All Rights Reserved.</span></p>
       </address>
