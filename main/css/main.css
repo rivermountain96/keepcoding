@@ -191,6 +191,9 @@ body{
 .login_ir .form-check-input{
   margin-top: 3px;
 }
+.login_ir .form-check-input{
+  margin-left: 0;
+}
 /* 이강산 login 끝 */
 
 /* 이강산 signup 시작 */
