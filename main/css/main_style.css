@@ -250,7 +250,11 @@ body a{
 .pshop_section01{
   margin-right: var(--base-unit);
 }
-.pshop_section01_category{
+.pshop_section01 .btn{
+  padding: 11px;
+  margin-top: var(--base-unit);
+}
+.pshop_section01_category_wrap{
   margin-top: var(--base-unit);
   background-color: var(--mc-white);
   border-radius: 4px;
@@ -373,7 +377,7 @@ body a{
   border-radius: 4px;
 }
 .myproduct_list_list form input, .myproduct_list_list form button{
-  padding:12px;
+  padding:11px;
   margin-bottom: var(--base-unit) ;
 }
 .myproduct_list_list .cart{
