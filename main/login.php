@@ -12,7 +12,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
     <div class="row justify-content-center">
       <div class="col-md-6 d-flex justify-content-center">
         <div class="login">
-          <form action="index.php" class="login_content" method="POST">
+          <form action="login_ok.php" class="login_content" method="POST">
             <div class="login_id form-group">
               <input type="text" name="userid" id="userid" class="form-control" placeholder="ID">
             </div>
