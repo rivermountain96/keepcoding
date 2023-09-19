@@ -87,6 +87,24 @@
     </div>
 
   <div class="product_status row col p-0">
+    <h6 class="pd10 h6">난이도</h6>
+    <div class="product_status_checkbox d-flex">
+      <div class="form-check">
+          <input class="product_status_input form-check-input" type="radio" value="초급" name="level" id="level_1" checked>
+          <label class="form-check-lsabel" for="level_1">초급</label>
+      </div>
+      <div class="form-check product_no_status">
+          <input class="product_status_input form-check-input" type="radio" value="중급" name="level" id="level_2">
+          <label class="form-check-label" for="level_2">중급</label>
+      </div>
+      <div class="form-check product_no_status">
+          <input class="product_status_input form-check-input" type="radio" value="고급" name="level" id="level_3">
+          <label class="form-check-label" for="level_3">고급</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="product_status row col p-0">
       <h6 class="pd10 h6">추천강의여부</h6>
       <div class="product_status_checkbox d-flex justify-content-start gap-3">
         <div class="form-check">
