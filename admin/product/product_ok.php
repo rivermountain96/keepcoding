@@ -24,7 +24,7 @@ try{
   $sale_price =  (int)$_POST['sale_price']??0 ;
   
   $status = $_POST['status']??0 ;
-  $issale = $_POST['issale']??'' ;
+  $issale = $_POST['issale']??0 ;
   $sale_cnt =  (int)$_POST['sale_cnt']??0 ;
   
 
