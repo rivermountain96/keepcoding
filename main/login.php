@@ -18,7 +18,7 @@ if(isset($_SESSION['UID'])){
     <div class="row justify-content-center">
       <div class="col-md-6 d-flex justify-content-center">
         <div class="login">
-          <form action="index.html" class="login_content" method="POST">
+          <form action="index.php" class="login_content" method="POST">
             <div class="login_id form-group">
               <input type="text" name="userid" id="userid" class="form-control" placeholder="ID">
             </div>
@@ -39,7 +39,7 @@ if(isset($_SESSION['UID'])){
             </div>
           </form>
           <div class="sign_content">
-            <p>아직 회원이 아니신가요? <a href="/keepcoding/main/members/signup.html">회원가입하기</a></p>
+            <p>아직 회원이 아니신가요? <a href="/keepcoding/main/members/signup.php">회원가입하기</a></p>
           </div>
         </div>
       </div>
