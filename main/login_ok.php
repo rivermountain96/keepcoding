@@ -10,7 +10,7 @@ if(isset($_SESSION['UID'])){
   
 }
 
-$userid = $_POST['userid'];
+  $userid = $_POST['userid'];
   $userpw = $_POST['passwd'];
   $passwd = hash('sha512',$userpw); //암호를 sha512 알고리즘이용 암호화
   
