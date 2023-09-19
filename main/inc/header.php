@@ -56,11 +56,13 @@
               <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">백엔드</a></li>
               <li><hr></li>
               <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">기초강의</a></li>
+              <li><hr></li>
+              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">숏강의</a></li>
             </ul>
           </li>
 
           <li class="nav-item dropdown">
-          <a class="h5" href="#">이벤트</a>
+          <a class="h5" href="/keepcoding/main/shorts/shorts.php">숏강의?</a>
           </li>
 
           <li class="nav-item dropdown">
