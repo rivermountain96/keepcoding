@@ -1,6 +1,7 @@
 <?php
 $title =  '회원가입';
 require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/coupon_function.php';
 
 $username = $_POST['username'];
 $userid = $_POST['userid'];
