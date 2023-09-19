@@ -49,7 +49,7 @@
   <div class="row justify-content-start pd24 gap-3">
     <div class="product_up_usedate col p-0">
       <h6 class="pd10 h6">수강 기한</h6>
-      <select class="form-select form-select-lg" name="usedate" id="usedate" aria-label="Small select example">
+      <select class="form-select form-select-lg" name="status" id="status" aria-label="Small select example">
           <option value="1" selected>제한</option>
           <option value="2">무제한</option>
       </select>
@@ -76,38 +76,43 @@
       <h6 class="pd10 h6">판매 상태</h6>
       <div class="product_status_checkbox d-flex">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="0" name="status" id="status_sale">
+            <input class="product_status_input form-check-input" type="radio" value="0" name="issale" id="status_sale">
             <label class="form-check-lsabel" for="status_sale">판매중</label>
         </div>
         <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="1" name="status" id="status_notsale" checked>
+            <input class="product_status_input form-check-input" type="radio" value="1" name="issale" id="status_notsale" checked>
             <label class="form-check-label" for="status_notsale">판매중지</label>
         </div>
       </div>
     </div>
 
   <div class="product_status row col p-0">
+    <h6 class="pd10 h6">난이도</h6>
+    <div class="product_status_checkbox d-flex">
+      <div class="form-check">
+          <input class="product_status_input form-check-input" type="radio" value="초급" name="level" id="level_1" checked>
+          <label class="form-check-lsabel" for="level_1">초급</label>
+      </div>
+      <div class="form-check product_no_status">
+          <input class="product_status_input form-check-input" type="radio" value="중급" name="level" id="level_2">
+          <label class="form-check-label" for="level_2">중급</label>
+      </div>
+      <div class="form-check product_no_status">
+          <input class="product_status_input form-check-input" type="radio" value="고급" name="level" id="level_3">
+          <label class="form-check-label" for="level_3">고급</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="product_status row col p-0">
       <h6 class="pd10 h6">추천강의여부</h6>
       <div class="product_status_checkbox d-flex justify-content-start gap-3">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isbest" id="isbest">
+            <input class="product_status_input form-check-input" type="checkbox" value="1" name="isbest" id="isbest">
             <label class="form-check-lsabel" for="isbest">추천강의</label>
         </div>
       </div>
   </div>
-  <!-- <div class="product_status row col p-0">
-      <h6 class="pd10 h6">컨텐츠유형</h6>
-      <div class="product_status_checkbox d-flex justify-content-start gap-3">
-        <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="0" name="shortform" id="shortform">
-            <label class="form-check-lsabel" for="shortform">숏강의</label>
-        </div>
-        <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="1" name="shortform" id="normalform" checked>
-            <label class="form-check-lsabel" for="normalform">일반강의</label>
-        </div>
-      </div>
-  </div> -->
 
   <div class="pd24">
     <div class="product_up_detail col p-0">

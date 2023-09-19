@@ -13,7 +13,7 @@ if (isset($_SESSION['UID'])) {
 if (isset($_POST['login'])) {
   // 사용자가 입력한 아이디와 비밀번호 가져오기
   $username = $_POST['username'];
-  $password = $_POST['password'];
+  $userpw = $_POST['userpw'];
 
   // 여기에서 사용자 아이디와 비밀번호를 검증하고 로그인 절차를 진행합니다.
   // 아래는 간단한 검증 예제입니다.

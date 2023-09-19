@@ -129,9 +129,9 @@ $sql .= $search_where;//쿼리조합
           <th class="align-middle"> <a href="product_view.php?pid=<?php echo $item->pid ?>"><?php echo $item->name ?></a></th>
           
           <td class="align-middle"><?php 
-          if($item -> status == 0){
+          if($item -> issale == 0){
             echo '판매중';
-          } else if ($item -> status == 1){
+          } else if ($item -> issale == 1){
             echo '판매중지';
           } 
           ?></td>
