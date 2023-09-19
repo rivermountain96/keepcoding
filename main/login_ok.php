@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/dbcon.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
 if(isset($_SESSION['UID'])){
 
@@ -24,7 +24,7 @@ if(isset($_SESSION['UID'])){
     $sql = "UPDATE cart SET userid='{$userid}' where 1=1";    
     $result = $mysqli->query($sql);
     echo "<script>
-      alert('$rs->username 님 반갑습니다');
+      alert('$rs->userid 님 반갑습니다');
       location.href = '/keepcoding/main/index.php';
     </script>";
   } else{
