@@ -39,6 +39,10 @@ try{
   $sale_end_date = $_POST['sale_end_date'];
   $content = rawurldecode($_POST['content']); //encodeURIComponent통해 변경된 코드를 원래코드로 변경
   $video_url = $_POST['video_url'];
+  $complete_rate = $_POST['complete_rate'];
+  $satisfaction = $_POST['satisfaction'];
+  $level = $_POST['level'];
+
   $file_table_id = $_POST['file_table_id']??0;
   $file_table_id = $_POST['file_table_id'];
   $file_table_id = rtrim($file_table_id, ',');//최우측 콤마 제거
@@ -85,11 +89,11 @@ try{
 
 
   $sql = "INSERT INTO products
-  (name, cate, content, thumbnail, price, sale_price, sale_cnt, status,
-  userid, regdate, sale_end_date, video_url)
+  (name, cate, product_intro, content, thumbnail, price, sale_cnt, status,
+  userid, regdate, sale_end_date, video_url, complete_rate, satisfaction, level)
   VALUES
-  ('{$name}', '{$cate}', '{$content}', '{$thumbnail}', {$price}, {$sale_price}, {$sale_cnt},
-  '{$status}', '{$_SESSION['AUID']}', now(), now(), '{$video_url}')";
+  ('{$name}', '{$cate}', '{$product_intro}', '{$content}', '{$thumbnail}', {$price}, {$sale_cnt},
+  '{$status}', '{$_SESSION['AUID']}', now(), '{$sale_end_date}', '{$video_url}', '{$complete_rate}', '{$satisfaction}', '{$level}')";
 
   $result = $mysqli -> query($sql);
 
