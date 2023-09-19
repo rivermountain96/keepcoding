@@ -256,7 +256,7 @@ body a{
   border-radius: 4px;
   padding: var(--base-unit);
 }
-.pshop_section01_recommend, .pshop_section01_type, .pshop_section01_level{
+.pshop_section01_recommend, .pshop_section01_level{
   margin-top: calc(var(--base-unit)*2);
 }
 .pshop_section01_list .form-check{

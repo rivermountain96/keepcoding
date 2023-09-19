@@ -11,7 +11,6 @@ $.getJSON("../data/product_shop_list.json", function (data) {
     </a>
       <div class='card-body z-3'>
         <p class='card-title text-center fw-semibold'>${item.card_title}</p>
-        <p class='card-text text-center fs-12'>${item.card_text}</p>
         <a href='${item.href02}' class='btn btn-primary fs-10 mt-2'>${item.btn_cate}</a>
         <a href='${item.href03}' class='btn btn-primary fs-10 mt-2'>${item.btn_price}</a>
     </div></div>`;
