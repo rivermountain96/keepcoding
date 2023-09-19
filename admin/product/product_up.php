@@ -95,7 +95,7 @@
         </div>
       </div>
   </div>
-  <div class="product_status row col p-0">
+  <!-- <div class="product_status row col p-0">
       <h6 class="pd10 h6">컨텐츠유형</h6>
       <div class="product_status_checkbox d-flex justify-content-start gap-3">
         <div class="form-check">
@@ -107,7 +107,7 @@
             <label class="form-check-lsabel" for="normalform">일반강의</label>
         </div>
       </div>
-  </div>
+  </div> -->
 
   <div class="pd24">
     <div class="product_up_detail col p-0">
