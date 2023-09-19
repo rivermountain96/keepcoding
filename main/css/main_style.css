@@ -250,13 +250,17 @@ body a{
 .pshop_section01{
   margin-right: var(--base-unit);
 }
-.pshop_section01_category{
+.pshop_section01 .btn{
+  padding: 11px;
+  margin-top: var(--base-unit);
+}
+.pshop_section01_category_wrap{
   margin-top: var(--base-unit);
   background-color: var(--mc-white);
   border-radius: 4px;
   padding: var(--base-unit);
 }
-.pshop_section01_recommend, .pshop_section01_type, .pshop_section01_level{
+.pshop_section01_recommend, .pshop_section01_level{
   margin-top: calc(var(--base-unit)*2);
 }
 .pshop_section01_list .form-check{
@@ -287,10 +291,13 @@ body a{
 .pshop_details_01 .cate_icon{
   width: 50px;
 }
-.pshop_details_01>img{
+.pshop_details_01>img, .pshop_details_01>iframe{
   width: 647px;
   height: 406px;
   border-radius: 10px;
+}
+.pshop_details_text{
+  height: 406px;
 }
 .pshop_details_text img, .pshop_details_text h3 {
   margin-bottom: var(--base-unit);
@@ -315,12 +322,13 @@ body a{
 .pshop_details_03 iframe{
   border-radius: 10px;
 }
-.pshop_details_04{
+.pshop_details_04, .pshop_details_02_shorts{
   margin-bottom: calc(var(--base-unit)*8);
 }
 .pshop_details_04 button{
   padding: 11px 12px;
 }
+
 /* pshop_details 끝 */
 
 
@@ -369,7 +377,7 @@ body a{
   border-radius: 4px;
 }
 .myproduct_list_list form input, .myproduct_list_list form button{
-  padding:12px;
+  padding:11px;
   margin-bottom: var(--base-unit) ;
 }
 .myproduct_list_list .cart{
