@@ -76,11 +76,11 @@
       <h6 class="pd10 h6">판매 상태</h6>
       <div class="product_status_checkbox d-flex">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="0" name="status" id="status_sale">
+            <input class="product_status_input form-check-input" type="radio" value="1" name="status" id="status_sale">
             <label class="form-check-lsabel" for="status_sale">판매중</label>
         </div>
         <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="1" name="status" id="status_notsale" checked>
+            <input class="product_status_input form-check-input" type="radio" value="0" name="status" id="status_notsale" checked>
             <label class="form-check-label" for="status_notsale">판매중지</label>
         </div>
       </div>
@@ -108,7 +108,7 @@
       <h6 class="pd10 h6">추천강의여부</h6>
       <div class="product_status_checkbox d-flex justify-content-start gap-3">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="checkbox" value="0" name="isbest" id="isbest">
+            <input class="product_status_input form-check-input" type="checkbox" value="1" name="isbest" id="isbest">
             <label class="form-check-lsabel" for="isbest">추천강의</label>
         </div>
       </div>
