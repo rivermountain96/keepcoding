@@ -49,7 +49,7 @@
   <div class="row justify-content-start pd24 gap-3">
     <div class="product_up_usedate col p-0">
       <h6 class="pd10 h6">수강 기한</h6>
-      <select class="form-select form-select-lg" name="usedate" id="usedate" aria-label="Small select example">
+      <select class="form-select form-select-lg" name="status" id="status" aria-label="Small select example">
           <option value="1" selected>제한</option>
           <option value="2">무제한</option>
       </select>
@@ -76,11 +76,11 @@
       <h6 class="pd10 h6">판매 상태</h6>
       <div class="product_status_checkbox d-flex">
         <div class="form-check">
-            <input class="product_status_input form-check-input" type="radio" value="1" name="status" id="status_sale">
+            <input class="product_status_input form-check-input" type="radio" value="1" name="issale" id="status_sale">
             <label class="form-check-lsabel" for="status_sale">판매중</label>
         </div>
         <div class="form-check product_no_status">
-            <input class="product_status_input form-check-input" type="radio" value="0" name="status" id="status_notsale" checked>
+            <input class="product_status_input form-check-input" type="radio" value="0" name="issale" id="status_notsale" checked>
             <label class="form-check-label" for="status_notsale">판매중지</label>
         </div>
       </div>
