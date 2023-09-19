@@ -1,4 +1,5 @@
 <?php
+$title =  '로그인';
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
 
 if(isset($_SESSION['UID'])){
@@ -46,6 +47,33 @@ if(isset($_SESSION['UID'])){
   </div>
 </section>
 <!-- 이강산 login 끝-->
+
+<script>
+$(document).ready(function(){
+  var key = getCookie('admin'); 
+  if(key!=""){
+    $("#userid").val(key); 
+  }
+  
+  if($("#userid").val() != ""){ 
+    $("#saveId").attr("checked", true); 
+  }
+  
+  $("#saveId").change(function(){ 
+    if($("#saveId").is(":checked")){ 
+      setCookie('admin', $("#userid").val(), 7); 
+    }else{ 
+      deleteCookie('admin');
+    }
+  });
+  
+  $("#userid").keyup(function(){ 
+    if($("#saveId").is(":checked")){
+      setCookie('admin', $("#userid").val(), 7); 
+    }
+  });
+});
+</script>
 
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
