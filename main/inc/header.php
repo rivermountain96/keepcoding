@@ -59,11 +59,10 @@
               <li><hr></li>
               <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">숏강의</a></li>
             </ul>
-            </ul>
           </li>
 
           <li class="nav-item dropdown">
-          <a class="h5" href="/keepcoding/main/shorts/shorts.html">숏강의?</a>
+          <a class="h5" href="/keepcoding/main/shorts/shorts.php">숏강의?</a>
           </li>
 
           <li class="nav-item dropdown">
