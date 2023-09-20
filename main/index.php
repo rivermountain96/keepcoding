@@ -48,16 +48,13 @@
 
           // cate 값에 따라 카테고리 설정
           if (strpos($item->cate, '1/') === 0) {
-            $category_number = str_replace('1/', '', $item->cate);
-            if ($category_number == '4') {
-              $cate = 'HTML';
-            } elseif ($category_number == '5') {
-              $cate = 'CSS';
-            }
+            $cate = '기초강의';
           } elseif (strpos($item->cate, '2/') === 0) {
             $cate = '프론트엔드';
           } elseif (strpos($item->cate, '3/') === 0) {
             $cate = '백엔드';
+          } elseif (strpos($item->cate, '4/') === 0) {
+            $cate = 'Shorts';
           }
           if($type != '숏강의'){ // 일반강의라면
             if($item->price == 0){
