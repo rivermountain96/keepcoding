@@ -290,10 +290,10 @@ body a{
 }
 .noresult{
   width:100%;
-  height: 445px;
+  height: 455px;
   border: 1px solid var(--mc-gray4);
   border-radius: 10px;
-  line-height: 445px;
+  line-height: 455px;
 }
 /* pshop 끝 */
 
