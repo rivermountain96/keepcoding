@@ -288,6 +288,13 @@ body a{
 .pshop_section02 nav{
   margin: calc(var(--base-unit)*2) auto calc(var(--base-unit)*8);
 }
+.noresult{
+  width:100%;
+  height: 445px;
+  border: 1px solid var(--mc-gray4);
+  border-radius: 10px;
+  line-height: 445px;
+}
 /* pshop 끝 */
 
 /* pshop_details 시작 */
