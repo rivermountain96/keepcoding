@@ -14,11 +14,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
         <div class="login">
           <form action="login_ok.php" class="login_content" method="POST">
             <div class="login_id form-group">
-              <input type="text" name="userid" id="userid" class="form-control" placeholder="ID">
+              <input type="text" name="userid" id="userid" class="form-control" placeholder="ID" required>
             </div>
 
             <div class="login_pw form-group">
-              <input type="password" name="userpw" id="userpw" class="form-control" placeholder="PASSWORD">
+              <input type="password" name="userpw" id="userpw" class="form-control" placeholder="PASSWORD" required>
               <a href="#" class="fw-medium">Forgot password?</a>
             </div>
 
