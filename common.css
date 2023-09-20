@@ -451,6 +451,18 @@ input:focus {
   justify-content: space-between;
   padding: 15px 20px;
 }
+.card-btn svg *{
+  fill: var(--mc-gray3);
+}
+.card-time{
+  color: var(--mc-gray3);
+}
+.card-btn:hover svg *{
+  fill: var(--mc-gray1);
+}
+.card-btn:hover .card-time{
+  color: var(--mc-gray1);
+}
 
 /* banner */
 
