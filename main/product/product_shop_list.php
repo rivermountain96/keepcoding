@@ -130,19 +130,13 @@
       <div>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search" name="search_keyword">
-          <button class="btn btn-outline-primary col-1" type="submit">검색</button>
+          <button class="btn btn-primary col-1" type="submit">검색</button>
         </form>
       </div>
       <div class="card_list d-flex justify-content-between gap-3 row m-0">
         <?php
           if(isset($rsc)){
             foreach($rsc as $item){
-              if($item->price == 0){
-                $price = '무료';
-              }else{
-                $price = $item->price;
-              }
-
               $cate = $item->cate;
               $cateNum = explode('/', $cate);
               $middleNumber = $cateNum[1]; // 중간 숫자 추출
@@ -157,19 +151,27 @@
         <div class="card sec2 text-center p-0" data-bs-theme="dark">
           <a href="">
           <div class="card-img-top-wrap">
-            <img src="<?= $item->thumbnail ?>" class="card-img-top" alt="lecture img">
+            <a href="/keepcoding/main/product/product_shop_details.php?pid=<?= $item->pid ?>">
+              <img src="<?= $item->thumbnail ?>" class="card-img-top" alt="lecture img">
+            </a>
           </div>
           </a>
           <div class='card-body z-3'>
-              <p class='card-title text-center fw-semibold'><?= $item->name ?></p>
+              <p class='card-title text-center fw-semibold'><a href="/keepcoding/main/product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $item->name ?></a></p>
               <a href='${item.href02}' class='btn btn-primary fs-10 mt-2'><?= $cateName2 ?></a>
-              <a href='${item.href03}' class='btn btn-primary fs-10 mt-2'>₩ <span class="number"><?= $price ?><span></a>
+              <a href='${item.href03}' class='btn btn-primary fs-10 mt-2'><?php
+                  if($item->price == 0){
+                    echo "무료 강의";
+                  }else{
+                    echo "₩ <span class=\"number\">$item->price;<span>";
+                  }
+               ?></a>
           </div>
         </div>
         <?php
             }}else{
         ?>
-          <p class="text-center fs-3 mc-gray3">검색 결과가 없습니다</p>
+          <p class="text-center mc-gray3 noresult">검색 결과가 없습니다</p>
         <?php
             }
         ?>
