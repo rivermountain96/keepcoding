@@ -20,15 +20,19 @@ if(isset($_SESSION['UID'])){
           <h2>회원가입</h2>
           <form action="signup_ok.php" class="login_content" method="POST" id="signup_form">
             <div class="login_id signup_id row">
-              <input type="text" name="userid" id="userid" placeholder="ID">
+              <input type="text" name="userid" id="userid" placeholder="ID" require>
             </div>
       
             <div class="login_pw row">
-              <input type="password" name="userpw" id="userpw" placeholder="PASSWORD">
+              <input type="password" name="userpw" id="userpw" placeholder="PASSWORD" require>
+            </div>
+
+            <div class="login_pw row">
+              <input type="password" name="userpw_check" id="userpw_check" placeholder="CONFIRM PASSWORD" require>
             </div>
       
             <div class="login_email row">
-              <input type="email" name="useremail" id="useremail" placeholder="EMAIL">
+              <input type="email" name="useremail" id="useremail" placeholder="EMAIL" require>
             </div>
 
             <div class="login_ir sigup_info_agree d-flex justify-content-center">
@@ -53,6 +57,12 @@ if(isset($_SESSION['UID'])){
     e.preventDefault();
     let userid = $('#userid').val();
     let useremail = $('#useremail').val();
+    let infoAgreed = $('#infoagree').prop('checked'); // 개인정보 수집 및 이용 동의 체크 여부를 가져옵니다.
+
+    if (!infoAgreed) {
+      alert('개인정보 수집 및 이용 동의를 진행하셔야 회원가입이 가능합니다.');
+      return;
+    }
 
     let data = {
       userid: userid,
