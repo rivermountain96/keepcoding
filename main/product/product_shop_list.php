@@ -49,15 +49,6 @@
     $rsc[] = $rs;
   }
 
-  $num_result = $mysqli -> query($sql);
-
-  if(isset($num_result)){
-    $num_rows = mysqli_num_rows($num_result);
-  }else{
-    $num_rows = 0;
-  }
-
-
 ?>
   <h2 class="h4 container pshop_title">강의탐색</h2>
   <div class="container d-flex justify-content-between">
@@ -70,7 +61,7 @@
       
       <div class="pshop_section01_list">
         <form method="GET">
-          <div class="pshop_section01_category_wrap">
+          <div class="pshop_section01_category">
             <h3 class="h6">카테고리</h3>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="category" id="category01" value="2">
@@ -92,7 +83,7 @@
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="category" id="category04" value="48">
-              <label class="form-check-label" for="category04">
+              <label class="form-check-label" for="category03">
                 숏강의
               </label>
             </div>
@@ -135,19 +126,23 @@
     <!-- pshop_section01 끝 -->
     <!-- pshop_section02 시작 -->
     <section class="pshop_section02 col-9">
-      <h2 class="h6">총 <span><?= $num_rows ?></span> 개의 강의</h2>
+      <h2 class="h6"><span>24개</span>의 강의</h2>
       <div>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search" name="search_keyword">
-          <button class="btn btn-primary col-1" type="submit">검색</button>
+          <button class="btn btn-outline-primary col-1" type="submit">검색</button>
         </form>
       </div>
       <div class="card_list d-flex justify-content-between gap-3 row m-0">
         <?php
           if(isset($rsc)){
             foreach($rsc as $item){
+              if($item->price == 0){
+                $price = '무료';
+              }else{
+                $price = $item->price;
+              }
 
-              // 중분류 카테고리명 추출
               $cate = $item->cate;
               $cateNum = explode('/', $cate);
               $middleNumber = $cateNum[1]; // 중간 숫자 추출
@@ -157,55 +152,24 @@
               while($cr = $cateresult -> fetch_object()){
                 $crs[] = $cr;
               }
-              foreach($crs as $cateName){$cateName2 = $cateName->name;};
-
-              // 제목 생략
-              // var_dump($item->name);
-              $name = $item->name;
-              // var_dump($name);
-              $maxLength = 25;
-
-              $length = mb_strlen($name, 'utf-8');
-              if($length <= $maxLength){
-                $name = $name;
-              }else{
-                $str = mb_substr($name, 0, $maxLength, 'utf-8');
-                $name = $str . '⋯';
-              }
-              // function truncateString($name, $maxLength) {
-              //   if (mb_strlen($name, 'utf-8') <= $maxLength) {
-              //       return $name; // 문자열의 길이가 제한 이하이면 그대로 반환
-              //   } else {
-              //       $truncatedStr = mb_substr($name, 0, $maxLength, 'utf-8'); // 제한 길이만큼 잘라냄
-              //       return $truncatedStr . '...'; // 말줄임표 추가
-              //   }
-              // }
-
-              // $newname = truncateString($name, $maxLength);
-              
+              foreach($crs as $cateName){$cateName2 = $cateName->name;}
         ?>
         <div class="card sec2 text-center p-0" data-bs-theme="dark">
-          <a href="/keepcoding/main/product/product_shop_details.php?pid=<?= $item->pid ?>">
-            <div class="card-img-top-wrap">
-                <img src="<?= $item->thumbnail ?>" class="card-img-top" alt="lecture img">
-            </div>
+          <a href="">
+          <div class="card-img-top-wrap">
+            <img src="<?= $item->thumbnail ?>" class="card-img-top" alt="lecture img">
+          </div>
           </a>
           <div class='card-body z-3'>
-              <p class='card-title text-center fw-semibold'><a href="/keepcoding/main/product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $name ?></a></p>
-              <a href='' class='btn btn-primary fs-10 mt-2'><?= $cateName2 ?></a>
-              <a href='' class='btn btn-primary fs-10 mt-2'><?php
-                  if($item->price == 0){
-                    echo "무료 강의";
-                  }else{
-                    echo "₩ <span class=\"number\">$item->price;<span>";
-                  }
-               ?></a>
+              <p class='card-title text-center fw-semibold'><?= $item->name ?></p>
+              <a href='${item.href02}' class='btn btn-primary fs-10 mt-2'><?= $cateName2 ?></a>
+              <a href='${item.href03}' class='btn btn-primary fs-10 mt-2'>₩ <span class="number"><?= $price ?><span></a>
           </div>
         </div>
         <?php
             }}else{
         ?>
-          <p class="text-center mc-gray3 noresult">검색 결과가 없습니다</p>
+          <p class="text-center fs-3 mc-gray3">검색 결과가 없습니다</p>
         <?php
             }
         ?>
