@@ -1,5 +1,4 @@
 <?php
-  session_start();
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
   
   $sql = "SELECT * FROM products WHERE 1=1 LIMIT 0, 4";
