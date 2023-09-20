@@ -320,6 +320,9 @@ body a{
   padding: var(--base-unit);
   border-radius: 10px;
 }
+.pshop_details_02_price{
+  padding: 14px;
+}
 .pshop_details_02 button{
   padding: 11px;
 }
@@ -377,6 +380,10 @@ body a{
 .myproduct_list{
   margin-top: calc(var(--base-unit)*7);
 }
+.myproduct_list a:hover{
+  text-decoration: none;
+  color: var(--mc-gray1);
+}
 .myproduct_list_my{
   margin-right: var(--base-unit);
 }
@@ -404,3 +411,8 @@ body a{
   height: 110px;
 }
 /* mypage 끝 */
+
+.sectoin_shorts_01{
+  background: url(../img/shorts_bg.png) no-repeat ;
+  background-size: cover;
+}
