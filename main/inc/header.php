@@ -51,13 +51,13 @@
           <li class="nav-item dropdown">
             <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="/keepcoding/main/product/product_shop_list.php" role="button" aria-expanded="false">강의탐색</a>
             <ul class="dropdown-menu nav_dropdown shadow-sm">
-              <li class="fs-6"><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">프론트엔드</a></li>
+              <li class="fs-6"><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=2">프론트엔드</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">백엔드</a></li>
+              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=3">백엔드</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">기초강의</a></li>
+              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=1">기초강의</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">숏강의</a></li>
+              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=48">숏강의</a></li>
             </ul>
           </li>
 

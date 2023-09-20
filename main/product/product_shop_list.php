@@ -83,7 +83,7 @@
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="category" id="category04" value="48">
-              <label class="form-check-label" for="category03">
+              <label class="form-check-label" for="category04">
                 숏강의
               </label>
             </div>
