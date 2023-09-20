@@ -6,7 +6,7 @@
     "href02": "#",
     "btn_cate": "HTML",
     "href03": "#",
-    "btn_price": "￦1000"
+    "btn_price": "￦1,000"
   },
   {    
     "href":"../product/product_shop_details.html",
@@ -15,7 +15,7 @@
     "href02": "#",
     "btn_cate": "CSS",
     "href03": "#",
-    "btn_price": "￦5000"
+    "btn_price": "￦5,000"
   },
   {    
     "href":"../product/product_shop_details.html",
@@ -24,7 +24,7 @@
     "href02": "#",
     "btn_cate": "CSS",
     "href03": "#",
-    "btn_price": "￦5000"
+    "btn_price": "￦5,000"
   },
   {
     "href":"../product/product_shop_details.html",
@@ -33,7 +33,7 @@
     "href02": "#",
     "btn_cate": "HTML",
     "href03": "#",
-    "btn_price": "￦1000"
+    "btn_price": "￦1,000"
   },
   {    
     "href":"../product/product_shop_details.html",
@@ -42,7 +42,7 @@
     "href02": "#",
     "btn_cate": "CSS",
     "href03": "#",
-    "btn_price": "￦5000"
+    "btn_price": "￦5,000"
   },
   {    
     "href":"../product/product_shop_details.html",
@@ -51,7 +51,7 @@
     "href02": "#",
     "btn_cate": "CSS",
     "href03": "#",
-    "btn_price": "￦5000"
+    "btn_price": "￦5,000"
   },
   {
     "href":"../product/product_shop_details.html",
@@ -60,7 +60,7 @@
     "href02": "#",
     "btn_cate": "HTML",
     "href03": "#",
-    "btn_price": "￦1000"
+    "btn_price": "￦1,000"
   },
   {    
     "href":"../product/product_shop_details.html",
@@ -69,7 +69,7 @@
     "href02": "#",
     "btn_cate": "CSS",
     "href03": "#",
-    "btn_price": "￦5000"
+    "btn_price": "￦5,000"
   },
   {    
     "href":"../product/product_shop_details.html",
@@ -78,6 +78,6 @@
     "href02": "#",
     "btn_cate": "CSS",
     "href03": "#",
-    "btn_price": "￦5000"
+    "btn_price": "￦5,000"
   }
 ]
