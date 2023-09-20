@@ -11,14 +11,17 @@ function user_coupon($mysqli, $uid, $num, $reason){
   $cprice = $crs -> coupon_price;
   $duedate = date("Y-m-d 23:59:59", strtotime("+30 days"));
 
+  // coupons 테이블의 status 값을 읽어와서 user_coupons 테이블의 status로 복사
+  $cstatus = $crs -> status;
+
   $ucsql = "INSERT INTO user_coupons 
-    (couponid,userid,status,regdate,duedate,reason)
-    VALUES({$crs -> cid}, '{$uid}', {$num}, now(),'{$duedate}','{$reason}')
+    (couponid, userid, status, regdate, duedate, reason)
+    VALUES({$crs -> cid}, '{$uid}', {$cstatus}, now(),'{$duedate}','{$reason}')
   ";
   $ucresult = $mysqli -> query($ucsql) or die($mysql->error);
 
   echo "<script>
-    alert('가입완료! $cname 이 발행되었습니다.');
+    alert('가입완료! '.$cname.'이 발행되었습니다.');
     location.href= '/keepcoding/main/index.php';
   </script>";
 

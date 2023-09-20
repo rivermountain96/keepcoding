@@ -1,36 +1,65 @@
 <?php
-  session_start();
+  $title = '홈';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
   
-  $sql = "SELECT * FROM products WHERE 1=1 LIMIT 0, 4";
-  $result = $mysqli -> query($sql);
-  while($rs = $result -> fetch_object()){
+  // 필터링
+  $category = $_GET['category'] ?? ''; // 받아올 값
+
+  // 검색
+  $search_keyword = $_GET['search_keyword'] ?? ''; // 검색어 가져오기
+
+  $search_where = ''; // 빈 문자열 생성
+
+  $sql = "SELECT * FROM products WHERE 1=1";
+
+  // 검색어가 입력되었을 경우 검색 조건 추가
+  if (!empty($search_keyword)) {
+    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%')";
+  }
+
+  $sql .= " LIMIT 0, 4";
+
+  $result = $mysqli->query($sql);
+  while ($rs = $result->fetch_object()) {
     $rsc[] = $rs;
   }
 ?>
 
+
   <!-- section 시작 -->
     <!-- main_section01_search 시작 -->
-    <section class="container main_section01_search" >
-      <h2 class="d-flex justify-content-center" >킵코딩 강의를 <span>검색</span>하세요</h2>
+    <section class="container main_section01_search">
+      <h2 class="d-flex justify-content-center">킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
-        <form action="#" class="search_own" role="search" method="GET">
-          <input class="search_input" type="search" aria-label="Search" placeholder="프론트엔드">
-          <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-          </svg></button>
+        <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
+          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="프론트엔드" value="<?= htmlspecialchars($search_keyword) ?>">
+          <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg></button>
         </form>
       </div>
       <div class="d-flex flex-column">
         <ul class="main_middlec_icon d-flex justify-content-center gap-5">
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_html.png" alt="HTML">HTML</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_js.png" alt="JS">JS</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_react.png" alt="React">React</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png" alt="Java">Java</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png" alt="jQuery">jQuery</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_spring.png" alt="Spring">Spring</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png" alt="Python">Python</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_html.png"
+                alt="HTML">HTML</a></li>
+          <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
+          <li><a href="product/product_shop_list.php?category=<?= urlencode($search_keyword) ?>"><img width="50"
+                height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_js.png"
+                alt="JS">JS</a></li>
+          <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
+          <li><a href="product/product_shop_list.php?category=<?= urlencode($search_keyword) ?>"><img width="50"
+                height="50" src="../main/img/main_react.png" alt="React">React</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png"
+                alt="Java">Java</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png"
+                alt="jQuery">jQuery</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_spring.png"
+                alt="Spring">Spring</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png"
+                alt="Python">Python</a></li>
         </ul>
       </div>
     </section>
@@ -44,24 +73,25 @@
       <div class="d-flex justify-content-between gap-3">
       <?php
         foreach($rsc as $item){
-          $type = $item->level;
-          $cate = ""; // 초기값 설정
+          
+          // 중분류 카테고리명 추출
+          $cate = $item->cate;
+          $cateNum = explode('/', $cate);
+          $middleNumber = $cateNum[1]; // 중간 숫자 추출
 
-          // cate 값에 따라 카테고리 설정
-          if (strpos($item->cate, '1/') === 0) {
-            $cate = 'HTML/CSS';
-          } elseif (strpos($item->cate, '2/') === 0) {
-            $cate = '프론트엔드';
-          } elseif (strpos($item->cate, '3/') === 0) {
-            $cate = '백엔드';
+          $catesql = "SELECT name FROM category WHERE cid=$middleNumber";
+          $cateresult = $mysqli->query($catesql);
+
+          $crs = array();
+
+          while($cr = $cateresult -> fetch_object()){
+            $crs[] = $cr;
           }
-          if($type != '숏강의'){ // 일반강의라면
-            if($item->price == 0){
-              $price = '무료 강의';
-            } else {
-              $price = '￦ '.$item->price;
-            }
-          }
+          foreach($crs as $cateName){
+            $cateName2 = $cateName->name;
+          };
+
+          
         ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
@@ -73,8 +103,14 @@
             <div class="card-body z-3">
               <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
               <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $cate;?></a>
-              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $price;?></a>
+              <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cateName2;?></a>
+              <a href="#none" class="btn btn-primary fs-10 mt-2"><?php
+                  if($item->price == 0){
+                    echo "무료 강의";
+                  }else{
+                    echo "₩ <span class=\"number\">$item->price;<span>";
+                  }
+               ?></a>
             </div>
         </div>
         <?php
@@ -94,21 +130,21 @@
           <br>어머! 숏강의 들었을 뿐인걸요?
           </p>
           <p class="card-text fs-6 mb-4">꼭 필요한 내용만 전달!<br>지루하지 않게 끝까지 몰입 가능!</p>
-          <a href="../main/product/product_shop_details_shorts.php" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+          <a href="../main/product/product_shop_details_shorts.php" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
               <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
             </svg>
             <span class="fw-medium mc-gray3">객체 지향 프로그래밍 이해하기</span>
-            <span>01:00</span>
+            <span class="card-time">01:00</span>
           </a>
-          <a href="../main/product/product_shop_details_shorts.php" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+          <a href="../main/product/product_shop_details_shorts.php" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
               <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
             </svg>
             <span class="fw-medium mc-gray3">React Styled components</span>
-            <span>00:30</span>
+            <span class="card-time">00:30</span>
           </a>
           
         </div>
@@ -188,7 +224,7 @@
               </div>
         
               <div id="result" class="view flex-column align-items-center gap-4">
-                <img src="#" alt="#" class="result_img">
+                <img src="#none" alt="#none" class="result_img">
                 <h5 class="name mc-gray2 fw-semibold">직업 이름</h5>
                 <p class="sub mc-gray5 fw-semibold">한줄소개</p>
                 <p class="desc mc-gray2 fs-14">설명</p>
@@ -223,7 +259,7 @@
           <div class="card-body">
             <p class="card-title fs-5 fw-bold mb-4">공지사항</p>
             <p class="card-text mb-5">킵코딩의 정보와 다양한 소식을 확인하세요</p><br>
-            <a href="#" class="btn btn-primary fw-semibold br-20">
+            <a href="#none" class="btn btn-primary fw-semibold br-20">
               <span>공지사항 전체보기</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
               <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
@@ -234,7 +270,7 @@
           <div class="card-body">
             <p class="card-title fs-5 fw-bold mb-4">Q&A</p>
             <p class="card-text mb-5">강의 또는 사이트에 관한 질문이 있나요?<br>궁금한 부분이 있다면 작성글을 남겨 주세요</p>
-            <a href="#" class="btn btn-primary fw-semibold br-20">
+            <a href="#none" class="btn btn-primary fw-semibold br-20">
               <span>Q&A 게시판</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
               <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
@@ -245,7 +281,7 @@
           <div class="card-body">
             <p class="card-title fs-5 fw-bold mb-4">개발 관련 정보</p>
             <p class="card-text mb-5">개발과 관련된 정보를 회원들과 공유하는 공간</p><br>
-            <a href="#" class="btn btn-primary fw-semibold br-20">
+            <a href="#none" class="btn btn-primary fw-semibold br-20">
               <span>개발 정보 게시판</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
               <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
@@ -259,3 +295,5 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
 ?>
+<script src="/keepcoding/main/js/test_data.js"></script>
+<script src="/keepcoding/main/js/test.js"></script>

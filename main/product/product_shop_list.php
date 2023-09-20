@@ -142,7 +142,7 @@
           <button class="btn btn-primary col-1" type="submit">검색</button>
         </form>
       </div>
-      <div class="card_list d-flex justify-content-between gap-3 row m-0">
+      <div class="card_list d-flex justify-content-start gap-4 row m-0">
         <?php
           if(isset($rsc)){
             foreach($rsc as $item){
@@ -154,16 +154,21 @@
 
               $catesql = "SELECT name FROM category WHERE cid=$middleNumber";
               $cateresult = $mysqli->query($catesql);
+
+              $crs = array();
+
               while($cr = $cateresult -> fetch_object()){
                 $crs[] = $cr;
               }
-              foreach($crs as $cateName){$cateName2 = $cateName->name;};
+              foreach($crs as $cateName){
+                $cateName2 = $cateName->name;
+              };
 
               // 제목 생략
               // var_dump($item->name);
               $name = $item->name;
               // var_dump($name);
-              $maxLength = 25;
+              $maxLength = 23;
 
               $length = mb_strlen($name, 'utf-8');
               if($length <= $maxLength){
@@ -172,16 +177,6 @@
                 $str = mb_substr($name, 0, $maxLength, 'utf-8');
                 $name = $str . '⋯';
               }
-              // function truncateString($name, $maxLength) {
-              //   if (mb_strlen($name, 'utf-8') <= $maxLength) {
-              //       return $name; // 문자열의 길이가 제한 이하이면 그대로 반환
-              //   } else {
-              //       $truncatedStr = mb_substr($name, 0, $maxLength, 'utf-8'); // 제한 길이만큼 잘라냄
-              //       return $truncatedStr . '...'; // 말줄임표 추가
-              //   }
-              // }
-
-              // $newname = truncateString($name, $maxLength);
               
         ?>
         <div class="card sec2 text-center p-0" data-bs-theme="dark">

@@ -50,15 +50,15 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
       <!-- 메뉴 시작 -->
         <ul class="nav d-flex col-4 justify-content-between nav_menu">
           <li class="nav-item dropdown">
-            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="/keepcoding/main/product/product_shop_list.php" role="button" aria-expanded="false">강의탐색</a>
+            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#none" role="button" aria-expanded="false">강의탐색</a>
             <ul class="dropdown-menu nav_dropdown shadow-sm">
-              <li class="fs-6"><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">프론트엔드</a></li>
+              <li class="fs-6"><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=2">프론트엔드</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">백엔드</a></li>
+              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=3">백엔드</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">기초강의</a></li>
+              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=1">기초강의</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php">숏강의</a></li>
+              <li><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=48">숏강의</a></li>
             </ul>
           </li>
 
@@ -67,11 +67,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
           </li>
 
           <li class="nav-item dropdown">
-            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">커뮤니티</a>
+            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#none" role="button" aria-expanded="false">커뮤니티</a>
             <ul class="dropdown-menu nav_dropdown shadow-sm">
-              <li><a class="dropdown-item fs-6" href="#">공지사항</a></li>
+              <li><a class="dropdown-item fs-6" href="#none">공지사항</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="#">Q&amp;A</a></li>
+              <li><a class="dropdown-item fs-6" href="#none">Q&amp;A</a></li>
             </ul>
           </li>
         </ul>
@@ -86,7 +86,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
         if(isset($_SESSION['UID'])) {
           $userid = $_SESSION['UID']; // 회원 아이디를 세션에서 가져오기
-          echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/logout.php">' . $userid . '</a></li>';
+          echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/mypage/myproduct_list.php">' . $userid . '</a></li>';
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/logout.php">로그아웃</a></li>';
         } else {
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/login.php">로그인</a></li>';
