@@ -2,9 +2,8 @@
   session_start();
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
   
-  $sql = "SELECT * FROM products WHERE cate LIKE '1%' LIMIT 0, 4";
+  $sql = "SELECT * FROM products WHERE cate LIMIT 0, 4";
   $result = $mysqli -> query($sql);
-
   while($rs = $result -> fetch_object()){
     $rsc[] = $rs;
   }
@@ -46,13 +45,23 @@
       <?php
         foreach($rsc as $item){
           $type = $item->level;
+          $cate = ""; // 초기값 설정
+
+          // cate 값에 따라 카테고리 설정
+          if (strpos($item->cate, '1/') === 0) {
+            $cate = 'HTML/CSS';
+          } elseif (strpos($item->cate, '2/') === 0) {
+            $cate = '프론트엔드';
+          } elseif (strpos($item->cate, '3/') === 0) {
+            $cate = '백엔드';
+          }
           if($type != '숏강의'){ // 일반강의라면
             if($item->price == 0){
               $price = '무료 강의';
             } else {
               $price = '￦ '.$item->price;
             }
-          }        
+          }
         ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
@@ -64,7 +73,7 @@
             <div class="card-body z-3">
               <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
               <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
+              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $cate;?></a>
               <a href="#" class="btn btn-primary fs-10 mt-2"><?= $price;?></a>
             </div>
         </div>
