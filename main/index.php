@@ -1,6 +1,10 @@
 <?php
+  $title = '홈';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
   
+  // 필터링
+  $category = $_GET['category'] ?? ''; //받아올값
+
   $sql = "SELECT * FROM products WHERE 1=1 LIMIT 0, 4";
   $result = $mysqli -> query($sql);
   while($rs = $result -> fetch_object()){
@@ -43,26 +47,25 @@
       <div class="d-flex justify-content-between gap-3">
       <?php
         foreach($rsc as $item){
-          $type = $item->level;
-          $cate = ""; // 초기값 설정
+          
+          // 중분류 카테고리명 추출
+          $cate = $item->cate;
+          $cateNum = explode('/', $cate);
+          $middleNumber = $cateNum[1]; // 중간 숫자 추출
 
-          // cate 값에 따라 카테고리 설정
-          if (strpos($item->cate, '1/') === 0) {
-            $cate = '기초강의';
-          } elseif (strpos($item->cate, '2/') === 0) {
-            $cate = '프론트엔드';
-          } elseif (strpos($item->cate, '3/') === 0) {
-            $cate = '백엔드';
-          } elseif (strpos($item->cate, '4/') === 0) {
-            $cate = 'Shorts';
+          $catesql = "SELECT name FROM category WHERE cid=$middleNumber";
+          $cateresult = $mysqli->query($catesql);
+
+          $crs = array();
+
+          while($cr = $cateresult -> fetch_object()){
+            $crs[] = $cr;
           }
-          if($type != '숏강의'){ // 일반강의라면
-            if($item->price == 0){
-              $price = '무료 강의';
-            } else {
-              $price = '￦ '.$item->price;
-            }
-          }
+          foreach($crs as $cateName){
+            $cateName2 = $cateName->name;
+          };
+
+          
         ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
@@ -74,8 +77,14 @@
             <div class="card-body z-3">
               <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
               <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
-              <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cate;?></a>
-              <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $price;?></a>
+              <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cateName2;?></a>
+              <a href="#none" class="btn btn-primary fs-10 mt-2"><?php
+                  if($item->price == 0){
+                    echo "무료 강의";
+                  }else{
+                    echo "₩ <span class=\"number\">$item->price;<span>";
+                  }
+               ?></a>
             </div>
         </div>
         <?php
