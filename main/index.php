@@ -43,13 +43,13 @@
       <p><span>HTML & CSS 완전 정복</span></p>
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
+      <?php
+          if(isset($rsc)){
+            foreach($rsc as $item){            
+        ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
           <a href="product/product_shop_details.php">
-          <?php
-            if(isset($rsc)){
-              foreach($rsc as $item){            
-          ?>
             <div class="card-img-top-wrap">
               <!-- <img src="../main/img/example01.png" class="card-img-top" alt="example img"> -->
               <img src="<?php echo $item->thumbnail ?>" class="card-img-top" alt="<?= $item-> name ?>">
@@ -61,12 +61,11 @@
               <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
               <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
             </div>
-            <?php
-                }
-              }
-            ?>        
         </div>
-        
+        <?php
+            }
+          }
+        ?> 
     </section>
     <!-- main_section02_starter 끝 -->
 
