@@ -35,6 +35,5 @@
   <script src="/keepcoding/main/js/active.js"></script>
   <script src="/keepcoding/main/js/main.js"></script>
   <script src="/keepcoding/main/js/test_data.js"></script>
-  <script src="/keepcoding/main/js/test.js"></script>
 </body>
 </html>
