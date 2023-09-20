@@ -76,34 +76,25 @@
         </ul>
       <!-- 메뉴 끝 -->
 
-      <!-- 장바구니,로그인 시작 -->
-        <ul class="nav nav-login">
-          <li class="nav-item item_cart"><a class="fs-6" href="/keepcoding/main/cart/cart.php">장바구니</a></li>
-          <li class="nav-item"><a class="fs-6" href="/keepcoding/main/login.php">로그인</a></li>
-          <!-- <li class="nav-item"><a class="fs-6" href="../mypage/myproduct_list.php">아이디</a></li> -->
-          <li class="nav-item"><a class="fs-6" href="/keepcoding/main/members/signup.php">회원가입</a></li>
-          <!-- <li class="nav-item"><a class="fs-6" href="../login_out.php">로그아웃</a></li> -->
-        </ul>
-      <!-- 장바구니,로그인 끝 -->
 
-      
+      <!-- 장바구니,로그인 시작 -->
       <ul class="nav nav-login">
         <li class="nav-item item_cart"><a class="fs-6" href="/keepcoding/main/cart/cart.php">장바구니</a></li>
-        
         <?php
         // 세션 시작 코드 (session_start() 함수 사용)
         session_start();
 
         // 사용자가 로그인한 경우
-        if (isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['userid'])) {
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/logout.php">로그아웃</a></li>';
         } else {
-          // 사용자가 로그인하지 않은 경우
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/login.php">로그인</a></li>';
-          echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/members/signup.php">회원가입</a></li>';
         }
         ?>
+        <li class="nav-item"><a class="fs-6" href="/keepcoding/main/members/signup.php">회원가입</a></li>
       </ul>
+      <!-- 장바구니,로그인 끝 -->
+
       
     </div>
   </header>
