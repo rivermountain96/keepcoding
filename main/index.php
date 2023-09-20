@@ -17,14 +17,14 @@
       </div>
       <div class="d-flex flex-column">
         <ul class="main_middlec_icon d-flex justify-content-center gap-5">
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_html.png" alt="HTML">HTML</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_js.png" alt="JS">JS</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_react.png" alt="React">React</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_java.png" alt="Java">Java</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_jquery.png" alt="jQuery">jQuery</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_spring.png" alt="Spring">Spring</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_python.png" alt="Python">Python</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_html.png" alt="HTML">HTML</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_js.png" alt="JS">JS</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_react.png" alt="React">React</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png" alt="Java">Java</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png" alt="jQuery">jQuery</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_spring.png" alt="Spring">Spring</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png" alt="Python">Python</a></li>
         </ul>
       </div>
     </section>
@@ -32,13 +32,13 @@
 
     <!-- main_section02_starter 시작 -->
     <section class="container main_section02_starter">
-      <h2 class="h4 "><a href="product/product_shop_list.html">왕초보를 위한 기초강의 > </a></h2>
+      <h2 class="h4 "><a href="product/product_shop_list.php">왕초보를 위한 기초강의 > </a></h2>
       <p><span>HTML & CSS 완전 정복</span></p>
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.html">
+          <a href="product/product_shop_details.php">
             <div class="card-img-top-wrap">
               <img src="../main/img/example01.png" class="card-img-top" alt="example img">
             </div>
@@ -53,7 +53,7 @@
         </div>
         <!-- example02 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.html">
+          <a href="product/product_shop_details.php">
             <div class="card-img-top-wrap">
               <img src="../main/img/example02.png" class="card-img-top" alt="example img">
             </div>
@@ -68,7 +68,7 @@
         </div>
         <!-- example03 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.html">
+          <a href="product/product_shop_details.php">
             <div class="card-img-top-wrap">
               <img src="../main/img/example03.png" class="card-img-top" alt="example img">
             </div>
@@ -83,7 +83,7 @@
         </div>
         <!-- example04 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.html">
+          <a href="product/product_shop_details.php">
             <div class="card-img-top-wrap">
               <img src="../main/img/example04.png" class="card-img-top" alt="example img">
             </div>
@@ -103,7 +103,7 @@
 
     <!-- main_section03_shorts 시작 -->
     <section class="container main_section03_shorts">
-      <h2 class="h4"><a href="product/product_shop_list.html">3분 이내로 배우는 숏강의 > </a></h2>
+      <h2 class="h4"><a href="product/product_shop_list.php">3분 이내로 배우는 숏강의 > </a></h2>
       <p><span>강의는 짧고 배움은 길게!</span></p>
     <div class="d-flex justify-content-between gap-3">
       <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
@@ -112,7 +112,7 @@
           <br>어머! 숏강의 들었을 뿐인걸요?
           </p>
           <p class="card-text fs-6 mb-4">꼭 필요한 내용만 전달!<br>지루하지 않게 끝까지 몰입 가능!</p>
-          <a href="../main/product/product_shop_details_shorts.html" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+          <a href="../main/product/product_shop_details_shorts.php" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
               <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
@@ -120,7 +120,7 @@
             <span class="fw-medium mc-gray3">객체 지향 프로그래밍 이해하기</span>
             <span>01:00</span>
           </a>
-          <a href="../main/product/product_shop_details_shorts.html" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+          <a href="../main/product/product_shop_details_shorts.php" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
               <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
@@ -164,7 +164,7 @@
         <div class="banner banner2 pcbg d-flex justify-content-between align-items-center">
           <div class="banner-text d-flex flex-column gap-2">
             <p class="btn btn-primary w-50 mb-2">
-                <a href="members/signup.html" class="text-white">회원가입 바로가기</a>
+                <a href="members/signup.php" class="text-white">회원가입 바로가기</a>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 18">
                 <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
               </svg>
@@ -218,7 +218,7 @@
                   <li>하는일4</li>
                   <li>하는일5</li>
                 </ul>
-                <a href="./common.html" class="btn btn-outline-light fs-14 mt-4">나에게 맞는 강의 찾으러 가기</a>
+                <a href="./common.php" class="btn btn-outline-light fs-14 mt-4">나에게 맞는 강의 찾으러 가기</a>
               </div>
         
             </div>
