@@ -142,7 +142,7 @@
           <button class="btn btn-primary col-1" type="submit">검색</button>
         </form>
       </div>
-      <div class="card_list d-flex justify-content-start gap-3 row m-0">
+      <div class="card_list d-flex justify-content-between gap-3 row m-0">
         <?php
           if(isset($rsc)){
             foreach($rsc as $item){
@@ -168,7 +168,7 @@
               // var_dump($item->name);
               $name = $item->name;
               // var_dump($name);
-              $maxLength = 25;
+              $maxLength = 23;
 
               $length = mb_strlen($name, 'utf-8');
               if($length <= $maxLength){
