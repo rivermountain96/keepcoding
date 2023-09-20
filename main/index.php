@@ -3,21 +3,35 @@
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
   
   // 필터링
-  $category = $_GET['category'] ?? ''; //받아올값
+  $category = $_GET['category'] ?? ''; // 받아올 값
 
-  $sql = "SELECT * FROM products WHERE 1=1 LIMIT 0, 4";
-  $result = $mysqli -> query($sql);
-  while($rs = $result -> fetch_object()){
+  // 검색
+  $search_keyword = $_GET['search_keyword'] ?? ''; // 검색어 가져오기
+
+  $search_where = ''; // 빈 문자열 생성
+
+  $sql = "SELECT * FROM products WHERE 1=1";
+
+  // 검색어가 입력되었을 경우 검색 조건 추가
+  if (!empty($search_keyword)) {
+    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%')";
+  }
+
+  $sql .= " LIMIT 0, 4";
+
+  $result = $mysqli->query($sql);
+  while ($rs = $result->fetch_object()) {
     $rsc[] = $rs;
   }
 ?>
+
 
   <!-- section 시작 -->
     <!-- main_section01_search 시작 -->
     <section class="container main_section01_search" >
       <h2 class="d-flex justify-content-center" >킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
-        <form action="#none" class="search_own" role="search" method="GET">
+        <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
           <input class="search_input" type="search" aria-label="Search" placeholder="프론트엔드">
           <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
