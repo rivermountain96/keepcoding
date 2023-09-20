@@ -258,4 +258,5 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
 ?>
-<script src="../main/js/test.js"></script>
+<script src="/keepcoding/main/js/test_data.js"></script>
+<script src="/keepcoding/main/js/test.js"></script>
