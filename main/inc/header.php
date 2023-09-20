@@ -1,6 +1,6 @@
 <?php
-  // session_start(); 
-  // include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
+  session_start(); 
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,11 +81,8 @@
       <ul class="nav nav-login">
         <li class="nav-item item_cart"><a class="fs-6" href="/keepcoding/main/cart/cart.php">장바구니</a></li>
         <?php
-        // 세션 시작 코드 (session_start() 함수 사용)
-        session_start();
-
         // 사용자가 로그인한 경우
-        if (isset($_SESSION['userid'])) {
+        if(isset($_SESSION['userid'])) {
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/logout.php">로그아웃</a></li>';
         } else {
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/login.php">로그인</a></li>';
