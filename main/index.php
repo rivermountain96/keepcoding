@@ -1,10 +1,9 @@
 <?php
   session_start();
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
-
-  $sql = "SELECT * FROM products WHERE cate LIKE '1%' LIMIT 0, 4";
+  
+  $sql = "SELECT * FROM products WHERE cate LIMIT 0, 4";
   $result = $mysqli -> query($sql);
-
   while($rs = $result -> fetch_object()){
     $rsc[] = $rs;
   }
@@ -44,26 +43,41 @@
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
       <?php
-          if(isset($rsc)){
-            foreach($rsc as $item){            
+        foreach($rsc as $item){
+          $type = $item->level;
+          $cate = ""; // 초기값 설정
+
+          // cate 값에 따라 카테고리 설정
+          if (strpos($item->cate, '1/') === 0) {
+            $cate = 'HTML/CSS';
+          } elseif (strpos($item->cate, '2/') === 0) {
+            $cate = '프론트엔드';
+          } elseif (strpos($item->cate, '3/') === 0) {
+            $cate = '백엔드';
+          }
+          if($type != '숏강의'){ // 일반강의라면
+            if($item->price == 0){
+              $price = '무료 강의';
+            } else {
+              $price = '￦ '.$item->price;
+            }
+          }
         ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
           <a href="product/product_shop_details.php">
             <div class="card-img-top-wrap">
-              <!-- <img src="../main/img/example01.png" class="card-img-top" alt="example img"> -->
-              <img src="<?php echo $item->thumbnail ?>" class="card-img-top" alt="<?= $item-> name ?>">
+              <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
             </div>
           </a>
             <div class="card-body z-3">
-              <p class="card-title text-center fw-semibold"><?= $item-> name ?></p>
+              <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
               <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
+              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $cate;?></a>
+              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $price;?></a>
             </div>
         </div>
         <?php
-            }
           }
         ?> 
     </section>
@@ -242,44 +256,6 @@
     </section>
     <!-- main_section05_etc 끝 -->
 
-  <!-- footer 시작  -->
-  <footer class="main_footer d-flex flex-column">
-    <ul class="d-flex h6 justify-content-center">
-      <li><a href="#">이용약관</a></li>
-      <li><a href="#">윤리경영</a></li>
-      <li><a href="#">개인정보처리방침</a></li>
-      <li><a href="#">이메일무단수집거부</a></li>
-      <li><a href="#">고객지원</a></li>
-    </ul>
-    <div class="d-flex justify-content-center">
-      <address class="footer_address">
-        <p>대표 <span>Zootopia</span> TEL<span>02-722-2111</span></p>
-        <p>주소<span>서울특별시 종로구 관수동 수표로 96 2F 국일관</span></p>
-          <div class="d-flex justify-content-center footer_item gap-4">
-            <p><a aria-label="facebook" target="_blank" href="#">
-              <img src="../main/img/footer_facebook.svg" alt="zootopiafacebook"></a></p>
-            <p><a aria-label="youtube" target="_blank" href="#">
-              <img src="../main/img/footer_youtube.svg" alt="zootopiayoutube"></a></p>
-          </div>
-        <p class="footer_copyright"><span>Copyright &copy; Zootopia Co. Ltd. All Rights Reserved.</span></p>
-      </address>
-    </div>
-  </footer>
-  <!-- footer 끝  -->
-  <script>
-    $("#datepicker").datepicker();
-
-    $('#summernote').summernote({
-      placeholder: 'Hello keep coding',
-      tabsize: 2,
-      height: 100
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <script src="../main/js/jquery.number.min.js"></script>
-  <script src="../main/js/active.js"></script>
-  <script src="../main/js/main.js"></script>
-  <script src="../main/js/test_data.js"></script>
-  <script src="../main/js/test.js"></script>
-</body>
-</html>
+<?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
+?>
