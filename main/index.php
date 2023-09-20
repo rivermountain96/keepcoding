@@ -1,5 +1,12 @@
 <?php
+  session_start();
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
+  
+  $sql = "SELECT * FROM products WHERE cate LIMIT 0, 4";
+  $result = $mysqli -> query($sql);
+  while($rs = $result -> fetch_object()){
+    $rsc[] = $rs;
+  }
 ?>
 
   <!-- section 시작 -->
@@ -16,14 +23,14 @@
       </div>
       <div class="d-flex flex-column">
         <ul class="main_middlec_icon d-flex justify-content-center gap-5">
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_html.png" alt="HTML">HTML</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_js.png" alt="JS">JS</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_react.png" alt="React">React</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_java.png" alt="Java">Java</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_jquery.png" alt="jQuery">jQuery</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_spring.png" alt="Spring">Spring</a></li>
-          <li><a href="product/product_shop_list.html"><img width="50" height="50" src="../main/img/main_python.png" alt="Python">Python</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_html.png" alt="HTML">HTML</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_js.png" alt="JS">JS</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_react.png" alt="React">React</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png" alt="Java">Java</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png" alt="jQuery">jQuery</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_spring.png" alt="Spring">Spring</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png" alt="Python">Python</a></li>
         </ul>
       </div>
     </section>
@@ -31,78 +38,54 @@
 
     <!-- main_section02_starter 시작 -->
     <section class="container main_section02_starter">
-      <h2 class="h4 "><a href="product/product_shop_list.html">왕초보를 위한 기초강의 > </a></h2>
+      <h2 class="h4 "><a href="product/product_shop_list.php">왕초보를 위한 기초강의 > </a></h2>
       <p><span>HTML & CSS 완전 정복</span></p>
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
+      <?php
+        foreach($rsc as $item){
+          $type = $item->level;
+          $cate = ""; // 초기값 설정
+
+          // cate 값에 따라 카테고리 설정
+          if (strpos($item->cate, '1/') === 0) {
+            $cate = 'HTML/CSS';
+          } elseif (strpos($item->cate, '2/') === 0) {
+            $cate = '프론트엔드';
+          } elseif (strpos($item->cate, '3/') === 0) {
+            $cate = '백엔드';
+          }
+          if($type != '숏강의'){ // 일반강의라면
+            if($item->price == 0){
+              $price = '무료 강의';
+            } else {
+              $price = '￦ '.$item->price;
+            }
+          }
+        ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.html">
+          <a href="product/product_shop_details.php">
             <div class="card-img-top-wrap">
-              <img src="../main/img/example01.png" class="card-img-top" alt="example img">
+              <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
             </div>
           </a>
             <div class="card-body z-3">
-              <p class="card-title text-center fw-semibold">HTML - 기본 문법 학습</p>
+              <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
               <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
+              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $cate;?></a>
+              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $price;?></a>
             </div>
-
         </div>
-        <!-- example02 -->
-        <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.html">
-            <div class="card-img-top-wrap">
-              <img src="../main/img/example02.png" class="card-img-top" alt="example img">
-            </div>
-          </a>
-            <div class="card-body">
-              <p class="card-title text-center fw-semibold">HTML과 CSS가 만나는 법습</p>
-              <p class="card-text text-center fs-12">HTML에 CSS를 삽입하는 방법</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
-            </div>
-
-        </div>
-        <!-- example03 -->
-        <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.html">
-            <div class="card-img-top-wrap">
-              <img src="../main/img/example03.png" class="card-img-top" alt="example img">
-            </div>
-          </a>
-            <div class="card-body">
-              <p class="card-title text-center fw-semibold">선택자의 타입들</p>
-              <p class="card-text text-center fs-12">태그  / 클래스 / 아이디 선택자</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">CSS</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
-            </div>
-
-        </div>
-        <!-- example04 -->
-        <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.html">
-            <div class="card-img-top-wrap">
-              <img src="../main/img/example04.png" class="card-img-top" alt="example img">
-            </div>
-          </a>
-            <div class="card-body">
-              <p class="card-title text-center fw-semibold">Flex 1 : intro</p>
-              <p class="card-text text-center fs-12">레이아웃을 효과적으로 표현</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">CSS</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
-            </div>
-
-        </div>
-      </div>
-      <!-- example 끝 -->
+        <?php
+          }
+        ?> 
     </section>
     <!-- main_section02_starter 끝 -->
 
     <!-- main_section03_shorts 시작 -->
     <section class="container main_section03_shorts">
-      <h2 class="h4"><a href="product/product_shop_list.html">3분 이내로 배우는 숏강의 > </a></h2>
+      <h2 class="h4"><a href="product/product_shop_list.php">3분 이내로 배우는 숏강의 > </a></h2>
       <p><span>강의는 짧고 배움은 길게!</span></p>
     <div class="d-flex justify-content-between gap-3">
       <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
@@ -111,7 +94,7 @@
           <br>어머! 숏강의 들었을 뿐인걸요?
           </p>
           <p class="card-text fs-6 mb-4">꼭 필요한 내용만 전달!<br>지루하지 않게 끝까지 몰입 가능!</p>
-          <a href="../main/product/product_shop_details_shorts.html" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+          <a href="../main/product/product_shop_details_shorts.php" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
               <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
@@ -119,7 +102,7 @@
             <span class="fw-medium mc-gray3">객체 지향 프로그래밍 이해하기</span>
             <span>01:00</span>
           </a>
-          <a href="../main/product/product_shop_details_shorts.html" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+          <a href="../main/product/product_shop_details_shorts.php" class="btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
               <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
@@ -163,7 +146,7 @@
         <div class="banner banner2 pcbg d-flex justify-content-between align-items-center">
           <div class="banner-text d-flex flex-column gap-2">
             <p class="btn btn-primary w-50 mb-2">
-                <a href="members/signup.html" class="text-white">회원가입 바로가기</a>
+                <a href="members/signup.php" class="text-white">회원가입 바로가기</a>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 18">
                 <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
               </svg>
@@ -217,7 +200,7 @@
                   <li>하는일4</li>
                   <li>하는일5</li>
                 </ul>
-                <a href="./common.html" class="btn btn-outline-light fs-14 mt-4">나에게 맞는 강의 찾으러 가기</a>
+                <a href="./common.php" class="btn btn-outline-light fs-14 mt-4">나에게 맞는 강의 찾으러 가기</a>
               </div>
         
             </div>
@@ -273,44 +256,6 @@
     </section>
     <!-- main_section05_etc 끝 -->
 
-  <!-- footer 시작  -->
-  <footer class="main_footer d-flex flex-column">
-    <ul class="d-flex h6 justify-content-center">
-      <li><a href="#">이용약관</a></li>
-      <li><a href="#">윤리경영</a></li>
-      <li><a href="#">개인정보처리방침</a></li>
-      <li><a href="#">이메일무단수집거부</a></li>
-      <li><a href="#">고객지원</a></li>
-    </ul>
-    <div class="d-flex justify-content-center">
-      <address class="footer_address">
-        <p>대표 <span>Zootopia</span> TEL<span>02-722-2111</span></p>
-        <p>주소<span>서울특별시 종로구 관수동 수표로 96 2F 국일관</span></p>
-          <div class="d-flex justify-content-center footer_item gap-4">
-            <p><a aria-label="facebook" target="_blank" href="#">
-              <img src="../main/img/footer_facebook.svg" alt="zootopiafacebook"></a></p>
-            <p><a aria-label="youtube" target="_blank" href="#">
-              <img src="../main/img/footer_youtube.svg" alt="zootopiayoutube"></a></p>
-          </div>
-        <p class="footer_copyright"><span>Copyright &copy; Zootopia Co. Ltd. All Rights Reserved.</span></p>
-      </address>
-    </div>
-  </footer>
-  <!-- footer 끝  -->
-  <script>
-    $("#datepicker").datepicker();
-
-    $('#summernote').summernote({
-      placeholder: 'Hello keep coding',
-      tabsize: 2,
-      height: 100
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <script src="../main/js/jquery.number.min.js"></script>
-  <script src="../main/js/active.js"></script>
-  <script src="../main/js/main.js"></script>
-  <script src="../main/js/test_data.js"></script>
-  <script src="../main/js/test.js"></script>
-</body>
-</html>
+<?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
+?>

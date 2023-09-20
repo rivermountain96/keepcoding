@@ -195,6 +195,9 @@ body a{
     width: 50px;
     height: 77px;
   }
+  .main_middlec_icon a:hover, .main_section02_starter a:hover, .main_section03_shorts a:hover, .main_section04_banner a:hover, .main_section05_etc a:hover{
+    text-decoration: none;
+  }
   .main_middlec_icon li img, .main_middlec_icon li svg{
     margin-bottom: 10px;
   }
@@ -219,6 +222,9 @@ body a{
 
   .main_section03_shorts iframe{
     border-radius: 10px;
+  }
+  .main_section03_shorts a:hover{
+    color: var(--mc-white);
   }
 
   /* main_section04_banner 시작*/
@@ -282,6 +288,13 @@ body a{
 .pshop_section02 nav{
   margin: calc(var(--base-unit)*2) auto calc(var(--base-unit)*8);
 }
+.noresult{
+  width:100%;
+  height: 445px;
+  border: 1px solid var(--mc-gray4);
+  border-radius: 10px;
+  line-height: 445px;
+}
 /* pshop 끝 */
 
 /* pshop_details 시작 */
@@ -309,6 +322,9 @@ body a{
   background-color: var(--mc-white);
   padding: var(--base-unit);
   border-radius: 10px;
+}
+.pshop_details_02_price{
+  padding: 14px;
 }
 .pshop_details_02 button{
   padding: 11px;
@@ -367,6 +383,10 @@ body a{
 .myproduct_list{
   margin-top: calc(var(--base-unit)*7);
 }
+.myproduct_list a:hover{
+  text-decoration: none;
+  color: var(--mc-gray1);
+}
 .myproduct_list_my{
   margin-right: var(--base-unit);
 }
@@ -394,3 +414,21 @@ body a{
   height: 110px;
 }
 /* mypage 끝 */
+/* sectoin_shortst 시작 */
+.sectoin_shorts_01{
+  background: url(../img/shorts_bg.png) no-repeat top center;
+  background-size: cover;
+  width: 100%;
+  max-height: 100%;
+}
+.shorts_svg_wrap{
+  padding-top: calc(var(--base-unit)*10);
+  padding-bottom: calc(var(--base-unit)*22);
+}
+.sectoin_shorts_02 {
+  padding: calc(var(--base-unit)*8) 0;
+}
+.sectoin_shorts_02 img{
+  border-radius: 10px;
+}
+/* sectoin_shortst 끝 */
