@@ -80,7 +80,7 @@
         <ul class="nav nav-login">
           <li class="nav-item item_cart"><a class="fs-6" href="/keepcoding/main/cart/cart.php">장바구니</a></li>
           <li class="nav-item"><a class="fs-6" href="/keepcoding/main/login.php">로그인</a></li>
-          <!-- <li class="nav-item"><a class="fs-6" href="../mypage/myproduct_list.php">아이디</a></li> -->
+          <!-- <li class="nav-item"><a class="fs-6" href="../mypage/myproduct_list.php"><span>아이디</span></a></li> -->
           <li class="nav-item"><a class="fs-6" href="/keepcoding/main/members/signup.php">회원가입</a></li>
           <!-- <li class="nav-item"><a class="fs-6" href="../login_out.php">로그아웃</a></li> -->
         </ul>

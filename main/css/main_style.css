@@ -370,6 +370,10 @@ body a{
 .myproduct_list{
   margin-top: calc(var(--base-unit)*7);
 }
+.myproduct_list a:hover{
+  text-decoration: none;
+  color: var(--mc-gray1);
+}
 .myproduct_list_my{
   margin-right: var(--base-unit);
 }
