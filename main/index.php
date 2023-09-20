@@ -13,7 +13,7 @@
     <section class="container main_section01_search" >
       <h2 class="d-flex justify-content-center" >킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
-        <form action="#" class="search_own" role="search" method="GET">
+        <form action="#none" class="search_own" role="search" method="GET">
           <input class="search_input" type="search" aria-label="Search" placeholder="프론트엔드">
           <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -74,8 +74,8 @@
             <div class="card-body z-3">
               <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
               <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $cate;?></a>
-              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $price;?></a>
+              <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cate;?></a>
+              <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $price;?></a>
             </div>
         </div>
         <?php
@@ -189,7 +189,7 @@
               </div>
         
               <div id="result" class="view flex-column align-items-center gap-4">
-                <img src="#" alt="#" class="result_img">
+                <img src="#none" alt="#none" class="result_img">
                 <h5 class="name mc-gray2 fw-semibold">직업 이름</h5>
                 <p class="sub mc-gray5 fw-semibold">한줄소개</p>
                 <p class="desc mc-gray2 fs-14">설명</p>
@@ -224,7 +224,7 @@
           <div class="card-body">
             <p class="card-title fs-5 fw-bold mb-4">공지사항</p>
             <p class="card-text mb-5">킵코딩의 정보와 다양한 소식을 확인하세요</p><br>
-            <a href="#" class="btn btn-primary fw-semibold br-20">
+            <a href="#none" class="btn btn-primary fw-semibold br-20">
               <span>공지사항 전체보기</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
               <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
@@ -235,7 +235,7 @@
           <div class="card-body">
             <p class="card-title fs-5 fw-bold mb-4">Q&A</p>
             <p class="card-text mb-5">강의 또는 사이트에 관한 질문이 있나요?<br>궁금한 부분이 있다면 작성글을 남겨 주세요</p>
-            <a href="#" class="btn btn-primary fw-semibold br-20">
+            <a href="#none" class="btn btn-primary fw-semibold br-20">
               <span>Q&A 게시판</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
               <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
@@ -246,7 +246,7 @@
           <div class="card-body">
             <p class="card-title fs-5 fw-bold mb-4">개발 관련 정보</p>
             <p class="card-text mb-5">개발과 관련된 정보를 회원들과 공유하는 공간</p><br>
-            <a href="#" class="btn btn-primary fw-semibold br-20">
+            <a href="#none" class="btn btn-primary fw-semibold br-20">
               <span>개발 정보 게시판</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
               <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
