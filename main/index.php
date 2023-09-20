@@ -1,6 +1,13 @@
 <?php
   session_start();
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
+
+  $sql = "SELECT * FROM products WHERE cate LIKE '1%' LIMIT 0, 4";
+  $result = $mysqli -> query($sql);
+
+  while($rs = $result -> fetch_object()){
+    $rsc[] = $rs;
+  }
 ?>
 
   <!-- section 시작 -->
@@ -36,68 +43,29 @@
       <p><span>HTML & CSS 완전 정복</span></p>
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
+      <?php
+          if(isset($rsc)){
+            foreach($rsc as $item){            
+        ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
           <a href="product/product_shop_details.php">
             <div class="card-img-top-wrap">
-              <img src="../main/img/example01.png" class="card-img-top" alt="example img">
+              <!-- <img src="../main/img/example01.png" class="card-img-top" alt="example img"> -->
+              <img src="<?php echo $item->thumbnail ?>" class="card-img-top" alt="<?= $item-> name ?>">
             </div>
           </a>
             <div class="card-body z-3">
-              <p class="card-title text-center fw-semibold">HTML - 기본 문법 학습</p>
+              <p class="card-title text-center fw-semibold"><?= $item-> name ?></p>
               <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
               <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
               <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
             </div>
-
         </div>
-        <!-- example02 -->
-        <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.php">
-            <div class="card-img-top-wrap">
-              <img src="../main/img/example02.png" class="card-img-top" alt="example img">
-            </div>
-          </a>
-            <div class="card-body">
-              <p class="card-title text-center fw-semibold">HTML과 CSS가 만나는 법습</p>
-              <p class="card-text text-center fs-12">HTML에 CSS를 삽입하는 방법</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
-            </div>
-
-        </div>
-        <!-- example03 -->
-        <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.php">
-            <div class="card-img-top-wrap">
-              <img src="../main/img/example03.png" class="card-img-top" alt="example img">
-            </div>
-          </a>
-            <div class="card-body">
-              <p class="card-title text-center fw-semibold">선택자의 타입들</p>
-              <p class="card-text text-center fs-12">태그  / 클래스 / 아이디 선택자</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">CSS</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
-            </div>
-
-        </div>
-        <!-- example04 -->
-        <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.php">
-            <div class="card-img-top-wrap">
-              <img src="../main/img/example04.png" class="card-img-top" alt="example img">
-            </div>
-          </a>
-            <div class="card-body">
-              <p class="card-title text-center fw-semibold">Flex 1 : intro</p>
-              <p class="card-text text-center fs-12">레이아웃을 효과적으로 표현</p>
-              <a href="#" class="btn btn-primary fs-10 mt-2">CSS</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
-            </div>
-
-        </div>
-      </div>
-      <!-- example 끝 -->
+        <?php
+            }
+          }
+        ?> 
     </section>
     <!-- main_section02_starter 끝 -->
 
