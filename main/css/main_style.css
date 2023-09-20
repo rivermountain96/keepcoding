@@ -223,6 +223,9 @@ body a{
   .main_section03_shorts iframe{
     border-radius: 10px;
   }
+  .main_section03_shorts a:hover{
+    color: var(--mc-white);
+  }
 
   /* main_section04_banner 시작*/
   .main_section04_banner .banner{width: 100%;}
@@ -284,6 +287,13 @@ body a{
 }
 .pshop_section02 nav{
   margin: calc(var(--base-unit)*2) auto calc(var(--base-unit)*8);
+}
+.noresult{
+  width:100%;
+  height: 445px;
+  border: 1px solid var(--mc-gray4);
+  border-radius: 10px;
+  line-height: 445px;
 }
 /* pshop 끝 */
 
@@ -404,8 +414,21 @@ body a{
   height: 110px;
 }
 /* mypage 끝 */
-
+/* sectoin_shortst 시작 */
 .sectoin_shorts_01{
-  background: url(../img/shorts_bg.png) no-repeat ;
+  background: url(../img/shorts_bg.png) no-repeat top center;
   background-size: cover;
+  width: 100%;
+  max-height: 100%;
 }
+.shorts_svg_wrap{
+  padding-top: calc(var(--base-unit)*10);
+  padding-bottom: calc(var(--base-unit)*22);
+}
+.sectoin_shorts_02 {
+  padding: calc(var(--base-unit)*8) 0;
+}
+.sectoin_shorts_02 img{
+  border-radius: 10px;
+}
+/* sectoin_shortst 끝 */
