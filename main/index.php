@@ -53,6 +53,8 @@
             $cate = '프론트엔드';
           } elseif (strpos($item->cate, '3/') === 0) {
             $cate = '백엔드';
+          } elseif (strpos($item->cate, '4/') === 0) {
+            $cate = 'Shorts';
           }
           if($type != '숏강의'){ // 일반강의라면
             if($item->price == 0){

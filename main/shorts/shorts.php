@@ -7,7 +7,7 @@
     <div class="shorts_svg_wrap container">
       <p class="h3 mc-white mb-2">Try everything</p>
       <h2 class="mb-4"><img src="../img/what'sShorts.svg" alt="킵코딩숏츠"></h2>
-      <button class="btn btn-lg btn-primary h4 fs-3 p-3 pe-4 ps-4" onClick="location.href='/keepcoding/main/product/product_shop_list.php'">모든 숏강의는 결제없이 바로 무료수강</button>
+      <button class="btn btn-lg btn-primary h4 fs-3 p-3 pe-4 ps-4" onClick="location.href='/keepcoding/main/product/product_shop_list.php?category=48'">모든 숏강의는 결제없이 바로 무료수강</button>
     </div>
   </section>
 
