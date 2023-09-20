@@ -1,7 +1,8 @@
 <?php
-  session_start(); 
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
+session_start(); 
+include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,12 +84,14 @@
         <?php
         // 사용자가 로그인한 경우
         if(isset($_SESSION['userid'])) {
+          $userid = $_SESSION['userid']; // 회원 아이디를 세션에서 가져오기
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/logout.php">로그아웃</a></li>';
+          echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/logout.php">' . $userid . '</a></li>';
         } else {
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/login.php">로그인</a></li>';
+          echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/members/signup.php">회원가입</a></li>';
         }
         ?>
-        <li class="nav-item"><a class="fs-6" href="/keepcoding/main/members/signup.php">회원가입</a></li>
       </ul>
       <!-- 장바구니,로그인 끝 -->
 
