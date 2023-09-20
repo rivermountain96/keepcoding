@@ -50,7 +50,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
       <!-- 메뉴 시작 -->
         <ul class="nav d-flex col-4 justify-content-between nav_menu">
           <li class="nav-item dropdown">
-            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="/keepcoding/main/product/product_shop_list.php" role="button" aria-expanded="false">강의탐색</a>
+            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#none" role="button" aria-expanded="false">강의탐색</a>
             <ul class="dropdown-menu nav_dropdown shadow-sm">
               <li class="fs-6"><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=2">프론트엔드</a></li>
               <li><hr></li>
@@ -67,11 +67,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
           </li>
 
           <li class="nav-item dropdown">
-            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">커뮤니티</a>
+            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#none" role="button" aria-expanded="false">커뮤니티</a>
             <ul class="dropdown-menu nav_dropdown shadow-sm">
-              <li><a class="dropdown-item fs-6" href="#">공지사항</a></li>
+              <li><a class="dropdown-item fs-6" href="#none">공지사항</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="#">Q&amp;A</a></li>
+              <li><a class="dropdown-item fs-6" href="#none">Q&amp;A</a></li>
             </ul>
           </li>
         </ul>
