@@ -141,7 +141,6 @@ body{
 }
 .login button:hover{
   background-color: var(--primary-color-hover);
-  color: var(--mc-black);
 }
 .login_pw{
   margin-top: 20px;
