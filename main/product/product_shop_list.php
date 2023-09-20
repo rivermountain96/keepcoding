@@ -154,10 +154,15 @@
 
               $catesql = "SELECT name FROM category WHERE cid=$middleNumber";
               $cateresult = $mysqli->query($catesql);
+
+              $crs = array();
+
               while($cr = $cateresult -> fetch_object()){
                 $crs[] = $cr;
               }
-              foreach($crs as $cateName){$cateName2 = $cateName->name;};
+              foreach($crs as $cateName){
+                $cateName2 = $cateName->name;
+              };
 
               // 제목 생략
               // var_dump($item->name);
@@ -172,16 +177,6 @@
                 $str = mb_substr($name, 0, $maxLength, 'utf-8');
                 $name = $str . '⋯';
               }
-              // function truncateString($name, $maxLength) {
-              //   if (mb_strlen($name, 'utf-8') <= $maxLength) {
-              //       return $name; // 문자열의 길이가 제한 이하이면 그대로 반환
-              //   } else {
-              //       $truncatedStr = mb_substr($name, 0, $maxLength, 'utf-8'); // 제한 길이만큼 잘라냄
-              //       return $truncatedStr . '...'; // 말줄임표 추가
-              //   }
-              // }
-
-              // $newname = truncateString($name, $maxLength);
               
         ?>
         <div class="card sec2 text-center p-0" data-bs-theme="dark">
