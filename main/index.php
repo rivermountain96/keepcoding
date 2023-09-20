@@ -28,26 +28,38 @@
 
   <!-- section 시작 -->
     <!-- main_section01_search 시작 -->
-    <section class="container main_section01_search" >
-      <h2 class="d-flex justify-content-center" >킵코딩 강의를 <span>검색</span>하세요</h2>
+    <section class="container main_section01_search">
+      <h2 class="d-flex justify-content-center">킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
         <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
-          <input class="search_input" type="search" aria-label="Search" placeholder="프론트엔드">
-          <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-          </svg></button>
+          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="프론트엔드" value="<?= htmlspecialchars($search_keyword) ?>">
+          <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg></button>
         </form>
       </div>
       <div class="d-flex flex-column">
         <ul class="main_middlec_icon d-flex justify-content-center gap-5">
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_html.png" alt="HTML">HTML</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_js.png" alt="JS">JS</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_react.png" alt="React">React</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png" alt="Java">Java</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png" alt="jQuery">jQuery</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_spring.png" alt="Spring">Spring</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png" alt="Python">Python</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_html.png"
+                alt="HTML">HTML</a></li>
+          <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
+          <li><a href="product/product_shop_list.php?category=<?= urlencode($search_keyword) ?>"><img width="50"
+                height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_js.png"
+                alt="JS">JS</a></li>
+          <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
+          <li><a href="product/product_shop_list.php?category=<?= urlencode($search_keyword) ?>"><img width="50"
+                height="50" src="../main/img/main_react.png" alt="React">React</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png"
+                alt="Java">Java</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png"
+                alt="jQuery">jQuery</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_spring.png"
+                alt="Spring">Spring</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png"
+                alt="Python">Python</a></li>
         </ul>
       </div>
     </section>
