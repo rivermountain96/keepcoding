@@ -48,7 +48,12 @@
 
           // cate 값에 따라 카테고리 설정
           if (strpos($item->cate, '1/') === 0) {
-            $cate = 'HTML/CSS';
+            $category_number = str_replace('1/', '', $item->cate);
+            if ($category_number == '4') {
+              $cate = 'HTML';
+            } elseif ($category_number == '5') {
+              $cate = 'CSS';
+            }
           } elseif (strpos($item->cate, '2/') === 0) {
             $cate = '프론트엔드';
           } elseif (strpos($item->cate, '3/') === 0) {
