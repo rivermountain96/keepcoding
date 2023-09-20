@@ -1,6 +1,5 @@
 <?php
 $title =  '로그인';
-include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
 
 ?>
