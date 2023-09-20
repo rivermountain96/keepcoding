@@ -78,7 +78,7 @@
             echo $echo;
           ?>
         </p>
-        <button class="btn btn-lg btn-primary fs-6 h6" data-pid="<?= $item->pid; ?>">장바구니 담기</button>
+        <button class="btn btn-lg btn-primary fs-6 h6" data-pid="<?= $item->pid; ?>" id="insert">장바구니 담기</button>
       </div>
     </div>
 
@@ -113,4 +113,30 @@
   </section>
   <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
-?>
+  ?>
+  <script>
+    $(document).on('click', '#insert', function(){
+      let pid = $(this).attr('data-pid');
+      let data = {
+        pid : pid
+      }
+      $.ajax({
+        async: false,
+        type: 'POST',
+        data: data,
+        url: "cart_insert.php",
+        dataType: 'json',
+        error: function(error){
+          console.log('Error:', error);
+        },
+        success: function(rdata){
+          if(rdata.result == 1){
+            alert('장바구니 담기 성공');
+            location.reload();
+          }else{
+            alert('장바구니 담기 실패');
+            location.reload();
+        }
+      }});
+    });
+  </script>

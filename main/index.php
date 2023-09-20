@@ -48,7 +48,7 @@
 
           // cate 값에 따라 카테고리 설정
           if (strpos($item->cate, '1/') === 0) {
-            $cate = 'HTML/CSS';
+            $cate = '기초강의';
           } elseif (strpos($item->cate, '2/') === 0) {
             $cate = '프론트엔드';
           } elseif (strpos($item->cate, '3/') === 0) {
