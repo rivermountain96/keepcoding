@@ -49,6 +49,15 @@
     $rsc[] = $rs;
   }
 
+  $num_result = $mysqli -> query($sql);
+
+  if(isset($num_result)){
+    $num_rows = mysqli_num_rows($num_result);
+  }else{
+    $num_rows = 0;
+  }
+
+
 ?>
   <h2 class="h4 container pshop_title">강의탐색</h2>
   <div class="container d-flex justify-content-between">
@@ -126,7 +135,7 @@
     <!-- pshop_section01 끝 -->
     <!-- pshop_section02 시작 -->
     <section class="pshop_section02 col-9">
-      <h2 class="h6"><span>24개</span>의 강의</h2>
+      <h2 class="h6">총 <span><?= $num_rows ?></span> 개의 강의</h2>
       <div>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search" name="search_keyword">
