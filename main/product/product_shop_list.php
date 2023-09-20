@@ -168,7 +168,7 @@
               // var_dump($item->name);
               $name = $item->name;
               // var_dump($name);
-              $maxLength = 25;
+              $maxLength = 23;
 
               $length = mb_strlen($name, 'utf-8');
               if($length <= $maxLength){
