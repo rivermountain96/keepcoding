@@ -1,7 +1,7 @@
 <?php
   session_start();
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
-
+  
   $sql = "SELECT * FROM products WHERE cate LIKE '1%' LIMIT 0, 4";
   $result = $mysqli -> query($sql);
 
@@ -44,26 +44,31 @@
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
       <?php
-          if(isset($rsc)){
-            foreach($rsc as $item){            
+        foreach($rsc as $item){
+          $type = $item->level;
+          if($type != '숏강의'){ // 일반강의라면
+            if($item->price == 0){
+              $price = '무료 강의';
+            } else {
+              $price = '￦ '.$item->price;
+            }
+          }        
         ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
           <a href="product/product_shop_details.php">
             <div class="card-img-top-wrap">
-              <!-- <img src="../main/img/example01.png" class="card-img-top" alt="example img"> -->
-              <img src="<?php echo $item->thumbnail ?>" class="card-img-top" alt="<?= $item-> name ?>">
+              <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
             </div>
           </a>
             <div class="card-body z-3">
-              <p class="card-title text-center fw-semibold"><?= $item-> name ?></p>
+              <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
               <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
               <a href="#" class="btn btn-primary fs-10 mt-2">HTML</a>
-              <a href="#" class="btn btn-primary fs-10 mt-2">￦1000</a>
+              <a href="#" class="btn btn-primary fs-10 mt-2"><?= $price;?></a>
             </div>
         </div>
         <?php
-            }
           }
         ?> 
     </section>
