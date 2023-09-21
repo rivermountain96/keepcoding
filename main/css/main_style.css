@@ -223,9 +223,7 @@ body a{
   .main_section03_shorts iframe{
     border-radius: 10px;
   }
-  .main_section03_shorts a:hover{
-    color: var(--mc-white);
-  }
+
 
   /* main_section04_banner 시작*/
   .main_section04_banner .banner{width: 100%;}
@@ -355,8 +353,12 @@ body a{
 .cart_section .cart, .cart_section_select h4{
   margin-bottom: var(--base-unit);
 }
-.cart_trash:hover{
+.cart_trash:hover, .cart_all_trash:hover{
   text-decoration: underline;
+  color: var(--mc-gray1);
+}
+.cart_section>.cart_trash a:hover{
+  color: var(--mc-gray1);
 }
 .cart_card{
   margin-bottom: var(--base-unit);
@@ -376,6 +378,12 @@ body a{
 }
 .cart_section_calc div ul:nth-child(3){
   margin-top: calc(var(--base-unit)*3);
+}
+.cart_card .cart_info .cart_about h3 a{
+  color: var(--mc-gray1);
+}
+.cart_card .cart_info .cart_about h3 a:hover{
+  text-decoration: none;
 }
 /* cart_section 끝 */
 
