@@ -37,6 +37,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   <!-- summernote 끝 -->
+  <!-- share 시작-->
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js" integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH" crossorigin="anonymous"></script>
+  <script>Kakao.init('b20a514da7c33c650ca0a06403dad918'); Kakao.isInitialized();</script>
+  <!-- share 끝-->
   <title><?php if(isset($title)){echo $title;}else{echo '홈';} ?> - KEEP CODING</title>
 </head>
 <body>
@@ -50,7 +54,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
       <!-- 메뉴 시작 -->
         <ul class="nav d-flex col-4 justify-content-between nav_menu">
           <li class="nav-item dropdown">
-            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#none" role="button" aria-expanded="false">강의탐색</a>
+            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="/keepcoding/main/product/product_shop_list.php" role="button" aria-expanded="false">강의탐색</a>
             <ul class="dropdown-menu nav_dropdown shadow-sm">
               <li class="fs-6"><a class="dropdown-item fs-6" href="/keepcoding/main/product/product_shop_list.php?category=2">프론트엔드</a></li>
               <li><hr></li>
@@ -67,11 +71,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
           </li>
 
           <li class="nav-item dropdown">
-            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#none" role="button" aria-expanded="false">커뮤니티</a>
+            <a class="dropdown-toggle h5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">커뮤니티</a>
             <ul class="dropdown-menu nav_dropdown shadow-sm">
-              <li><a class="dropdown-item fs-6" href="#none">공지사항</a></li>
+              <li><a class="dropdown-item fs-6" href="#">공지사항</a></li>
               <li><hr></li>
-              <li><a class="dropdown-item fs-6" href="#none">Q&amp;A</a></li>
+              <li><a class="dropdown-item fs-6" href="#">Q&amp;A</a></li>
             </ul>
           </li>
         </ul>
@@ -86,7 +90,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
         if(isset($_SESSION['UID'])) {
           $userid = $_SESSION['UID']; // 회원 아이디를 세션에서 가져오기
-          echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/mypage/myproduct_list.php">' . $userid . '</a></li>';
+          echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/logout.php">' . $userid . '</a></li>';
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/logout.php">로그아웃</a></li>';
         } else {
           echo '<li class="nav-item"><a class="fs-6" href="/keepcoding/main/login.php">로그인</a></li>';
