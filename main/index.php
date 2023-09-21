@@ -130,19 +130,23 @@
           <br>어머! 숏강의 들었을 뿐인걸요?
           </p>
           <p class="card-text fs-6 mb-4">꼭 필요한 내용만 전달!<br>지루하지 않게 끝까지 몰입 가능!</p>
-          <a href="../main/product/product_shop_details_shorts.php" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
-              <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-              <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
-            </svg>
-            <span class="fw-medium mc-gray3">객체 지향 프로그래밍 이해하기</span>
-            <span class="card-time">01:00</span>
+          <a href="/keepcoding/main/product/product_shop_details.php?pid=54" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+            <div class="d-flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+              </svg>
+              <span class="fw-medium mc-gray3">1분 CSS - 선택자 게임</span>
+            </div>
+            <span class="card-time">00:49</span>
           </a>
-          <a href="../main/product/product_shop_details_shorts.php" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
-              <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-              <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
-            </svg>
+          <a href="/keepcoding/main/product/product_shop_details.php?pid=50" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+            <div class="d-flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+              </svg>
+            </div>
             <span class="fw-medium mc-gray3">React Styled components</span>
             <span class="card-time">00:30</span>
           </a>
@@ -150,12 +154,14 @@
         </div>
       </div>
       <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
-        <div class="card-body big-pd d-flex flex-column justify-content-between">
-          <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">최적화된 학습 방법
-          </p>
-          <p class="card-text fs-6 mb-4">단조로운 영상 위주의 강의는 놉!<br>재밌고 능동적으로 배우기</p>
-          <img src="../main/img/Group576.svg" alt="computer img" class="computerImg align-self-end">
-        </div>
+        <a href="/keepcoding/main/shorts/shorts.php">
+          <div class="card-body big-pd d-flex flex-column justify-content-between">
+            <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">최적화된 학습 방법
+            </p>
+            <p class="card-text fs-6 mb-4">단조로운 영상 위주의 강의는 놉!<br>재밌고 능동적으로 배우기</p>
+            <img src="../main/img/Group576.svg" alt="computer img" class="computerImg align-self-end">
+          </div>
+        </a>
       </div>
       <div>
         <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
