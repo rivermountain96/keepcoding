@@ -101,8 +101,9 @@
             </div>
           </a>
             <div class="card-body z-3">
-              <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
-              <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
+              <p class="card-title text-center fw-semibold">
+              <a href="product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $item-> name;?></a>
+              </p>
               <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cateName2;?></a>
               <a href="#none" class="btn btn-primary fs-10 mt-2"><?php
                   if($item->price == 0){
