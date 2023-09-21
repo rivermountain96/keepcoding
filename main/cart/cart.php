@@ -146,15 +146,13 @@ while($urs = $ucresult -> fetch_object()){
         <h4 class="h6">쿠폰선택</h4>
         <select class="form-select form-select-lg mb-3 fs-6 p-3 shadow-sm" aria-label="Large select example" id="cartCoupon" name="cartCoupon">
           <option value="" disabled selected>쿠폰선택</option>
-
           <?php
-          foreach($ucArr as $uc){
+            if(isset($ucArr)){
+              foreach($ucArr as $uc){
           ?>
           <option value="<?= $uc -> ucid; ?>" data-price="<?= $uc-> coupon_price; ?>"><?= $uc -> coupon_name; ?></option>
-          <!-- <option value="2">쿠폰 Two</option>
-          <option value="3">쿠폰 Three</option> -->
           <?php
-          }
+            }}
           ?>
         </select>
       </div>

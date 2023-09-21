@@ -254,13 +254,15 @@
           <div class='card-body z-3'>
               <p class='card-title text-center fw-semibold'><a href="/keepcoding/main/product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $name ?></a></p>
               <a href='' class='btn btn-primary fs-10 mt-2'><?= $cateName2 ?></a>
-              <a href='' class='btn btn-primary fs-10 mt-2'><?php
+              <a href='' class='btn btn-primary fs-10 mt-2'>
+                <?php
                   if($item->price == 0){
                     echo "무료 강의";
                   }else{
-                    echo "₩ <span class=\"number\">$item->price;<span>";
+                    echo "₩ <span class=\"number\">$item->price;</span>";
                   }
-               ?></a>
+                ?>
+              </a>
           </div>
         </div>
         <?php

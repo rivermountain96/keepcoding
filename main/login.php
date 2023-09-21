@@ -7,6 +7,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
 
   <!-- 이강산 login 시작-->
 <section class="content1">
+  <h1 class="hidden">login</h1>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6 d-flex justify-content-center">
