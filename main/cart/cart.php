@@ -315,6 +315,7 @@ $('.karl-checkout-btn').click(function(e){
     
     // 장바구니에 담긴 상품이 없을 경우
     let databaseResult = <?php echo $cartresult->num_rows; ?>;
+    console.log(databaseResult);
     if (databaseResult === 0) {
     alert('장바구니에 담긴 강의가 없습니다');
     } else {

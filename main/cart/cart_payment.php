@@ -4,6 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
 $userid = $_POST['userid'];
 $ucid = $_POST['ucid'];
+$cartid = $_POST['cartid'];
 
 $csql = "DELETE FROM cart WHERE userid='{$userid}'";
 $cresult = $mysqli -> query($csql);
