@@ -96,17 +96,22 @@
                 </div>
                 <span class="modal-body-tt">장바구니에 강의가 정상적으로 담겼습니다</span>
               </div>
-                <div class="modal-footer d-flex justify-content-center">
-                  <button class="btn btn-secondary fw-semibold" data-bs-dismiss="modal" onclick="location.href='/keepcoding/main/cart/cart.php';">장바구니 이동</button>
-                  <button class="btn btn-primary fw-semibold" onclick="location.href='/keepcoding/main/product/product_shop_list.php';">강의 계속 탐색하기</button>
-                </div>
-                </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-secondary fw-semibold" data-bs-dismiss="modal" onclick="location.href='/keepcoding/main/cart/cart.php';">장바구니 이동</button>
+                <button class="btn btn-primary fw-semibold" onclick="location.href='/keepcoding/main/product/product_shop_list.php';">강의 계속 탐색하기</button>
               </div>
             </div>
+          </div>
+        </div>
+
+
 
       </div>
     </div>
 
+    
+
+  
     <div class="pshop_details_03">
       <?= $item->content ?>
     </div>
@@ -140,17 +145,18 @@
         }}
     ?>
   </section>
+  <?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
+  ?>
   <script>
     // 장바구니 담기
-      $('.insert').click(function(e){ 
+     $('.insert').click(function(e){ 
           e.preventDefault();
           let pid = '<?php echo $pid; ?>';
 
           let data = {
           pid : pid
         }
-
-        // console.log(data);
 
         $.ajax({
                   async:false,
@@ -163,7 +169,7 @@
                   },
                   success:function(data){
                       if(data.result == 'ok'){
-                          alert('장바구니에 추가되었습니다.');
+                          // alert('장바구니에 추가되었습니다.');
                       } else{
                           alert('장바구니 담기 실패');
                       }
@@ -172,7 +178,3 @@
 
       });
   </script>
-  <?php
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
-  ?>
-
