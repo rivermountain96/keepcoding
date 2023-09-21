@@ -25,18 +25,20 @@
   }
 
   if($level !== ''){
-    // $search_where .= " and level = '{$level}'";
     if(isset($level[0])){
       $level_where = " and level = '{$level[0]}'";
+      $levelPage = "&level%5B%5D={$level[0]}";
     }
-    
     if(isset($level[1])){
       $level_where = " and level = '{$level[0]}' OR level = '{$level[1]}'";
+      $levelPage = "&level%5B%5D={$level[0]}&level%5B%5D={$level[1]}";
     }
     if(isset($level[2])){
-      $level_where = " and level = '{$level[0]}' OR level = '{$level[1]}' OR level = '{$level[1]}'";
+      $level_where = " and level = '{$level[0]}' OR level = '{$level[1]}' OR level = '{$level[2]}'";
+      $levelPage = "&level%5B%5D={$level[0]}&level%5B%5D={$level[1]}&level%5B%5D={$level[2]}";
     }
-    
+  }else{
+    $levelPage = "&level={$level}";
   }
 
   if($search_keyword !== ''){
@@ -56,7 +58,7 @@
   $limit = " limit $startLimit, $endLimit";
   $query = $sql.$order.$limit;
 
-  var_dump($query);
+  // var_dump($query);
   $result = $mysqli -> query($query);
 
   while($rs = $result -> fetch_object()){
@@ -275,25 +277,25 @@
           <ul class="pagination justify-content-center align-items-center ">
           <?php
               if($pageNumber>1){                   
-                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=1\">Previous</a></li>";
+                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?category=$category&recommend=$recommend&levelPage&search_keyword=$search_keyword&pageNumber=1\">Previous</a></li>";
                   if($block_num > 1){
                       $prev = ($block_num - 2) * $block_ct + 1;
-                      echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">&lt;</a></li>";
+                      echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">&lt;</a></li>";
                   }
               }
               for($i=$block_start;$i<=$block_end;$i++){
                 if($pageNumber == $i){
-                    echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+                    echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
                 }else{
-                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
                 }
               }
               if($pageNumber<$total_page){
                 if($total_block > $block_num){
                     $next = $block_num * $block_ct + 1;
-                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
+                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
                 }
-                echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
+                echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
               }
             ?>
           </ul>
