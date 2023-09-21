@@ -30,28 +30,6 @@
       $ucArr[] = $urs;
   }
 
-  // 페이지네이션
-
-  $pagenationTarget = 'coupons';
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/pagenation.php';
-
-  $limit = " limit $startLimit, $endLimit";
-  $query = $sql.$order.$limit;
-
-  // var_dump($query);
-  $result = $mysqli -> query($query);
-
-  while($rs = $result -> fetch_object()){
-    $rsc[] = $rs;
-  }
-
-  $num_result = $mysqli -> query($sql);
-
-  if(isset($num_result)){
-    $num_rows = mysqli_num_rows($num_result);
-  }else{
-    $num_rows = 0;
-  }
 ?>
 
   <!-- myproduct_list 시작 -->
@@ -111,27 +89,39 @@
         <nav aria-label="Page navigation" class="col-11">
           <ul class="pagination justify-content-center align-items-center ">
           <?php
-              if($pageNumber>1){                   
-                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?category=$category&recommend=$recommend&levelPage&search_keyword=$search_keyword&pageNumber=1\">Previous</a></li>";
-                  if($block_num > 1){
-                      $prev = ($block_num - 2) * $block_ct + 1;
-                      echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">&lt;</a></li>";
+              // 쿠폰 개수 가져오기
+              $userCouponCountSql = "SELECT COUNT(*) as coupon_count FROM user_coupons WHERE userid = '{$userid}'";
+              $userCouponCountResult = $mysqli->query($userCouponCountSql);
+              $userCouponCountRow = $userCouponCountResult->fetch_assoc();
+              $userCouponCount = $userCouponCountRow['coupon_count'];
+
+              // 페이지당 보여줄 쿠폰 개수와 페이지 번호 설정
+              $pageCount = 10; // 페이지당 보여줄 쿠폰 개수
+              $pageNumber = $_GET['pageNumber'] ?? 1;
+
+              // 페이지 수 계산
+              $totalPages = ceil($userCouponCount / $pageCount);
+
+              // 페이지네이션 코드 수정
+              echo '<ul class="pagination justify-content-center align-items-center">';
+              if ($pageNumber > 1) {
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=1">처음</a></li>';
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . ($pageNumber - 1) . '">이전</a></li>';
+              }
+
+              for ($i = 1; $i <= $totalPages; $i++) {
+                  if ($i == $pageNumber) {
+                      echo '<li class="page-item active"><span class="page-link">' . $i . '</span></li>';
+                  } else {
+                      echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $i . '">' . $i . '</a></li>';
                   }
               }
-              for($i=$block_start;$i<=$block_end;$i++){
-                if($pageNumber == $i){
-                    echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
-                }else{
-                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
-                }
+
+              if ($pageNumber < $totalPages) {
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . ($pageNumber + 1) . '">다음</a></li>';
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $totalPages . '">마지막</a></li>';
               }
-              if($pageNumber<$total_page){
-                if($total_block > $block_num){
-                    $next = $block_num * $block_ct + 1;
-                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
-                }
-                echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
-              }
+              echo '</ul>';
             ?>
           </ul>
         </nav>

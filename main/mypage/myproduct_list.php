@@ -9,7 +9,7 @@
     $userid = '';
   }
 
-  $sql = "SELECT * FROM members WHERE 1=1";
+  $sql = "SELECT * FROM members WHERE 1=1" ;
   $result = $mysqli->query($sql);
 
   if ($result) {
@@ -19,28 +19,6 @@
     echo "쿼리 실행 오류: " . $mysqli->error;
   }
 
-    // 페이지네이션
-
-    $pagenationTarget = 'products';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/pagenation.php';
-  
-    $limit = " limit $startLimit, $endLimit";
-    $query = $sql.$order.$limit;
-  
-    // var_dump($query);
-    $result = $mysqli -> query($query);
-  
-    while($rs = $result -> fetch_object()){
-      $rsc[] = $rs;
-    }
-  
-    $num_result = $mysqli -> query($sql);
-  
-    if(isset($num_result)){
-      $num_rows = mysqli_num_rows($num_result);
-    }else{
-      $num_rows = 0;
-    }
 
 ?>
 
@@ -67,8 +45,13 @@
       <div>
         <!-- 사용자가 담은 강의 정보를 출력 -->
         <?php
-          // products 테이블에서 사용자가 담은 강의 정보를 가져오는 쿼리
-          $sql_products = "SELECT * FROM products WHERE 1=1";
+          // 페이지 설정
+          $pageCount = 5; // 페이지당 보여줄 상품 개수
+          $pageNumber = $_GET['pageNumber'] ?? 1; // 현재 페이지 번호
+
+          // products 테이블에서 데이터 가져오기
+          $startLimit = ($pageNumber - 1) * $pageCount; // 시작 레코드 인덱스
+          $sql_products = "SELECT * FROM products WHERE 1=1 LIMIT $startLimit, $pageCount";
           $result_products = $mysqli->query($sql_products);
 
           if ($result_products) {
@@ -78,11 +61,12 @@
               $productContent = $prs->content;
               $productIntro = $prs->product_intro;
               $productId = $prs->pid;
+              $productThumbnail = $prs->thumbnail;
         ?>
         <div class="cart">
           <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
             <div class="d-flex gap-4">
-              <img src="../img/example06.png" alt="cart img" class="shadow-sm">
+              <img src="<?=$productThumbnail ;?>" alt="cart img" class="shadow-sm">
               <div class="cart_info d-flex flex-column justify-content-start p-0 gap-2">
                 <div class="ccart_about d-flex flex-column gap-2">
                   <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php" class="mc-gray1"><?= $productName; ?></a></h3>
@@ -111,27 +95,36 @@
         <nav aria-label="Page navigation" class="col-11">
           <ul class="pagination justify-content-center align-items-center ">
           <?php
-              if($pageNumber>1){                   
-                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?category=$category&recommend=$recommend&levelPage&search_keyword=$search_keyword&pageNumber=1\">Previous</a></li>";
-                  if($block_num > 1){
-                      $prev = ($block_num - 2) * $block_ct + 1;
-                      echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">&lt;</a></li>";
+              // 전체 상품 개수 가져오기
+              $sql_total_count = "SELECT COUNT(*) as total_count FROM products WHERE 1=1";
+              $result_total_count = $mysqli->query($sql_total_count);
+              $total_count_row = $result_total_count->fetch_assoc();
+              $totalProducts = $total_count_row['total_count'];
+
+              // 전체 페이지 수 계산
+              $totalPages = ceil($totalProducts / $pageCount);
+
+              // 페이지네이션 코드
+              echo '<ul class="pagination justify-content-center align-items-center">';
+              if ($pageNumber > 1) {
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=1">Previous</a></li>';
+                  // echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . ($pageNumber - 1) . '">Previous</a></li>';
+              }
+
+              for ($i = 1; $i <= $totalPages; $i++) {
+                  if ($i == $pageNumber) {
+                      echo '<li class="page-item active"><span class="page-link">' . $i . '</span></li>';
+                  } else {
+                      echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $i . '">' . $i . '</a></li>';
                   }
               }
-              for($i=$block_start;$i<=$block_end;$i++){
-                if($pageNumber == $i){
-                    echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
-                }else{
-                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
-                }
+
+              if ($pageNumber < $totalPages) {
+                $nextPage = $pageNumber + 1;
+                echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $nextPage . '">Next</a></li>';
               }
-              if($pageNumber<$total_page){
-                if($total_block > $block_num){
-                    $next = $block_num * $block_ct + 1;
-                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
-                }
-                echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
-              }
+               echo '</ul>';
+
             ?>
           </ul>
         </nav>
