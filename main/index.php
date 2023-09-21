@@ -96,7 +96,6 @@
       <div class="d-flex justify-content-between gap-3">
       <?php
         foreach($rsc as $item){
-          
           // 중분류 카테고리명 추출
           $cate = $item->cate;
           $cateNum = explode('/', $cate);
@@ -113,32 +112,31 @@
           foreach($crs as $cateName){
             $cateName2 = $cateName->name;
           };
-        ?>
-        </div>
-        <!-- example01 -->
-        <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.php?pid=<?= $item->pid ?>">
-            <div class="card-img-top-wrap">
-              <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
-            </div>
-          </a>
-            <div class="card-body z-3">
-              <p class="card-title text-center fw-semibold">
-              <a href="product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $item-> name;?></a>
-              </p>
-              <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cateName2;?></a>
-              <a href="#none" class="btn btn-primary fs-10 mt-2"><?php
-                  if($item->price == 0){
-                    echo "무료 강의";
-                  }else{
-                    echo "₩ <span class=\"number\">$item->price;<span>";
-                  }
-               ?></a>
-            </div>
-        </div>
-        <?php
-          }
-        ?> 
+      ?>
+      <!-- example01 -->
+      <div class="card sec2 text-center" data-bs-theme="dark">
+        <a href="product/product_shop_details.php?pid=<?= $item->pid ?>">
+          <div class="card-img-top-wrap">
+            <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
+          </div>
+        </a>
+          <div class="card-body z-3">
+            <p class="card-title text-center fw-semibold">
+            <a href="product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $item-> name;?></a>
+            </p>
+            <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cateName2;?></a>
+            <a href="#none" class="btn btn-primary fs-10 mt-2"><?php
+                if($item->price == 0){
+                  echo "무료 강의";
+                }else{
+                  echo "₩ <span class=\"number\">$item->price;<span>";
+                }
+              ?></a>
+          </div>
+      </div>
+      <?php
+        }
+      ?> 
     </section>
     <!-- main_section02_starter 끝 -->
 
