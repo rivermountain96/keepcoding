@@ -56,20 +56,21 @@
 
           if ($result_products) {
             while ($prs = $result_products->fetch_object()) {
+              $productId = $prs->pid;
               $productName = $prs->name;
               $productCategory = $prs->cate;
               $productContent = $prs->content;
               $productIntro = $prs->product_intro;
-              $productId = $prs->pid;
               $productThumbnail = $prs->thumbnail;
         ?>
+
         <div class="cart">
           <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
             <div class="d-flex gap-4">
-              <img src="<?=$productThumbnail ;?>" alt="cart img" class="shadow-sm">
+              <img src="<?=$productThumbnail;?>" alt="cart img" class="shadow-sm">
               <div class="cart_info d-flex flex-column justify-content-start p-0 gap-2">
                 <div class="ccart_about d-flex flex-column gap-2">
-                  <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php" class="mc-gray1"><?= $productName; ?></a></h3>
+                  <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php?pid=<?= $productId; ?>" class="mc-gray1"><?= $productName; ?></a></h3>
                   <p class="mc-gray4">프론트엔드>HTML>초급</p>
                 </div>
                 <p class="d-flex"><?= $productIntro; ?></p>
