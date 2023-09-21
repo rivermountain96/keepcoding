@@ -14,7 +14,7 @@
 
   // 검색어가 입력되었을 경우 검색 조건 추가
   if (!empty($search_keyword)) {
-    $sql .= " AND (name LIKE '%$search_keyword%')";
+    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%' OR category LIKE '%$search_keyword%')";
   }
 
   $sql .= " LIMIT 0, 4";
@@ -32,7 +32,7 @@
       <h2 class="d-flex justify-content-center">킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
         <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
-          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="ex) React" value="<?= htmlspecialchars($search_keyword) ?>">
+          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="React" value="<?= htmlspecialchars($search_keyword) ?>">
           <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
               fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path
