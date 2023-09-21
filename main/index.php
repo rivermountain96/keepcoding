@@ -298,6 +298,19 @@
     </section>
     <!-- main_section05_etc 끝 -->
 
+    <!-- 이원 aisde -->
+    <aside class="topBtn">
+      <a href="#top" id="top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" fill="none">
+          <circle cx="35" cy="35" r="35" fill="white"/>
+          <line x1="23.8982" y1="26" x2="45.4367" y2="26" stroke="#343A40" stroke-width="2"/>
+          <line y1="-1" x2="19.0012" y2="-1" transform="matrix(0.654931 -0.755689 0.654931 0.755689 23 45.8457)" stroke="#343A40" stroke-width="2"/>
+          <path d="M33.8889 30.5918L46.3334 44.9508" stroke="#343A40" stroke-width="2"/>
+          </svg>
+      </a>
+    </aside>
+    <!-- 이원 aisde 끝 -->
+
     <!-- 이강산 DIALOG POPUP 시작 -->
   <dialog class="popup">
     <h2>KEEPCODING LMS 학습사이트(포트폴리오)</h2>
@@ -347,6 +360,24 @@
     </div>
   </dialog>
   <!-- 이강산 DIALOG POPUP 끝 -->
+
+  <script>
+    let goTop = $('#top');
+
+      $(window).on('scroll',function(){
+          let tct = $(this).scrollTop();
+          if(tct > 500){
+              goTop.addClass('active');
+          } else {
+              goTop.removeClass('active');
+          }
+      })
+
+      goTop.click(function(e){
+          e.preventDefault();
+          $('html,body').stop().animate({scrollTop:0},'easeInCubic');
+      });
+  </script>
 
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';

@@ -440,3 +440,40 @@ body a{
   border-radius: 10px;
 }
 /* sectoin_shortst 끝 */
+
+/* aside 시작 */
+#top{
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  left: 89%;
+  bottom: 12%;
+  z-index: 1000;
+  transition: opacity 0.5s;
+  visibility:hidden;
+  opacity: 0;
+}
+
+#top.active{
+transition: opacity 0.3s;
+visibility: visible;
+opacity: 1;
+}
+
+#top svg{
+transition: 0.2s;
+border-radius: 50%;
+box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+}
+
+#top:hover circle{
+  transition: 0.1s;
+  fill: var(--primary-color);
+}
+
+#top:hover line,
+#top:hover path{
+  transition: 0.1s;
+  stroke: var(--mc-white);
+}
+/* aside 끝 */
