@@ -45,12 +45,12 @@
           <li><a href="product/product_shop_list.php?search_keyword=html"><img width="50" height="50" src="../main/img/main_html.png"
                 alt="HTML">HTML</a></li>
           <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
-          <li><a href="product/product_shop_list.php?search_keyword=css ?>"><img width="50"
+          <li><a href="product/product_shop_list.php?search_keyword=css"><img width="50"
                 height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
           <li><a href="product/product_shop_list.php?search_keyword=javascript"><img width="50" height="50" src="../main/img/main_js.png"
                 alt="JS">JS</a></li>
           <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
-          <li><a href="product/product_shop_list.php?search_keyword=React ?>"><img width="50"
+          <li><a href="product/product_shop_list.php?search_keyword=React"><img width="50"
                 height="50" src="../main/img/main_react.png" alt="React">React</a></li>
           <li><a href="product/product_shop_list.php?search_keyword=java"><img width="50" height="50" src="../main/img/main_java.png"
                 alt="Java">Java</a></li>
