@@ -17,6 +17,18 @@
   } else {
     echo "쿼리 실행 오류: " . $mysqli->error;
   }
+
+  $sql2 = "SELECT uc.ucid, c.coupon_name, c.coupon_price
+  from user_coupons uc
+  join coupons c
+  on c.cid = uc.couponid
+  where c.status = 1 and uc.status = 1 and uc.duedate >= now() and uc.userid='{$userid}'";
+  // var_dump($sql2);
+
+  $ucresult = $mysqli -> query($sql2);
+  while($urs = $ucresult -> fetch_object()){
+      $ucArr[] = $urs;
+  }
 ?>
 
   <!-- myproduct_list 시작 -->
@@ -40,91 +52,36 @@
       </div>
 
       <div class="d-flex row">
+        <?php
+          if(isset($ucArr)){
+          foreach($ucArr as $uc){
 
+          $cartRegdate = $item -> regdate;
+          $cartDuedate = $item -> sale_end_date;
+          
+          if($cartDuedate == NULL){
+            $cartResult = '무제한';
+          } else {
+            $cartResult = $cartRegdate.' ~ '.$cartDuedate;
+          }           
+        ?>
         <div class="cart col-6">
           <div class="cart_card shadow-sm mcbg-white d-flex">
             <div class="d-flex gap-4 mycoupon_list">
               <img src="../../admin/img/coupon01.svg" alt="cart img" class="shadow-sm col">
               <div class="cart_info d-flex flex-column justify-content-between col-8">
-                  <h3 class="h6">회원가입 축하쿠폰</h3>
+                  <h3 class="h6"><?= $uc -> coupon_name; ?></h3>
                   <p class="mc-gray4">강의 수강 신청 시 사용 가능</p>
-                  <p>무제한</p>
-                <p class="">₩10,000 </p>
+                  <p><?= $cartResult ;?></p>
+                <p class="">₩<?= $uc-> coupon_price; ?></p>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="cart col-6">
-          <div class="cart_card shadow-sm mcbg-white d-flex">
-            <div class="d-flex gap-4 mycoupon_list">
-              <img src="../../admin/img/coupon03.svg" alt="cart img" class="shadow-sm col">
-              <div class="cart_info d-flex flex-column justify-content-between col-8">
-                  <h3 class="h6">할인쿠폰</h3>
-                  <p class="mc-gray4">10만원 이상 신청 시 사용 가능</p>
-                  <p>무제한</p>
-                <p class="">₩20,000 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cart col-6">
-          <div class="cart_card shadow-sm mcbg-white d-flex">
-            <div class="d-flex gap-4 mycoupon_list">
-              <img src="../../admin/img/coupon04.svg" alt="cart img" class="shadow-sm col">
-              <div class="cart_info d-flex flex-column justify-content-between col-8">
-                  <h3 class="h6">첫 강의 신청 할인 쿠폰</h3>
-                  <p class="mc-gray4">2만원 이상 신청 시 사용 가능</p>
-                  <p>무제한</p>
-                <p class="">₩5,000 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cart col-6">
-          <div class="cart_card shadow-sm mcbg-white d-flex">
-            <div class="d-flex gap-4 mycoupon_list">
-              <img src="../../admin/img/coupon01.svg" alt="cart img" class="shadow-sm col">
-              <div class="cart_info d-flex flex-column justify-content-between col-8">
-                  <h3 class="h6">회원가입 축하쿠폰</h3>
-                  <p class="mc-gray4">강의 수강 신청 시 사용 가능</p>
-                  <p>무제한</p>
-                <p class="">₩10,000 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cart col-6">
-          <div class="cart_card shadow-sm mcbg-white d-flex">
-            <div class="d-flex gap-4 mycoupon_list">
-              <img src="../../admin/img/coupon02.svg" alt="cart img" class="shadow-sm col">
-              <div class="cart_info d-flex flex-column justify-content-between col-8">
-                  <h3 class="h6">여름방학 할인 쿠폰</h3>
-                  <p class="mc-gray4">2만원 이상 신청 시 사용 가능</p>
-                  <p>무제한</p>
-                <p class="">₩10,000 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cart col-6">
-          <div class="cart_card shadow-sm mcbg-white d-flex">
-            <div class="d-flex gap-4 mycoupon_list">
-              <img src="../../admin/img/coupon04.svg" alt="cart img" class="shadow-sm col">
-              <div class="cart_info d-flex flex-column justify-content-between col-8">
-                  <h3 class="h6">첫 강의 신청 할인 쿠폰</h3>
-                  <p class="mc-gray4">강의 수강 신청 시 사용 가능</p>
-                  <p>무제한</p>
-                <p class="">₩5,000 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <?php
+            }
+          }
+        ?>
       </div>
 
       <div class="d-flex justify-content-center">

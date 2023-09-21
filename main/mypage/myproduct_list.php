@@ -54,14 +54,15 @@
               $productCategory = $prs->cate;
               $productContent = $prs->content;
               $productIntro = $prs->product_intro;
+              $productId = $prs->pid;
         ?>
         <div class="cart">
           <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
             <div class="d-flex gap-4 row">
-              <img src="../img/example06.png" alt="cart img" class="shadow-sm col">
+              <img src="<?=$prs->thumbnail ;?>" alt="cart img" class="shadow-sm col">
               <div class="cart_info d-flex flex-column justify-content-between col-8">
                 <div class="cart_about d-flex flex-column gap-1">
-                  <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php" class="mc-gray1"><?= $productName; ?></a></h3><br>
+                  <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php?pid=<?= $productId ;?>" class="mc-gray1"><?= $productName; ?></a></h3><br>
                   <p class="mc-gray4">프론트엔드>HTML>초급</p><br>
                 </div>
                 <p class="d-flex"><?= $productIntro; ?></p>
