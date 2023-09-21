@@ -140,38 +140,39 @@
         }}
     ?>
   </section>
+  <script>
+    // 장바구니 담기
+      $('.insert').click(function(e){ 
+          e.preventDefault();
+          let pid = '<?php echo $pid; ?>';
+
+          let data = {
+          pid : pid
+        }
+
+        // console.log(data);
+
+        $.ajax({
+                  async:false,
+                  type:'post',
+                  url:'product_cart_insert.php',
+                  data: data,
+                  dataType:'json',
+                  error:function(error){
+                      console.log(error);
+                  },
+                  success:function(data){
+                      if(data.result == 'ok'){
+                          alert('장바구니에 추가되었습니다.');
+                      } else{
+                          alert('장바구니 담기 실패');
+                      }
+                  }
+              });
+
+      });
+  </script>
   <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
   ?>
-<script>
-  // 장바구니 담기
-    $('.insert').click(function(e){ 
-        e.preventDefault();
-        let pid = '<?php echo $pid; ?>';
 
-        let data = {
-        pid : pid
-      }
-
-      // console.log(data);
-
-      $.ajax({
-                async:false,
-                type:'post',
-                url:'product_cart_insert.php',
-                data: data,
-                dataType:'json',
-                error:function(error){
-                    console.log(error);
-                },
-                success:function(data){
-                    if(data.result == 'ok'){
-                        alert('장바구니에 추가되었습니다.');
-                    } else{
-                        alert('장바구니 담기 실패');
-                    }
-                }
-            });
-
-    });
-</script>

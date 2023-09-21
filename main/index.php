@@ -133,10 +133,11 @@
                 }
               ?></a>
           </div>
+        </div>
+        <?php
+          }
+        ?>
       </div>
-      <?php
-        }
-      ?> 
     </section>
     <!-- main_section02_starter 끝 -->
 
@@ -395,8 +396,8 @@
       });
   </script>
 
+<script src="/keepcoding/main/js/test_data.js"></script>
+<script src="/keepcoding/main/js/test.js"></script>
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
 ?>
-  <script src="/keepcoding/main/js/test_data.js"></script>
-  <script src="/keepcoding/main/js/test.js"></script>
