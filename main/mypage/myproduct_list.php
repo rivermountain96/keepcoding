@@ -19,6 +19,29 @@
     echo "쿼리 실행 오류: " . $mysqli->error;
   }
 
+    // 페이지네이션
+
+    $pagenationTarget = 'products';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/pagenation.php';
+  
+    $limit = " limit $startLimit, $endLimit";
+    $query = $sql.$order.$limit;
+  
+    // var_dump($query);
+    $result = $mysqli -> query($query);
+  
+    while($rs = $result -> fetch_object()){
+      $rsc[] = $rs;
+    }
+  
+    $num_result = $mysqli -> query($sql);
+  
+    if(isset($num_result)){
+      $num_rows = mysqli_num_rows($num_result);
+    }else{
+      $num_rows = 0;
+    }
+
 ?>
 
   <!-- myproduct_list 시작 -->
@@ -85,13 +108,31 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#none">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#none">1</a></li>
-            <li class="page-item"><a class="page-link" href="#none">2</a></li>
-            <li class="page-item"><a class="page-link" href="#none">3</a></li>
-            <li class="page-item"><a class="page-link" href="#none">Next</a></li>
+        <nav aria-label="Page navigation" class="col-11">
+          <ul class="pagination justify-content-center align-items-center ">
+          <?php
+              if($pageNumber>1){                   
+                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?category=$category&recommend=$recommend&levelPage&search_keyword=$search_keyword&pageNumber=1\">Previous</a></li>";
+                  if($block_num > 1){
+                      $prev = ($block_num - 2) * $block_ct + 1;
+                      echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">&lt;</a></li>";
+                  }
+              }
+              for($i=$block_start;$i<=$block_end;$i++){
+                if($pageNumber == $i){
+                    echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+                }else{
+                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+                }
+              }
+              if($pageNumber<$total_page){
+                if($total_block > $block_num){
+                    $next = $block_num * $block_ct + 1;
+                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
+                }
+                echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend$levelPage&search_keyword=$search_keyword&pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
+              }
+            ?>
           </ul>
         </nav>
       </div>
