@@ -1,25 +1,36 @@
 <?php
+  session_start(); 
   $title = '마이페이지';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
 
-if(isset($_SESSION['UID'])){
-  $userid = $_SESSION['UID'];
-} else{
-  $userid = '';
-}
+  if(isset($_SESSION['UID'])){
+    $userid = $_SESSION['UID'];
+  } else{
+    $userid = '';
+  }
+
+  $sql = "SELECT * FROM members WHERE 1=1";
+  $result = $mysqli->query($sql);
+
+  if ($result) {
+    $rs = $result->fetch_object();
+    $useremail = $rs->useremail;
+  } else {
+    echo "쿼리 실행 오류: " . $mysqli->error;
+  }
 ?>
 
   <!-- myproduct_list 시작 -->
   <section class="container myproduct_list d-flex justify-content-between">
     <div class="myproduct_list_my col-3">
       <h2 class="h4 myproduct_list_id"><span><?= $userid;?></span>님</h2>
-      <p class="myproduct_list_main"><span><?= $useremail;?></span></p>
+      <p class="myproduct_list_main"><span></span><?= $useremail;?></p>
       <ul>
         <li class="h6"><a class="mc-gray1" href="/keepcoding/main/mypage/myproduct_list.php">나의 강의</a></li>
         <li class="h6"><a class="mc-gray1" href="/keepcoding/main/mypage/mycoupon_list.php">나의 쿠폰</a></li>
       </ul>
     </div> 
-
+    
     <div class="myproduct_list_list col-9">
       <h2 class="h4">나의 강의</h2>
       <div>
@@ -125,4 +136,3 @@ if(isset($_SESSION['UID'])){
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
 ?>
-

@@ -10,6 +10,7 @@ if(isset($_SESSION['UID'])){
     </script>";
   
 }
+
 ?>
 
   <!-- 이강산 signup 시작-->
