@@ -28,7 +28,7 @@
           <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_react.png" alt="React">React</a></li>
           <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png" alt="Java">Java</a></li>
           <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png" alt="jQuery">jQuery</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_spring.png" alt="Spring">Spring</a></li>
+          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_php.png" alt="php">Php</a></li>
           <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png" alt="Python">Python</a></li>
         </ul>
       </div>
