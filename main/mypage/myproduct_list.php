@@ -58,29 +58,19 @@
             $productName = $prs->name;
             $productCategory = $prs->cate;
             $productContent = $prs->content;
-            
+            $productIntro = $prs->product_intro;
             // 필요한 강의 정보를 여기에 출력하는 코드 작성
         ?>
         <div class="cart">
           <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
             <div class="d-flex gap-4 row">
-              <img src="<?= $prs->thumbnail;?>" alt="cart img" class="shadow-sm col">
+              <img src="../img/example06.png" alt="cart img" class="shadow-sm col">
               <div class="cart_info d-flex flex-column justify-content-between col-8">
                 <div class="cart_about d-flex flex-column gap-1">
                   <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php" class="mc-gray1"><?= $productName; ?></a></h3><br>
                   <p class="mc-gray4">프론트엔드>HTML>초급</p><br>
                 </div>
-                <p class="d-flex">
-                <?php
-                // $productContent의 길이가 20자 이상인 경우에만 생략 및 더 보기 링크 표시
-                if (strlen($productContent) > 20) {
-                    $shortContent = substr($productContent, 0, 20) . '...'; // 처음 20자만 표시하고 "..." 추가
-                    echo '<p class="d-flex">' . $shortContent . '</p>';
-                } else {
-                    echo '<p class="d-flex">' . $productContent . '</p>';
-                }
-                ?>
-                </p>
+                <p class="d-flex"><?= $productIntro; ?></p>
               </div>
             </div>
             <div class="d-flex flex-column align-items-end col-1">
@@ -95,7 +85,6 @@
         </div>
         <?php
             }
-            var_dump($prs);
         ?>
       </div>
 
