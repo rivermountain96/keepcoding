@@ -164,7 +164,7 @@
         </a>
       </div>
       <div>
-        <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
       </div>
     </div>
     </section>
