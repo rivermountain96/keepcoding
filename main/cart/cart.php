@@ -36,12 +36,16 @@ from user_coupons uc
 join coupons c
 on c.cid = uc.couponid
 where c.status = 1 and uc.status = 1 and uc.duedate >= now() and uc.userid='{$userid}'";
-// var_dump($sql2);
 
 $ucresult = $mysqli -> query($sql2);
 while($urs = $ucresult -> fetch_object()){
     $ucArr[] = $urs;
 }
+
+// 사용자의 cartid를 데이터베이스에서 조회합니다.
+$cartsql = "SELECT cartid FROM cart WHERE userid = '{$userid}'";
+$cartresult = $mysqli->query($cartsql);
+
 ?>
 
   <!-- cart_section 시작 -->
@@ -304,15 +308,22 @@ $('.cart_all_trash').click(function(e){
       $('.grandtotal').text(subtotal - discount);
     });
 
+
 // 결제하기 버튼 클릭 시
 $('.karl-checkout-btn').click(function(e){
-  e.preventDefault();
-  if(confirm('결제를 진행하시겠습니까?')){
+    e.preventDefault();
+    
+    // 장바구니에 담긴 상품이 없을 경우
+    let databaseResult = <?php echo $cartresult->num_rows; ?>;
+    if (databaseResult === 0) {
+    alert('장바구니에 담긴 강의가 없습니다');
+    } else {
+    if (confirm('결제를 진행하시겠습니까?')){
     let userid = '<?= $_SESSION['UID']; ?>';
 
     let data = {
       ucid : ucid,
-      userid : userid
+      userid : userid,
     }
 
     $.ajax({
@@ -334,9 +345,11 @@ $('.karl-checkout-btn').click(function(e){
             } 
         }
       });
-
-  }
+    }
+  } 
 });
+
+
 
 </script>
 
