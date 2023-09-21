@@ -294,7 +294,7 @@ $('.cart_all_trash').click(function(e){
 });
 
   // 쿠폰을 이용하여 할인 결제하기
-  let ucid;
+  let ucid = '';
     $('#cartCoupon').change(function(){
       let discount = Number($('#cartCoupon option:selected').attr('data-price'));
       let subtotal = Number($('.subtotal').text());
