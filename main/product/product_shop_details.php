@@ -85,6 +85,11 @@
     <div class="pshop_details_03">
       <?= $item->content ?>
     </div>
+
+    <div class="d-flex justify-content-end pshop_details_04">
+      <button class="btn btn-primary fs-6 h6" onclick="location.href='/keepcoding/main/product/product_shop_list.php';">강의탐색으로 돌아가기</button>
+    </div>
+
     <?php
         }else{ //숏강의라면
     ?>
@@ -105,7 +110,6 @@
             <p><?= $item -> sale_cnt ?></p>
           </div>
           <button class="btn btn-primary fs-6 h6" onclick="location.href='/keepcoding/main/product/product_shop_list.php';">강의탐색으로 돌아가기</button>
-          <!-- <button class="btn btn-lg btn-primary fs-6 h6 disabled">숏강의는 결제없이 바로 무료수강</button> -->
         </div>
     <?php
         }}
