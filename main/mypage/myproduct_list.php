@@ -19,9 +19,6 @@
     echo "쿼리 실행 오류: " . $mysqli->error;
   }
 
-  // products 테이블에서 사용자가 담은 강의 정보를 가져오는 쿼리
-  $sql_products = "SELECT * FROM products WHERE userid = '$userid'";
-  $result_products = $mysqli->query($sql_products);
 ?>
 
   <!-- myproduct_list 시작 -->
@@ -47,10 +44,23 @@
       <div>
         <!-- 사용자가 담은 강의 정보를 출력 -->
         <?php
-          while ($row = $result_products->fetch_object()) {
-            $productName = $row->name;
-            $productCategory = $row->cate;
-            $productContent = $row->content;
+          // products 테이블에서 사용자가 담은 강의 정보를 가져오는 쿼리
+          $sql_products = "SELECT * FROM products WHERE userid = '$userid'";
+          $result_products = $mysqli->query($sql_products);
+
+          if ($result_products) {
+            $prs = $result_products->fetch_object();
+          } else {
+            echo "쿼리 실행 오류: " . $mysqli->error;
+          }
+
+          while ($prs = $result_products->fetch_object()) {
+            $prsr[] = $prs;
+          }
+          foreach($prs as $pitem){
+            $productName = $pitem->name;
+            $productCategory = $pitem->cate;
+            $productContent = $pitem->content;
           // 필요한 강의 정보를 여기에 출력하는 코드 작성
         ?>
         <div class="cart">
@@ -59,12 +69,10 @@
               <img src="../img/example06.png" alt="cart img" class="shadow-sm col">
               <div class="cart_info d-flex flex-column justify-content-between col-8">
                 <div class="cart_about d-flex flex-column gap-1">
-                  <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php" class="mc-gray1">HTML - 기본문법</a></h3><br>
+                  <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php" class="mc-gray1"><?= $productName; ?></a></h3><br>
                   <p class="mc-gray4">프론트엔드>HTML>초급</p><br>
                 </div>
-                <p class="d-flex">본 수업은 HTML에 대한 심화된 내용을 다룹니다. 
-                  HTML의 기본문법과 HTML의 주요한 태그들에 대한 수업을 담고 있습니다.
-                  본 수업은 HTML에 대한 심화된 내용을 다룹니다. </p>
+                <p class="d-flex"><?= $productContent; ?></p>
               </div>
             </div>
             <div class="d-flex flex-column align-items-end col-1">
