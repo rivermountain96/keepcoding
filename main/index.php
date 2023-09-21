@@ -14,7 +14,7 @@
 
   // 검색어가 입력되었을 경우 검색 조건 추가
   if (!empty($search_keyword)) {
-    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%' OR category LIKE '%$search_keyword%')";
+    $sql .= " AND name LIKE '%$search_keyword%'";
   }
 
   $sql .= " LIMIT 0, 4";
