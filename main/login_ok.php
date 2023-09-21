@@ -3,13 +3,11 @@ session_start();
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
 if(isset($_SESSION['UID'])){
-
-    echo "<script>
-      alert('이미 로그인 하셨습니다.');
-      location.href = '/keepcoding/main/index.php';
-    </script>";
+  echo "<script>
+    alert('이미 로그인 하셨습니다.');
+    location.href = '/keepcoding/main/index.php';
+  </script>";
 }
-
   $userid = $_POST['userid'];
   $userpw = $_POST['userpw'];
   $passwd = hash('sha512',$userpw); //암호를 sha512 알고리즘이용 암호화
