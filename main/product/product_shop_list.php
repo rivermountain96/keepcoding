@@ -9,6 +9,8 @@
   $recommend = $_GET['recommend'] ?? ''; //받아올값
   $level = $_GET['level'] ?? ''; //받아올값
 
+  $level_where = '';
+
   // 검색
   $search_keyword = $_GET['search_keyword'] ?? ''; //받아올값
 
@@ -23,16 +25,27 @@
   }
 
   if($level !== ''){
-    $search_where .= " and level = '{$level}'";
+    // $search_where .= " and level = '{$level}'";
+    if(isset($level[0])){
+      $level_where = " and level = '{$level[0]}'";
+    }
+    
+    if(isset($level[1])){
+      $level_where = " and level = '{$level[0]}' OR level = '{$level[1]}'";
+    }
+    if(isset($level[2])){
+      $level_where = " and level = '{$level[0]}' OR level = '{$level[1]}' OR level = '{$level[1]}'";
+    }
+    
   }
 
   if($search_keyword !== ''){
-    $search_where .= " and (name like '%{$search_keyword}%' or product_intro like '%{$search_keyword}%' or content like '%{$search_keyword}%')";
+    $search_where .= " and (name like '%{$search_keyword}%')";
   }
 
   $sql = "SELECT * FROM products WHERE 1=1";
 
-  $sql .= $search_where;
+  $sql .= $search_where.$level_where;
   $order = ' order by pid desc'; //최신순 정렬
 
   // 페이지네이션
@@ -43,6 +56,7 @@
   $limit = " limit $startLimit, $endLimit";
   $query = $sql.$order.$limit;
 
+  var_dump($query);
   $result = $mysqli -> query($query);
 
   while($rs = $result -> fetch_object()){
@@ -73,25 +87,65 @@
           <div class="pshop_section01_category_wrap">
             <h3 class="h6">카테고리</h3>
             <div class="form-check">
+              <?php
+                if($category == 2){
+              ?>
+              <input class="form-check-input" type="radio" name="category" id="category01" value="2" checked>
+              <?php
+                }else{
+              ?>
               <input class="form-check-input" type="radio" name="category" id="category01" value="2">
+              <?php
+                }
+              ?>
               <label class="form-check-label" for="category01">
                 프론트엔드
               </label>
             </div>
             <div class="form-check">
+              <?php
+                if($category == 3){
+              ?>
+              <input class="form-check-input" type="radio" name="category" id="category02" value="3" checked>
+              <?php
+                }else{
+              ?>
               <input class="form-check-input" type="radio" name="category" id="category02" value="3">
+              <?php
+                }
+              ?>
               <label class="form-check-label" for="category02">
                 백엔드
               </label>
             </div>
             <div class="form-check">
+              <?php
+                if($category == 1){
+              ?>
+              <input class="form-check-input" type="radio" name="category" id="category03" value="1" checked>
+              <?php
+                }else{
+              ?>
               <input class="form-check-input" type="radio" name="category" id="category03" value="1">
+              <?php
+                }
+              ?>
               <label class="form-check-label" for="category03">
                 기초강의
               </label>
             </div>
             <div class="form-check">
+              <?php
+                if($category == 48){
+              ?>
+              <input class="form-check-input" type="radio" name="category" id="category04" value="48" checked>
+              <?php
+                }else{
+              ?>
               <input class="form-check-input" type="radio" name="category" id="category04" value="48">
+              <?php
+                }
+              ?>
               <label class="form-check-label" for="category04">
                 숏강의
               </label>
@@ -100,7 +154,17 @@
           <div class="pshop_section01_recommend">
             <h3 class="h6">추천</h3>
             <div class="form-check">
+              <?php
+                if($recommend == 1){
+              ?>
+              <input class="form-check-input" type="checkbox" value="1" id="recommend" name="recommend" checked>
+              <?php
+                }else{
+              ?>
               <input class="form-check-input" type="checkbox" value="1" id="recommend" name="recommend">
+              <?php
+                }
+              ?>
               <label class="form-check-label" for="recommend">
                 BEST 강의
               </label>
@@ -109,19 +173,19 @@
           <div class="pshop_section01_level">
             <h3 class="h6">난이도</h3>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="초급" id="level01" name="level">
+              <input class="form-check-input" type="checkbox" value="초급" id="level01" name="level[]" <?php if($level != ''){ if(in_array("초급",$level)){echo "checked";} }?>>
               <label class="form-check-label" for="level01">
                 초급
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="중급" id="level02" name="level">
+              <input class="form-check-input" type="checkbox" value="중급" id="level02" name="level[]" <?php if($level != ''){ if(in_array("중급",$level)){echo "checked";} }?>>
               <label class="form-check-label" for="level02">
                 중급
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="고급" id="level03" name="level">
+              <input class="form-check-input" type="checkbox" value="고급" id="level03" name="level[]" <?php if($level != ''){ if(in_array("고급",$level)){echo "checked";} }?>>
               <label class="form-check-label" for="level03">
                 고급
               </label>
@@ -138,7 +202,7 @@
       <h2 class="h6">총 <span><?= $num_rows ?></span> 개의 강의</h2>
       <div>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="제목 및 내용 검색하기" aria-label="Search" name="search_keyword">
+          <input class="form-control me-2" type="search" placeholder="제목 및 언어명으로 검색하기" aria-label="Search" name="search_keyword">
           <button class="btn btn-primary col-1" type="submit">검색</button>
         </form>
       </div>
