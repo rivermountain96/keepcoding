@@ -55,13 +55,11 @@
           }
 
           while ($prs = $result_products->fetch_object()) {
-            $prsr[] = $prs;
-          }
-          foreach($prs as $pitem){
-            $productName = $pitem->name;
-            $productCategory = $pitem->cate;
-            $productContent = $pitem->content;
-          // 필요한 강의 정보를 여기에 출력하는 코드 작성
+            $productName = $prs->name;
+            $productCategory = $prs->cate;
+            $productContent = $prs->content;
+            var_dump($prs);
+            // 필요한 강의 정보를 여기에 출력하는 코드 작성
         ?>
         <div class="cart">
           <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
@@ -86,7 +84,7 @@
           </div>
         </div>
         <?php
-          }
+            }
         ?>
       </div>
 
