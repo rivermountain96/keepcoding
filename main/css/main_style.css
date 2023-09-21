@@ -434,42 +434,38 @@ body a{
 /* sectoin_shortst 끝 */
 
 /* aside 시작 */
-.topBtn{
-  position: fixed;
-  left: 88%;
-  bottom: 18%;
-  z-index: 1000;
-}
-
 #top{
-position: absolute;
-width: 65px;
-height: 65px;
-background: #363636;
-border: 1px solid #363636;
-border-radius: 50%;
-cursor: pointer;
-box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.30);
-transition: opacity 0.5s;
-visibility:hidden;
-opacity: 0;
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  left: 89%;
+  bottom: 12%;
+  z-index: 1000;
+  transition: opacity 0.5s;
+  visibility:hidden;
+  opacity: 0;
 }
 
 #top.active{
+transition: opacity 0.3s;
 visibility: visible;
 opacity: 1;
 }
 
 #top svg{
-position: absolute;
-left: 0;
-top: 13px;
-transform: translate(30px);
-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.10);
+transition: 0.2s;
+border-radius: 50%;
+box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
 }
 
-#top:hover{
-transition: 0.2s ease-out;
-background: var(--primary-color);
-border: 1px solid var(--primary-color);
+#top:hover circle{
+  transition: 0.1s;
+  fill: var(--primary-color);
 }
+
+#top:hover line,
+#top:hover path{
+  transition: 0.1s;
+  stroke: var(--mc-white);
+}
+/* aside 끝 */
