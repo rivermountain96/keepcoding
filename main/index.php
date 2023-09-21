@@ -94,25 +94,25 @@
       <p><span>HTML & CSS 완전 정복</span></p>
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
-      <?php
-        foreach($rsc as $item){
-          // 중분류 카테고리명 추출
-          $cate = $item->cate;
-          $cateNum = explode('/', $cate);
-          $middleNumber = $cateNum[1]; // 중간 숫자 추출
+        <?php
+          foreach($rsc as $item){
+            // 중분류 카테고리명 추출
+            $cate = $item->cate;
+            $cateNum = explode('/', $cate);
+            $middleNumber = $cateNum[1]; // 중간 숫자 추출
 
-          $catesql = "SELECT name FROM category WHERE cid=$middleNumber";
-          $cateresult = $mysqli->query($catesql);
+            $catesql = "SELECT name FROM category WHERE cid=$middleNumber";
+            $cateresult = $mysqli->query($catesql);
 
-          $crs = array();
+            $crs = array();
 
-          while($cr = $cateresult -> fetch_object()){
-            $crs[] = $cr;
-          }
-          foreach($crs as $cateName){
-            $cateName2 = $cateName->name;
-          };
-      ?>
+            while($cr = $cateresult -> fetch_object()){
+              $crs[] = $cr;
+            }
+            foreach($crs as $cateName){
+              $cateName2 = $cateName->name;
+            };
+        ?>
       <!-- example01 -->
       <div class="card sec2 text-center" data-bs-theme="dark">
         <a href="product/product_shop_details.php?pid=<?= $item->pid ?>">
