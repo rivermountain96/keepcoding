@@ -360,6 +360,9 @@ body a{
 .cart_section .cart, .cart_section_select h4{
   margin-bottom: var(--base-unit);
 }
+.cart_section_select{
+  margin-top: calc(var(--base-unit)*2);
+}
 .cart_trash:hover, .cart_all_trash:hover{
   text-decoration: underline;
   color: var(--mc-gray1);
@@ -376,7 +379,7 @@ body a{
   border-radius: 10px;
 }
 .cart_section_calc div{
-  margin: calc(var(--base-unit)*5) 0 calc(var(--base-unit)*8) ;
+  margin: calc(var(--base-unit)*2) 0 calc(var(--base-unit)*8) ;
   background-color: var(--mc-white);
   border-radius: 10px;
   padding: var(--base-unit);
