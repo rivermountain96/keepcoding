@@ -95,7 +95,7 @@
         ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.php">
+          <a href="product/product_shop_details.php?pid=<?= $item->pid ?>">
             <div class="card-img-top-wrap">
               <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
             </div>
@@ -164,7 +164,7 @@
         </a>
       </div>
       <div>
-        <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
       </div>
     </div>
     </section>
@@ -318,17 +318,18 @@
     <hr>
   
     <div class="work">
-      <p><span>팀원</span> : 정*원, 이*산, 이*서, 최*희</p>
-      <p><span>기획</span> : 이*산, 이*서</p>
+      <p><span>팀원</span> : 정*원, 박*용, 이*산, 이*서, 최*희</p>
+      <p><span>기획</span> : 공동 참여</p>
       <p><span>디자인</span> : 정*원, 최*희</p>
       <dl>
         <dt><span>- 퍼블리싱 구현 -</span></dt>
-        <dd><span>최*희</span> : 헤더/푸터/로그인/강의탐색/강의상세보기/강의상세보기(숏강의)/마이 페이지</dd>
+        <dd><span>최*희</span> : 메인(헤더|푸터)/강의탐색/강의상세보기/숏강의/마이페이지</dd>
+        <dd><span>이*산|정*원</span> : 로그인/회원가입</dd>
+        <dd><span>이*서</span> : common.css/테스트배너/테스트</dd>
         <dt><span>- 백엔드 구현 -</span></dt>
-        <dd><span>이*산</span> : 로그인/회원가입/메인 페이지(백엔드)</dd>
-        <dd><span>이*서</span> : 숏 테스트/강의탐색/강의상세보기</dd>
-        <dt><span>- 퍼블리싱, 백엔드 구현 -</span></dt>
-        <dd><span>정*원</span> : 메인 페이지(퍼블리싱)/장바구니/결제페이지/공지사항</dd>
+        <dd><span>정*원</span> : 장바구니/고투탑</dd>
+        <dd><span>이*산</span> : 로그인/로그아웃/회원가입/메인페이지</dd>
+        <dd><span>이*서</span> : 강의탐색/강의상세보기/테스트</dd>
       </dl>
     </div>
   

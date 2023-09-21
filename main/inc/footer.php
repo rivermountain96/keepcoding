@@ -34,7 +34,6 @@
   <script src="/keepcoding/main/js/jquery.number.min.js"></script>
   <script src="/keepcoding/main/js/active.js"></script>
   <script src="/keepcoding/main/js/main.js"></script>
-  <script src="/keepcoding/main/js/test_data.js"></script>
   <script src="/keepcoding/main/js/share.js"></script>
 </body>
 </html>
