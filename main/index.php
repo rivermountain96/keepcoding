@@ -14,7 +14,7 @@
 
   // 검색어가 입력되었을 경우 검색 조건 추가
   if (!empty($search_keyword)) {
-    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%')";
+    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%' OR category LIKE '%$search_keyword%')";
   }
 
   $sql .= " LIMIT 0, 4";
@@ -32,7 +32,7 @@
       <h2 class="d-flex justify-content-center">킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
         <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
-          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="프론트엔드" value="<?= htmlspecialchars($search_keyword) ?>">
+          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="React" value="<?= htmlspecialchars($search_keyword) ?>">
           <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
               fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path
@@ -130,19 +130,23 @@
           <br>어머! 숏강의 들었을 뿐인걸요?
           </p>
           <p class="card-text fs-6 mb-4">꼭 필요한 내용만 전달!<br>지루하지 않게 끝까지 몰입 가능!</p>
-          <a href="../main/product/product_shop_details_shorts.php" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
-              <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-              <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
-            </svg>
-            <span class="fw-medium mc-gray3">객체 지향 프로그래밍 이해하기</span>
-            <span class="card-time">01:00</span>
+          <a href="/keepcoding/main/product/product_shop_details.php?pid=54" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+            <div class="d-flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+              </svg>
+              <span class="fw-medium mc-gray3">1분 CSS - 선택자 게임</span>
+            </div>
+            <span class="card-time">00:49</span>
           </a>
-          <a href="../main/product/product_shop_details_shorts.php" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
-              <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-              <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
-            </svg>
+          <a href="/keepcoding/main/product/product_shop_details.php?pid=50" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+            <div class="d-flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+              </svg>
+            </div>
             <span class="fw-medium mc-gray3">React Styled components</span>
             <span class="card-time">00:30</span>
           </a>
@@ -150,12 +154,14 @@
         </div>
       </div>
       <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
-        <div class="card-body big-pd d-flex flex-column justify-content-between">
-          <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">최적화된 학습 방법
-          </p>
-          <p class="card-text fs-6 mb-4">단조로운 영상 위주의 강의는 놉!<br>재밌고 능동적으로 배우기</p>
-          <img src="../main/img/Group576.svg" alt="computer img" class="computerImg align-self-end">
-        </div>
+        <a href="/keepcoding/main/shorts/shorts.php">
+          <div class="card-body big-pd d-flex flex-column justify-content-between">
+            <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">최적화된 학습 방법
+            </p>
+            <p class="card-text fs-6 mb-4">단조로운 영상 위주의 강의는 놉!<br>재밌고 능동적으로 배우기</p>
+            <img src="../main/img/Group576.svg" alt="computer img" class="computerImg align-self-end">
+          </div>
+        </a>
       </div>
       <div>
         <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -306,21 +312,23 @@
       <p><span>특징</span> : html, css, jQuery (Bootstrap, jQuery Library)</p>
       <p>local: Windows, XAMPP(PHP, APACHE, MYSQL) | remote : PHP, LINUX, MYSQL</p>
       <p><span>기획</span> : <a href="#" target="_blank" class="figma"><span class="font_green">발표 자료</span></a>  |  <span>코드</span> : <a href="https://github.com/rivermountain96/keepcoding/tree/main" target="_blank" class="git"><span>깃허브</span><i class="fa-brands fa-github"></i></a></p>
-      <p><span>구현 완료 페이지</span> : <a href="http://keepcoding.dothome.co.kr/keepcoding/admin/login.php" target="_blank" class="dothome"><span>관리자 로그인 페이지</span></a></p>
+      <p><span>구현 완료 페이지</span> : <a href="http://keepcoding.dothome.co.kr/keepcoding/main/index.php" target="_blank" class="dothome"><span>Keep Coding 페이지</span></a></p>
     </div>
   
     <hr>
   
     <div class="work">
       <p><span>팀원</span> : 정*원, 이*산, 이*서, 최*희</p>
-      <p><span>기획</span> : 전원참가(공동)</p>
+      <p><span>기획</span> : 이*산, 이*서</p>
+      <p><span>디자인</span> : 정*원, 최*희</p>
       <dl>
         <dt><span>- 퍼블리싱 구현 -</span></dt>
-        <dd><span>최*희</span> : 강좌관리/쿠폰등록/공지사항/Q&amp;A게시판/강사&amp;수강생 관리</dd>
+        <dd><span>최*희</span> : 헤더/푸터/로그인/강의탐색/강의상세보기/강의상세보기(숏강의)/마이 페이지</dd>
         <dt><span>- 백엔드 구현 -</span></dt>
-        <dd><span>정*원</span> : 로그인/쿠폰등록/공지사항</dd>
-        <dd><span>이*산</span> : 강좌관리/강좌등록/Q&amp;A게시판</dd>
-        <dd><span>이*서</span> : 헤더/대시보드/카테고리관리/쿠폰관리</dd>
+        <dd><span>이*산</span> : 로그인/회원가입/메인 페이지(백엔드)</dd>
+        <dd><span>이*서</span> : 숏 테스트/강의탐색/강의상세보기</dd>
+        <dt><span>- 퍼블리싱, 백엔드 구현 -</span></dt>
+        <dd><span>정*원</span> : 메인 페이지(퍼블리싱)/장바구니/결제페이지/공지사항</dd>
       </dl>
     </div>
   
