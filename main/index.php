@@ -14,7 +14,7 @@
 
   // 검색어가 입력되었을 경우 검색 조건 추가
   if (!empty($search_keyword)) {
-    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%' OR category LIKE '%$search_keyword%')";
+    $sql .= " AND name LIKE '%$search_keyword%'";
   }
 
   $sql .= " LIMIT 0, 4";
@@ -32,7 +32,7 @@
       <h2 class="d-flex justify-content-center">킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
         <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
-          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="React" value="<?= htmlspecialchars($search_keyword) ?>">
+          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="ex) React" value="<?= htmlspecialchars($search_keyword) ?>">
           <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
               fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path
@@ -101,8 +101,9 @@
             </div>
           </a>
             <div class="card-body z-3">
-              <p class="card-title text-center fw-semibold"><?= $item-> name;?></p>
-              <p class="card-text text-center fs-12">코딩 기초 필수! 기본 문법 다지기!</p>
+              <p class="card-title text-center fw-semibold">
+              <a href="product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $item-> name;?></a>
+              </p>
               <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cateName2;?></a>
               <a href="#none" class="btn btn-primary fs-10 mt-2"><?php
                   if($item->price == 0){
@@ -298,6 +299,19 @@
     </section>
     <!-- main_section05_etc 끝 -->
 
+    <!-- 이원 aisde -->
+    <aside class="topBtn">
+      <a href="#top" id="top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" fill="none">
+          <circle cx="35" cy="35" r="35" fill="white"/>
+          <line x1="23.8982" y1="26" x2="45.4367" y2="26" stroke="#343A40" stroke-width="2"/>
+          <line y1="-1" x2="19.0012" y2="-1" transform="matrix(0.654931 -0.755689 0.654931 0.755689 23 45.8457)" stroke="#343A40" stroke-width="2"/>
+          <path d="M33.8889 30.5918L46.3334 44.9508" stroke="#343A40" stroke-width="2"/>
+          </svg>
+      </a>
+    </aside>
+    <!-- 이원 aisde 끝 -->
+
     <!-- 이강산 DIALOG POPUP 시작 -->
   <dialog class="popup">
     <h2>KEEPCODING LMS 학습사이트(포트폴리오)</h2>
@@ -347,6 +361,24 @@
     </div>
   </dialog>
   <!-- 이강산 DIALOG POPUP 끝 -->
+
+  <script>
+    let goTop = $('#top');
+
+      $(window).on('scroll',function(){
+          let tct = $(this).scrollTop();
+          if(tct > 500){
+              goTop.addClass('active');
+          } else {
+              goTop.removeClass('active');
+          }
+      })
+
+      goTop.click(function(e){
+          e.preventDefault();
+          $('html,body').stop().animate({scrollTop:0},'easeInCubic');
+      });
+  </script>
 
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
