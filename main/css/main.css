@@ -215,6 +215,81 @@ body{
   padding-top: 0;
 }
 
+/* 모달 스타일 */
+.modal_create {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+.modal_create > .modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 40%;
+  position: relative; /* 상대 위치 설정 */
+  box-shadow: 0 0 5px 0 var(--primary-color);
+  display: flex; 
+  /* flex-direction: column;  */
+  justify-content: center; 
+  align-items: center;
+}
+.modal_create > .modal-content h2{
+  padding: 10px 0 40px 0;
+}
+.modal_create h3 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-bottom: 10px;
+	color: var(--mc-black);
+}
+
+.modal_create hr {
+  margin: 8px 0;
+  border: none;
+  border-bottom: 1px solid var(--mc-gray4);
+}
+
+.modal_create span {
+  color: var(--mc-black);
+  font-weight: bold;
+}
+
+/* 닫기 버튼 스타일 */
+.close_modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#infoagreeLabel{
+  cursor: pointer;
+}
+#infoagreeLabel:hover{
+  text-decoration: underline;
+}
+#agreeButton{
+  margin-top: 50px;
+  width: 15%;
+  height: 35px;
+  background: var(--mc-white);
+  color: var(--primary-color);
+  border-radius: 5px;
+  border-color: var(--primary-color);
+}
+
+#agreeButton:hover{
+  background: var(--primary-color-hover);
+  color: var(--mc-white);
+}
 
 
 
