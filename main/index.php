@@ -318,15 +318,18 @@
     <hr>
   
     <div class="work">
-      <p><span>팀원</span> : 정*원, 이*산, 이*서, 최*희</p>
-      <p><span>기획</span> : 전원참가(공동)</p>
+      <p><span>팀원</span> : 정*원, 박*용, 이*산, 이*서, 최*희</p>
+      <p><span>기획</span> : 공동 참여</p>
+      <p><span>디자인</span> : 정*원, 최*희</p>
       <dl>
         <dt><span>- 퍼블리싱 구현 -</span></dt>
-        <dd><span>최*희</span> : 강좌관리/쿠폰등록/공지사항/Q&amp;A게시판/강사&amp;수강생 관리</dd>
+        <dd><span>최*희</span> : 메인(헤더|푸터)/강의탐색/강의상세보기/숏강의/마이페이지</dd>
+        <dd><span>이*산|정*원</span> : 로그인/회원가입</dd>
+        <dd><span>이*서</span> : common.css/테스트배너/테스트</dd>
         <dt><span>- 백엔드 구현 -</span></dt>
-        <dd><span>정*원</span> : 로그인/쿠폰등록/공지사항</dd>
-        <dd><span>이*산</span> : 강좌관리/강좌등록/Q&amp;A게시판</dd>
-        <dd><span>이*서</span> : 헤더/대시보드/카테고리관리/쿠폰관리</dd>
+        <dd><span>정*원</span> : 장바구니/고투탑</dd>
+        <dd><span>이*산</span> : 로그인/로그아웃/회원가입/메인페이지</dd>
+        <dd><span>이*서</span> : 강의탐색/강의상세보기/테스트</dd>
       </dl>
     </div>
   
