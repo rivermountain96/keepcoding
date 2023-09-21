@@ -42,23 +42,23 @@
       </div>
       <div class="d-flex flex-column">
         <ul class="main_middlec_icon d-flex justify-content-center gap-5">
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_html.png"
+          <li><a href="product/product_shop_list.php?search_keyword=html"><img width="50" height="50" src="../main/img/main_html.png"
                 alt="HTML">HTML</a></li>
           <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
-          <li><a href="product/product_shop_list.php?category=<?= urlencode($search_keyword) ?>"><img width="50"
+          <li><a href="product/product_shop_list.php?search_keyword=css ?>"><img width="50"
                 height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_js.png"
+          <li><a href="product/product_shop_list.php?search_keyword=javascript"><img width="50" height="50" src="../main/img/main_js.png"
                 alt="JS">JS</a></li>
           <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
-          <li><a href="product/product_shop_list.php?category=<?= urlencode($search_keyword) ?>"><img width="50"
+          <li><a href="product/product_shop_list.php?search_keyword=React ?>"><img width="50"
                 height="50" src="../main/img/main_react.png" alt="React">React</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png"
+          <li><a href="product/product_shop_list.php?search_keyword=java"><img width="50" height="50" src="../main/img/main_java.png"
                 alt="Java">Java</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png"
+          <li><a href="product/product_shop_list.php?search_keyword=jquery"><img width="50" height="50" src="../main/img/main_jquery.png"
                 alt="jQuery">jQuery</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_php.png"
+          <li><a href="product/product_shop_list.php?search_keyword=php"><img width="50" height="50" src="../main/img/main_php.png"
                 alt="Php">Php</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png"
+          <li><a href="product/product_shop_list.php?search_keyword=python"><img width="50" height="50" src="../main/img/main_python.png"
                 alt="Python">Python</a></li>
         </ul>
       </div>
@@ -67,7 +67,7 @@
 
     <!-- main_section02_starter 시작 -->
     <section class="container main_section02_starter">
-      <h2 class="h4 "><a href="product/product_shop_list.php">왕초보를 위한 기초강의 > </a></h2>
+      <h2 class="h4 "><a href="product/product_shop_list.php?category=1">왕초보를 위한 기초강의 > </a></h2>
       <p><span>HTML & CSS 완전 정복</span></p>
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
@@ -121,7 +121,7 @@
 
     <!-- main_section03_shorts 시작 -->
     <section class="container main_section03_shorts">
-      <h2 class="h4"><a href="product/product_shop_list.php">3분 이내로 배우는 숏강의 > </a></h2>
+      <h2 class="h4"><a href="product/product_shop_list.php?category=48">3분 이내로 배우는 숏강의 > </a></h2>
       <p><span>강의는 짧고 배움은 길게!</span></p>
     <div class="d-flex justify-content-between gap-3">
       <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
