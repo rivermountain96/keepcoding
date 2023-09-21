@@ -1,7 +1,15 @@
 <?php
-$title = '장바구니';
-include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
-// include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/admin_check.php';
+  $title = '장바구니';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
+  // include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/admin_check.php';
+
+// $where = '';
+
+// if(isset($_SESSION['UID'])){
+//     $where = " c.userid = '{$_SESSION['UID']}' ";
+// } else {
+//     $where = " c.userid = '' ";
+// }
 
 if(isset($_SESSION['UID'])){
   $userid = $_SESSION['UID'];
@@ -47,6 +55,11 @@ while($urs = $ucresult -> fetch_object()){
         </svg>
       </a></p>
     </div>
+
+    <!-- 장바구니에 담긴 상품이 없을 때 -->
+    <!-- <div class="noCart d-flex justify-content-center">
+      <h5 class="fw-normal">장바구니에 담긴 상품이 없습니다</h5>
+    <div> -->
 
     <div class="cart">
       <?php
@@ -153,8 +166,10 @@ while($urs = $ucresult -> fetch_object()){
 
     <div class="container d-flex justify-content-between g-0">
       <div class="cart_section_select col-4">
+        <h4 class="h6">쿠폰선택</h4>
         <select class="form-select form-select-lg mb-3 fs-6 p-3 shadow-sm" aria-label="Large select example" id="cartCoupon" name="cartCoupon">
           <option value="" disabled selected>쿠폰선택</option>
+
           <?php
           if(isset($ucArr)){
           foreach($ucArr as $uc){

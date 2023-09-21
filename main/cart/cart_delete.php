@@ -2,9 +2,9 @@
 session_start();
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
-$cartid = $_POST['cartid'];
+$userid = $_POST['userid'];
 
-$sql = "DELETE FROM cart WHERE cartid={$cartid}";
+$sql = "DELETE FROM cart WHERE userid='{$userid}'";
 $result = $mysqli->query($sql);
 
 if($result){
