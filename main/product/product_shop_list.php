@@ -211,25 +211,25 @@
           <ul class="pagination justify-content-center align-items-center ">
           <?php
               if($pageNumber>1){                   
-                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?category=$category&recommend=$recommend&level=$level&pageNumber=1\">Previous</a></li>";
+                  echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=1\">Previous</a></li>";
                   if($block_num > 1){
                       $prev = ($block_num - 2) * $block_ct + 1;
-                      echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&pageNumber=$prev\" class=\"page-link\">&lt;</a></li>";
+                      echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$prev\" class=\"page-link\">&lt;</a></li>";
                   }
               }
               for($i=$block_start;$i<=$block_end;$i++){
                 if($pageNumber == $i){
-                    echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?category=$category&recommend=$recommend&level=$level&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+                    echo "<li class=\"page-item active\" aria-current=\"page\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
                 }else{
-                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&pageNumber=$i\" class=\"page-link\">$i</a></li>";
+                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$i\" class=\"page-link\">$i</a></li>";
                 }
               }
               if($pageNumber<$total_page){
                 if($total_block > $block_num){
                     $next = $block_num * $block_ct + 1;
-                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
+                    echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$next\" class=\"page-link\">&gt;</a></li>";
                 }
-                echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
+                echo "<li class=\"page-item\"><a href=\"?category=$category&recommend=$recommend&level=$level&search_keyword=$search_keyword&pageNumber=$total_page\" class=\"page-link\">Next</a></li>";
               }
             ?>
           </ul>

@@ -37,6 +37,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   <!-- summernote 끝 -->
+  <!-- share 시작-->
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js" integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH" crossorigin="anonymous"></script>
+  <script>Kakao.init('b20a514da7c33c650ca0a06403dad918'); Kakao.isInitialized();</script>
+  <!-- share 끝-->
   <title><?php if(isset($title)){echo $title;}else{echo '홈';} ?> - KEEP CODING</title>
 </head>
 <body>

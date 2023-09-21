@@ -22,8 +22,18 @@
     </div>
   </footer>
   <!-- footer 끝  -->
+  <script>
+    $("#datepicker").datepicker();
+
+    $('#summernote').summernote({
+      placeholder: 'Hello keep coding',
+      tabsize: 2,
+      height: 100
+    });
+  </script>
   <script src="/keepcoding/main/js/jquery.number.min.js"></script>
   <script src="/keepcoding/main/js/active.js"></script>
   <script src="/keepcoding/main/js/main.js"></script>
+  <script src="/keepcoding/main/js/share.js"></script>
 </body>
 </html>

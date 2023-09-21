@@ -14,7 +14,7 @@
 
   // 검색어가 입력되었을 경우 검색 조건 추가
   if (!empty($search_keyword)) {
-    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%')";
+    $sql .= " AND (name LIKE '%$search_keyword%' OR description LIKE '%$search_keyword%' OR category LIKE '%$search_keyword%')";
   }
 
   $sql .= " LIMIT 0, 4";
@@ -32,7 +32,7 @@
       <h2 class="d-flex justify-content-center">킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
         <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
-          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="프론트엔드" value="<?= htmlspecialchars($search_keyword) ?>">
+          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="React" value="<?= htmlspecialchars($search_keyword) ?>">
           <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
               fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path
@@ -42,23 +42,23 @@
       </div>
       <div class="d-flex flex-column">
         <ul class="main_middlec_icon d-flex justify-content-center gap-5">
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_html.png"
+          <li><a href="product/product_shop_list.php?search_keyword=html"><img width="50" height="50" src="../main/img/main_html.png"
                 alt="HTML">HTML</a></li>
           <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
-          <li><a href="product/product_shop_list.php?category=<?= urlencode($search_keyword) ?>"><img width="50"
+          <li><a href="product/product_shop_list.php?search_keyword=css"><img width="50"
                 height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_js.png"
+          <li><a href="product/product_shop_list.php?search_keyword=javascript"><img width="50" height="50" src="../main/img/main_js.png"
                 alt="JS">JS</a></li>
           <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
-          <li><a href="product/product_shop_list.php?category=<?= urlencode($search_keyword) ?>"><img width="50"
+          <li><a href="product/product_shop_list.php?search_keyword=React"><img width="50"
                 height="50" src="../main/img/main_react.png" alt="React">React</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_java.png"
+          <li><a href="product/product_shop_list.php?search_keyword=java"><img width="50" height="50" src="../main/img/main_java.png"
                 alt="Java">Java</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_jquery.png"
+          <li><a href="product/product_shop_list.php?search_keyword=jquery"><img width="50" height="50" src="../main/img/main_jquery.png"
                 alt="jQuery">jQuery</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_spring.png"
-                alt="Spring">Spring</a></li>
-          <li><a href="product/product_shop_list.php"><img width="50" height="50" src="../main/img/main_python.png"
+          <li><a href="product/product_shop_list.php?search_keyword=php"><img width="50" height="50" src="../main/img/main_php.png"
+                alt="Php">Php</a></li>
+          <li><a href="product/product_shop_list.php?search_keyword=python"><img width="50" height="50" src="../main/img/main_python.png"
                 alt="Python">Python</a></li>
         </ul>
       </div>
@@ -67,7 +67,7 @@
 
     <!-- main_section02_starter 시작 -->
     <section class="container main_section02_starter">
-      <h2 class="h4 "><a href="product/product_shop_list.php">왕초보를 위한 기초강의 > </a></h2>
+      <h2 class="h4 "><a href="product/product_shop_list.php?category=1">왕초보를 위한 기초강의 > </a></h2>
       <p><span>HTML & CSS 완전 정복</span></p>
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
@@ -95,7 +95,7 @@
         ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.php">
+          <a href="product/product_shop_details.php?pid=<?= $item->pid ?>">
             <div class="card-img-top-wrap">
               <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
             </div>
@@ -121,7 +121,7 @@
 
     <!-- main_section03_shorts 시작 -->
     <section class="container main_section03_shorts">
-      <h2 class="h4"><a href="product/product_shop_list.php">3분 이내로 배우는 숏강의 > </a></h2>
+      <h2 class="h4"><a href="product/product_shop_list.php?category=48">3분 이내로 배우는 숏강의 > </a></h2>
       <p><span>강의는 짧고 배움은 길게!</span></p>
     <div class="d-flex justify-content-between gap-3">
       <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
@@ -130,19 +130,23 @@
           <br>어머! 숏강의 들었을 뿐인걸요?
           </p>
           <p class="card-text fs-6 mb-4">꼭 필요한 내용만 전달!<br>지루하지 않게 끝까지 몰입 가능!</p>
-          <a href="../main/product/product_shop_details_shorts.php" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
-              <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-              <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
-            </svg>
-            <span class="fw-medium mc-gray3">객체 지향 프로그래밍 이해하기</span>
-            <span class="card-time">01:00</span>
+          <a href="/keepcoding/main/product/product_shop_details.php?pid=54" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+            <div class="d-flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+              </svg>
+              <span class="fw-medium mc-gray3">1분 CSS - 선택자 게임</span>
+            </div>
+            <span class="card-time">00:49</span>
           </a>
-          <a href="../main/product/product_shop_details_shorts.php" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
-              <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-              <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
-            </svg>
+          <a href="/keepcoding/main/product/product_shop_details.php?pid=50" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+            <div class="d-flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+              </svg>
+            </div>
             <span class="fw-medium mc-gray3">React Styled components</span>
             <span class="card-time">00:30</span>
           </a>
@@ -150,15 +154,17 @@
         </div>
       </div>
       <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
-        <div class="card-body big-pd d-flex flex-column justify-content-between">
-          <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">최적화된 학습 방법
-          </p>
-          <p class="card-text fs-6 mb-4">단조로운 영상 위주의 강의는 놉!<br>재밌고 능동적으로 배우기</p>
-          <img src="../main/img/Group576.svg" alt="computer img" class="computerImg align-self-end">
-        </div>
+        <a href="/keepcoding/main/shorts/shorts.php">
+          <div class="card-body big-pd d-flex flex-column justify-content-between">
+            <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">최적화된 학습 방법
+            </p>
+            <p class="card-text fs-6 mb-4">단조로운 영상 위주의 강의는 놉!<br>재밌고 능동적으로 배우기</p>
+            <img src="../main/img/Group576.svg" alt="computer img" class="computerImg align-self-end">
+          </div>
+        </a>
       </div>
       <div>
-        <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
       </div>
     </div>
     </section>
@@ -236,7 +242,7 @@
                   <li>하는일4</li>
                   <li>하는일5</li>
                 </ul>
-                <a href="./common.php" class="btn btn-outline-light fs-14 mt-4">나에게 맞는 강의 찾으러 가기</a>
+                <button type="button" class="btn btn-outline-light fs-14 mt-4" onclick="js:kakaoShare()">친구에게 공유하기</button>
               </div>
         
             </div>
@@ -291,6 +297,56 @@
       </div>
     </section>
     <!-- main_section05_etc 끝 -->
+
+    <!-- 이강산 DIALOG POPUP 시작 -->
+  <dialog class="popup">
+    <h2>KEEPCODING LMS 학습사이트(포트폴리오)</h2>
+    <p>
+      <span>본 사이트는 구직용 포트폴리오 사이트입니다.</span>
+    </p>
+  
+    <hr>
+  
+    <div class="info">
+      <p><span>제작기간</span> : 2023. 09. 09 - 09. 25</p>
+      <p><span>특징</span> : html, css, jQuery (Bootstrap, jQuery Library)</p>
+      <p>local: Windows, XAMPP(PHP, APACHE, MYSQL) | remote : PHP, LINUX, MYSQL</p>
+      <p><span>기획</span> : <a href="#" target="_blank" class="figma"><span class="font_green">발표 자료</span></a>  |  <span>코드</span> : <a href="https://github.com/rivermountain96/keepcoding/tree/main" target="_blank" class="git"><span>깃허브</span><i class="fa-brands fa-github"></i></a></p>
+      <p><span>구현 완료 페이지</span> : <a href="http://keepcoding.dothome.co.kr/keepcoding/main/index.php" target="_blank" class="dothome"><span>Keep Coding 페이지</span></a></p>
+    </div>
+  
+    <hr>
+  
+    <div class="work">
+      <p><span>팀원</span> : 정*원, 박*용, 이*산, 이*서, 최*희</p>
+      <p><span>기획</span> : 공동 참여</p>
+      <p><span>디자인</span> : 정*원, 최*희</p>
+      <dl>
+        <dt><span>- 퍼블리싱 구현 -</span></dt>
+        <dd><span>최*희</span> : 메인(헤더|푸터)/강의탐색/강의상세보기/숏강의/마이페이지</dd>
+        <dd><span>이*산|정*원</span> : 로그인/회원가입</dd>
+        <dd><span>이*서</span> : common.css/테스트배너/테스트</dd>
+        <dt><span>- 백엔드 구현 -</span></dt>
+        <dd><span>정*원</span> : 장바구니/고투탑</dd>
+        <dd><span>이*산</span> : 로그인/로그아웃/회원가입/메인페이지</dd>
+        <dd><span>이*서</span> : 강의탐색/강의상세보기/테스트</dd>
+      </dl>
+    </div>
+  
+    <hr>
+  
+    <div class="close_wrap d-flex justify-content-between">
+      <div class="checkbox">
+        <input type="checkbox" id="daycheck" class="hidden">
+        <label for="daycheck">
+          <i class="fa-solid fa-check"></i>
+          오늘 하루 안보기
+        </label>
+      </div>
+      <button type="button" id="close">닫기</button>
+    </div>
+  </dialog>
+  <!-- 이강산 DIALOG POPUP 끝 -->
 
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
