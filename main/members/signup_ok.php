@@ -1,5 +1,4 @@
 <?php
-$title =  '회원가입';
 require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/coupon_function.php';
 
@@ -21,7 +20,10 @@ if ($userpw !== $userpw_check) {
   // 회원가입 쿼리 실행
   $sql = "INSERT INTO members (userid,userpw,useremail)
     VALUES('{$userid}','{$userpw}','{$useremail}')";
-  $result = $mysqli -> query($sql) or die($mysqli->error);
+  // $result = $mysqli -> query($sql) or die($mysqli->error);
+
+  $result = $mysqli->query($sql) or die(mysqli_error($mysqli));
+
 
   if ($result) {
     user_coupon($mysqli, $userid, 13,'회원가입');

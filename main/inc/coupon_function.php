@@ -21,7 +21,7 @@ function user_coupon($mysqli, $uid, $num, $reason){
   $ucresult = $mysqli -> query($ucsql) or die($mysql->error);
 
   echo "<script>
-    alert('가입완료! '.$cname.'이 발행되었습니다.');
+    alert('가입완료! {$cname}이 발행되었습니다.');
     location.href= '/keepcoding/main/index.php';
   </script>";
 

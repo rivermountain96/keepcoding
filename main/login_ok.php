@@ -14,7 +14,7 @@ if(isset($_SESSION['UID'])){
   $userpw = $_POST['userpw'];
   $passwd = hash('sha512',$userpw); //암호를 sha512 알고리즘이용 암호화
   
-  $query = "select * from members where userid='{$userid}' and userpw='{$passwd}'"; 
+  $query = "SELECT * FROM members WHERE userid='{$userid}' AND userpw='{$passwd}'"; 
   $result = $mysqli->query($query);
   $rs = $result->fetch_object();
 
@@ -22,7 +22,7 @@ if(isset($_SESSION['UID'])){
 
     $_SESSION['UID'] = $rs->userid;
 
-    $sql = "UPDATE cart SET userid='{$userid}' where pid='{$pid}'";    
+    $sql = "UPDATE cart SET userid='{$userid}' WHERE ucid='{$ucid}'";  
     $result = $mysqli->query($sql);
     echo "<script>
       alert('$rs->userid 님 반갑습니다');
