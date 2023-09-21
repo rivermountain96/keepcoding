@@ -432,3 +432,44 @@ body a{
   border-radius: 10px;
 }
 /* sectoin_shortst 끝 */
+
+/* aside 시작 */
+.topBtn{
+  position: fixed;
+  left: 88%;
+  bottom: 18%;
+  z-index: 1000;
+}
+
+#top{
+position: absolute;
+width: 65px;
+height: 65px;
+background: #363636;
+border: 1px solid #363636;
+border-radius: 50%;
+cursor: pointer;
+box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.30);
+transition: opacity 0.5s;
+visibility:hidden;
+opacity: 0;
+}
+
+#top.active{
+visibility: visible;
+opacity: 1;
+}
+
+#top svg{
+position: absolute;
+left: 0;
+top: 13px;
+transform: translate(30px);
+box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.10);
+}
+
+#top:hover{
+transition: 0.2s ease-out;
+background: var(--primary-color);
+border: 1px solid var(--primary-color);
+}

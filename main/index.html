@@ -350,6 +350,21 @@
       </div>
     </section>
     <!-- main_section05_etc 끝 -->
+   
+      <!-- 이원 aisde -->
+  <aside class="topBtn">
+    <a href="#top" id="top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84" fill="none">
+        <g filter="url(#filter0_d_2055_1292)">
+          <circle cx="39" cy="39" r="35" fill="white"/>
+        </g>
+        <line x1="27.8982" y1="30" x2="49.4367" y2="30" stroke="#343A40" stroke-width="2"/>
+        <line y1="-1" x2="19.0012" y2="-1" transform="matrix(0.654931 -0.755689 0.654931 0.755689 27 49.8457)" stroke="#343A40" stroke-width="2"/>
+        <path d="M37.8889 34.5918L50.3334 48.9508" stroke="#343A40" stroke-width="2"/>
+      </svg>
+    </a>
+  </aside>
+  <!-- 이원 aisde 끝 -->
 
   <!-- footer 시작  -->
   <footer class="main_footer d-flex flex-column">
@@ -375,6 +390,27 @@
     </div>
   </footer>
   <!-- footer 끝  -->
+
+  <script>
+    /* aside - 정이원 */
+    let goTop = $('#top');
+
+      $(window).on('scroll',function(){
+          let tct = $(this).scrollTop();
+          if(tct > 500){
+              goTop.addClass('active');
+          } else {
+              goTop.removeClass('active');
+          }
+      })
+
+      goTop.click(function(e){
+          e.preventDefault();
+          $('html,body').stop().animate({scrollTop:0},'easeInCubic');
+      });
+    
+  </script>
+
   <script src="../main/js/jquery.number.min.js"></script>
   <script src="../main/js/active.js"></script>
   <script src="../main/js/main.js"></script>
