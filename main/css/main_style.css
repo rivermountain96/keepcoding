@@ -371,7 +371,8 @@ body a{
   margin-bottom: var(--base-unit);
 }
 .cart_card div img{
-  width: 200px;
+  width: 266px;
+  height: 160px;
   border-radius: 10px;
 }
 .cart_section_calc div{
@@ -407,6 +408,9 @@ body a{
 }
 .myproduct_list_list .h4{
   margin-bottom: calc(var(--base-unit)*2);
+}
+.myproduct_list_list .cart_trash{
+  width:50px
 }
 .myproduct_list_my ul li{
   background-color: var(--mc-white);
