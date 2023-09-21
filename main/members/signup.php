@@ -59,6 +59,7 @@ if(isset($_SESSION['UID'])){
     let userid = $('#userid').val();
     let useremail = $('#useremail').val();
     let infoAgreed = $('#infoagree').prop('checked'); // 개인정보 수집 및 이용 동의 체크 여부를 가져옵니다.
+    let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     // 입력란 중 하나라도 비어있으면 알림 메시지를 띄웁니다.
     if (userid === '' || userpw === '' || userpw_check === '' || useremail === '') {
@@ -71,6 +72,12 @@ if(isset($_SESSION['UID'])){
       return;
     }
 
+    if (!useremail.match(emailRegex)) {
+      alert("유효한 이메일 주소를 입력하세요.");
+      return; // 폼 전송을 중지합니다.
+    }
+
+    
     let data = {
       userid: userid,
       useremail: useremail

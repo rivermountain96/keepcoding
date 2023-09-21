@@ -29,6 +29,7 @@
   while($urs = $ucresult -> fetch_object()){
       $ucArr[] = $urs;
   }
+
 ?>
 
   <!-- myproduct_list 시작 -->
@@ -85,13 +86,43 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#none">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#none">1</a></li>
-            <li class="page-item"><a class="page-link" href="#none">2</a></li>
-            <li class="page-item"><a class="page-link" href="#none">3</a></li>
-            <li class="page-item"><a class="page-link" href="#none">Next</a></li>
+        <nav aria-label="Page navigation" class="col-11">
+          <ul class="pagination justify-content-center align-items-center ">
+          <?php
+              // 쿠폰 개수 가져오기
+              $userCouponCountSql = "SELECT COUNT(*) as coupon_count FROM user_coupons WHERE userid = '{$userid}'";
+              $userCouponCountResult = $mysqli->query($userCouponCountSql);
+              $userCouponCountRow = $userCouponCountResult->fetch_assoc();
+              $userCouponCount = $userCouponCountRow['coupon_count'];
+
+              // 페이지당 보여줄 쿠폰 개수와 페이지 번호 설정
+              $pageCount = 10; // 페이지당 보여줄 쿠폰 개수
+              $pageNumber = $_GET['pageNumber'] ?? 1;
+
+              // 페이지 수 계산
+              $totalPages = ceil($userCouponCount / $pageCount);
+
+              // 페이지네이션 코드 수정
+              echo '<ul class="pagination justify-content-center align-items-center">';
+              if ($pageNumber > 1) {
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=1">처음</a></li>';
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . ($pageNumber - 1) . '">이전</a></li>';
+              }
+
+              for ($i = 1; $i <= $totalPages; $i++) {
+                  if ($i == $pageNumber) {
+                      echo '<li class="page-item active"><span class="page-link">' . $i . '</span></li>';
+                  } else {
+                      echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $i . '">' . $i . '</a></li>';
+                  }
+              }
+
+              if ($pageNumber < $totalPages) {
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . ($pageNumber + 1) . '">다음</a></li>';
+                  echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $totalPages . '">마지막</a></li>';
+              }
+              echo '</ul>';
+            ?>
           </ul>
         </nav>
       </div>

@@ -1,7 +1,15 @@
 <?php
-$title = '장바구니';
-include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
-// include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/admin_check.php';
+  $title = '장바구니';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
+  // include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/admin_check.php';
+
+// $where = '';
+
+// if(isset($_SESSION['UID'])){
+//     $where = " c.userid = '{$_SESSION['UID']}' ";
+// } else {
+//     $where = " c.userid = '' ";
+// }
 
 if(isset($_SESSION['UID'])){
   $userid = $_SESSION['UID'];
@@ -28,12 +36,16 @@ from user_coupons uc
 join coupons c
 on c.cid = uc.couponid
 where c.status = 1 and uc.status = 1 and uc.duedate >= now() and uc.userid='{$userid}'";
-// var_dump($sql2);
 
 $ucresult = $mysqli -> query($sql2);
 while($urs = $ucresult -> fetch_object()){
     $ucArr[] = $urs;
 }
+
+// 사용자의 cartid를 데이터베이스에서 조회합니다.
+$cartsql = "SELECT cartid FROM cart WHERE userid = '{$userid}'";
+$cartresult = $mysqli->query($cartsql);
+
 ?>
 
   <!-- cart_section 시작 -->
@@ -47,6 +59,11 @@ while($urs = $ucresult -> fetch_object()){
         </svg>
       </a></p>
     </div>
+
+    <!-- 장바구니에 담긴 상품이 없을 때 -->
+    <!-- <div class="noCart d-flex justify-content-center">
+      <h5 class="fw-normal">장바구니에 담긴 상품이 없습니다</h5>
+    <div> -->
 
     <div class="cart">
       <?php
@@ -153,8 +170,10 @@ while($urs = $ucresult -> fetch_object()){
 
     <div class="container d-flex justify-content-between g-0">
       <div class="cart_section_select col-4">
+        <h4 class="h6">쿠폰선택</h4>
         <select class="form-select form-select-lg mb-3 fs-6 p-3 shadow-sm" aria-label="Large select example" id="cartCoupon" name="cartCoupon">
           <option value="" disabled selected>쿠폰선택</option>
+
           <?php
           if(isset($ucArr)){
           foreach($ucArr as $uc){
@@ -279,7 +298,7 @@ $('.cart_all_trash').click(function(e){
 });
 
   // 쿠폰을 이용하여 할인 결제하기
-  let ucid;
+  let ucid = '';
     $('#cartCoupon').change(function(){
       let discount = Number($('#cartCoupon option:selected').attr('data-price'));
       let subtotal = Number($('.subtotal').text());
@@ -289,15 +308,23 @@ $('.cart_all_trash').click(function(e){
       $('.grandtotal').text(subtotal - discount);
     });
 
+
 // 결제하기 버튼 클릭 시
 $('.karl-checkout-btn').click(function(e){
-  e.preventDefault();
-  if(confirm('결제를 진행하시겠습니까?')){
+    e.preventDefault();
+    
+    // 장바구니에 담긴 상품이 없을 경우
+    let databaseResult = <?php echo $cartresult->num_rows; ?>;
+    console.log(databaseResult);
+    if (databaseResult === 0) {
+    alert('장바구니에 담긴 강의가 없습니다');
+    } else {
+    if (confirm('결제를 진행하시겠습니까?')){
     let userid = '<?= $_SESSION['UID']; ?>';
 
     let data = {
       ucid : ucid,
-      userid : userid
+      userid : userid,
     }
 
     $.ajax({
@@ -319,9 +346,11 @@ $('.karl-checkout-btn').click(function(e){
             } 
         }
       });
-
-  }
+    }
+  } 
 });
+
+
 
 </script>
 
