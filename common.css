@@ -210,6 +210,10 @@
 
 hr{margin:0;}
 
+.hidden{
+  display: none;
+}
+
 /* component */
 
 .bd-callout {
