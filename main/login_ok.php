@@ -20,7 +20,7 @@ if(isset($_SESSION['UID'])){
 
     $_SESSION['UID'] = $rs->userid;
 
-    $sql = "UPDATE cart SET userid='{$userid}' where userid='{$userid}'";    
+    $sql = "UPDATE cart SET userid='{$userid}' WHERE userid='{$userid}'";  
     $result = $mysqli->query($sql);
     echo "<script>
       alert('$rs->userid 님 반갑습니다');
