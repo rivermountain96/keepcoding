@@ -95,7 +95,7 @@
         ?>
         <!-- example01 -->
         <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.php">
+          <a href="product/product_shop_details.php?pid=<?= $item->pid ?>">
             <div class="card-img-top-wrap">
               <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
             </div>
