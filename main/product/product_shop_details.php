@@ -78,7 +78,32 @@
             echo $echo;
           ?>
         </p>
-        <button class="insert btn btn-lg btn-primary fs-6 h6" data-pid="<?= $item->pid; ?>">장바구니 담기</button>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="insert btn btn-lg btn-primary fs-6 h6" data-pid="<?= $item->pid; ?>">장바구니 담기</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title fs-5" id="exampleModalLabel">장바구니 담기</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <div class="modal-svg d-flex justify-content-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M50 7.8125C50 7.3981 49.8354 7.00067 49.5424 6.70765C49.2493 6.41462 48.8519 6.25 48.4375 6.25H43.75C43.4015 6.2501 43.063 6.36672 42.7883 6.58133C42.5137 6.79593 42.3187 7.0962 42.2344 7.43437L40.9688 12.5H4.6875C4.45016 12.5001 4.21596 12.5542 4.00266 12.6583C3.78936 12.7624 3.60259 12.9137 3.4565 13.1007C3.31041 13.2878 3.20885 13.5057 3.15954 13.7378C3.11022 13.97 3.11444 14.2103 3.17188 14.4406L7.85938 33.1906C7.94372 33.5288 8.13871 33.8291 8.41334 34.0437C8.68797 34.2583 9.02647 34.3749 9.375 34.375H37.5C37.8485 34.3749 38.187 34.2583 38.4617 34.0437C38.7363 33.8291 38.9313 33.5288 39.0156 33.1906L44.9688 9.375H48.4375C48.8519 9.375 49.2493 9.21038 49.5424 8.91735C49.8354 8.62433 50 8.2269 50 7.8125ZM40.1875 15.625L38.625 21.875H34.375V15.625H40.1875ZM31.25 15.625V21.875H25V15.625H31.25ZM21.875 15.625V21.875H15.625V15.625H21.875ZM12.5 15.625V21.875H8.25L6.6875 15.625H12.5ZM9.03125 25H12.5V31.25H10.5938L9.03125 25ZM15.625 25H21.875V31.25H15.625V25ZM25 25H31.25V31.25H25V25ZM34.375 25H37.8438L36.2813 31.25H34.375V25ZM34.375 40.625C35.2038 40.625 35.9987 40.9542 36.5847 41.5403C37.1708 42.1263 37.5 42.9212 37.5 43.75C37.5 44.5788 37.1708 45.3737 36.5847 45.9597C35.9987 46.5458 35.2038 46.875 34.375 46.875C33.5462 46.875 32.7513 46.5458 32.1653 45.9597C31.5792 45.3737 31.25 44.5788 31.25 43.75C31.25 42.9212 31.5792 42.1263 32.1653 41.5403C32.7513 40.9542 33.5462 40.625 34.375 40.625ZM40.625 43.75C40.625 42.0924 39.9665 40.5027 38.7944 39.3306C37.6223 38.1585 36.0326 37.5 34.375 37.5C32.7174 37.5 31.1277 38.1585 29.9556 39.3306C28.7835 40.5027 28.125 42.0924 28.125 43.75C28.125 45.4076 28.7835 46.9973 29.9556 48.1694C31.1277 49.3415 32.7174 50 34.375 50C36.0326 50 37.6223 49.3415 38.7944 48.1694C39.9665 46.9973 40.625 45.4076 40.625 43.75ZM12.5 40.625C13.3288 40.625 14.1237 40.9542 14.7097 41.5403C15.2958 42.1263 15.625 42.9212 15.625 43.75C15.625 44.5788 15.2958 45.3737 14.7097 45.9597C14.1237 46.5458 13.3288 46.875 12.5 46.875C11.6712 46.875 10.8763 46.5458 10.2903 45.9597C9.70424 45.3737 9.375 44.5788 9.375 43.75C9.375 42.9212 9.70424 42.1263 10.2903 41.5403C10.8763 40.9542 11.6712 40.625 12.5 40.625ZM18.75 43.75C18.75 42.0924 18.0915 40.5027 16.9194 39.3306C15.7473 38.1585 14.1576 37.5 12.5 37.5C10.8424 37.5 9.25269 38.1585 8.08059 39.3306C6.90848 40.5027 6.25 42.0924 6.25 43.75C6.25 45.4076 6.90848 46.9973 8.08059 48.1694C9.25269 49.3415 10.8424 50 12.5 50C14.1576 50 15.7473 49.3415 16.9194 48.1694C18.0915 46.9973 18.75 45.4076 18.75 43.75Z" fill="#343A40"/>
+                  </svg>
+                </div>
+                <span class="modal-body-tt">장바구니에 강의가 정상적으로 담겼습니다</span>
+              </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button class="btn btn-secondary fw-semibold" data-bs-dismiss="modal" onclick="location.href='/keepcoding/main/cart/cart.php';">장바구니 이동</button>
+                  <button class="btn btn-primary fw-semibold" onclick="location.href='/keepcoding/main/product/product_shop_list.php';">강의 계속 탐색하기</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
       </div>
     </div>
 
@@ -115,12 +140,9 @@
         }}
     ?>
   </section>
-  <?php
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
-  ?>
   <script>
     // 장바구니 담기
-     $('.insert').click(function(e){ 
+      $('.insert').click(function(e){ 
           e.preventDefault();
           let pid = '<?php echo $pid; ?>';
 
@@ -150,3 +172,7 @@
 
       });
   </script>
+  <?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
+  ?>
+

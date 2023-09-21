@@ -45,21 +45,15 @@
         <!-- 사용자가 담은 강의 정보를 출력 -->
         <?php
           // products 테이블에서 사용자가 담은 강의 정보를 가져오는 쿼리
-          $sql_products = "SELECT * FROM products WHERE userid = '$userid'";
+          $sql_products = "SELECT * FROM products WHERE 1=1";
           $result_products = $mysqli->query($sql_products);
 
           if ($result_products) {
-            $prs = $result_products->fetch_object();
-          } else {
-            echo "쿼리 실행 오류: " . $mysqli->error;
-          }
-
-          while ($prs = $result_products->fetch_object()) {
-            $productName = $prs->name;
-            $productCategory = $prs->cate;
-            $productContent = $prs->content;
-            var_dump($prs);
-            // 필요한 강의 정보를 여기에 출력하는 코드 작성
+            while ($prs = $result_products->fetch_object()) {
+              $productName = $prs->name;
+              $productCategory = $prs->cate;
+              $productContent = $prs->content;
+              $productIntro = $prs->product_intro;
         ?>
         <div class="cart">
           <div class="cart_card shadow-sm mcbg-white w-100 d-flex justify-content-between">
@@ -70,7 +64,7 @@
                   <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php" class="mc-gray1"><?= $productName; ?></a></h3><br>
                   <p class="mc-gray4">프론트엔드>HTML>초급</p><br>
                 </div>
-                <p class="d-flex"><?= $productContent; ?></p>
+                <p class="d-flex"><?= $productIntro; ?></p>
               </div>
             </div>
             <div class="d-flex flex-column align-items-end col-1">
@@ -85,6 +79,7 @@
         </div>
         <?php
             }
+          } 
         ?>
       </div>
 

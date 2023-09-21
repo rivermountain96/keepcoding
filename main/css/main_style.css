@@ -488,3 +488,21 @@ box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
   stroke: var(--mc-white);
 }
 /* aside 끝 */
+
+/* cart 시작 */
+.noCart{
+  padding-bottom: var(--base-unit);
+}
+.noCart_tt {
+  margin-top: 12px;
+}
+.productlistBtn {
+  margin: var(--base-unit) 0;
+}
+/* cart 끝 */
+
+/* product_shop_details modal 시작 */
+.modal-footer{
+  margin-top: var(--base-unit);
+}
+/* product_shop_details modal 끝 */

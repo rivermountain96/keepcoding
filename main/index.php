@@ -24,8 +24,6 @@
     $rsc[] = $rs;
   }
 ?>
-
-
   <!-- section 시작 -->
     <!-- main_section01_search 시작 -->
     <section class="container main_section01_search">
@@ -33,33 +31,58 @@
       <div class="d-flex justify-content-center">
         <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
           <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="ex) React" value="<?= htmlspecialchars($search_keyword) ?>">
-          <button class="search_btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+          <button class="search_btn" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
               fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path
-                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg></button>
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </button>
         </form>
       </div>
       <div class="d-flex flex-column">
         <ul class="main_middlec_icon d-flex justify-content-center gap-5">
-          <li><a href="product/product_shop_list.php?search_keyword=html"><img width="50" height="50" src="../main/img/main_html.png"
-                alt="HTML">HTML</a></li>
+          <li>
+            <a href="product/product_shop_list.php?search_keyword=html">
+              <img width="50" height="50" src="../main/img/main_html.png" alt="HTML">HTML
+            </a>
+          </li>
           <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
-          <li><a href="product/product_shop_list.php?search_keyword=css"><img width="50"
-                height="50" src="../main/img/main_css.png" alt="CSS">CSS</a></li>
-          <li><a href="product/product_shop_list.php?search_keyword=javascript"><img width="50" height="50" src="../main/img/main_js.png"
-                alt="JS">JS</a></li>
+          <li>
+            <a href="product/product_shop_list.php?search_keyword=css">
+              <img width="50" height="50" src="../main/img/main_css.png" alt="CSS">CSS
+            </a>
+          </li>
+          <li>
+            <a href="product/product_shop_list.php?search_keyword=javascript">
+              <img width="50" height="50" src="../main/img/main_js.png" alt="JS">JS
+            </a>
+          </li>
           <!-- 중간 카테고리의 URL을 만들 때 검색어도 함께 전달 -->
-          <li><a href="product/product_shop_list.php?search_keyword=React"><img width="50"
-                height="50" src="../main/img/main_react.png" alt="React">React</a></li>
-          <li><a href="product/product_shop_list.php?search_keyword=java"><img width="50" height="50" src="../main/img/main_java.png"
-                alt="Java">Java</a></li>
-          <li><a href="product/product_shop_list.php?search_keyword=jquery"><img width="50" height="50" src="../main/img/main_jquery.png"
-                alt="jQuery">jQuery</a></li>
-          <li><a href="product/product_shop_list.php?search_keyword=php"><img width="50" height="50" src="../main/img/main_php.png"
-                alt="Php">Php</a></li>
-          <li><a href="product/product_shop_list.php?search_keyword=python"><img width="50" height="50" src="../main/img/main_python.png"
-                alt="Python">Python</a></li>
+          <li>
+            <a href="product/product_shop_list.php?search_keyword=React">
+              <img width="50" height="50" src="../main/img/main_react.png" alt="React">React
+            </a>
+          </li>
+          <li>
+            <a href="product/product_shop_list.php?search_keyword=java">
+              <img width="50" height="50" src="../main/img/main_java.png" alt="Java">Java
+            </a>
+          </li>
+          <li>
+            <a href="product/product_shop_list.php?search_keyword=jquery">
+              <img width="50" height="50" src="../main/img/main_jquery.png" alt="jQuery">jQuery
+            </a>
+          </li>
+          <li>
+            <a href="product/product_shop_list.php?search_keyword=php">
+              <img width="50" height="50" src="../main/img/main_php.png" alt="Php">
+              Php</a>
+          </li>
+          <li>
+            <a href="product/product_shop_list.php?search_keyword=python">
+              <img width="50" height="50" src="../main/img/main_python.png" alt="Python">Python
+            </a>
+          </li>
         </ul>
       </div>
     </section>
@@ -71,52 +94,50 @@
       <p><span>HTML & CSS 완전 정복</span></p>
       <!-- example 시작 -->
       <div class="d-flex justify-content-between gap-3">
-      <?php
-        foreach($rsc as $item){
-          
-          // 중분류 카테고리명 추출
-          $cate = $item->cate;
-          $cateNum = explode('/', $cate);
-          $middleNumber = $cateNum[1]; // 중간 숫자 추출
+        <?php
+          foreach($rsc as $item){
+            // 중분류 카테고리명 추출
+            $cate = $item->cate;
+            $cateNum = explode('/', $cate);
+            $middleNumber = $cateNum[1]; // 중간 숫자 추출
 
-          $catesql = "SELECT name FROM category WHERE cid=$middleNumber";
-          $cateresult = $mysqli->query($catesql);
+            $catesql = "SELECT name FROM category WHERE cid=$middleNumber";
+            $cateresult = $mysqli->query($catesql);
 
-          $crs = array();
+            $crs = array();
 
-          while($cr = $cateresult -> fetch_object()){
-            $crs[] = $cr;
-          }
-          foreach($crs as $cateName){
-            $cateName2 = $cateName->name;
-          };
-
-          
+            while($cr = $cateresult -> fetch_object()){
+              $crs[] = $cr;
+            }
+            foreach($crs as $cateName){
+              $cateName2 = $cateName->name;
+            };
         ?>
-        <!-- example01 -->
-        <div class="card sec2 text-center" data-bs-theme="dark">
-          <a href="product/product_shop_details.php?pid=<?= $item->pid ?>">
-            <div class="card-img-top-wrap">
-              <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
-            </div>
-          </a>
-            <div class="card-body z-3">
-              <p class="card-title text-center fw-semibold">
-              <a href="product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $item-> name;?></a>
-              </p>
-              <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cateName2;?></a>
-              <a href="#none" class="btn btn-primary fs-10 mt-2"><?php
-                  if($item->price == 0){
-                    echo "무료 강의";
-                  }else{
-                    echo "₩ <span class=\"number\">$item->price;<span>";
-                  }
-               ?></a>
-            </div>
+      <!-- example01 -->
+      <div class="card sec2 text-center" data-bs-theme="dark">
+        <a href="product/product_shop_details.php?pid=<?= $item->pid ?>">
+          <div class="card-img-top-wrap">
+            <img src="<?php echo $item->thumbnail;?>" class="card-img-top" alt="<?= $item-> name;?>">
+          </div>
+        </a>
+          <div class="card-body z-3">
+            <p class="card-title text-center fw-semibold">
+            <a href="product/product_shop_details.php?pid=<?= $item->pid ?>"><?= $item-> name;?></a>
+            </p>
+            <a href="#none" class="btn btn-primary fs-10 mt-2"><?= $cateName2;?></a>
+            <a href="#none" class="btn btn-primary fs-10 mt-2"><?php
+                if($item->price == 0){
+                  echo "무료 강의";
+                }else{
+                  echo "₩ <span class=\"number\">$item->price;<span>";
+                }
+              ?></a>
+          </div>
         </div>
         <?php
           }
-        ?> 
+        ?>
+      </div>
     </section>
     <!-- main_section02_starter 끝 -->
 
@@ -124,50 +145,46 @@
     <section class="container main_section03_shorts">
       <h2 class="h4"><a href="product/product_shop_list.php?category=48">3분 이내로 배우는 숏강의 > </a></h2>
       <p><span>강의는 짧고 배움은 길게!</span></p>
-    <div class="d-flex justify-content-between gap-3">
-      <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
-        <div class="card-body big-pd">
-          <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">가방끈이 기시네요?
-          <br>어머! 숏강의 들었을 뿐인걸요?
-          </p>
-          <p class="card-text fs-6 mb-4">꼭 필요한 내용만 전달!<br>지루하지 않게 끝까지 몰입 가능!</p>
-          <a href="/keepcoding/main/product/product_shop_details.php?pid=54" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
-            <div class="d-flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
-                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
-              </svg>
-              <span class="fw-medium mc-gray3">1분 CSS - 선택자 게임</span>
+      <div class="d-flex justify-content-between gap-3">
+        <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
+          <div class="card-body big-pd">
+            <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">가방끈이 기시네요?<br>어머! 숏강의 들었을 뿐인걸요?</p>
+            <p class="card-text fs-6 mb-4">꼭 필요한 내용만 전달!<br>지루하지 않게 끝까지 몰입 가능!</p>
+            <a href="/keepcoding/main/product/product_shop_details.php?pid=54" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+              <div class="d-flex gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                  <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+                </svg>
+                <span class="fw-medium mc-gray3">1분 CSS - 선택자 게임</span>
+              </div>
+              <span class="card-time">00:49</span>
+            </a>
+            <a href="/keepcoding/main/product/product_shop_details.php?pid=50" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
+              <div class="d-flex gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                  <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
+                </svg>
+              </div>
+              <span class="fw-medium mc-gray3">React Styled components</span>
+              <span class="card-time">00:30</span>
+            </a>
+          </div>
+        </div>
+        <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
+          <a href="/keepcoding/main/shorts/shorts.php">
+            <div class="card-body big-pd d-flex flex-column justify-content-between">
+              <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">최적화된 학습 방법</p>
+              <p class="card-text fs-6 mb-4">단조로운 영상 위주의 강의는 놉!<br>재밌고 능동적으로 배우기</p>
+              <img src="../main/img/Group576.svg" alt="computer img" class="computerImg align-self-end">
             </div>
-            <span class="card-time">00:49</span>
           </a>
-          <a href="/keepcoding/main/product/product_shop_details.php?pid=50" class="card-btn btn btn-light br-10 fs-12 pc2 w-100 big-pd d-flex align-items-center justify-content-between">
-            <div class="d-flex gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
-                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
-              </svg>
-            </div>
-            <span class="fw-medium mc-gray3">React Styled components</span>
-            <span class="card-time">00:30</span>
-          </a>
-          
+        </div>
+        <div>
+          <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
         </div>
       </div>
-      <div class="card sec3 mb-3" style="width: 19.5rem;" data-bs-theme="dark">
-        <a href="/keepcoding/main/shorts/shorts.php">
-          <div class="card-body big-pd d-flex flex-column justify-content-between">
-            <p class="card-title fs-5 fw-bold lh-sm nowrap mb-4">최적화된 학습 방법
-            </p>
-            <p class="card-text fs-6 mb-4">단조로운 영상 위주의 강의는 놉!<br>재밌고 능동적으로 배우기</p>
-            <img src="../main/img/Group576.svg" alt="computer img" class="computerImg align-self-end">
-          </div>
-        </a>
-      </div>
-      <div>
-        <iframe width="648" height="413" src="https://www.youtube.com/embed/4BUwV1DcHZA?mute=1" title="streamlit #shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
-      </div>
-    </div>
     </section>
     <!-- main_section03_shorts 끝 -->
 
@@ -189,14 +206,13 @@
         <div class="banner banner2 pcbg d-flex justify-content-between align-items-center">
           <div class="banner-text d-flex flex-column gap-2">
             <p class="btn btn-primary w-50 mb-2">
-                <a href="members/signup.php" class="text-white">회원가입 바로가기</a>
+              <a href="members/signup.php" class="text-white">회원가입 바로가기</a>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 18">
                 <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z"/>
               </svg>
             </p>
             <h4 class="fw-semibold">신규 가입한 모든 분들께 드리는 혜택</h4>
             <h3 class="fw-semibold">가입 즉시 발급되는<span class="fw-bold">1만원</span> 쿠폰!</h3>
-        <!-- </a> -->
           </div>
           <img src="../main/img/bannerimg2.svg" alt="bannerimg2" class="bannerimg2">
         </div>
@@ -380,8 +396,8 @@
       });
   </script>
 
+<script src="/keepcoding/main/js/test_data.js"></script>
+<script src="/keepcoding/main/js/test.js"></script>
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
 ?>
-<script src="/keepcoding/main/js/test_data.js"></script>
-<script src="/keepcoding/main/js/test.js"></script>
