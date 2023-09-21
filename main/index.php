@@ -236,7 +236,7 @@
                   <li>하는일4</li>
                   <li>하는일5</li>
                 </ul>
-                <a href="./common.php" class="btn btn-outline-light fs-14 mt-4">나에게 맞는 강의 찾으러 가기</a>
+                <button type="button" class="btn btn-outline-light fs-14 mt-4" onclick="js:kakaoShare()">친구에게 공유하기</button>
               </div>
         
             </div>
