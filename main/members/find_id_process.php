@@ -2,7 +2,6 @@
 session_start();
 include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
 
-$_SESSION['notFoundMessage'] = "아이디를 찾을 수 없습니다.";
 $userid = $_POST['userid'];
 $useremail = $_POST['useremail'];
 
@@ -16,7 +15,6 @@ if ($result) {
   $foundId = $row['userid'];
 
   // 아이디를 세션 변수에 저장
-  session_start();
   $_SESSION['foundId'] = $foundId;
 
   // 아이디를 find_id.php로 리다이렉트
@@ -25,7 +23,10 @@ if ($result) {
 
 } else {
   // 아이디 찾기 실패
-  echo "아이디를 찾을 수 없습니다.";
+  $_SESSION['notFoundMessage'] = "아이디를 찾을 수 없습니다."; // 실패 시 메시지 설정
+  header('Location: find_id.php');
+  exit();
+  
 }
 
 // MySQL 연결 종료

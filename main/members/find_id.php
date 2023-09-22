@@ -35,12 +35,12 @@ $notFoundMessage = $_SESSION['notFoundMessage'];
 <!-- 이강산 아이디찾기 끝-->
 
 <script>
-	let foundIdInput = $("#foundId");
-	let notFoundMessage = "<?php echo $notFoundMessage; ?>"; // PHP 변수를 JavaScript로 전달
+	// let foundIdInput = $("#foundId");
+	// let notFoundMessage = "<?php echo $notFoundMessage; ?>"; // PHP 변수를 JavaScript로 전달
 
-	if (notFoundMessage) {
-		foundIdInput.val(notFoundMessage); // notFoundMessage 값을 input 요소에 설정
-	}
+	// if (notFoundMessage === "아이디를 찾을 수 없습니다.") {
+  //       foundIdInput.val(notFoundMessage); // notFoundMessage 값을 input 요소에 설정
+  //   }
 </script>
 
 <?php
