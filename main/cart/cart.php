@@ -170,7 +170,6 @@ $cartresult = $mysqli->query($cartsql);
 
     <div class="container d-flex justify-content-between g-0">
       <div class="cart_section_select col-4">
-        <h4 class="h6">쿠폰선택</h4>
         <select class="form-select form-select-lg mb-3 fs-6 p-3 shadow-sm" aria-label="Large select example" id="cartCoupon" name="cartCoupon">
           <option value="" disabled selected>쿠폰선택</option>
 
