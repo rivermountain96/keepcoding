@@ -9,7 +9,7 @@
     $userid = '';
   }
 
-  $sql = "SELECT * FROM members WHERE 1=1" ;
+  $sql = "SELECT * FROM members WHERE userid = '$userid'" ;
   $result = $mysqli->query($sql);
 
   if ($result) {
@@ -18,7 +18,6 @@
   } else {
     echo "쿼리 실행 오류: " . $mysqli->error;
   }
-
 
 ?>
 
@@ -62,6 +61,38 @@
               $productContent = $prs->content;
               $productIntro = $prs->product_intro;
               $productThumbnail = $prs->thumbnail;
+
+              $type = $prs->level;
+              if($type != '숏강의'){ // 일반강의라면
+                $cate = $prs->cate;
+                $cateNum = explode('/', $cate);
+                $bigCate = $cateNum[0]; //대분류
+                $midCate = $cateNum[1]; // 중분류
+                $smCate = $prs->level; // 소분류
+
+                // $rsc3와 $rsc4 배열 초기화
+                $rsc3 = [];
+                $rsc4 = [];
+
+                $sql3 = "SELECT name FROM category WHERE cid=$bigCate";
+                $result3 = $mysqli->query($sql3);
+                while ($rs3 = $result3->fetch_object()) {
+                    $rsc3[] = $rs3;
+                }
+
+                foreach ($rsc3 as $item3) {
+                    $bcn = $item3->name;
+                }
+
+                $sql4 = "SELECT name FROM category WHERE cid=$midCate";
+                $result4 = $mysqli->query($sql4);
+                while ($rs4 = $result4->fetch_object()) {
+                    $rsc4[] = $rs4;
+                }
+
+                foreach ($rsc4 as $item4) {
+                    $mcn = $item4->name;
+                }
         ?>
 
         <div class="cart">
@@ -71,16 +102,18 @@
               <div class="cart_info d-flex flex-column justify-content-start p-0 gap-2">
                 <div class="ccart_about d-flex flex-column gap-2">
                   <h3 class="h5"><a href="/keepcoding/main/product/product_shop_details.php?pid=<?= $productId; ?>" class="mc-gray1"><?= $productName; ?></a></h3>
-                  <p class="mc-gray4">프론트엔드>HTML>초급</p>
+                  <p class="mc-gray4"><?= $bcn.'>'.$mcn.'>'.$smCate;?></p>
                 </div>
                 <p class="d-flex"><?= $productIntro; ?></p>
               </div>
+
             </div>
           </div>
         </div>
         <?php
             }
-          } 
+          }
+        }
         ?>
       </div>
 
@@ -116,7 +149,7 @@
                 $nextPage = $pageNumber + 1;
                 echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $nextPage . '">Next</a></li>';
               }
-               echo '</ul>';
+                echo '</ul>';
 
             ?>
           </ul>
