@@ -605,9 +605,10 @@ box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
 }
 .login_id input::placeholder,
 .login_pw input::placeholder,
-.login_email input::placeholder{
+.login_email input::placeholder,
+.login_signup input::placeholder{
   font-size: var(--font-size-16);
-  color: var(--mc-login);
+  color: var(--mc-gray4);
 }
 .login input[type="text"],
 .login input[type="password"],
@@ -783,11 +784,15 @@ box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
 #agreeButton:hover{
   background: var(--primary-color-hover);
 }
-
-/* find_id */
-.find_id_form{
-  padding:20px 0 300px 0;
+#find_id_process_form{
+  margin-top: calc(var(--base-unit)*2);
 }
-.find_id_form-btn{
-  margin:10px 0 0 0;
+#find_id_process_form label{
+  padding-left: 5px;
+}
+#find_id_process_form button{
+  margin-top: var(--base-unit);
+}
+#find_id_label{
+  padding-top: calc(var(--base-unit)*0.5);
 }
