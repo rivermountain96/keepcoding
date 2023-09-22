@@ -25,7 +25,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
   <!-- summernote 끝 -->
   <link href="/keepcoding/common.css" rel="stylesheet">
-  <link href="/keepcoding/main/css/main.css" rel="stylesheet">
   <link href="/keepcoding/main/css/test.css" rel="stylesheet">
   <link href="/keepcoding/main/css/main_style.css" rel="stylesheet">
 

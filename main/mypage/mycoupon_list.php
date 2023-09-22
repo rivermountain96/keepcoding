@@ -18,12 +18,11 @@
     echo "쿼리 실행 오류: " . $mysqli->error;
   }
 
-  $sql2 = "SELECT uc.ucid, c.coupon_name, c.coupon_price
-  from user_coupons uc
-  join coupons c
-  on c.cid = uc.couponid
-  where c.status = 1 and uc.status = 1 and uc.duedate >= now() and uc.userid='{$userid}'";
-  // var_dump($sql2);
+  $sql2 = "SELECT uc.ucid, c.status, c.coupon_name, c.coupon_price, c.coupon_image
+  FROM user_coupons uc
+  JOIN coupons c ON c.cid = uc.couponid
+  WHERE uc.status = 1 AND uc.duedate >= NOW() AND uc.userid='{$userid}'";
+
 
   $ucresult = $mysqli -> query($sql2);
   while($urs = $ucresult -> fetch_object()){
@@ -57,24 +56,33 @@
           if(isset($ucArr)){
           foreach($ucArr as $uc){
 
-          $cartRegdate = $item -> regdate;
-          $cartDuedate = $item -> sale_end_date;
+          $couponRegdate = $uc -> regdate;
+          $couponDuedate = $uc -> sale_end_date;
+          $couponStatus = $uc -> status;
+          $couponImg = $uc -> coupon_image;
+          $couponName = $uc -> coupon_name;
           
-          if($cartDuedate == NULL){
-            $cartResult = '무제한';
+          if($couponDuedate == NULL){
+            $couponResult = '무제한';
           } else {
-            $cartResult = $cartRegdate.' ~ '.$cartDuedate;
-          }           
+            $couponResult = $couponRegdate.' ~ '.$couponDuedate;
+          }
+          
+          if($couponStatus == 1){
+            $couponStatus = '사용 가능';
+          } else {
+            $couponStatus = '사용 불가';
+          }
         ?>
         <div class="cart col-6">
           <div class="cart_card shadow-sm mcbg-white d-flex">
             <div class="d-flex gap-4 mycoupon_list">
-              <img src="../../admin/img/coupon01.svg" alt="cart img" class="shadow-sm col">
+              <img src="<?= $couponImg;?>" alt="<?= $couponName;?>" class="shadow-sm col">
               <div class="cart_info d-flex flex-column justify-content-between col-8">
-                  <h3 class="h6"><?= $uc -> coupon_name; ?></h3>
-                  <p class="mc-gray4">강의 수강 신청 시 사용 가능</p>
-                  <p><?= $cartResult ;?></p>
-                <p class="">₩<?= $uc-> coupon_price; ?></p>
+                  <h3 class="h6"><?= $couponName; ?></h3>
+                  <p class="mc-gray4"><?= $couponStatus ;?></p>
+                  <p><?= $coupontResult ;?></p>
+                <p class="">₩<span class="number"><?= $uc-> coupon_price; ?></span></p>
               </div>
             </div>
           </div>

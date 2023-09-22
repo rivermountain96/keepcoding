@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/admin/inc/dbcon.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/coupon_function.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/members/coupon_function.php';
 
 $userid = $_POST['userid'];
 $userpw = $_POST['userpw'];
