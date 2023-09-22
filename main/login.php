@@ -19,7 +19,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
 
             <div class="login_pw form-group">
               <input type="password" name="userpw" id="userpw" class="form-control" placeholder="PASSWORD" required>
-              <a href="/keepcoding/main/members/find_id.php" class="fw-medium">Forgot password?</a>
+              <a href="/keepcoding/main/members/find_id.php" class="fw-medium">Forgot ID / Password?</a>
             </div>
 
             <div class="login_ir d-flex justify-content-end">
