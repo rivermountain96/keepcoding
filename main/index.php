@@ -30,7 +30,7 @@
       <h2 class="d-flex justify-content-center">킵코딩 강의를 <span>검색</span>하세요</h2>
       <div class="d-flex justify-content-center">
         <form action="product/product_shop_list.php" class="search_own" role="search" method="GET">
-          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="ex) React" value="<?= htmlspecialchars($search_keyword) ?>">
+          <input class="search_input" type="search" name="search_keyword" aria-label="Search" placeholder="ex&#41; React" value="<?= htmlspecialchars($search_keyword) ?>">
           <button class="search_btn" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
               fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
