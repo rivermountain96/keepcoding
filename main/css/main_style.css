@@ -439,9 +439,13 @@ body a{
 .myproduct_list div nav{
   margin: var(--base-unit) auto calc(var(--base-unit)*8) ;
 }
-.mycoupon_list img{
+.cart_card .mycoupon_list img{
   padding: 24px;
-  height: 110px;
+  width: 192px;
+  height: 125px;
+}
+.myproduct_list_list .cart_card{
+width: calc(var(--base-unit)*19.75);
 }
 /* mypage 끝 */
 /* sectoin_shortst 시작 */
