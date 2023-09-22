@@ -131,7 +131,7 @@
               $totalPages = ceil($totalProducts / $pageCount);
 
               // 페이지네이션 코드
-              echo '<ul class="pagination justify-content-center align-items-center">';
+              
               if ($pageNumber > 1) {
                   echo '<li class="page-item"><a class="page-link" href="?pageNumber=1">Previous</a></li>';
                   // echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . ($pageNumber - 1) . '">Previous</a></li>';
@@ -149,13 +149,12 @@
                 $nextPage = $pageNumber + 1;
                 echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $nextPage . '">Next</a></li>';
               }
-                echo '</ul>';
 
             ?>
           </ul>
         </nav>
       </div>
-
+    </div>
   </section>
   <!-- myproduct_list 끝 -->
 

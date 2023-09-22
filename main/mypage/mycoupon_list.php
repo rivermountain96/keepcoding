@@ -112,7 +112,6 @@
               $totalPages = ceil($userCouponCount / $pageCount);
 
               // 페이지네이션 코드 수정
-              echo '<ul class="pagination justify-content-center align-items-center">';
               if ($pageNumber > 1) {
                   echo '<li class="page-item"><a class="page-link" href="?pageNumber=1">처음</a></li>';
                   echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . ($pageNumber - 1) . '">이전</a></li>';
@@ -130,7 +129,6 @@
                   echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . ($pageNumber + 1) . '">다음</a></li>';
                   echo '<li class="page-item"><a class="page-link" href="?pageNumber=' . $totalPages . '">마지막</a></li>';
               }
-              echo '</ul>';
             ?>
           </ul>
         </nav>
