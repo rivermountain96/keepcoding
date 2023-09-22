@@ -18,7 +18,7 @@
     echo "쿼리 실행 오류: " . $mysqli->error;
   }
 
-  $sql2 = "SELECT uc.ucid, c.coupon_name, c.coupon_price
+  $sql2 = "SELECT uc.ucid, c.status, c.coupon_name, c.coupon_price
   from user_coupons uc
   join coupons c
   on c.cid = uc.couponid
@@ -57,14 +57,21 @@
           if(isset($ucArr)){
           foreach($ucArr as $uc){
 
-          $cartRegdate = $item -> regdate;
-          $cartDuedate = $item -> sale_end_date;
+          $cartRegdate = $uc -> regdate;
+          $cartDuedate = $uc -> sale_end_date;
+          $cartStatus = $uc -> status;
           
           if($cartDuedate == NULL){
             $cartResult = '무제한';
           } else {
             $cartResult = $cartRegdate.' ~ '.$cartDuedate;
-          }           
+          }
+          
+          if($cartStatus == 1){
+            $cartStatus = '사용 가능';
+          } else {
+            $cartStatus = '사용 불가';
+          }
         ?>
         <div class="cart col-6">
           <div class="cart_card shadow-sm mcbg-white d-flex">
@@ -72,9 +79,9 @@
               <img src="../../admin/img/coupon01.svg" alt="cart img" class="shadow-sm col">
               <div class="cart_info d-flex flex-column justify-content-between col-8">
                   <h3 class="h6"><?= $uc -> coupon_name; ?></h3>
-                  <p class="mc-gray4">강의 수강 신청 시 사용 가능</p>
+                  <p class="mc-gray4"><?= $cartStatus ;?></p>
                   <p><?= $cartResult ;?></p>
-                <p class="">₩<?= $uc-> coupon_price; ?></p>
+                <p class="">₩<span class="number"><?= $uc-> coupon_price; ?></span></p>
               </div>
             </div>
           </div>
