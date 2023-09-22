@@ -170,6 +170,7 @@ $cartresult = $mysqli->query($cartsql);
 
     <div class="container d-flex justify-content-between g-0">
       <div class="cart_section_select col-4">
+        <h4 class="h6">쿠폰선택</h4>
         <select class="form-select form-select-lg mb-3 fs-6 p-3 shadow-sm" aria-label="Large select example" id="cartCoupon" name="cartCoupon">
           <option value="" disabled selected>쿠폰선택</option>
 
@@ -296,36 +297,34 @@ $('.cart_all_trash').click(function(e){
           }
 });
 
-  // 쿠폰을 이용하여 할인 결제하기
-  let ucid = '';
-    $('#cartCoupon').change(function(){
-      let discount = Number($('#cartCoupon option:selected').attr('data-price'));
-      let subtotal = Number($('.subtotal').text());
-      ucid = Number($('#cartCoupon option:selected').val());
+// 쿠폰을 이용하여 할인 결제하기
+let ucid = '';
+  $('#cartCoupon').change(function(){
+    let discount = Number($('#cartCoupon option:selected').attr('data-price'));
+    let subtotal = Number($('.subtotal').text());
+    ucid = Number($('#cartCoupon option:selected').val());
 
-      $('.discount').text(discount);
-      $('.grandtotal').text(subtotal - discount);
-    });
+    $('.discount').text(discount);
+    $('.grandtotal').text(subtotal - discount);
+  });
 
 
 // 결제하기 버튼 클릭 시
 $('.karl-checkout-btn').click(function(e){
     e.preventDefault();
     
-    // 장바구니에 담긴 상품이 없을 경우
-    let databaseResult = <?php echo $cartresult->num_rows; ?>;
-    console.log(databaseResult);
-    if (databaseResult === 0) {
-    alert('장바구니에 담긴 강의가 없습니다');
-    } else {
+// 장바구니에 담긴 상품이 없을 경우
+let databaseResult = <?php echo $cartresult->num_rows; ?>;
+if (databaseResult === 0) {
+alert('장바구니에 담긴 강의가 없습니다');
+}else {
+  let userid = '<?= $_SESSION['UID']; ?>';
+  if(userid != ''){ //유저아이디가 비어있지 않다면
     if (confirm('결제를 진행하시겠습니까?')){
-    let userid = '<?= $_SESSION['UID']; ?>';
-
-    let data = {
-      ucid : ucid,
-      userid : userid,
-    }
-
+      let data = {
+        ucid : ucid,
+        userid : userid,
+      }
     $.ajax({
         async: false,
         type: 'post',
@@ -338,7 +337,7 @@ $('.karl-checkout-btn').click(function(e){
         success: function(data){
             if(data.result == 'ok'){
                 alert('결제 완료');
-                location.href = '/keepcoding/main/index.php';
+                location.href = '/keepcoding/main/login.php';
             } else {
                 alert('결제 실패');
                 location.reload();
@@ -346,7 +345,11 @@ $('.karl-checkout-btn').click(function(e){
         }
       });
     }
-  } 
+    
+  }else{ //유저아이디가 비어있다면
+    location.href = '/keepcoding/main/login.php';
+  }
+} 
 });
 
 
