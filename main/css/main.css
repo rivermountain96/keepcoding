@@ -234,10 +234,11 @@ body{
   width: 40%;
   position: relative; /* 상대 위치 설정 */
   box-shadow: 0 0 5px 0 var(--primary-color);
-  display: flex; 
+  display: flex;
+  padding: 40px;
   /* flex-direction: column;  */
-  justify-content: center; 
-  align-items: center;
+  /* justify-content: center;  */
+  /* align-items: center; */
 }
 .modal_create > .modal-content h2{
   padding: 10px 0 40px 0;
@@ -276,24 +277,16 @@ body{
 #infoagreeLabel:hover{
   text-decoration: underline;
 }
+
 #agreeButton{
-  margin-top: 50px;
+  margin-top: 40px;
   width: 15%;
   height: 35px;
-  background: var(--mc-white);
-  color: var(--primary-color);
   border-radius: 5px;
   border-color: var(--primary-color);
 }
-
 #agreeButton:hover{
   background: var(--primary-color-hover);
-  color: var(--mc-white);
 }
-
-
-
-
-
 
 /* 이강산 signup 끝 */
