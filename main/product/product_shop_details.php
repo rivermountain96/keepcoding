@@ -145,9 +145,6 @@
         }}
     ?>
   </section>
-  <?php
-  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
-  ?>
   <script>
     // 장바구니 담기
      $('.insert').click(function(e){ 
@@ -178,3 +175,6 @@
 
       });
   </script>
+  <?php
+  include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/footer.php';
+  ?>
