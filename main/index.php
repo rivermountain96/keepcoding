@@ -328,9 +328,9 @@
     </aside>
     <!-- 이원 aisde 끝 -->
 
-    <!-- 이강산 DIALOG POPUP 시작 -->
-  <dialog class="popup">
-    <h2>KEEPCODING LMS 학습사이트(포트폴리오)</h2>
+ <!-- 이강산 DIALOG POPUP 시작 -->
+ <dialog class="popup">
+    <h2>KEEPCODING LMS 학습사이트 (포트폴리오)</h2>
     <p>
       <span>본 사이트는 구직용 포트폴리오 사이트입니다.</span>
     </p>
@@ -353,13 +353,14 @@
       <p><span>디자인</span> : 정*원, 최*희</p>
       <dl>
         <dt><span>- 퍼블리싱 구현 -</span></dt>
-        <dd><span>최*희</span> : 메인(헤더|푸터)/강의탐색/강의상세보기/숏강의/마이페이지</dd>
-        <dd><span>이*산|정*원</span> : 로그인/회원가입</dd>
-        <dd><span>이*서</span> : common.css/테스트배너/테스트</dd>
+        <dd><span>정*원</span> : 로그인 / 회원가입 / 탑버튼</dd>
+        <dd><span>최*희</span> : 메인 / 헤더 | 푸터 / 강의탐색 / 강의상세보기 / 숏강의 / 마이페이지</dd>
+        <dd><span>이*산</span> : 로그인 / 회원가입</dd>
+        <dd><span>이*서</span> : common.css / 메인(테스트)</dd>
         <dt><span>- 백엔드 구현 -</span></dt>
-        <dd><span>정*원</span> : 장바구니/고투탑</dd>
-        <dd><span>이*산</span> : 로그인/로그아웃/회원가입/메인페이지</dd>
-        <dd><span>이*서</span> : 강의탐색/강의상세보기/테스트</dd>
+        <dd><span>정*원</span> : 장바구니</dd>
+        <dd><span>이*산</span> : 로그인 / 로그아웃 / 회원가입 / 메인 / 마이페이지</dd>
+        <dd><span>이*서</span> : 강의탐색 / 강의상세보기 / 메인(테스트)</dd>
       </dl>
     </div>
   
