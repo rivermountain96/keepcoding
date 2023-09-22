@@ -784,4 +784,10 @@ box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
   background: var(--primary-color-hover);
 }
 
-/* signup 끝 */
+/* find_id */
+.find_id_form{
+  padding:20px 0 300px 0;
+}
+.find_id_form-btn{
+  margin:10px 0 0 0;
+}
