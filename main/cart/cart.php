@@ -337,7 +337,7 @@ alert('장바구니에 담긴 강의가 없습니다');
         success: function(data){
             if(data.result == 'ok'){
                 alert('결제 완료');
-                location.href = '/keepcoding/main/login.php';
+                location.href = '/keepcoding/main/cart/cart.php';
             } else {
                 alert('결제 실패');
                 location.reload();
