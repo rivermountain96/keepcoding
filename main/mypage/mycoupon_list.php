@@ -1,4 +1,5 @@
 <?php
+  session_start(); 
   $title = '마이페이지';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
 
@@ -8,7 +9,7 @@
     $userid = '';
   }
 
-  $sql = "SELECT * FROM members WHERE 1=1";
+  $sql = "SELECT * FROM members WHERE userid = '$userid'";
   $result = $mysqli->query($sql);
 
   if ($result) {
@@ -51,7 +52,7 @@
         </form>
       </div>
 
-      <div class="d-flex row">
+      <div class="d-flex row justify-content-start column-gap-4">
         <?php
           if(isset($ucArr)){
           foreach($ucArr as $uc){
@@ -74,11 +75,11 @@
             $couponStatus = '사용 불가';
           }
         ?>
-        <div class="cart col-6">
+        <div class="cart col m-0 p-0">
           <div class="cart_card shadow-sm mcbg-white d-flex">
             <div class="d-flex gap-4 mycoupon_list">
               <img src="<?= $couponImg;?>" alt="<?= $couponName;?>" class="shadow-sm col">
-              <div class="cart_info d-flex flex-column justify-content-between col-8">
+              <div class="cart_info d-flex flex-column justify-content-between">
                   <h3 class="h6"><?= $couponName; ?></h3>
                   <p class="mc-gray4"><?= $couponStatus ;?></p>
                   <p><?= $coupontResult ;?></p>
@@ -87,6 +88,7 @@
             </div>
           </div>
         </div>
+        
         <?php
             }
           }
