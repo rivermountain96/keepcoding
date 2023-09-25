@@ -20,7 +20,7 @@
           <p class="h4">빠르게 습득 가능한 강의</p>
         </div>
         <div>
-          <img src="../img/shorts_why02.svg" alt="1분내외" class="shadow mb-4" >
+          <img src="../img/shorts_why02.svg" alt="최대 3분" class="shadow mb-4" >
           <p class="h4">짧고 재미있는 강의</p>
         </div>
         <div>
