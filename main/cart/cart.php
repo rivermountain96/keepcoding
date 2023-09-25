@@ -224,7 +224,10 @@ $cartresult = $mysqli->query($cartsql);
         $('.grandtotal').text(subtotal);
   }
   cartClac();
-
+  let subtotalT = $('.subtotal').text();
+  if(subtotalT = 0){
+    $('#cartCoupon').prop('disabled',true);
+  }
 // 장바구니 삭제
   $('.cart_trash').click(function(){
 

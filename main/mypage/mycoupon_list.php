@@ -1,4 +1,5 @@
 <?php
+  session_start(); 
   $title = '마이페이지';
   include_once $_SERVER['DOCUMENT_ROOT'].'/keepcoding/main/inc/header.php';
 
@@ -8,7 +9,7 @@
     $userid = '';
   }
 
-  $sql = "SELECT * FROM members WHERE 1=1";
+  $sql = "SELECT * FROM members WHERE userid = '$userid'";
   $result = $mysqli->query($sql);
 
   if ($result) {

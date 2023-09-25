@@ -25,7 +25,7 @@
   <section class="container myproduct_list d-flex justify-content-between">
     <div class="myproduct_list_my col-3">
       <h2 class="h4 myproduct_list_id"><span><?= $userid;?></span>님</h2>
-      <p class="myproduct_list_main"><span></span><?= $useremail;?></p>
+      <p class="myproduct_list_main"><span><?= $useremail;?></span></p>
       <ul>
         <li class="h6"><a class="mc-gray1" href="/keepcoding/main/mypage/myproduct_list.php">나의 강의</a></li>
         <li class="h6"><a class="mc-gray1" href="/keepcoding/main/mypage/mycoupon_list.php">나의 쿠폰</a></li>
