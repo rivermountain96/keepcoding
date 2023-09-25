@@ -82,7 +82,7 @@
               <div class="cart_info d-flex flex-column justify-content-between">
                   <h3 class="h6"><?= $couponName; ?></h3>
                   <p class="mc-gray4"><?= $couponStatus ;?></p>
-                  <p><?= $coupontResult ;?></p>
+                  <p><?= $couponResult ;?></p>
                 <p class="">₩<span class="number"><?= $uc-> coupon_price; ?></span></p>
               </div>
             </div>
