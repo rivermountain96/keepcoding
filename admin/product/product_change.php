@@ -69,7 +69,7 @@ $row = $result -> fetch_object();
 
     <div class="product_change_regdate col p-0 datepicker">
       <label class="pd10 h6" for="regdate">시작일</label>
-      <input type="text" id="reg_date" name="reg_date" class="form-control" value="<?php echo $row->reg_date;?>"></p>
+      <input type="text" id="regdate" name="regdate" class="form-control" value="<?php echo $row->regdate;?>"></p>
     </div>
 
     <div class="product_change_enddate col p-0 datepicker">
@@ -82,7 +82,7 @@ $row = $result -> fetch_object();
   <div class="row justify-content-start pd24 row-cols-8 gap-3 form-width-973">
       <div class="product_change_price col-4 p-0">
       <label class="pd10 h6" for="product_change_price">판매 금액</label>
-      <input class="form-control form-control-lg" name="price" id="product_change_price" type="number" value="" min="5000"
+      <input class="form-control form-control-lg" name="price" id="product_change_price" type="number" value="" min="0"
           max="100000" step="5000" aria-label="default input example">
       </div>
     <div class="product_status row col p-0">
@@ -142,7 +142,7 @@ $row = $result -> fetch_object();
       });
 
 
-      $("#reg_date").datepicker({
+      $("#regdate").datepicker({
         dateFormat: "yy.mm.dd",
         minDate: "today",
         maxDate: "+1Y",
@@ -168,10 +168,10 @@ $row = $result -> fetch_object();
       usedate.change(function () {
         let value = usedate.val();
         if (value == 2) {
-          $("#reg_date").datepicker("option", { disabled: true, dateFormat: "" });
+          $("#regdate").datepicker("option", { disabled: true, dateFormat: "" });
           $("#sale_end_date").datepicker("option", { disabled: true, dateFormat: "" });
         } else {
-          $("#reg_date").datepicker("option", { disabled: false, dateFormat: "yy.mm.dd" });
+          $("#regdate").datepicker("option", { disabled: false, dateFormat: "yy.mm.dd" });
           $("#sale_end_date").datepicker("option", { disabled: false, dateFormat: "yy.mm.dd" });
         }
       });

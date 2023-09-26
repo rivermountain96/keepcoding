@@ -1,0 +1,83 @@
+[
+  {
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example01.png",
+    "card_title": "CSS 수업 - flex 2 : basic",
+    "href02": "#",
+    "btn_cate": "HTML",
+    "href03": "#",
+    "btn_price": "￦1,000"
+  },
+  {    
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example02.png",
+    "card_title": "CSS 수업 - 상속",
+    "href02": "#",
+    "btn_cate": "CSS",
+    "href03": "#",
+    "btn_price": "￦5,000"
+  },
+  {    
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example03.png",
+    "card_title": "CSS 수업 - 타이포그래피 : text-⋯",
+    "href02": "#",
+    "btn_cate": "CSS",
+    "href03": "#",
+    "btn_price": "￦5,000"
+  },
+  {
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example04.png",
+    "card_title": "CSS 수업 - 선택자 공부팁",
+    "href02": "#",
+    "btn_cate": "HTML",
+    "href03": "#",
+    "btn_price": "￦1,000"
+  },
+  {    
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example05.png",
+    "card_title": "CSS 수업 - 선택자의종류 1 : 아이디⋯",
+    "href02": "#",
+    "btn_cate": "CSS",
+    "href03": "#",
+    "btn_price": "￦5,000"
+  },
+  {    
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example06.png",
+    "card_title": "CSS 수업 - CSS 소개",
+    "href02": "#",
+    "btn_cate": "CSS",
+    "href03": "#",
+    "btn_price": "￦5,000"
+  },
+  {
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example07.png",
+    "card_title": "HTML - form : hidden",
+    "href02": "#",
+    "btn_cate": "HTML",
+    "href03": "#",
+    "btn_price": "￦1,000"
+  },
+  {    
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example08.png",
+    "card_title": "HTML - form : label",
+    "href02": "#",
+    "btn_cate": "CSS",
+    "href03": "#",
+    "btn_price": "￦5,000"
+  },
+  {    
+    "href":"../product/product_shop_details.html",
+    "image": "../img/example09.png",
+    "card_title": "HTML - form 기본",
+    "href02": "#",
+    "btn_cate": "CSS",
+    "href03": "#",
+    "btn_price": "￦5,000"
+  }
+]

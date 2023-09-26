@@ -143,15 +143,15 @@
             <?php
               if($item->status > 0){
             ?>
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked disabled>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault<?= $item-> cid?>" checked disabled>
             <?php
               }else{
             ?>
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" disabled>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault<?= $item-> cid?>" disabled>
             <?php
               }
             ?>
-            <!-- <label class="form-check-label" for="flexSwitchCheckDefault"></label> -->
+            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
           </div>
         </td>
         <td class="align-middle">₩<span class="number"><?= $item -> coupon_price;?></span></td>
