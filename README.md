@@ -1,4 +1,4 @@
-# keepcoding 4차
+# keepcoding
 
 <br>
 <div align="center">
@@ -11,11 +11,9 @@
 https://github.com/rivermountain96/keepcoding
 </a>
 <br>
-<br>
-📆 2023. 09. 09. ~ 2023. 09. 25. 
-<br>
+📆 2023. 08. 21. ~ 2023. 09. 08. 
 
-**[Tema Jootopia 4th project : 회원 페이지](http://keepcoding.dothome.co.kr/keepcoding/main/index.php)**
+**Tema Jootopia 3th project**
 
 **🥾 [주토피아의 기획과 디자인](https://www.figma.com/file/uNjm1oLLgycPRqu5iTJ6eV/%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84?type=design&node-id=0-1&mode=design)**
 
@@ -27,76 +25,6 @@ https://github.com/rivermountain96/keepcoding
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>
 
 
-
-</div>
-
-## 🖥️ Screenshots
-
-<div align="center">
-  
-|메인|
-|:-:|
-|<img width=600 src="https://github.com/rivermountain96/keepcoding/assets/103012829/d8368623-2e28-4fa9-ae8b-304d90ec705a">|
-<br>
-
-|강좌|
-|:-:|
-|<img width=600 src="https://github.com/rivermountain96/keepcoding/assets/103012829/d0ca724d-2662-4e8b-b4aa-6d5291c07691">|
-<br>
-
-|회원가입|
-|:-:|
-|<img width=600 src="https://github.com/rivermountain96/keepcoding/assets/103012829/29d955c1-e98b-4d27-8429-3b663d48448c">|
-<br>
-
-|결제|
-|:-:|
-|<img width=600 src="https://github.com/rivermountain96/keepcoding/assets/103012829/c30531a4-bcd0-4632-a4b2-f697aea5fe4e">|
-<br>
-
-
-</div>
-<br>
-
-## 🧑🏻‍💻👩🏻‍💻 Members
-
-|Developer|Developer|Developer|Developer|
-|:-:|:-:|:-:|:-:|
-|<img src="https://github.com/rivermountain96/keepcoding/assets/103012829/f2f7001c-09b5-4cdf-b3e9-6a57b03762d7">|<img src="https://github.com/rivermountain96/keepcoding/assets/103012829/f0d3c887-3db2-4270-abbd-b202ba6edebf">|<img src="https://github.com/rivermountain96/keepcoding/assets/103012829/6e751129-b32c-47be-bbad-f4a047def6ed">|<img src="https://github.com/rivermountain96/keepcoding/assets/103012829/04f326c3-f5db-4ddf-bef4-285c93ac8e73">|
-[팀장 : 정이원](https://github.com/jeongewon)|[이은서](https://github.com/triallife)|[이강산](https://github.com/rivermountain96)|[최성희](https://github.com/sunchoi22)|
-
-<br>
-
-### Design and Implement
-|담당|담당자|파트|퍼센트|
-|:-:|:-:|:-:|:-:|
-|퍼블리싱|정이원|로그인/회원가입/탑버튼|100%|
-|퍼블리싱|최성희|메인(헤더,푸터)/강의탐색/강의상세보기/숏강의/마이페이지|100%|
-|퍼블리싱|이강산|로그인/회원가입|100%|
-|퍼블리싱|이은서|common.css/테스트배너/메인(테스트)|100%|
-|백엔드|정이원|장바구니|100%|
-|백엔드|이강산|로그인/로그아웃/회원가입/메인/마이페이지|100%|
-|백엔드|이은서|강의탐색/강의상세보기/메인(테스트)|100%|
-<br>
-<br>
-
-# keepcoding 3차
-
-<br>
-<div align="center">
-
-📆 2023. 08. 21. ~ 2023. 09. 08.
-<br>
-**[Tema Jootopia 3th project : 관리자 페이지](http://keepcoding.dothome.co.kr/keepcoding/admin/login.php)**
-
-**🥾 [주토피아의 기획과 디자인](https://www.figma.com/file/uNjm1oLLgycPRqu5iTJ6eV/%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84?type=design&node-id=0-1&mode=design)**
-
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jQuery&logoColor=white"/>
-<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white"/>
-<img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>
 
 </div>
 
@@ -123,6 +51,7 @@ https://github.com/rivermountain96/keepcoding
 |:-:|
 |<img width=600 src="https://github.com/rivermountain96/keepcoding/assets/103012829/ef485b93-1b5a-4cbd-b39e-0e76b9cacc00">|
 
+
 </div>
 <br>
 
@@ -135,27 +64,20 @@ https://github.com/rivermountain96/keepcoding
 
 <br>
 
-### Design and Implement
-|담당|담당자|파트|퍼센트|
-|:-:|:-:|:-:|:-:|
-|퍼블리싱|최성희|강좌관리/쿠폰등록/공지사항/Q&A게시판/강사&수강생 관리|100%|
-|백엔드|박민용|강좌리스트|100%|
-|백엔드|이강산|강좌관리/강좌등록/Q&A게시판|100%|
-|퍼블리싱/백엔드|정이원|로그인/쿠폰등록/공지사항|100%|
-|퍼블리싱/백엔드|이은서|헤더/대시보드/카테고리관리/쿠폰관리|100%|
-<br>
-<br>
-<br>
-
-## 💡Description
+## Description
 🖐 Hello there! We are Tema Jootopia.<br><br>
 동물원을 뜻하는 Zoo + 이상향을 의미하는 Utopia = ‘주토피아’<br>
 다양한 개성을 가진 팀원들이 모여 이상향을 함께 만들어나가자는 의미입니다.
 
-<br>
+
+### Design and Implement
+|Part|Who|%|
+|:-:|:-:|:-:|
+|담당|담당자|퍼센트|
 <br>
 
-## 🧐 Expectations
+
+## Expectations
 
 ### 타겟? 
 - 코딩이 어려워 포기하고 싶은 사람.

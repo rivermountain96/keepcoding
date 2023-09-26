@@ -24,7 +24,6 @@ try{
   $sale_price =  (int)$_POST['sale_price']??0 ;
   
   $status = $_POST['status']??0 ;
-  $issale = $_POST['issale']??0 ;
   $sale_cnt =  (int)$_POST['sale_cnt']??0 ;
   
 
@@ -40,11 +39,8 @@ try{
   $sale_end_date = $_POST['sale_end_date'];
   $content = rawurldecode($_POST['content']); //encodeURIComponent통해 변경된 코드를 원래코드로 변경
   $video_url = $_POST['video_url'];
-  $complete_rate = (int)$_POST['complete_rate'];
-  $satisfaction = (int)$_POST['satisfaction'];
-  $level = $_POST['level'];
-
   $file_table_id = $_POST['file_table_id']??0;
+  $file_table_id = $_POST['file_table_id'];
   $file_table_id = rtrim($file_table_id, ',');//최우측 콤마 제거
 
 
@@ -89,20 +85,20 @@ try{
 
 
   $sql = "INSERT INTO products
-  (name, cate, product_intro, content, thumbnail, price, sale_cnt, status,
-  userid, regdate, sale_end_date, video_url, complete_rate, satisfaction, level)
+  (name, cate, content, thumbnail, price, sale_price, sale_cnt, status,
+  userid, reg_date, sale_end_date, video_url)
   VALUES
-  ('{$name}', '{$cate}', '{$product_intro}', '{$content}', '{$thumbnail}', {$price}, {$sale_cnt},
-  '{$status}', '{$_SESSION['AUID']}', now(), '{$sale_end_date}', '{$video_url}', '{$complete_rate}', '{$satisfaction}', '{$level}')";
+  ('{$name}', '{$cate}', '{$content}', '{$thumbnail}', {$price}, {$sale_price}, {$sale_cnt},
+  '{$status}', '{$_SESSION['AUID']}', now(), now(), '{$video_url}')";
 
   $result = $mysqli -> query($sql);
 
 
-if (!$result) {
-  echo "쿼리 실행 중 오류: " . $mysqli->error;
-} 
-echo "실행된 쿼리: " . $sql;
-$pid = $mysqli -> insert_id; //테이블에 저장되는 값의 고유 번호
+// if (!$result) {
+//   echo "쿼리 실행 중 오류: " . $mysqli->error;
+// } 
+// echo "실행된 쿼리: " . $sql;
+// $pid = $mysqli -> insert_id; //테이블에 저장되는 값의 고유 번호
 
 
 if($result){ //상품이 등록되면
