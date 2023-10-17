@@ -87,7 +87,7 @@ https://github.com/rivermountain96/keepcoding
 
 📆 2023. 08. 21. ~ 2023. 09. 08.
 <br>
-**[Tema Jootopia 3th project : 관리자 페이지](http://keepcoding.dothome.co.kr/keepcoding/admin/login.php)**
+**[Tema Jootopia 3rd project : 관리자 페이지](http://keepcoding.dothome.co.kr/keepcoding/admin/login.php)**
 
 **🥾 [주토피아의 기획과 디자인](https://www.figma.com/file/uNjm1oLLgycPRqu5iTJ6eV/%EC%A3%BC%ED%86%A0%ED%94%BC%EC%95%84?type=design&node-id=0-1&mode=design)**
 
